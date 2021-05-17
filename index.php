@@ -47,7 +47,7 @@
 				<div>Фото</div>
 				<div>Название</div>
 				<div>Описание</div>
-				<div>Категория</div>
+				<div>xkty</div>
 				<div>Временная метка</div>
 			</div>
 			<div class="solved_item">
