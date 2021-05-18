@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Благоустройство города</title>
+	<title>Благо</title>
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="styles/main.css">
 </head>
@@ -47,7 +47,7 @@
 				<div>Фото</div>
 				<div>Название</div>
 				<div>Описание</div>
-				<div>xkty</div>
+				<div></div>
 				<div>Временная метка</div>
 			</div>
 			<div class="solved_item">
