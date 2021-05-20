@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>у сани маленький член</title>
+	<title>член</title>
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="styles/main.css">
 </head>
