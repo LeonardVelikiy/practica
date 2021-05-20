@@ -24,7 +24,7 @@
 			</div>
 		</div>
 		<div class="tagline">
-			<div>Член</div>
+			<div></div>
 			<div>Сообщить о проблеме</div>
 		</div>
 		<div class="solved_text">Последние решенные проблемы</div>
