@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Хочу член Саши</title>
+	<title>Благо</title>
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="styles/main.css">
 </head>
