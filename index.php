@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Благо</title>
+	<title></title>
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="styles/main.css">
 </head>
