@@ -1,0 +1,326 @@
+*
+{
+	margin: 0px;
+	padding: 0px;
+}
+
+.wrapper
+{
+	margin: 0px auto;
+	width: 100%;
+	height: auto;
+}
+
+.head
+{
+	height: 85px;
+	width: 100%;
+	border-bottom: 5px solid #d2d2d2; 
+}
+
+.logo,
+.link_f,
+.link_s,
+.out
+{
+	float: left;
+}
+
+.logo
+{
+	height: 20px;
+	width: 50px;
+	margin-left: 180px;
+	margin-top: 25px;
+}
+
+.link_f,
+.link_s
+{
+	float: left;
+	text-decoration: none;
+}
+
+.link_f
+{
+	font-size: 16pt;
+	font-family: "Nunito-SemiBold";
+	margin-top: 25px;
+	margin-left: 300px;
+}
+
+.link_s
+{
+	font-size: 16pt;
+	font-family: "Nunito-SemiBold";
+	margin-top: 25px;
+	margin-left: 60px;
+}
+
+.out
+{
+	width: 100px;
+	height: 32px;
+	background-color: #ff0000;
+	border: 5px solid #a60000;
+	border-radius: 15px;
+	font-family: "Nunito-Bold";
+	font-size: 16pt;
+	color: #ffffff;
+	text-align: center;
+	padding-top: 3px;
+	margin-left: 250px;
+	margin-top: 20px;
+}
+
+.out:hover
+{
+	cursor: pointer;
+	background-color: #ff0000;
+	border: 5px solid #ff0000;
+}
+
+.yinfo_text
+{
+	width: 100%-60px;
+	font-size: 37pt;
+	font-family: "Nunito-Bold";
+	margin-left: 60px;
+	margin-top: 20px;
+}
+
+.user_info
+{
+	height: 200px;
+	width: 80%;
+	margin-left: 250px;
+	margin-top: 20px;
+}
+
+.avatar_img,
+.std_info,
+.user_info_change
+{
+	float: left;
+}
+
+.avatar_img
+{
+	height: 200px;
+	width: 200px;
+	border: 3px solid black;
+}
+
+.std_info
+{
+	height: 150px;
+	width: 300px;
+	margin-left: 60px;
+	padding-top: 30px;
+	padding-bottom: 20px;
+}
+
+.std_info > div:nth-child(1)
+{
+	font-size: 14pt;
+	font-family: "Nunito-SemiBold";
+	margin-bottom: 10px;
+	
+}
+
+.std_info > div:nth-child(2)
+{
+	font-size: 14pt;
+	font-family: "Nunito-SemiBold";
+	margin-bottom: 10px;
+	
+}
+
+.std_info > div:nth-child(3)
+{
+	font-size: 14pt;
+	font-family: "Nunito-SemiBold";
+	margin-bottom: 10px;
+	
+}
+
+.std_info > div:nth-child(4)
+{
+	font-size: 14pt;
+	font-family: "Nunito-SemiBold";
+	margin-bottom: 10px;
+	
+}
+
+.user_info_change
+{
+	width: 260px;
+	height: 33px;
+	background-color: #b6b6b6;
+	border: 5px solid #9c9c9c;
+	border-radius: 15px;
+	font-family: "Nunito-Bold";
+	font-size: 16pt;
+	color: #ffffff;
+	text-align: center;
+	padding-top: 2px;
+	margin-top: 68.5px;
+	margin-left: 50px;
+}
+
+.user_info_change:hover
+{
+	cursor: pointer;
+	background-color: #b6b6b6;
+	border: 5px solid #b6b6b6;
+}
+
+.problem_text
+{
+	width: 100%-60px;
+	font-size: 37pt;
+	font-family: "Nunito-Bold";
+	margin-left: 60px;
+	margin-top: 20px;
+}
+
+.your_p_item
+{
+	height: 560px;
+	width: 100%;
+}
+
+.prodlem_item
+{
+	height: 470px;
+	width: 260px;
+	margin-left: 60px;
+	margin-top: 60px;
+	float: left;
+	border: 3px solid black;
+}
+
+.prodlem_item > div:nth-child(1)
+{
+	width: 260px;
+	height: 260px;
+}
+
+.prodlem_item > div:nth-child(2)
+{
+	width: 260px;
+	height: 30px;
+	font-family: "Nunito-Bold";
+	text-align: center;
+	margin-top: 10px;
+	font-size: 14pt;
+}
+
+.prodlem_item > div:nth-child(3)
+{
+	width: 230px;
+	height: 70px;
+	font-family: "Nunito-SemiBold";
+	font-size: 13pt;
+	margin-bottom: 10px;
+	margin-right: 15px;
+	margin-left: 15px;
+}
+
+.prodlem_item > div:nth-child(4)
+{
+	width: 230px;
+	height: 35px;
+	font-family: "Nunito-SemiBold";
+	font-size: 13pt;
+	margin-right: 15px;
+	margin-left: 15px;
+}
+
+.prodlem_item > div:nth-child(5)
+{
+	width: 250px;
+	height: 20px;
+	font-family: "Nunito-SemiBold";
+	text-align: right;
+	margin-right: 10px;
+}
+
+.prodlem_item > div:nth-child(6)
+{
+	height: 20px;
+	font-family: "Nunito-SemiBold";
+	text-align: center;
+	margin-top: 10px;
+}
+
+.prodlem_item > div:nth-child(6) > a
+{
+	color: #000000;
+	text-decoration: none;
+}
+
+.prodlem_item > div:nth-child(6) > a:hover
+{
+	text-decoration: underline;
+}
+
+.delete_acc
+{
+	height: 20px;
+	font-family: "Nunito-SemiBold";
+	font-size: 14pt;
+	margin-left: 60px;
+	margin-top: 10px;
+}
+
+.delete_acc > a
+{
+	color: #ff0000;
+	text-decoration: none;
+}
+
+.delete_acc > a:hover
+{
+	text-decoration: underline;
+}
+
+.copyright
+{
+	height: 45px;
+	width: 100%;
+	margin-top: 50px;
+	padding-top: 15px;
+	text-align: center;
+	background-color: #1cd538;
+	font-size: 16pt;
+	color: #ffffff;
+	font-family: "Nunito-Bold";
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@font-face
+{
+	src:url(../fonts/Nunito-SemiBold.ttf);
+	font-family: "Nunito-SemiBold";
+}
+
+@font-face
+{
+	src:url(../fonts/Nunito-Bold.ttf);
+	font-family: "Nunito-Bold";
+}
