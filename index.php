@@ -9,10 +9,10 @@
 	<div class="wrapper">
 		<div class="head">
 			<div class="logo">ЛОГО</div>
-			<a href="admin.php">
+			<a href="pages/admin.php">
 				<span class="link_f">О сервисе</span>
 			</a>
-			<a href="profile.php">
+			<a href="pages/profile.php">
 				<span class="link_s">Все сообщения</span>
 			</a>	
 			<a href="pages/auth_form.php">
