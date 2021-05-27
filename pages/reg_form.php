@@ -8,7 +8,7 @@
 <body>
 	<div class="form_window_reg">
 		<a href="../index.php">
-			<div></div>
+			<div class="close_btn"></div>
 		</a>
 		<div class="form_mname">Регистрация</div>
 		<div class="form_place">

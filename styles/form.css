@@ -22,18 +22,7 @@
 	margin: 65px auto;
 }
 
-.form_window_auth > a:nth-child(1) > div
-{
-	height: 60px;
-	width: 60px;
-	background-image: url(../images/close.png);
-	background-size: 80%;
-	background-repeat: no-repeat;
-	background-position: 5px;
-	margin-left: auto;
-}
-
-.form_window_reg > a:nth-child(1) > div
+.close_btn
 {
 	height: 60px;
 	width: 60px;
