@@ -7,9 +7,9 @@
 </head>
 <body>
 	<div class="form_window_reg">
-		<a href="../index.php">
-			<div></div>
-		</a>
+		<div>
+			<a href="../index.php"></a>
+		</div>
 		<div class="form_mname">Регистрация</div>
 		<div class="form_place">
 			<form>
