@@ -1,0 +1,159 @@
+*
+{
+	margin: 0px 0px;
+	padding: 0px 0px;
+}
+
+.form_window_auth
+{
+	height: 350px;
+	width: 400px;
+	border: 3px solid black;
+	border-radius: 20px;
+	margin: 150px auto;
+}
+
+.form_window_reg
+{
+	height: 520px;
+	width: 400px;
+	border: 3px solid black;
+	border-radius: 20px;
+	margin: 65px auto;
+}
+
+.form_window_auth > div:nth-child(1)
+{
+	height: 60px;
+	width: 60px;
+	background-image: url(../images/close.png);
+	background-size: 80%;
+	background-repeat: no-repeat;
+	background-position: 5px;
+	margin-left: auto;
+}
+
+.form_window_reg > div:nth-child(1)
+{
+	height: 60px;
+	width: 60px;
+	background-image: url(../images/close.png);
+	background-size: 80%;
+	background-repeat: no-repeat;
+	background-position: 5px;
+	margin-left: auto;
+}
+
+.form_mname
+{
+	margin-top: 20px;
+	margin-bottom: 30px;
+	text-align: center;
+	font-size: 18pt;
+	font-family: "Nunito-Bold";
+
+
+}
+
+.form_place
+{
+	text-align: center;
+}
+
+.form_mitem
+{
+	height: 25px;
+	width: 185px;
+	padding-left: 15px;
+	padding-right: 15px;
+	border: 3px solid #d5d5d5;
+	border-radius: 15px;
+	background-color: #d5d5d5;
+	font-family: "Nunito-SemiBold";
+	margin-bottom: 15px;
+	outline: none;
+}
+
+.pers_inf
+{
+	margin-left: 5px;
+	font-size: 14px;
+	font-family: "Nunito-SemiBold";
+
+}
+
+.form_btn
+{
+	width: 100px;
+	height: 32px;
+	background-color: #00ff00;
+	border: 3px solid #00ff00;
+	border-radius: 15px;
+	font-family: "Nunito-SemiBold";
+	font-size: 14pt;
+	color: #ffffff;
+	text-align: center;
+}
+
+.form_btn_reg
+{
+	width: 150px;
+	height: 32px;
+	margin-top: 10px;
+	background-color: #00ff00;
+	border: 3px solid #00ff00;
+	border-radius: 15px;
+	font-family: "Nunito-SemiBold";
+	font-size: 14pt;
+	color: #ffffff;
+	text-align: center;
+}
+
+.form_btn:hover
+{
+	cursor: pointer;
+	background-color: #00cc00;
+	border: 3px solid #00cc00;
+}
+
+.form_btn_reg:hover
+{
+	cursor: pointer;
+	background-color: #00cc00;
+	border: 3px solid #00cc00;
+}
+
+
+.form_link
+{
+	margin-top: 10px;
+	text-align: center;
+	font-size: 13pt;
+	font-family: "Nunito-SemiBold";
+}
+
+.form_link > a
+{
+	text-decoration: none;
+	color: #000000;
+}
+
+.form_link > a:hover
+{
+	text-decoration: underline;
+}
+
+
+
+
+@font-face
+{
+	src:url(../fonts/Nunito-SemiBold.ttf);
+	font-family: "Nunito-SemiBold";
+}
+
+@font-face
+{
+	src:url(../fonts/Nunito-Bold.ttf);
+	font-family: "Nunito-Bold";
+}
