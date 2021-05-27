@@ -3,7 +3,7 @@
 <head>
 	<title>Личный кабинет</title>
 	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="styles/profile.css">
+	<link rel="stylesheet" type="text/css" href="../styles/profile.css">
 </head>
 <body>
 	<div class="wrapper">
@@ -11,7 +11,9 @@
 			<div class="logo">ЛОГО</div>
 			<span class="link_f">О сервисе</span>
 			<span class="link_s">Все сообщения</span>
-			<div class="out">Выйти</div>
+			<a href="../index.php">
+				<div class="out">Выйти</div>
+			</a>
 		</div>
 		<span class="yinfo_text">Ваш профиль</span>
 		<div class="user_info">
