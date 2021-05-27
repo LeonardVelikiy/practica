@@ -22,7 +22,7 @@
 	margin: 65px auto;
 }
 
-.form_window_auth > div:nth-child(1) > a:nth-child(1)
+.form_window_auth > a:nth-child(1)
 {
 	height: 60px;
 	width: 60px;
@@ -33,7 +33,7 @@
 	margin-left: auto;
 }
 
-.form_window_reg > div:nth-child(1) > a:nth-child(1)
+.form_window_reg > a:nth-child(1)
 {
 	height: 60px;
 	width: 60px;

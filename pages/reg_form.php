@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Форма</title>
+	<title>Регистрация</title>
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="../styles/form.css">
 </head>
 <body>
 	<div class="form_window_reg">
-		<div>
-			<a href="../index.php"></a>
-		</div>
+		<a href="../index.php">
+			<div></div>
+		</a>
 		<div class="form_mname">Регистрация</div>
 		<div class="form_place">
 			<form>
