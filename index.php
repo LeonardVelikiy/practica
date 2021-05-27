@@ -11,7 +11,7 @@
 			<div class="logo">ЛОГО</div>
 			<span class="link_f">О сервисе</span>
 			<span class="link_s">Все сообщения</span>
-			<a href="pages/profile.php">
+			<a href="pages/auth_form.php">
 				<div class="auth">Войти</div>
 			</a>
 		</div>
