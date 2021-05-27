@@ -7,7 +7,9 @@
 </head>
 <body>
 	<div class="form_window_auth">
-		<div></div>
+		<a href="../index.php">
+			<div></div>
+		</a>
 		<div class="form_mname">Вход</div>
 		<div class="form_place">
 			<form>
