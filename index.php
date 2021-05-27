@@ -9,8 +9,12 @@
 	<div class="wrapper">
 		<div class="head">
 			<div class="logo">ЛОГО</div>
-			<span class="link_f">О сервисе</span>
-			<span class="link_s">Все сообщения</span>
+			<a href="admin.php">
+				<span class="link_f">О сервисе</span>
+			</a>
+			<a href="profile.php">
+				<span class="link_s">Все сообщения</span>
+			</a>	
 			<a href="pages/auth_form.php">
 				<div class="auth">Войти</div>
 			</a>
