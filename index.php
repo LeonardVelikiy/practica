@@ -15,7 +15,7 @@
 		</div>
 		<div class="checker">
 			<div>
-				<div>xxx</div>
+				<div>xxxdd</div>
 				<div>Заинтересованых<br>граждан</div>
 			</div>
 			<div>
