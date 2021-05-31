@@ -29,6 +29,7 @@
 				<div><a href="">Удалить</a></div>
 			</div>
 		</div>
+		<a href="administration.php">Перейти на панель администации</a>
 		<div class="copyright">Copyright</div>
 	</div>
 </body>
