@@ -74,6 +74,67 @@ $online_count = R::count('online', "lastvisit > " . ( time() - (360) ))
 	<link rel="stylesheet" type="text/css" href="styles/main.css">
 </head>
 <body>
+<div id="dark">
+	<div id="okno">
+		<a href=#>
+		<div class="close_btn1"></div>
+	</a>
+		<form method="POST" enctype="multipart/form-data">
+		<input type="file" name="рhoto_start" class="form_mitem1" id="form_mitem1"><label for="form_mitem1" class="label"></span>
+      <span class="input__file-button-text">Выберите файл</span></label><br><br>
+		<input type="text" name="title" class="form_mitem2" placeholder="Название"><br><br>
+		<textarea name="description"  class="form_mitem3" placeholder="Описание"></textarea><br><br>
+		<select name="category" class="form_mitem4"><option name="option">Выберите категорию</option><?php
+		$connect=mysqli_connect('localhost','root','','pract'); 
+		
+
+		$str_out_categoty="SELECT * FROM `category`";
+		$run_out_categoty=mysqli_query($connect,$str_out_categoty);
+		while ($out=mysqli_fetch_array($run_out_categoty)){
+			echo "<option>$out[category]</option>";
+		}
+			?></select><br><br>
+		<input type="submit" name="add" value="Сообщить">
+		</form></div></div>
+		<?php
+	$option=$_POST['option'];
+	$рhoto_start=$_POST['рhoto_start'];
+	$title=$_POST['title'];
+	$description=$_POST['description'];
+	$category=$_POST['category'];
+	$date_start=time();
+	$status="Новая";
+	$add=$_POST['add'];
+	$file_get = $_FILES['рhoto_start']['name'];
+		$temp = $_FILES['рhoto_start']['tmp_name'];
+
+		$file_to_saved = "img/".time().$file_get;
+		move_uploaded_file($temp, $file_to_saved);
+	if($add){
+	$str_add_application="INSERT INTO `applications` (`рhoto_start`, `title`, `description`, `category`, `status`, `date_start`) VALUES ('$file_to_saved', '$title', '$description', '$category', '$status', '$date_start')";
+	if ($рhoto_start && $title && $description) {
+		if ($category != $option) {
+	$run_str_add_application=mysqli_query($connect, $str_add_application);
+	if($run_str_add_application)
+	{
+		echo "Запрос добавлен";
+	}
+	else
+	{
+		echo "Ошибка добавления";
+	}
+}
+else
+{
+	echo "Заполните поля";
+}
+}
+else
+{
+	echo "Заполните поля";
+}
+}
+		?>
 	<div class="wrapper">
 		<div class="head">
 			<div class="logo">ЛОГО</div>
