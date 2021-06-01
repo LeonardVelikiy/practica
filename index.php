@@ -112,7 +112,7 @@ $online_count = R::count('online', "lastvisit > " . ( time() - (360) ))
 				<div>$out[title]</div>
 				<div>$out[description]</div>
 				<div>$out[category]</div>
-				<div>echo date('d/m/Y', $out[date_end])</div>
+				<div>date('d/m/Y', $out[date_end])</div>
 			</div>";
 		}
 		?>
