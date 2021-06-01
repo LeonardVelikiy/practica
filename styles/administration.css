@@ -117,6 +117,11 @@
     background-color: chartreuse;
 	border: 1px solid black;
 }
+.left_panel > form > button:nth-child(4)
+{
+	
+	font-size: 23px;
+}
 .left_panel > form > button:hover
 {
     background-color: rgba(82, 160, 4, 0.979);
