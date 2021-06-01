@@ -80,19 +80,17 @@ $online_count = R::count('online', "lastvisit > " . ( time() - (360) ))
 		<div class="close_btn1"></div>
 	</a>
 		<form method="POST" enctype="multipart/form-data">
-		<button type="file" name="рhoto_start" class="form_mitem1" id="form_mitem1"></button><br><br>
+		<input type="file" name="рhoto_start" class="form_mitem1" id="form_mitem1"></input><br><br>
 		<input type="text" name="title" class="form_mitem2" placeholder="Название"><br><br>
 		<textarea name="description"  class="form_mitem3" placeholder="Описание"></textarea><br><br>
 		<select name="category" class="form_mitem4"><option name="option">Выберите категорию</option>
 		<?php
-		
-
 		$str_out_categoty="SELECT * FROM `category`";
 		$run_out_categoty=mysqli_query($connect,$str_out_categoty);
 		while ($out=mysqli_fetch_array($run_out_categoty)){
 			echo "<option>$out[category]</option>";
 		}
-			?></select><br><br>
+		?></select><br><br>
 		<input type="submit" name="add" value="Сообщить">
 		<?php 
 				$option=$_POST['option'];
@@ -121,12 +119,14 @@ $online_count = R::count('online', "lastvisit > " . ( time() - (360) ))
 else
 {
 	echo "Заполните поля";
+	print_r($_FILES);
 	print_r($str_add_application);
 }
 }
 else
 {
 	echo "Заполните поля";
+	print_r($_FILES);
 	print_r($str_add_application);
 }
 }
