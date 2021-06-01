@@ -108,7 +108,10 @@
 .left_panel > form > button
 {
 	width: 300px;
-	height: 100px;
+	height: 50px;
+	cursor: pointer;
+	border-radius: 15px;
+	margin-bottom: 25px;
     background-color: chartreuse;
 	border: 1px solid black;
 }
