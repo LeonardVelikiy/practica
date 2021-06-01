@@ -17,7 +17,7 @@
 			<div class="left_panel">
 				<form method="GET">
 					<input type="submit" name="aplication" value="aplication"></input>
-					<input type="submit" name="user" value="пользователи"></input>
+					<input type="submit" name="user" value="user"></input>
 					<input type="submit" name="aplication" value='aplication work'></input>
 					<input type="submit" name="user" value='users work'></input>
 				</form>
