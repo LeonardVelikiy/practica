@@ -26,7 +26,7 @@ if ( $online )
             $c = (array) @json_decode(CookieManager::read($cookie_key), true);
             if ( $c )
             {
-                if( $c['lastvisit'] < (time() - (60 * 5)) ) 
+                if( $c['lastvisit'] < (time() - (60 * 1)) ) 
                 {
                     $do_update = true;
                 }
