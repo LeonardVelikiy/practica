@@ -16,10 +16,10 @@
 		<div>
 			<div class="left_panel">
 				<form method="GET">
-					<input type="submit" name="aplication" value="aplication"></input>
-					<input type="submit" name="user" value="user"></input>
-					<input type="submit" name="aplication" value='aplication work'></input>
-					<input type="submit" name="user" value='users work'></input>
+					<button  name="aplication" value="aplication"> заявки</button>
+					<button  name="user" value="user">пользователи </button>
+					<button  name="aplication" value='aplication work'></button>
+					<button  name="user" value='users work'></button>
 				</form>
 			</div>
 			<div class="right_body">
