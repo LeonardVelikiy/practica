@@ -80,11 +80,11 @@ $online_count = R::count('online', "lastvisit > " . ( time() - (360) ))
 		<div class="close_btn1"></div>
 	</a>
 		<form method="POST" enctype="multipart/form-data">
-		<input type="file" name="рhoto_start" class="form_mitem1" id="form_mitem1"><label for="form_mitem1" class="label"></span>
-      <span class="input__file-button-text">Выберите файл</span></label><br><br>
+		<input type="file" name="рhoto_start" class="form_mitem1" id="form_mitem1"></input><br><br>
 		<input type="text" name="title" class="form_mitem2" placeholder="Название"><br><br>
 		<textarea name="description"  class="form_mitem3" placeholder="Описание"></textarea><br><br>
-		<select name="category" class="form_mitem4"><option name="option">Выберите категорию</option><?php
+		<select name="category" class="form_mitem4"><option name="option">Выберите категорию</option>
+		<?php
 		
 
 		$str_out_categoty="SELECT * FROM `category`";
@@ -94,14 +94,15 @@ $online_count = R::count('online', "lastvisit > " . ( time() - (360) ))
 		}
 			?></select><br><br>
 		<input type="submit" name="add" value="Сообщить">
-		<?php $option=$_POST['option'];
-	$рhoto_start=$_POST['рhoto_start'];
-	$title=$_POST['title'];
-	$description=$_POST['description'];
-	$category=$_POST['category'];
-	$date_start=time();
-	$status="Новая";
-	$add=$_POST['add'];
+		<?php 
+				$option=$_POST['option'];
+				$рhoto_start=$_POST['рhoto_start'];
+				$title=$_POST['title'];
+				$description=$_POST['description'];
+				$category=$_POST['category'];
+				$date_start=time();
+				$status="Новая";
+				$add=$_POST['add'];
 		if($add){
 	$str_add_application="INSERT INTO `applications` (`рhoto_start`, `title`, `description`, `category`, `status`, `date_start`) VALUES ('$file_to_saved', '$title', '$description', '$category', '$status', '$date_start')";
 	if ($рhoto_start && $title && $description) {
