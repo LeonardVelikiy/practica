@@ -101,62 +101,20 @@ $online_count = R::count('online', "lastvisit > " . ( time() - (360) ))
 		</div>
 		<div class="solved_text">Последние решенные проблемы</div>
 		<div class="solved_p_item">
-			<div class="solved_item">
+		<?php
+		$str_out_application="SELECT * FROM `applications` WHERE `status`='Выполнено' ORDER BY `date_end` DESC";
+		$run_out_application=mysqli_query($connect,$str_out_application);
+		while ($out=mysqli_fetch_array($run_out_application)){
+			$id=$out['id'];
+			echo "<div class='solved_item'>
 				<div>Фото</div>
-				<div>Название</div>
-				<div>Описание</div>
-				<div>Категория</div>
-				<div>Временная метка</div>
-			</div>
-			<div class="solved_item">
-				<div>Фото</div>
-				<div>Название</div>
-				<div>Описание</div>
-				<div>Категория</div>
-				<div>Временная метка</div>
-			</div>
-			<div class="solved_item">
-				<div>Фото</div>
-				<div>Название</div>
-				<div>Описание</div>
-				<div></div>
-				<div>Временная метка</div>
-			</div>
-			<div class="solved_item">
-				<div>Фото</div>
-				<div>Название</div>
-				<div>Описание</div>
-				<div>Категория</div>
-				<div>Временная метка</div>
-			</div>
-			<div class="solved_item">
-				<div>Фото</div>
-				<div>Название</div>
-				<div>Описание</div>
-				<div>Категория</div>
-				<div>Временная метка</div>
-			</div>
-			<div class="solved_item">
-				<div>Фото</div>
-				<div>Название</div>
-				<div>Описание</div>
-				<div>Категория</div>
-				<div>Временная метка</div>
-			</div>
-			<div class="solved_item">
-				<div>Фото</div>
-				<div>Название</div>
-				<div>Описание</div>
-				<div>Категория</div>
-				<div>Временная метка</div>
-			</div>
-			<div class="solved_item">
-				<div>Фото</div>
-				<div>Название</div>
-				<div>Описание</div>
-				<div>Категория</div>
-				<div>Временная метка</div>
-			</div>
+				<div>$out[title]</div>
+				<div>$out[description]</div>
+				<div>$out[category]</div>
+				<div>echo date('d/m/Y', $out[date_end])</div>
+			</div>"
+		}
+		?>
 		</div>
 		<div class="copyright">Copyright</div>
 	</div>
