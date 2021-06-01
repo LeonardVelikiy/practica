@@ -108,12 +108,8 @@ $online_count = R::count('online', "lastvisit > " . ( time() - (360) ))
 				$add=$_POST['add'];
 		if($add){
 			$str_add_application="INSERT INTO `applications` (`рhoto_start`, `title`, `description`, `category`, `status`, `date_start`) VALUES ('$file_to_saved', '$title', '$description', '$category', '$status', '$date_start')";
-<<<<<<< HEAD
 			$run_str_add_application=mysqli_query($connect, $str_add_application);
 	if ($_FILES && $title && $description) {
-=======
-	if ($рhoto_start && $title && $description) {
->>>>>>> 093105a3aed9df35bf0a38594705711fab3a8148
 		if ($category != $option) {
 			$run_str_add_application=mysqli_query($connect, $str_add_application);
 	if($run_str_add_application)
