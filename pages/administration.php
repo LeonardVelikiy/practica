@@ -17,9 +17,9 @@
 			<div class="left_panel">
 				<form method="GET">
 					<button  name="aplication" value="aplication"> заявки</button>
-					<button  name="user" value="user">пользователи </button>
-					<button  name="aplication" value='aplication work'></button>
-					<button  name="user" value='users work'></button>
+					<button  name="user" value="user">пользователи</button>
+					<button  name="aplication" value='aplication_work'>работа с заявками</button>
+					<button  name="user" value='users_work'>работа с пользовтелями</button>
 				</form>
 			</div>
 			<div class="right_body">
