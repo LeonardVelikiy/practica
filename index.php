@@ -4,8 +4,10 @@ $connect=mysqli_connect('localhost','cn31570_practica','practica','cn31570_pract
 require 'pages/cookies.php';
 require 'pages/rb.php';
 R::setup( 'mysql:host=localhost;dbname=cn31570_practica','cn31570_practica', 'practica' );
+
 $query = mysqli_query($connect, "SELECT * FROM `applications` WHERE `status`='Выполнено'");
 $count = mysqli_fetch_row($query)[0];
+
 if ( !R::testconnection() )
 {
         exit ('Нет соединения с базой данных');
@@ -91,7 +93,7 @@ $online_count = R::count('online', "lastvisit > " . ( time() - (360) ))
 				<div>Заинтересованых<br>граждан</div>
 			</div>
 			<div>
-				<div><?php var_dump($count) ?></div>
+				<div><?php $count?></div>
 				<div>Решенных<br>проблем</div>
 			</div>
 		</div>
@@ -111,7 +113,7 @@ $online_count = R::count('online', "lastvisit > " . ( time() - (360) ))
 				<div>$out[title]</div>
 				<div>$out[description]</div>
 				<div>$out[category]</div>
-				<div>".date('d/m/Y', $out[date_end])."</div>
+				<div>".date('d/m/Y', $out['date_end'])."</div>
 			</div>";
 		}
 		?>
