@@ -105,6 +105,7 @@
 	width: 100%-120px;
 	font-size: 37pt;
 	font-family: "Nunito-Bold";
+	border: 2px solid black;
 	margin-left: 60px;
 	margin-top: 20px;
 }
