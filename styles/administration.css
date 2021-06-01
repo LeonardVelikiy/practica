@@ -112,6 +112,8 @@
 	cursor: pointer;
 	border-radius: 15px;
 	margin-bottom: 25px;
+	font-family: "Nunito-Bold";
+	font-size: 45px;
     background-color: chartreuse;
 	border: 1px solid black;
 }
