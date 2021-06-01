@@ -61,7 +61,7 @@ if ( $online )
 }
  
 
-$online_count = R::count('online', "lastvisit > " . ( time() - (3600) ))
+$online_count = R::count('online', "lastvisit > " . ( time() - (60) ))
 ?>
 <!DOCTYPE html>
 <html>
