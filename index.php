@@ -93,7 +93,7 @@ $online_count = R::count('online', "lastvisit > " . ( time() - (360) ))
 				<div>Заинтересованых<br>граждан</div>
 			</div>
 			<div>
-				<div><?php $count?></div>
+				<div><?php echo"$count";?></div>
 				<div>Решенных<br>проблем</div>
 			</div>
 		</div>
