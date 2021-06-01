@@ -16,9 +16,9 @@
 		<div>
 			<div class="left_panel">
 				<form method="GET">
-					<input type="submit" name="aplication" value="1"></input>
-					<input type="submit" name="aplication" value="2"></input>
-					<input type="submit" name="aplication" value="3"></input>
+					<input type="submit" name="aplication" value="заявки"></input>
+					<input type="submit" name="aplication" value="пользователи"></input>
+					<input type="submit" name="aplication" value="" placeholder="работа"></input>
 					<input type="submit" name="aplication" value="4"></input>
 				</form>
 			</div>
