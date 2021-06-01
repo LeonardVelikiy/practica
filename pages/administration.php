@@ -30,7 +30,7 @@
 			<div class="left_panel_item"></div>
 			</div>
 			<div class="right_body">
-				<div class="problem_text">Панель администрации</div>
+				<div class="admin_content"></div>
 			</div>
 		</div>
 		<div class="copyright">Copyright</div>
