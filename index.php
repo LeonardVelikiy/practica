@@ -81,7 +81,7 @@ $online_count = R::count('online', "lastvisit > " . ( time() - (360) ))
 	</a>
 		<form method="POST" enctype="multipart/form-data">
 		<input type="file" name="рhoto_start" class="form_mitem1" id="form_mitem1"></input><br><br>
-		<input type="text" name="title" class="form_mitem2" placeholder="Название"><br><br>
+		<input type="text" name="title" class="form_mitem2" value="ss" placeholder="Название"><br><br>
 		<textarea name="description"  class="form_mitem3" placeholder="Описание"></textarea><br><br>
 		<select name="category" class="form_mitem4"><option name="option">Выберите категорию</option>
 		<?php
@@ -108,10 +108,14 @@ $online_count = R::count('online', "lastvisit > " . ( time() - (360) ))
 				$add=$_POST['add'];
 		if($add){
 			$str_add_application="INSERT INTO `applications` (`рhoto_start`, `title`, `description`, `category`, `status`, `date_start`) VALUES ('$file_to_saved', '$title', '$description', '$category', '$status', '$date_start')";
+<<<<<<< HEAD
 			$run_str_add_application=mysqli_query($connect, $str_add_application);
 	if ($_FILES && $title && $description) {
+=======
+	if ($рhoto_start && $title && $description) {
+>>>>>>> 093105a3aed9df35bf0a38594705711fab3a8148
 		if ($category != $option) {
-	
+			$run_str_add_application=mysqli_query($connect, $str_add_application);
 	if($run_str_add_application)
 	{
 		echo "Запрос добавлен";
