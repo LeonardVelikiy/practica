@@ -85,7 +85,6 @@ $online_count = R::count('online', "lastvisit > " . ( time() - (360) ))
 		<input type="text" name="title" class="form_mitem2" placeholder="Название"><br><br>
 		<textarea name="description"  class="form_mitem3" placeholder="Описание"></textarea><br><br>
 		<select name="category" class="form_mitem4"><option name="option">Выберите категорию</option><?php
-		$connect=mysqli_connect('localhost','root','','pract'); 
 		
 
 		$str_out_categoty="SELECT * FROM `category`";
