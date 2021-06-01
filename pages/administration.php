@@ -16,10 +16,10 @@
 		<div>
 			<div class="left_panel">
 				<form method="GET">
-					<button  name="aplication" value="aplication"> заявки</button>
-					<button  name="user" value="user">пользователи</button>
-					<button  name="aplication" value='aplication_work'>работа с заявками</button>
-					<button  name="user" value='users_work'>работа с пользовтелями</button>
+					<button  name="aplications" value="aplication"> заявки</button>
+					<button  name="users" value="users">пользователи</button>
+					<button  name="aplications" value='aplication_work'>работа с заявками</button>
+					<button  name="users" value='users_work'>работа с пользовтелями</button>
 				</form>
 			</div>
 			<div class="right_body">
