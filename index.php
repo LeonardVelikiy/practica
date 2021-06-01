@@ -1,3 +1,68 @@
+<?php
+$query = mysqli_query($connect, "SELECT COUNT(*) FROM `applications` WHERE `status`='Выполнено'");
+$count = mysqli_fetch_row($query)[0];
+require 'pages/cookies.php';
+	require 'pages/rb.php';
+R::setup( 'mysql:host=Хост;dbname=Введи сюда название бд','Логин', 'Пароль' );
+ 
+if ( !R::testconnection() )
+{
+        exit ('Нет соединения с базой данных');
+}
+ 
+$cookie_key = 'online-cache';
+ 
+
+$ip = $_SERVER['REMOTE_ADDR']; 
+ 
+
+$online = R::findOne('online', 'ip = ?', array($ip)); 
+ 
+if ( $online )
+{
+    $do_update = false;
+    if ( CookieManager::stored($cookie_key) )
+        {
+            $c = (array) @json_decode(CookieManager::read($cookie_key), true);
+            if ( $c )
+            {
+                if( $c['lastvisit'] < (time() - (60 * 5)) ) 
+                {
+                    $do_update = true;
+                }
+            } else
+            {
+                $do_update = true;
+            }
+ 
+        } else{
+                $do_update = true;      
+        }
+        if ( $do_update )
+        {
+                $time = time();
+                $online->lastvisit = $time;
+                R::store($online);
+                CookieManager::store($cookie_key, json_encode(array(
+                    'id' => $online->id,
+                    'lastvisit' => $time)));
+                 
+        }
+ 
+} else{
+    $time = time();
+    $online = R::dispense('online');
+    $online->lastvisit = $time;
+    $online->ip = $ip;
+    R::store($online);
+    CookieManager::store($cookie_key, json_encode(array(
+        'id' => $online->id,
+        'lastvisit' => $time)));
+}
+ 
+
+$online_count = R::count('online', "lastvisit > " . ( time() - (3600) ))
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,11 +86,11 @@
 		</div>
 		<div class="checker">
 			<div>
-				<div>xxx</div>
+				<div><?php echo "$online_count"?></div>
 				<div>Заинтересованых<br>граждан</div>
 			</div>
 			<div>
-				<div>yyy</div>
+				<div><?php echo "$count"?></div>
 				<div>Решенных<br>проблем</div>
 			</div>
 		</div>
