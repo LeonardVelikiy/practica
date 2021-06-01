@@ -1,11 +1,11 @@
 <?php
-$query = mysqli_query($connect, "SELECT * FROM `applications` WHERE `status`='Выполнено'");
-$count = mysqli_fetch_row($query)[0];
+
 $connect=mysqli_connect('localhost','cn31570_practica','practica','cn31570_practica');
 require 'pages/cookies.php';
-	require 'pages/rb.php';
+require 'pages/rb.php';
 R::setup( 'mysql:host=localhost;dbname=cn31570_practica','cn31570_practica', 'practica' );
- 
+$query = mysqli_query($connect, "SELECT * FROM `applications` WHERE `status`='Выполнено'");
+$count = mysqli_fetch_row($query)[0];
 if ( !R::testconnection() )
 {
         exit ('Нет соединения с базой данных');
@@ -106,7 +106,7 @@ $online_count = R::count('online', "lastvisit > " . ( time() - (360) ))
 		$run_out_application=mysqli_query($connect,$str_out_application);
 		while ($out=mysqli_fetch_array($run_out_application)) {
 			$id=$out['id'];
-			echo "<div class=".solved_item.">
+			echo "<div class=solved_item>
 				<div>Фото</div>
 				<div>$out[title]</div>
 				<div>$out[description]</div>
