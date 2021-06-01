@@ -1,5 +1,5 @@
 <?php
-$query = mysqli_query($connect, "SELECT COUNT(*) FROM `applications` WHERE `status`='Выполнено'");
+$query = mysqli_query($connect, "SELECT * FROM `applications` WHERE `status`='Выполнено'");
 $count = mysqli_fetch_row($query)[0];
 $connect=mysqli_connect('localhost','cn31570_practica','practica','cn31570_practica');
 require 'pages/cookies.php';
@@ -91,8 +91,7 @@ $online_count = R::count('online', "lastvisit > " . ( time() - (360) ))
 				<div>Заинтересованых<br>граждан</div>
 			</div>
 			<div>
-				<div><?php if($count>0){ echo "$count";}
-				else { echo "0";}?></div>
+				<div><?php  echo '$count'?></div>
 				<div>Решенных<br>проблем</div>
 			</div>
 		</div>
