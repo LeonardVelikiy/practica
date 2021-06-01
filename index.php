@@ -80,7 +80,7 @@ $online_count = R::count('online', "lastvisit > " . ( time() - (360) ))
 		<div class="close_btn1"></div>
 	</a>
 		<form method="POST" enctype="multipart/form-data">
-		<button type="file" name="рhoto_start" class="form_mitem1" id="form_mitem1"></button><br><br>
+		<input type="file" name="рhoto_start" class="form_mitem1" id="form_mitem1"></input><br><br>
 		<input type="text" name="title" class="form_mitem2" placeholder="Название"><br><br>
 		<textarea name="description"  class="form_mitem3" placeholder="Описание"></textarea><br><br>
 		<select name="category" class="form_mitem4"><option name="option">Выберите категорию</option>
