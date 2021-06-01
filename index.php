@@ -3,7 +3,7 @@ $query = mysqli_query($connect, "SELECT COUNT(*) FROM `applications` WHERE `stat
 $count = mysqli_fetch_row($query)[0];
 require 'pages/cookies.php';
 	require 'pages/rb.php';
-R::setup( 'mysql:host=Хост;dbname=Введи сюда название бд','Логин', 'Пароль' );
+R::setup( 'mysql:host=Хост;dbname=cn31570_practica','cn31570_practica', 'practica' );
  
 if ( !R::testconnection() )
 {
