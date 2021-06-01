@@ -106,7 +106,7 @@ $online_count = R::count('online', "lastvisit > " . ( time() - (360) ))
 		$run_out_application=mysqli_query($connect,$str_out_application);
 		while ($out=mysqli_fetch_array($run_out_application)) {
 			$id=$out['id'];
-			echo "<div class="solved_item">
+			echo "<div class=".solved_item.">
 				<div>Фото</div>
 				<div>$out[title]</div>
 				<div>$out[description]</div>
