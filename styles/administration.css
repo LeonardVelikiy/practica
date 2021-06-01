@@ -107,8 +107,8 @@
 }
 .left_panel > form > input
 {
-	width: 100px;
-	height: 800px;
+	width: 800px;
+	height: 100px;
     background-color: chartreuse;
 	border: 1px solid black;
 }
