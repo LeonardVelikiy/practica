@@ -102,9 +102,10 @@
 {
 	width: 1000px;
 	height: 800px;
-	margin: auto;
+	margin: 0px 100px;
 	border: 2px solid black;
 }
+
 .copyright
 {
 	height: 45px;
