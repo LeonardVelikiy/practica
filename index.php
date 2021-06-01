@@ -104,7 +104,7 @@ $online_count = R::count('online', "lastvisit > " . ( time() - (360) ))
 		<?php
 		$str_out_application="SELECT * FROM `applications` WHERE `status`='Выполнено' ORDER BY `date_end` DESC";
 		$run_out_application=mysqli_query($connect,$str_out_application);
-		while ($out=mysqli_fetch_array($run_out_application)){
+		while ($out=mysqli_fetch_array($run_out_application)) {
 			$id=$out['id'];
 			echo "<div class='solved_item'>
 				<div>Фото</div>
@@ -112,7 +112,7 @@ $online_count = R::count('online', "lastvisit > " . ( time() - (360) ))
 				<div>$out[description]</div>
 				<div>$out[category]</div>
 				<div>echo date('d/m/Y', $out[date_end])</div>
-			</div>"
+			</div>";
 		}
 		?>
 		</div>
