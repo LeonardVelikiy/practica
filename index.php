@@ -160,7 +160,7 @@ else
 		</div>
 		<div class="tagline">
 			<div></div>
-			<div>Сообщить о проблеме</div>
+			<div><a href="#dark">Сообщить о проблеме</a></div>
 		</div>
 		<div class="solved_text">Последние решенные проблемы</div>
 		<div class="solved_p_item">
