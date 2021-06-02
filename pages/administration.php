@@ -16,10 +16,10 @@
 		<div>
 			<div class="left_panel">
 				<form method="GET">
-					<button  name="aplications" value=""> заявки</button>
-					<button  name="users" value="">пользователи</button>
-					<button  name="aplications_work" value=''>работа с заявками</button>
-					<button  name="users_work" value=''>работа с пользовтелями</button>
+					<button  name="aplications" value="4ы"> заявки</button>
+					<button  name="users" value="3">пользователи</button>
+					<button  name="aplications_work" value='2'>работа с заявками</button>
+					<button  name="users_work" value='1'>работа с пользовтелями</button>
 				</form>
 			</div>
 			<div class="right_body">
@@ -46,8 +46,7 @@
 				if($_GET['users'])
 				{
 					$str_users_out=mysqli_query($connect, "SELECT * FROM `users`");
-					
-					echo"<table >
+					echo"<table>
 					<tr>
 						<th style=text-aligin:center;>ФИО
 						<th style=text-aligin:center;>Login
@@ -67,6 +66,7 @@
 							<td>$out[mail]
 							<td>0
 							<td><a href=?user_del=$out[id]>удалитьь</a>
+							<td><a href=?user_del=$out[id]>подробнее</a>
 						</tr>";
 						}
 					echo "</table>";
