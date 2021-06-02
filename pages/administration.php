@@ -18,8 +18,8 @@
 				<form method="GET">
 					<button  name="applications" value="ok"> заявки</button>
 					<button  name="users" value="ok">пользователи</button>
-					<button  name="aplications_work" value='0'>работа с заявками</button>
-					<button  name="users_work" value='0'>работа с пользовтелями</button>
+					<button  name="aplications_work" value='ok'>работа с заявками</button>
+					<button  name="users_work" value='ok'>работа с пользовтелями</button>
 				</form>
 			</div>
 			<div class="right_body">
