@@ -33,7 +33,7 @@
 				}
 				if($_GET['users'])
 				{
-					$str_users_out=mysqli_query($connect, "SELECT * FROM `users`");
+					$str_users_out=mysqli_query($connect, "SELECT * FROM `users` WHERE = 1");
 					echo"<table border=1 cellspacing=0 >
 					<tr>
 						<th style=text-aligin:center;>ФИО
