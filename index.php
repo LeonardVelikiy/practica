@@ -81,7 +81,7 @@ $online_count = R::count('online', "lastvisit > " . ( time() - (360) ))
 	</a>
 		<form method="POST" enctype="multipart/form-data">
 		<input type="file" name="рhoto_start" class="form_mitem1" id="form_mitem1"></input><br><br>
-		<input type="text" name="title" class="form_mitem2" value="ss" placeholder="Название"><br><br>
+		<input type="text" name="title" class="form_mitem2" placeholder="Название"><br><br>
 		<textarea name="description"  class="form_mitem3" placeholder="Описание"></textarea><br><br>
 		<select name="category" class="form_mitem4"><option name="option">Выберите категорию</option>
 		<?php
