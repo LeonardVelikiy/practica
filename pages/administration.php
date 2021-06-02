@@ -30,7 +30,7 @@
 				{
 					$str_aplications_out=mysqli_query($connect, "SELECT * FROM `applications`");
 					$out=mysqli_fetch_array($str_aplications_out);
-					echo"<table >
+					echo"<table border=1 cellspacing=0>
 					<tr>
 						<th style=text-aligin:center;>ФИО
 						<th style=text-aligin:center;>Login
