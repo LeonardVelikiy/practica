@@ -166,7 +166,7 @@ else
 					}
 					$application_in_tape=8;
 					$sql_page_number=$page_number*$application_in_tape;
-					$str_out_application_pag="SELECT * FROM `pract` ORDER BY `date_end` DESC LIMIT $sql_page_number, $application_in_tape";
+					$str_out_application_pag="SELECT * FROM `applications` ORDER BY `date_end` DESC LIMIT $sql_page_number, $application_in_tape";
 					$run_out_application_pag=mysqli_query($connect, $str_out_application_pag);
 		while ($out=mysqli_fetch_array($run_out_application_pag)) {
 			$id=$out['id'];
