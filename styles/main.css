@@ -393,13 +393,12 @@
 {
 	height: 40px;
 	width: 100%;
+	text-align: center;
 }
 
 .pagination
 {
-	height: 40px;
-	width: 40px;
-	text-align: center;
+	
 	font-size: 16pt;
 	text-decoration: none;
 	color: #ffffff;
