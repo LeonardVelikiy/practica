@@ -25,7 +25,7 @@
 			<div class="right_body">
 
 				<?php
-
+				include 'db.php';
 				if($_GET['aplications'])
 				{
 					$str_aplications_out=mysqli_query($connect, "SELECT * FROM `applications`");
