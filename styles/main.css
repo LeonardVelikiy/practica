@@ -180,9 +180,11 @@
 	padding-top: 2px;
 	margin-left: 210px;
 	margin-top: 190px;
+}
+.tagline > div > a
+{
 	text-decoration: none;
 }
-
 .tagline > div:nth-child(2):hover
 {
 	cursor: pointer;
