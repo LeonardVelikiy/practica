@@ -186,7 +186,7 @@ else
 						$int_count++;
 					}
 					for ($i=0; $i <$int_count ; $i++) { 
-						echo "<a href=/?page_number=$i style=font-size:25px;>   $p</a>";
+						echo "<a class=pagination href=/?page_number=$i>   $p</a>";
 						$p++;
 					}
 		?>
