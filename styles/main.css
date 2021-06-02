@@ -391,7 +391,7 @@
 
 .pag_place
 {
-	height: 30px;
+	height: 40px;
 	width: 100%;
 }
 
@@ -409,20 +409,18 @@
 {
 	height: 35px;
 	width: 40px;
-	margin-left: 25px;
+	margin-left: 20px;
 	padding-top: 5px;
 	background-color: #4cc33f;
 	border: 1px solid #4cc33f; 
 	border-radius: 20px;
 }
 
-.fix_pag
+.pagination:hover
 {
-	height: 30px;
-	width: 100%;
-	text-align: center;
+	background-color: #00ff00;
+	border: 1px solid #00ff00;
 }
-
 
 
 

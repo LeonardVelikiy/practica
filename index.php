@@ -191,7 +191,7 @@ else
 						$int_count++;
 					}
 					for ($i=0; $i <$int_count ; $i++) { 
-						echo "<div class=fix_pag><a class=pagination href=/?page_number=$i><div>$p</div></a></div>";
+						echo "<a class=pagination href=/?page_number=$i><div>$p</div></a>";
 						$p++;
 					}
 				?>	
