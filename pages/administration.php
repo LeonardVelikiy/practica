@@ -28,7 +28,34 @@
 				include 'db.php';
 				if($_GET['aplications'])
 				{
-					$str_aplications_out=mysqli_query($connect, "SELECT * FROM `applications`");
+					$aplications_del=$_GET['aplications'];
+					$str_user_del=mysqli_query($connect, "DELETE FROM `aplications` WHERE id = $aplications_del");
+
+					$str_aplications_out=mysqli_query($connect, "SELECT * FROM `aplications`");
+					echo"<table border=1 cellspacing=0 >
+					<tr>
+						<th style=text-aligin:center;>Публикующий
+						<th style=text-aligin:center;>статус
+						<th style=text-aligin:center;>название
+						<th style=text-aligin:center;>категория
+						<th style=text-aligin:center;>время публикации
+						<th colspan=2 style=text-aligin:center;>Действия
+					</tr>
+						";
+						while($out=mysqli_fetch_array($str_aplications_out))
+						{
+							echo"
+						<tr>	
+							<td>$out[user]
+							<td>$out[status]
+							<td>$out[title]
+							<td>$out[category]
+							<td>$out[date_start]
+							<td><a href=?users=$out[id]>удалить</a>
+							<td><a href=?users=$out[id]>подробнее</a>
+						</tr>";
+						}
+					echo "</table>";
 					
 				}
 				if($_GET['users'])
