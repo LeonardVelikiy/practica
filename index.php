@@ -159,7 +159,7 @@ else
 		$str_out_application="SELECT * FROM `applications` WHERE `status`='Выполнено' ORDER BY `date_end` DESC";
 		$run_out_application=mysqli_query($connect,$str_out_application);
 		$int_out_application=mysqli_num_rows($run_out_application);
-	$page_number=$_GET['page_number'];
+		$page_number=$_GET['page_number'];
 					if ($page_number == NULL)
 						{
 						$page_number=0;
