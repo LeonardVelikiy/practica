@@ -54,8 +54,8 @@
 							<td>$out[login]
 							<td>$out[mail]
 							<td>0
-							<td><a href=?user=$out[id]>удалить</a>
-							<td><a href=?user=$out[id]>подробнее</a>
+							<td><a href=?users=$out[id]>удалить</a>
+							<td><a href=?users=$out[id]>подробнее</a>
 						</tr>";
 						}
 					echo "</table>";
