@@ -16,10 +16,10 @@
 		<div>
 			<div class="left_panel">
 				<form method="GET">
-					<button  name="aplications" value="4ы"> заявки</button>
-					<button  name="users" value="3">пользователи</button>
-					<button  name="aplications_work" value='2'>работа с заявками</button>
-					<button  name="users_work" value='1'>работа с пользовтелями</button>
+					<button  name="aplications" value="0"> заявки</button>
+					<button  name="users" value="0">пользователи</button>
+					<button  name="aplications_work" value='0'>работа с заявками</button>
+					<button  name="users_work" value='0'>работа с пользовтелями</button>
 				</form>
 			</div>
 			<div class="right_body">
@@ -33,6 +33,9 @@
 				}
 				if($_GET['users'])
 				{
+					$users_del=$_GET['users'];
+					$str_user_del=mysqli_query($connect, "DELETE FROM `users` WHERE id = $users_del");
+
 					$str_users_out=mysqli_query($connect, "SELECT * FROM `users`");
 					echo"<table border=1 cellspacing=0 >
 					<tr>
@@ -51,8 +54,8 @@
 							<td>$out[login]
 							<td>$out[mail]
 							<td>0
-							<td><a href=?user_del=$out[id]>удалитьь</a>
-							<td><a href=?user_del=$out[id]>подробнее</a>
+							<td><a href=?user_del=$out[id]>удалить</a>
+							<td><a href=?user=$out[id]>подробнее</a>
 						</tr>";
 						}
 					echo "</table>";
