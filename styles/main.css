@@ -398,8 +398,7 @@
 .pagination
 {
 	text-align: center;
-	font-size: 14pt;
-	margin-left: 30px;
+	font-size: 16pt;
 	text-decoration: none;
 	color: #ffffff;
 	font-family: "Nunito-SemiBold";
@@ -408,11 +407,12 @@
 
 .pagination > div
 {
-	height: 20px;
-	width: 20px;
+	height: 40px;
+	width: 40px;
+	margin-left: 30px;
 	background-color: #4cc33f;
 	border: 1px solid #4cc33f; 
-	border-radius: 10px;
+	border-radius: 20px;
 }
 
 
