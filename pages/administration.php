@@ -26,12 +26,13 @@
 
 				<?php
 				include 'db.php';
-				if($_GET['aplications'])
+				if($_GET['applications'])
 				{
-					$aplications_del=$_GET['aplications'];
-					$str_user_del=mysqli_query($connect, "DELETE FROM `aplications` WHERE id = $aplications_del");
+					$applications_del=$_GET['applications'];
+					$str_applications_del=mysqli_query($connect, "DELETE FROM `applications` WHERE id = $applications_del");
 
-					$str_aplications_out=mysqli_query($connect, "SELECT * FROM `aplications`");
+					$str_applications_out=mysqli_query($connect, "SELECT * FROM `applications`");
+
 					echo"<table border=1 cellspacing=0 >
 					<tr>
 						<th style=text-aligin:center;>Публикующий
@@ -42,7 +43,7 @@
 						<th colspan=2 style=text-aligin:center;>Действия
 					</tr>
 						";
-						while($out=mysqli_fetch_array($str_aplications_out))
+						while($out=mysqli_fetch_array($str_applications_out))
 						{
 							echo"
 						<tr>	
