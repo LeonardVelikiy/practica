@@ -409,14 +409,19 @@
 {
 	height: 35px;
 	width: 40px;
-	margin-left: 30px;
+	margin-left: 25px;
 	padding-top: 5px;
 	background-color: #4cc33f;
 	border: 1px solid #4cc33f; 
 	border-radius: 20px;
-	text-align: center;
 }
 
+.fix_pag
+{
+	height: 30px;
+	width: 100%;
+	text-align: center;
+}
 
 
 
