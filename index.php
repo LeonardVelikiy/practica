@@ -1,6 +1,6 @@
 <?php
 
-$connect=mysqli_connect('localhost','cn31570_practica','practica','cn31570_practica');
+include '../pages/db.php' ;
 require 'pages/cookies.php';
 require 'pages/rb.php';
 R::setup( 'mysql:host=localhost;dbname=cn31570_practica','cn31570_practica', 'practica' );
