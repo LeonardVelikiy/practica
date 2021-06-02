@@ -181,7 +181,7 @@ else
 		
 		?>
 		</div>
-		<div>
+		<div class="pag_place">
 			<?php
 			$float_count=$int_out_application%8;
 					$int_count=floor($int_out_application/8);

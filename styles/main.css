@@ -388,6 +388,14 @@
 
 
 
+
+.pag_place
+{
+	height: 30px;
+	width: 200px;
+	text-align: center;
+}
+
 .pagination
 {
 	text-align: center;
@@ -395,10 +403,6 @@
 	margin-left: 20px;
 }
 
-.pagination > a:nth-child(1)
-{
-	margin-left: 500px;
-}
 
 
 
