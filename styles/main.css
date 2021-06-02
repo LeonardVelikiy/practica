@@ -403,6 +403,7 @@
 	text-decoration: none;
 	color: #ffffff;
 	font-family: "Nunito-SemiBold";
+	float: left;
 }
 
 .pagination > div
@@ -412,7 +413,6 @@
 	background-color: #4cc33f;
 	border: 1px solid #4cc33f; 
 	border-radius: 10px;
-	float: left;
 }
 
 
