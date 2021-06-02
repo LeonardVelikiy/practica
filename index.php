@@ -178,7 +178,12 @@ else
 				<div>".date('d/m/Y', $out['date_end'])."</div>
 			</div>";
 		}
-		$float_count=$int_out_application%8;
+		
+		?>
+		</div>
+		<div>
+			<?php
+			$float_count=$int_out_application%8;
 					$int_count=floor($int_out_application/8);
 					$p=1;
 					if ($float_count>0) 
@@ -189,7 +194,7 @@ else
 						echo "<a class=pagination href=/?page_number=$i>   $p</a>";
 						$p++;
 					}
-		?>
+				?>	
 		</div>
 		<div class="copyright">Copyright</div>
 	</div>
