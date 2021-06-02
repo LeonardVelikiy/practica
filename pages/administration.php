@@ -54,7 +54,7 @@
 							<td>$out[login]
 							<td>$out[mail]
 							<td>0
-							<td><a href=?user_del=$out[id]>удалить</a>
+							<td><a href=?user=$out[id]>удалить</a>
 							<td><a href=?user=$out[id]>подробнее</a>
 						</tr>";
 						}
