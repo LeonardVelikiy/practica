@@ -5,7 +5,7 @@ require 'pages/cookies.php';
 require 'pages/rb.php';
 R::setup( 'mysql:host=localhost;dbname=cn31570_practica','cn31570_practica', 'practica' );
 $connect=mysqli_connect('localhost','cn31570_practica','practica','cn31570_practica'); 
-$query = mysqli_query($connect, "SELECT * FROM `applications` WHERE `status`='Выполнено'");
+$query = mysqli_query($connect, "SELECT COUNT(*) `applications` WHERE `status`='Выполнено'");
 $count = mysqli_fetch_row($query)[0];
 
 if ( !R::testconnection() )
