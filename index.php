@@ -128,7 +128,7 @@ else
 		?></form></div></div>
 	<div class="wrapper">
 		<div class="head">
-			<div class="logo">ЛОГО</div>
+			<div class="logo"></div>
 			<a href="pages/admin.php">
 				<span class="link_f">О сервисе</span>
 			</a>
