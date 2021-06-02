@@ -416,7 +416,7 @@
 	border-radius: 20px;
 }
 
-.pagination:hover
+.pagination > div:hover
 {
 	background-color: #00ff00;
 	border: 1px solid #00ff00;
