@@ -30,13 +30,11 @@
 				{
 					$str_aplications_out=mysqli_query($connect, "SELECT * FROM `applications`");
 					$out=mysqli_fetch_array($str_aplications_out);
-					
-
 				}
 				if($_GET['users'])
 				{
 					$str_users_out=mysqli_query($connect, "SELECT * FROM `users`");
-					echo"<table>
+					echo"<table border=1 cellspacing=0 >
 					<tr>
 						<th style=text-aligin:center;>ФИО
 						<th style=text-aligin:center;>Login
@@ -47,7 +45,7 @@
 						<th>подробнее
 					</tr>
 						";
-						while($out=mysqli_fetch_array($str_aplications_out))
+						while($out=mysqli_fetch_array($str_users_out))
 						{
 							echo"
 						<tr>	
