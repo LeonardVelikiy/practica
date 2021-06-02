@@ -398,7 +398,7 @@
 
 .pagination
 {
-	
+	text-align: center;
 	font-size: 16pt;
 	text-decoration: none;
 	color: #ffffff;
@@ -411,7 +411,6 @@
 	height: 35px;
 	width: 40px;
 	margin-left: 20px;
-	text-align: center;
 	padding-top: 5px;
 	background-color: #4cc33f;
 	border: 1px solid #4cc33f; 
