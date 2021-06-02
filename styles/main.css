@@ -28,10 +28,12 @@
 
 .logo
 {
-	height: 20px;
-	width: 50px;
+	height: 85px;
+	width: 85px;
 	margin-left: 180px;
-	margin-top: 25px;
+	background-image: url(../images/logo.png);
+	background-size: 10%;
+	background-repeat: no-repeat;
 }
 
 .link_f,
