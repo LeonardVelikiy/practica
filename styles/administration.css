@@ -133,6 +133,11 @@
 	margin-left: 500px;
 	border: 2px solid black;
 }
+.right_body > table
+{
+	width: 100%;
+	margin: auto;
+}
 
 .copyright
 {
