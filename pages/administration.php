@@ -52,8 +52,8 @@
 							<td>$out[title]
 							<td>$out[category]
 							<td>$out[date_start]
-							<td><a href=?users=$out[id]>удалить</a>
-							<td><a href=?users=$out[id]>подробнее</a>
+							<td><a href=?applications=$out[id]>удалить</a>
+							<td><a href=?applications=$out[id]>подробнее</a>
 						</tr>";
 						}
 					echo "</table>";
