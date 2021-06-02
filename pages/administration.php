@@ -29,13 +29,11 @@
 				if($_GET['aplications'])
 				{
 					$str_aplications_out=mysqli_query($connect, "SELECT * FROM `applications`");
-					$out=mysqli_fetch_array($str_aplications_out);
+					
 				}
 				if($_GET['users'])
 				{
 					$str_users_out=mysqli_query($connect, "SELECT * FROM `users`");
-					$out=mysqli_fetch_array($str_users_out);
-					print_r($out);
 					echo"<table border=1 cellspacing=0 >
 					<tr>
 						<th style=text-aligin:center;>ФИО
