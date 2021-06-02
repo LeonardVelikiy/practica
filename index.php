@@ -158,7 +158,17 @@ else
 		<?php
 		$str_out_application="SELECT * FROM `applications` WHERE `status`='Выполнено' ORDER BY `date_end` DESC";
 		$run_out_application=mysqli_query($connect,$str_out_application);
-		while ($out=mysqli_fetch_array($run_out_application)) {
+		$int_out_application=mysqli_num_rows($run_out_application);
+	$page_number=$_GET['page_number'];
+					if ($page_number == NULL)
+						{
+						$page_number=0;
+					}
+					$application_in_tape=8;
+					$sql_page_number=$page_number*$application_in_tape;
+					$str_out_application_pag="SELECT * FROM `pract` ORDER BY `date_end` DESC LIMIT $sql_page_number, $application_in_tape";
+					$run_out_application_pag=mysqli_query($connect, $str_out_application_pag);
+		while ($out=mysqli_fetch_array($run_out_application_pag)) {
 			$id=$out['id'];
 			echo "<div class=solved_item>
 				<div><img src=$out[photo_end] width=260 height=260></div>
@@ -168,6 +178,17 @@ else
 				<div>".date('d/m/Y', $out['date_end'])."</div>
 			</div>";
 		}
+		$float_count=$int_out_application%8;
+					$int_count=floor($int_out_application/8);
+					$p=1;
+					if ($float_count>0) 
+					{
+						$int_count++;
+					}
+					for ($i=0; $i <$int_count ; $i++) { 
+						echo "<a href=/?page_number=$i style=font-size:25px;>   $p</a>";
+						$p++;
+					}
 		?>
 		</div>
 		<div class="copyright">Copyright</div>
