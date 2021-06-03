@@ -66,6 +66,9 @@ if ( $online )
 
 $online_count = R::count('online', "lastvisit > " . ( time() - (360) ))
 ?>
+<?php
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -125,7 +128,7 @@ $online_count = R::count('online', "lastvisit > " . ( time() - (360) ))
 				$temp = $_FILES['рhoto_start']['tmp_name'];
 		
 				$file_to_saved = "images/".time().$file_get;
-				move_uploaded_file($temp, $file_to_saved);
+				
 		if($add){
 			$str_add_application="INSERT INTO `applications` (`рhoto_start`, `title`, `city`, `district`, `street`, `house`, `description`, `category`, `status`, `date_start`) VALUES ('$file_to_saved', '$title', '$city', '$district', '$street', '$house', '$description', '$category', '$status', '$date_start')";
 			
@@ -133,6 +136,7 @@ $online_count = R::count('online', "lastvisit > " . ( time() - (360) ))
 			$run_str_add_application=mysqli_query($connect, $str_add_application);
 	if($run_str_add_application)
 	{
+		move_uploaded_file($temp, $file_to_saved);
 		echo '<script>location.replace("../#dark2");</script>'; exit;
 	}
 	else
