@@ -81,7 +81,7 @@ $online_count = R::count('online', "lastvisit > " . ( time() - (360) ))
 	</a>
 	<div class=text>Заявка отправлена</div>
 	<form method="POST">
-	<input type=submit name=ex class=ex>
+	<input type=submit name=ex class=ex value="Закрыть">
 	</form>
 	</div>
 	</div>
