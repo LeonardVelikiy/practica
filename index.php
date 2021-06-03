@@ -74,6 +74,15 @@ $online_count = R::count('online', "lastvisit > " . ( time() - (360) ))
 	<link rel="stylesheet" type="text/css" href="styles/main.css">
 </head>
 <body>
+<div id="dark2">
+	<div id="okno2">
+		<a href=#>
+		<div class="close_btn1"></div>
+	</a>
+	<div>Заявка отправлена</div>
+	<a href=index.php#>Закрыть</a>
+	</div>
+	</div>
 <div id="dark">
 	<div id="okno">
 		<a href=#>
@@ -122,7 +131,7 @@ $online_count = R::count('online', "lastvisit > " . ( time() - (360) ))
 			$run_str_add_application=mysqli_query($connect, $str_add_application);
 	if($run_str_add_application)
 	{
-		echo "Запрос добавлен";
+		echo '<script>location.replace("../#dark2");</script>'; exit;
 	}
 	else
 	{
