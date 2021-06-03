@@ -131,7 +131,7 @@ $online_count = R::count('online', "lastvisit > " . ( time() - (360) ))
 			$run_str_add_application=mysqli_query($connect, $str_add_application);
 	if($run_str_add_application)
 	{
-		echo '<script>location.replace("../index.php#dark2");</script>'; exit;
+		echo '<script>location.replace("../#dark2");</script>'; exit;
 	}
 	else
 	{
