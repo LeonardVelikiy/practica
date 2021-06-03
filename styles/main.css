@@ -370,11 +370,11 @@
   position: absolute;
 }
 #okno {
-        height: 450px;
+        height: 550px;
   width: 400px;
   border: 3px solid black;
   border-radius: 20px;
-  margin: 150px auto;
+  margin: 150px 50px;
   background-color: white;
         text-align: center;
         padding: 15px;
