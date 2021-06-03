@@ -133,7 +133,7 @@ else
 			<a href="pages/admin.php">
 				<span class="link_f">О сервисе</span>
 			</a>
-			<a href="pages/profile.php">
+			<a href="pages/all_messages.php">
 				<span class="link_s">Все сообщения</span>
 			</a>	
 			<a href="pages/auth_form.php">
