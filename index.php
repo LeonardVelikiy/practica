@@ -101,6 +101,10 @@ $online_count = R::count('online', "lastvisit > " . ( time() - (360) ))
 				$option=$_POST['option'];
 				$рhoto_start=$_POST['рhoto_start'];
 				$title=$_POST['title'];
+				$city=$_POST['city'];
+				$district=$_POST['district'];
+				$street=$_POST['street'];
+				$house=$_POST['house'];
 				$description=$_POST['description'];
 				$category=$_POST['category'];
 				$date_start=time();
@@ -112,9 +116,9 @@ $online_count = R::count('online', "lastvisit > " . ( time() - (360) ))
 				$file_to_saved = "images/".time().$file_get;
 				move_uploaded_file($temp, $file_to_saved);
 		if($add){
-			$str_add_application="INSERT INTO `applications` (`рhoto_start`, `title`, `description`, `category`, `status`, `date_start`) VALUES ('$file_to_saved', '$title', '$description', '$category', '$status', '$date_start')";
+			$str_add_application="INSERT INTO `applications` (`рhoto_start`, `title`, `city`, `district`, `street`, `house`, `description`, `category`, `status`, `date_start`) VALUES ('$file_to_saved', '$title', '$city', '$district', '$street', '$house', '$description', '$category', '$status', '$date_start')";
 			
-	if ($_FILES && $title && $description && $category != $option) {
+	if ($_FILES && $title && $city && $district && $street && $house && $description && $category != $option) {
 			$run_str_add_application=mysqli_query($connect, $str_add_application);
 	if($run_str_add_application)
 	{
