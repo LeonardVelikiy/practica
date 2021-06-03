@@ -80,7 +80,7 @@ $online_count = R::count('online', "lastvisit > " . ( time() - (360) ))
 		<div class="close_btn1"></div>
 	</a>
 	<div class=text>Заявка отправлена</div>
-	<a href=index.php# class=ex>Закрыть</a>
+	<input type=submit name=ex class=ex>Закрыть</a>
 	</div>
 	</div>
 <div id="dark">
@@ -106,7 +106,7 @@ $online_count = R::count('online', "lastvisit > " . ( time() - (360) ))
 		?></select><br><br>
 		<input type="submit" name="add" value="Сообщить">
 		<?php 
-				
+				$ex=$_POST['ex'];
 				$option=$_POST['option'];
 				$рhoto_start=$_POST['рhoto_start'];
 				$title=$_POST['title'];
@@ -142,6 +142,10 @@ else
 {
 	echo "Заполните поля";
 }
+}
+if($ex)
+{
+	echo '<script>location.replace("../index.php#");</script>'; exit;
 }
 		?></form></div></div>
 	<div class="wrapper">
