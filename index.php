@@ -80,7 +80,9 @@ $online_count = R::count('online', "lastvisit > " . ( time() - (360) ))
 		<div class="close_btn1"></div>
 	</a>
 	<div class=text>Заявка отправлена</div>
-	<input type=submit name=ex class=ex>Закрыть</a>
+	<form>
+	<input type=submit name=ex class=ex>
+	</form>
 	</div>
 	</div>
 <div id="dark">
