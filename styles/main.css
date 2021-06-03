@@ -397,9 +397,21 @@
         position: fixed;
       }
       #dark:target {display: block;}
+	  .text
+	  {
+		font-size: 16pt;
+		font-family: "Nunito-SemiBold";
+		margin-top: 25px;
+		margin-left: auto;
+		color: #000000;
+		text-decoration: none;
+	  }
+	  .ex
+	  {
 
+	  }
 	  #okno2 {
-        height: 200px;
+        height: 75px;
   width: 400px;
   border: 3px solid black;
   border-radius: 20px;
