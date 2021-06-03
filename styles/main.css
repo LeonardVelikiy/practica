@@ -399,9 +399,9 @@
       #dark:target {display: block;}
 	  .text
 	  {
-		font-size: 16pt;
+		font-size: 20pt;
 		font-family: "Nunito-SemiBold";
-		margin-top: 25px;
+		margin-top: 10px;
 		margin-left: auto;
 		color: #000000;
 		text-decoration: none;
