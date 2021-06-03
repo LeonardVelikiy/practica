@@ -53,6 +53,11 @@
 	text-decoration: none;
 }
 
+.link_f:hover
+{
+	text-decoration: underline;
+}
+
 .link_s
 {
 	font-size: 16pt;
@@ -61,6 +66,11 @@
 	margin-left: 60px;
 	color: #000000;
 	text-decoration: none;
+}
+
+.link_s:hover
+{
+	text-decoration: underline;
 }
 
 .auth
