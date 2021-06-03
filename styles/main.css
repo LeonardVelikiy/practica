@@ -49,6 +49,8 @@
 	font-family: "Nunito-SemiBold";
 	margin-top: 25px;
 	margin-left: 300px;
+	color: #000000;
+	text-decoration: none;
 }
 
 .link_s
@@ -57,6 +59,8 @@
 	font-family: "Nunito-SemiBold";
 	margin-top: 25px;
 	margin-left: 60px;
+	color: #000000;
+	text-decoration: none;
 }
 
 .auth
