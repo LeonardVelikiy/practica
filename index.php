@@ -1,24 +1,4 @@
 <?php
-	$ex=$_POST['ex'];
-	$option=$_POST['option'];
-	$рhoto_start=$_POST['рhoto_start'];
-	$title=$_POST['title'];
-	$city=$_POST['city'];
-	$district=$_POST['district'];
-	$street=$_POST['street'];
-	$house=$_POST['house'];
-	$description=$_POST['description'];
-	$category=$_POST['category'];
-	$date_start=time();
-	$status="Новая";
-	$add=$_POST['add'];
-	$file_get = $_FILES['рhoto_start']['name'];
-	$temp = $_FILES['рhoto_start']['tmp_name'];
-	move_uploaded_file($temp, $file_to_saved);
-	$file_to_saved = "images/".time().$file_get;
-?>
-
-<?php
 
 include '../pages/db.php' ;
 require 'pages/cookies.php';
@@ -86,7 +66,6 @@ if ( $online )
 
 $online_count = R::count('online', "lastvisit > " . ( time() - (360) ))
 ?>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -129,7 +108,23 @@ $online_count = R::count('online', "lastvisit > " . ( time() - (360) ))
 		?></select><br><br>
 		<input type="submit" name="add" value="Сообщить">
 		<?php 
-				
+				$ex=$_POST['ex'];
+				$option=$_POST['option'];
+				$рhoto_start=$_POST['рhoto_start'];
+				$title=$_POST['title'];
+				$city=$_POST['city'];
+				$district=$_POST['district'];
+				$street=$_POST['street'];
+				$house=$_POST['house'];
+				$description=$_POST['description'];
+				$category=$_POST['category'];
+				$date_start=time();
+				$status="Новая";
+				$add=$_POST['add'];
+				$file_get = $_FILES['рhoto_start']['name'];
+				$temp = $_FILES['рhoto_start']['tmp_name'];
+				move_uploaded_file($temp, $file_to_saved);
+				$file_to_saved = "images/".time().$file_get;
 				
 		if($add){
 			$str_add_application="INSERT INTO `applications` (`рhoto_start`, `title`, `city`, `district`, `street`, `house`, `description`, `category`, `status`, `date_start`) VALUES ('$file_to_saved', '$title', '$city', '$district', '$street', '$house', '$description', '$category', '$status', '$date_start')";
