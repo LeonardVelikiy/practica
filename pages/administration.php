@@ -146,8 +146,8 @@
 					}
 					echo"
 					</select><br><br>
-					<input type=submit name=add value=Сообщить>
-					</div>";
+					<input type=submit name=add value=Сообщить>";
+					
 					$ex=$_POST['ex'];
 					$option=$_POST['option'];
 					$title=$_POST['title'];
@@ -194,7 +194,8 @@
 					</form>";
 					$search=$_GET['search'];
 					$send_search=$_GET['send_search'];
-
+					
+					echo"</div>";
 					echo"<div class=part2>";
 					if ($send_search) {
 						$str_applications_out=mysqli_query($connect, "SELECT * FROM `applications` WHERE (user LIKE '%$search%' OR title LIKE '%$search%' OR city LIKE '%$search%' OR district LIKE '%$search%' OR street LIKE '%$search%' OR house LIKE '%$search%'  OR category LIKE '%$search%'  OR status LIKE '%$search%'  OR date_end LIKE '%$search%'  OR date_start LIKE '%$search%') ");
