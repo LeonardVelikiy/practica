@@ -119,7 +119,11 @@ $online_count = R::count('online', "lastvisit > " . ( time() - (360) ))
 				$date_start=time();
 				$status="Новая";
 				$add=$_POST['add'];
-
+				$file_get= $_FILES['рhoto_start']['name'];
+			$temp= $_FILES['рhoto_start']['tmp_name'];
+			$file_to_saved= "images/".time().$file_get;
+				$imageFileType = 
+strtolower(pathinfo(file_to_saved,PATHINFO_EXTENSION));
 
 		if($add){
 
@@ -129,9 +133,7 @@ $online_count = R::count('online', "lastvisit > " . ( time() - (360) ))
 		if($imageFileType != "jpg" && $imageFileType != "jpeg") {
 		}
 		else{
-		$file_get= $_FILES['рhoto_start']['name'];
-			$temp= $_FILES['рhoto_start']['tmp_name'];
-			$file_to_saved= "images/".time().$file_get;
+		
 			move_uploaded_file($temp, $file_to_saved);
 			$run_str_add_application=mysqli_query($connect, $str_add_application);
 	if($run_str_add_application)
