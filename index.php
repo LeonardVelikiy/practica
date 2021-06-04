@@ -1,7 +1,7 @@
 <?php
 if($run_str_add_application)
 {
-	header(Location: #dark2);
+	header(Location: /#dark2);
 }
 include '../pages/db.php' ;
 require 'pages/cookies.php';
