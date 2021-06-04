@@ -67,7 +67,7 @@ if ( $online )
 $online_count = R::count('online', "lastvisit > " . ( time() - (360) ))
 if($run_str_add_application)
 {
-	header(Location: "#dark2");
+	header("Location: #dark2");
 }
 ?>
 <!DOCTYPE html>
