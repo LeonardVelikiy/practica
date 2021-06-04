@@ -150,7 +150,12 @@
 	width: 70%;
 	height: 100%;
 	background-color: red;
+	overflow-y: scroll;
 
+}
+.part2 > table 
+{
+	width: 100%;
 }
 .copyright
 {
