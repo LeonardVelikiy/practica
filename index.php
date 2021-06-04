@@ -76,7 +76,7 @@ $online_count = R::count('online', "lastvisit > " . ( time() - (360) ))
 <body>
 <div id="dark2">
 	<div id="okno2">
-		<a href=#>
+		<a href="#">
 		<div class="close_btn1"></div>
 	</a>
 	<div class=text>Заявка отправлена</div>
