@@ -138,7 +138,7 @@ strtolower(pathinfo($file_to_saved,PATHINFO_EXTENSION));
 	if($run_str_add_application)
 	{
 		
-		echo '<script>location.replace("/#dark2");</script>'; exit();
+		echo '<script>location.replace("/#2");</script>'; exit();
 
 }
 	
