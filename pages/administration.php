@@ -92,6 +92,7 @@
 						<th style=text-aligin:center;>название
 						<th style=text-aligin:center;>категория
 						<th style=text-aligin:center;>время публикации
+						<th style=text-aligin:center;>время выполнения
 						<th colspan=2 style=text-aligin:center;>Действия
 					</tr>
 						";
@@ -103,7 +104,8 @@
 							<td>$out[status]
 							<td>$out[title]
 							<td>$out[category]
-							<td>$out[date_start]
+							<td>".date('d/m/Y',$out['date_start'])."
+							<td>".date('d/m/Y',$out['date_end'])."
 							<td><a href=?applications=$out[id]>удалить</a>
 							<td><a href=?applications=$out[id]>подробнее</a>
 						</tr>";
