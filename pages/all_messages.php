@@ -25,98 +25,62 @@
 			<input type="text" name="" class="text_sub" placeholder="Поиск">
 			<select class="select">
 				<option>Категория</option>
-				<option></option>
-				<option></option>
-				<option></option>
+				<?php
+		$str_out_categoty="SELECT * FROM `category`";
+		$run_out_categoty=mysqli_query($connect,$str_out_categoty);
+		while ($out=mysqli_fetch_array($run_out_categoty)){
+			echo "<option>$out[category]</option>";
+		}
+		?>
 			</select>
 			<input type="submit" name="" class="sub_btn" value="">
 			</form>
 		</div>
 		<div class="mess_p_item">
-			<div class="mess_item">
-				<div>Фото</div>
-				<div>Название</div>
-				<div>Описание</div>
-				<div>Категория</div>
-				<div>Временная метка</div>
-			</div>
-			<div class="mess_item">
-				<div>Фото</div>
-				<div>Название</div>
-				<div>Описание</div>
-				<div>Категория</div>
-				<div>Временная метка</div>
-			</div>
-			<div class="mess_item">
-				<div>Фото</div>
-				<div>Название</div>
-				<div>Описание</div>
-				<div>Категория</div>
-				<div>Временная метка</div>
-			</div>
-			<div class="mess_item">
-				<div>Фото</div>
-				<div>Название</div>
-				<div>Описание</div>
-				<div>Категория</div>
-				<div>Временная метка</div>
-			</div>
-			<div class="mess_item">
-				<div>Фото</div>
-				<div>Название</div>
-				<div>Описание</div>
-				<div>Категория</div>
-				<div>Временная метка</div>
-			</div>
-			<div class="mess_item">
-				<div>Фото</div>
-				<div>Название</div>
-				<div>Описание</div>
-				<div>Категория</div>
-				<div>Временная метка</div>
-			</div>
-			<div class="mess_item">
-				<div>Фото</div>
-				<div>Название</div>
-				<div>Описание</div>
-				<div>Категория</div>
-				<div>Временная метка</div>
-			</div>
-			<div class="mess_item">
-				<div>Фото</div>
-				<div>Название</div>
-				<div>Описание</div>
-				<div>Категория</div>
-				<div>Временная метка</div>
-			</div>
-			<div class="mess_item">
-				<div>Фото</div>
-				<div>Название</div>
-				<div>Описание</div>
-				<div>Категория</div>
-				<div>Временная метка</div>
-			</div>
-			<div class="mess_item">
-				<div>Фото</div>
-				<div>Название</div>
-				<div>Описание</div>
-				<div>Категория</div>
-				<div>Временная метка</div>
-			</div>
-			<div class="mess_item">
-				<div>Фото</div>
-				<div>Название</div>
-				<div>Описание</div>
-				<div>Категория</div>
-				<div>Временная метка</div>
-			</div>
-			<div class="mess_item">
-				<div>Фото</div>
-				<div>Название</div>
-				<div>Описание</div>
-				<div>Категория</div>
-				<div>Временная метка</div>
-			</div>
+			<?php
+		$str_out_application="SELECT * FROM `applications` WHERE `status`='Выполнено' ORDER BY `date_end` DESC";
+		$run_out_application=mysqli_query($connect,$str_out_application);
+		$int_out_application=mysqli_num_rows($run_out_application);
+		$page_number=$_GET['page_number'];
+					if ($page_number == NULL)
+						{
+						$page_number=0;
+					}
+					$application_in_tape=8;
+					$sql_page_number=$page_number*$application_in_tape;
+					$str_out_application_pag="SELECT * FROM `applications` WHERE `status`='Выполнено' ORDER BY `date_end` DESC LIMIT $sql_page_number, $application_in_tape";
+					$run_out_application_pag=mysqli_query($connect, $str_out_application_pag);
+		while ($out=mysqli_fetch_array($run_out_application_pag)) {
+			$id=$out['id'];
+			echo "<div class="mess_item">
+			<div><img src=$out[photo_start] width=260 height=260></div>
+			<div>$out[title]</div>
+			<div>$out[city]</div>
+			<div>$out[district]</div>
+			<div>$out[street]</div>
+			<div>$out[house]</div>
+			<div>$out[description]</div>
+			<div>$out[category]</div>
+			<div>".date('d/m/Y', $out['date_start'])."</div>
+			</div>"
+		}
+		
+		?>
+		</div>
+		<div class="pag_place">
+			<?php
+			$float_count=$int_out_application%8;
+					$int_count=floor($int_out_application/8);
+					$p=1;
+					if ($float_count>0) 
+					{
+						$int_count++;
+					}
+					for ($i=0; $i <$int_count ; $i++) { 
+						echo "<a class=pagination href=/?page_number=$i><div>$p</div></a>";
+						$p++;
+					}
+				?>	
 		</div>
 		<div class="copyright">Copyright</div>
 	</div>

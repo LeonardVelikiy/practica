@@ -134,9 +134,7 @@ $online_count = R::count('online', "lastvisit > " . ( time() - (360) ))
 	if($run_str_add_application)
 	{
 		
-		// echo '<script>location.replace("../#dark2");</script>'; exit;
-		var_dump($_FILES['рhoto_start']);
-		print_r($str_add_application);
+		echo '<script>location.replace("../#dark2");</script>'; exit;
 }
 	}
 	else
@@ -198,6 +196,10 @@ else
 			echo "<div class=solved_item>
 				<div><img src=$out[photo_end] width=260 height=260></div>
 				<div>$out[title]</div>
+				<div>$out[city]</div>
+				<div>$out[district]</div>
+				<div>$out[street]</div>
+				<div>$out[house]</div>
 				<div>$out[description]</div>
 				<div>$out[category]</div>
 				<div>".date('d/m/Y', $out['date_end'])."</div>
