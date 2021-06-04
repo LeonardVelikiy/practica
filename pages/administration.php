@@ -113,8 +113,8 @@
 							<td>$out[category]
 							<td>".date('d/m/Y',$out['date_start'])."
 							<td>$time_end
-							<td><a href=?applications_work=$out[id] style=color:red;>удалить</a>
-							<td><a href=?applications_work=$out[id] style=color:blue;>изменить</a>
+							<td><a href=?aplications_work=$out[id] style=color:red;>удалить</a>
+							<td><a href=?aplications_work=$out[id] style=color:blue;>изменить</a>
 						</tr>";
 						}
 					echo "</table>";
