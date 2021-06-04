@@ -54,7 +54,7 @@
 		while ($out=mysqli_fetch_array($run_out_application_pag)) {
 			$id=$out['id'];
 			echo "<div class=mess_item>
-			<div style=background:url($out[рhoto_start]);></div>
+			<div><img src=../$out[рhoto_start]  width=260 height=260></div>
 			<div>$out[title]</div>
 			<div>$out[description]</div>
 			<div>$out[category]</div>

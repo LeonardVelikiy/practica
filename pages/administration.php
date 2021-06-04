@@ -125,7 +125,7 @@
 						}
 					echo "</table>";
 				}
-				if($_GET['users_work'])
+				if($_GET['users_work']or$_GET['search']or$_GET['send_search'])
 				{
 					
 					$str_out_categoty="SELECT * FROM `category`";
@@ -146,8 +146,8 @@
 					}
 					echo"
 					</select><br><br>
-					<input type=submit name=add value=Сообщить>
-					</div>";
+					<input type=submit name=add value=Сообщить>";
+					
 					$ex=$_POST['ex'];
 					$option=$_POST['option'];
 					$title=$_POST['title'];
@@ -187,9 +187,24 @@
 									
 								}
 					}
+					echo"
+					<form method=GET><br>
+						<input type=text name=search><br>
+						<input type=submit name=send_search value=Поиск>
+					</form>";
+					$search=$_GET['search'];
+					$send_search=$_GET['send_search'];
 
+					echo"</div>";
 					echo"<div class=part2>";
-					$str_applications_out=mysqli_query($connect, "SELECT * FROM `applications` WHERE `status`='Новая'");
+					if ($send_search) {
+						$str_applications_out=mysqli_query($connect, "SELECT * FROM `applications` WHERE (user LIKE '%$search%' OR title LIKE '%$search%' OR city LIKE '%$search%' OR district LIKE '%$search%' OR street LIKE '%$search%' OR house LIKE '%$search%'  OR category LIKE '%$search%'  OR status LIKE '%$search%'  OR date_end LIKE '%$search%'  OR date_start LIKE '%$search%') ");
+					}
+					else
+					{
+						$str_out_users="SELECT * FROM `applications`";
+					}
+					
 					echo"<table border=1 cellspacing=0 >
 					<tr>
 						<th style=text-aligin:center;>Публикующий
