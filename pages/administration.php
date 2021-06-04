@@ -32,7 +32,7 @@
 				include 'db.php';
 				if($_GET['applications'])
 				{
-					$str_applications_out=mysqli_query($connect, "SELECT * FROM `applications`");
+					$str_applications_out=mysqli_query($connect, "SELECT * FROM `applications` WHERE `status`='Новая'");
 					echo"<table border=1 cellspacing=0 >
 					<tr>
 						<th style=text-aligin:center;>Публикующий
