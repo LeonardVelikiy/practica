@@ -50,7 +50,7 @@
 							<td>$out[status]
 							<td>$out[title]
 							<td>$out[category]
-							<td>$out[date_start]
+							<td>".date('d/m/Y',$out['date_start'])."
 						</tr>";
 						}
 					echo "</table>";
@@ -113,8 +113,8 @@
 							<td>$out[category]
 							<td>".date('d/m/Y',$out['date_start'])."
 							<td>$time_end
-							<td><a href=?applications=$out[id] style=color:red;>удалить</a>
-							<td><a href=?applications=$out[id] style=color:blue;>изменить</a>
+							<td><a href=?applications_work=$out[id] style=color:red;>удалить</a>
+							<td><a href=?applications_work=$out[id] style=color:blue;>изменить</a>
 						</tr>";
 						}
 					echo "</table>";
