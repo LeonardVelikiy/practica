@@ -188,13 +188,13 @@
 								}
 					}
 					echo"
-					<form method=GET>
+					<form method=GET><br>
 						<input type=text name=search><br>
 						<input type=submit name=send_search value=Поиск>
 					</form>";
 					$search=$_GET['search'];
 					$send_search=$_GET['send_search'];
-					
+
 					echo"</div>";
 					echo"<div class=part2>";
 					if ($send_search) {
