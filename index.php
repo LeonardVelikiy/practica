@@ -160,7 +160,7 @@ else
 	<div class="wrapper">
 		<div class="head">
 			<div class="logo"></div>
-			<a href="pages/admin.php">
+			<a href="pages/about.php">
 				<span class="link_f">О сервисе</span>
 			</a>
 			<a href="pages/all_messages.php">
