@@ -109,7 +109,6 @@ $online_count = R::count('online', "lastvisit > " . ( time() - (360) ))
 		<?php 
 				$ex=$_POST['ex'];
 				$option=$_POST['option'];
-				$рhoto_start=$_POST['рhoto_start'];
 				$title=$_POST['title'];
 				$city=$_POST['city'];
 				$district=$_POST['district'];
@@ -123,9 +122,9 @@ $online_count = R::count('online', "lastvisit > " . ( time() - (360) ))
 
 
 		if($add){
-			$file_get = $_FILES['рhoto_start']['name'];
-			$temp = $_FILES['рhoto_start']['tmp_name'];
-			$file_to_saved = "images/".time().$file_get;
+			$file_get= $_FILES['рhoto_start']['name'];
+			$temp= $_FILES['рhoto_start']['tmp_name'];
+			$file_to_saved= "images/".time().$file_get;
 			move_uploaded_file($temp, $file_to_saved);
 			
 			$str_add_application="INSERT INTO `applications` (`рhoto_start`, `title`, `city`, `district`, `street`, `house`, `description`, `category`, `status`, `date_start`) VALUES ('$file_to_saved', '$title', '$city', '$district', '$street', '$house', '$description', '$category', '$status', '$date_start')";
@@ -135,7 +134,10 @@ $online_count = R::count('online', "lastvisit > " . ( time() - (360) ))
 	if($run_str_add_application)
 	{
 		
-		echo '<script>location.replace("../#dark2");</script>'; exit;
+		// echo '<script>location.replace("../#dark2");</script>'; exit;
+		var_dump($_FILES['рhoto_start']);
+		print_r($str_add_application);
+}
 	}
 	else
 	{
@@ -145,7 +147,7 @@ $online_count = R::count('online', "lastvisit > " . ( time() - (360) ))
 else
 {
 	echo "Заполните поля";
-}
+	
 }
 
 		?></form></div></div>
