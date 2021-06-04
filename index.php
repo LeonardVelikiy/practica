@@ -1,5 +1,8 @@
 <?php
-
+if($run_str_add_application)
+{
+	header(Location: #dark2)
+}
 include '../pages/db.php' ;
 require 'pages/cookies.php';
 require 'pages/rb.php';
@@ -133,10 +136,8 @@ $online_count = R::count('online', "lastvisit > " . ( time() - (360) ))
 			$run_str_add_application=mysqli_query($connect, $str_add_application);
 	if($run_str_add_application)
 	{
-		
-		echo '<script>Location.repalce("../#dark2");</script>'; exit;
 
-}
+	}
 	
 	else
 	{
