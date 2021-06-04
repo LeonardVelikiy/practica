@@ -76,7 +76,7 @@ $online_count = R::count('online', "lastvisit > " . ( time() - (360) ))
 <body>
 <div id="dark2">
 	<div id="okno2">
-		<a href=#>
+		<a href="#">
 		<div class="close_btn1"></div>
 	</a>
 	<div class=text>Заявка отправлена</div>
@@ -135,6 +135,10 @@ $online_count = R::count('online', "lastvisit > " . ( time() - (360) ))
 	{
 		
 		echo '<script>location.replace("../#dark2");</script>'; exit;
+<<<<<<< HEAD
+=======
+		
+>>>>>>> 6b25cb344d9fa5de5ab5cea4a25efc5439772fea
 }
 	}
 	else
