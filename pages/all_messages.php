@@ -56,13 +56,11 @@
 			echo "<div class=mess_item>
 			<div><img src=$out[photo_start] width=260 height=260></div>
 			<div>$out[title]</div>
-			<div>$out[city]</div>
-			<div>$out[district]</div>
-			<div>$out[street]</div>
-			<div>$out[house]</div>
 			<div>$out[description]</div>
 			<div>$out[category]</div>
 			<div>".date('d/m/Y', $out['date_start'])."</div>
+			<div>$out[city]/$out[district]/$out[street]/$out[house]</div>
+			<a href=""><div>Выполнить</div></a>
 			</div>";
 		}
 		
@@ -87,12 +85,3 @@
 	</div>
 </body>
 </html>
-<div class="mess_item">
-	<div>Фото</div>
-	<div>Название</div>
-	<div>Описание</div>
-	<div>Категория</div>
-	<div>Временная метка</div>
-	<div>Адрес</div>
-	<a href=""><div>Выполнить</div></a>
-</div>
