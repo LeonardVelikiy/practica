@@ -188,7 +188,7 @@
 								}
 					}
 					echo"
-					<form method=GET><br>
+					<form method=GET ><br>
 						<input type=text name=search><br>
 						<input type=submit name=send_search value=Поиск>
 					</form>";
