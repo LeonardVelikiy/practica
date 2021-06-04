@@ -24,12 +24,6 @@
 			<form>
 			<input type="text" name="" class="text_sub" placeholder="Поиск">
 			<select class="select">
-				<option>Статус</option>
-				<option></option>
-				<option></option>
-				<option></option>
-			</select>
-			<select class="select">
 				<option>Категория</option>
 				<option></option>
 				<option></option>
