@@ -65,10 +65,6 @@ if ( $online )
  
 
 $online_count = R::count('online', "lastvisit > " . ( time() - (360) ))
-if($run_str_add_application)
-{
-	header("Location: #dark2");
-}
 ?>
 <!DOCTYPE html>
 <html>
@@ -137,8 +133,10 @@ if($run_str_add_application)
 			$run_str_add_application=mysqli_query($connect, $str_add_application);
 	if($run_str_add_application)
 	{
+		
+		echo '<script>Location.repalce("../#dark2");</script>'; exit;
 
-	}
+}
 	
 	else
 	{
