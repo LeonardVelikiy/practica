@@ -46,9 +46,9 @@
 						{
 						$page_number=0;
 					}
-					$application_in_tape=8;
+					$application_in_tape=12;
 					$sql_page_number=$page_number*$application_in_tape;
-					$str_out_application_pag="SELECT * FROM `applications` WHERE `status`='Выполнено' ORDER BY `date_end` DESC LIMIT $sql_page_number, $application_in_tape";
+					$str_out_application_pag="SELECT * FROM `applications` WHERE `status`='Новое' ORDER BY `date_end` DESC LIMIT $sql_page_number, $application_in_tape";
 					$run_out_application_pag=mysqli_query($connect, $str_out_application_pag);
 		while ($out=mysqli_fetch_array($run_out_application_pag)) {
 			$id=$out['id'];
@@ -69,8 +69,8 @@
 		</div>
 		<div class="pag_place">
 			<?php
-			$float_count=$int_out_application%8;
-					$int_count=floor($int_out_application/8);
+			$float_count=$int_out_application%12;
+					$int_count=floor($int_out_application/12);
 					$p=1;
 					if ($float_count>0) 
 					{
