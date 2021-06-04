@@ -137,7 +137,7 @@ $online_count = R::count('online', "lastvisit > " . ( time() - (360) ))
 		echo '<script>window.location("../#dark2");</script>'; exit;
 
 }
-	}
+	
 	else
 	{
 		echo "Ошибка добавления";
@@ -148,7 +148,7 @@ else
 	echo "Заполните поля";
 	
 }
-
+		}
 		?></form></div></div>
 	<div class="wrapper">
 		<div class="head">
