@@ -63,7 +63,7 @@
 			<div>$out[description]</div>
 			<div>$out[category]</div>
 			<div>".date('d/m/Y', $out['date_start'])."</div>
-			</div>"
+			</div>";
 		}
 		
 		?>
