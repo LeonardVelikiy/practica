@@ -202,7 +202,7 @@
 					}
 					else
 					{
-						$str_out_users="SELECT * FROM `applications`";
+						$str_out_users=mysqli_query($connect,"SELECT * FROM `applications`");
 					}
 					
 					echo"<table border=1 cellspacing=0 >
