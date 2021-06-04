@@ -135,8 +135,7 @@ $online_count = R::count('online', "lastvisit > " . ( time() - (360) ))
 	{
 		
 		echo '<script>location.replace("../#dark2");</script>'; exit;
-		var_dump($_FILES['рhoto_start']);
-		print_r($str_add_application);
+		
 }
 	}
 	else
