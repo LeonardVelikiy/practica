@@ -60,7 +60,7 @@
 			<div>$out[category]</div>
 			<div>".date('d/m/Y', $out['date_start'])."</div>
 			<div>$out[city]/$out[district]/$out[street]/$out[house]</div>
-			<a href=""><div>Выполнить</div></a>
+			<a href=><div>Выполнить</div></a>
 			</div>";
 		}
 		
