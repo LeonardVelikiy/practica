@@ -49,7 +49,7 @@
 					}
 					$application_in_tape=12;
 					$sql_page_number=$page_number*$application_in_tape;
-					$str_out_application_pag="SELECT * FROM `applications` WHERE `status`='Новое' ORDER BY `date_end` DESC LIMIT $sql_page_number, $application_in_tape";
+					$str_out_application_pag="SELECT * FROM `applications` WHERE `status`='Новая' ORDER BY `date_end` DESC LIMIT $sql_page_number, $application_in_tape";
 					$run_out_application_pag=mysqli_query($connect, $str_out_application_pag);
 		while ($out=mysqli_fetch_array($run_out_application_pag)) {
 			$id=$out['id'];
@@ -63,7 +63,7 @@
 			<div>$out[description]</div>
 			<div>$out[category]</div>
 			<div>".date('d/m/Y', $out['date_start'])."</div>
-			</div>"
+			</div>";
 		}
 		
 		?>
