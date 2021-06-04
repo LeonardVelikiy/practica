@@ -58,13 +58,18 @@
 				}
 				if($_GET['users'])
 				{
+					
+					$users_del=$_GET['users'];
+					$str_user_del=mysqli_query($connect, "DELETE FROM `users` WHERE id = $users_del");
+
 					$str_users_out=mysqli_query($connect, "SELECT * FROM `users`");
-					echo"<table border=1 cellspacing=0 >
+					echo"<table border=1 cellspacing=0 style=widht:50%;>
 					<tr>
 						<th style=text-aligin:center;>ФИО
 						<th style=text-aligin:center;>Login
 						<th style=text-aligin:center;>Mail
 						<th style=text-aligin:center;>Заявки
+						<th colspan=2 style=text-aligin:center;>Действия
 					</tr>
 						";
 						while($out=mysqli_fetch_array($str_users_out))
@@ -75,6 +80,7 @@
 							<td>$out[login]
 							<td>$out[mail]
 							<td>0
+							<td><a href=?users=$out[id]>удалить</a>
 						</tr>";
 						}
 					echo "</table>";
@@ -121,31 +127,6 @@
 				}
 				if($_GET['users_work'])
 				{
-					$users_del=$_GET['users'];
-					$str_user_del=mysqli_query($connect, "DELETE FROM `users` WHERE id = $users_del");
-
-					$str_users_out=mysqli_query($connect, "SELECT * FROM `users`");
-					echo"<table border=1 cellspacing=0 style=widht:50%;>
-					<tr>
-						<th style=text-aligin:center;>ФИО
-						<th style=text-aligin:center;>Login
-						<th style=text-aligin:center;>Mail
-						<th style=text-aligin:center;>Заявки
-						<th colspan=2 style=text-aligin:center;>Действия
-					</tr>
-						";
-						while($out=mysqli_fetch_array($str_users_out))
-						{
-							echo"
-						<tr>	
-							<td>$out[first_last_name]
-							<td>$out[login]
-							<td>$out[mail]
-							<td>0
-							<td><a href=?users=$out[id]>удалить</a>
-						</tr>";
-						}
-					echo "</table>";
 				}
 				
 				?>
