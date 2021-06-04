@@ -123,7 +123,7 @@ $online_count = R::count('online', "lastvisit > " . ( time() - (360) ))
 			$temp= $_FILES['рhoto_start']['tmp_name'];
 			$file_to_saved= "images/".time().$file_get;
 				$imageFileType = 
-strtolower(pathinfo(file_to_saved,PATHINFO_EXTENSION));
+strtolower(pathinfo($file_to_saved,PATHINFO_EXTENSION));
 
 		if($add){
 
