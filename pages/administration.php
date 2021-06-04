@@ -103,7 +103,7 @@
 								$time_end="-";
 							}else
 							{	
-								$time_end=".date('d/m/Y',$out[date_end]).";
+								$time_end=date('d/m/Y',$out['date_end']);
 							}
 							echo"
 						<tr>	
