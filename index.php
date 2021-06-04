@@ -140,7 +140,7 @@ strtolower(pathinfo(file_to_saved,PATHINFO_EXTENSION));
 	if($run_str_add_application)
 	{
 		
-		echo '<script>Location.repalce("../#dark2");</script>'; exit;
+		echo '<script>Location.repalce("http://cn31560.tmweb.ru//#dark2");</script>'; exit;
 
 }
 	
