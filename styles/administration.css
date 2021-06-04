@@ -131,6 +131,7 @@
 	width: 1000px;
 	height: 800px;
 	margin-left: 500px;
+	display: flex;
 	border: 2px solid black;
 }
 .right_body > table
