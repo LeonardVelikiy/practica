@@ -54,8 +54,8 @@
 		while ($out=mysqli_fetch_array($run_out_application_pag)) {
 			$id=$out['id'];
 			echo "<div class=mess_item>
-			<div><img src=../ $out[photo_start] width=260 height=260></div>
-			<div>$out[title]</div>
+			<div><img src=../ width=260 height=260></div>
+			<div>$out[photo_start]</div>
 			<div>$out[description]</div>
 			<div>$out[category]</div>
 			<div>".date('d/m/Y', $out['date_start'])."</div>
