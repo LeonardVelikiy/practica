@@ -187,9 +187,31 @@
 									
 								}
 					}
-					echo"
-					<div class=part2>
-					</div>";
+
+					echo"<div class=part2>";
+					$str_applications_out=mysqli_query($connect, "SELECT * FROM `applications` WHERE `status`='Новая'");
+					echo"<table border=1 cellspacing=0 >
+					<tr>
+						<th style=text-aligin:center;>Публикующий
+						<th style=text-aligin:center;>статус
+						<th style=text-aligin:center;>название
+						<th style=text-aligin:center;>категория
+						<th style=text-aligin:center;>время публикации
+					</tr>
+						";
+						while($out=mysqli_fetch_array($str_applications_out))
+						{
+							echo"
+						<tr>	
+							<td>$out[user]
+							<td>$out[status]
+							<td>$out[title]
+							<td>$out[category]
+							<td>".date('d/m/Y',$out['date_start'])."
+						</tr>";
+						}
+					echo "</table>";
+					echo"</div>";
 					}
 				
 				?>
