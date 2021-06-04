@@ -190,7 +190,7 @@
 					}
 					echo"
 					<form method=GET ><br>
-						<input type=text name=search><br>
+						<input type=text name=search class=form_mitem1><br>
 						<input type=submit name=send_search value=Поиск>
 					</form>";
 					$search=$_GET['search'];
