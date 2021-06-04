@@ -127,6 +127,12 @@
 				}
 				if($_GET['users_work'])
 				{
+					echo"
+					<div class=part1>
+					</div>";
+					echo"
+					<div class=part2>
+					</div>";
 				}
 				
 				?>

@@ -138,7 +138,18 @@
 	width: 100%;
 	margin: auto;
 }
-
+.part1
+{
+ 	width: 100px;
+	height: 100px;
+	background-color: blue;
+}
+.part2
+{
+	width: 100px;
+	height: 100px;
+	background-color: red;
+}
 .copyright
 {
 	height: 45px;
