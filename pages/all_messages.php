@@ -53,7 +53,7 @@
 					$run_out_application_pag=mysqli_query($connect, $str_out_application_pag);
 		while ($out=mysqli_fetch_array($run_out_application_pag)) {
 			$id=$out['id'];
-			echo "<div class="mess_item">
+			echo "<div class=mess_item>
 			<div><img src=$out[photo_start] width=260 height=260></div>
 			<div>$out[title]</div>
 			<div>$out[city]</div>
