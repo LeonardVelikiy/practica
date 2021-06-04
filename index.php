@@ -119,17 +119,22 @@ $online_count = R::count('online', "lastvisit > " . ( time() - (360) ))
 				$date_start=time();
 				$status="Новая";
 				$add=$_POST['add'];
-
-
-		if($add){
-			$file_get= $_FILES['рhoto_start']['name'];
+				$file_get= $_FILES['рhoto_start']['name'];
 			$temp= $_FILES['рhoto_start']['tmp_name'];
 			$file_to_saved= "images/".time().$file_get;
-			move_uploaded_file($temp, $file_to_saved);
-			
+				$imageFileType = 
+strtolower(pathinfo(file_to_saved,PATHINFO_EXTENSION));
+
+		if($add){
+
 			$str_add_application="INSERT INTO `applications` (`рhoto_start`, `title`, `city`, `district`, `street`, `house`, `description`, `category`, `status`, `date_start`) VALUES ('$file_to_saved', '$title', '$city', '$district', '$street', '$house', '$description', '$category', '$status', '$date_start')";
 			
 	if ($_FILES && $title && $city && $district && $street && $house && $category != $option) {
+		if($imageFileType != "jpg" && $imageFileType != "jpeg") {
+		}
+		else{
+		
+			move_uploaded_file($temp, $file_to_saved);
 			$run_str_add_application=mysqli_query($connect, $str_add_application);
 	if($run_str_add_application)
 	{
@@ -142,6 +147,7 @@ $online_count = R::count('online', "lastvisit > " . ( time() - (360) ))
 	{
 		echo "Ошибка добавления";
 	}
+}
 }
 else
 {
