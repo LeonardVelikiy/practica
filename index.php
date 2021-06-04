@@ -81,7 +81,6 @@ $online_count = R::count('online', "lastvisit > " . ( time() - (360) ))
 	</a>
 	<div class=text>Заявка отправлена</div>
 	<form method="POST">
-	<input type=submit name=ex class=ex value="Закрыть">
 	</form>
 	</div>
 	</div>
@@ -146,10 +145,7 @@ else
 	echo "Заполните поля";
 }
 }
-if($ex)
-{
-	echo '<script>location.replace("../index.php#");</script>'; exit;
-}
+
 		?></form></div></div>
 	<div class="wrapper">
 		<div class="head">
