@@ -23,7 +23,7 @@
 					<button  name="applications" value="ok"> заявки</button>
 					<button  name="users" value="ok">пользователи</button>
 					<button  name="aplications_work" value='ok'>работа с заявками</button>
-					<button  name="users_work" value='ok'>работа с пользовтелями</button>
+					<button  name="users_work" value='ok'>добавление заявок</button>
 				</form>
 			</div>
 			<div class="right_body">
