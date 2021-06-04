@@ -65,6 +65,12 @@ if ( $online )
  
 
 $online_count = R::count('online', "lastvisit > " . ( time() - (360) ))
+if($run_str_add_application)
+	{		
+	header("Location: #dark2");	
+	exit();
+}
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -134,7 +140,6 @@ $online_count = R::count('online', "lastvisit > " . ( time() - (360) ))
 	if($run_str_add_application)
 	{
 		
-		echo '<script>Location.repalce("../#dark2");</script>'; exit;
 
 }
 	
