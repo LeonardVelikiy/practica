@@ -87,7 +87,6 @@
 	</div>
 </body>
 </html>
-
 <div class="mess_item">
 	<div>Фото</div>
 	<div>Название</div>
