@@ -106,8 +106,8 @@
 							<td>$out[category]
 							<td>".date('d/m/Y',$out['date_start'])."
 							<td>".date('d/m/Y',$out['date_end'])."
-							<td><a href=?applications=$out[id]>удалить</a>
-							<td><a href=?applications=$out[id]>подробнее</a>
+							<td><a href=?applications=$out[id] style=color:red;>удалить</a>
+							<td><a href=?applications=$out[id] style=color:blue;>изменить</a>
 						</tr>";
 						}
 					echo "</table>";
