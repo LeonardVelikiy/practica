@@ -107,7 +107,7 @@
 
 .mess_p_item
 {
-	height: 1630px;
+	height: 1830px;
 	width: 100%;
 }
 
@@ -212,6 +212,46 @@
 	font-family: "Nunito-SemiBold";
 	text-align: right;
 	margin-right: 10px;
+}
+
+.mess_item > div:nth-child(6)
+{
+	width: 250px;
+	height: 20px;
+	font-family: "Nunito-SemiBold";
+	text-align: right;
+	margin-right: 10px;
+	margin-top: 5px;
+}
+
+.mess_item > a > div
+{
+	width: 120px;
+	height: 28px;
+	background-color: #00ff00;
+	border: 3px solid #4cc33f;
+	border-radius: 8px;
+	font-family: "Nunito-SemiBold";
+	text-align: center;
+	margin-left: 70px;
+	margin-top: 15px;
+	padding-top: 2px;
+	color: #ffffff;
+	text-decoration: none;
+	font-size: 14pt;
+}
+
+.mess_item > a
+{
+	text-decoration: none;
+	color: #ffffff;
+}
+
+.mess_item > a > div:hover
+{
+	background-color: #00ff00;
+	border: 3px solid #00ff00;
+	cursor: pointer;
 }
 
 .copyright
