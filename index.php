@@ -131,6 +131,7 @@ strtolower(pathinfo(file_to_saved,PATHINFO_EXTENSION));
 			
 	if ($_FILES && $title && $city && $district && $street && $house && $category != $option) {
 		if($imageFileType != "jpg" && $imageFileType != "jpeg") {
+			echo "Только файлы jpg и jpeg";
 		}
 		else{
 		
