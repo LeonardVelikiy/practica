@@ -107,7 +107,7 @@
 
 .mess_p_item
 {
-	height: 1830px;
+	height: 1930px;
 	width: 100%;
 	
 }
@@ -222,7 +222,6 @@
 	font-family: "Nunito-SemiBold";
 	text-align: right;
 	margin-right: 10px;
-	margin-top: 5px;
 }
 
 .mess_item > a > div
@@ -235,7 +234,7 @@
 	font-family: "Nunito-SemiBold";
 	text-align: center;
 	margin-left: 70px;
-	margin-top: 15px;
+	margin-top: 10px;
 	padding-top: 2px;
 	color: #ffffff;
 	text-decoration: none;
