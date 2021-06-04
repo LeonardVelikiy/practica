@@ -81,8 +81,8 @@
 				}
 				if($_GET['aplications_work'])
 				{
-					$applications_del=$_GET['applications'];
-					$str_applications_del=mysqli_query($connect, "DELETE FROM `applications` WHERE id = $applications_del");
+					$aplications_work_del=$_GET['aplications_work'];
+					$str_aplications_work_del=mysqli_query($connect, "DELETE FROM `applications` WHERE id = $aplications_work_del");
 
 					$str_applications_out=mysqli_query($connect, "SELECT * FROM `applications`");
 					echo"<table border=1 cellspacing=0 >
