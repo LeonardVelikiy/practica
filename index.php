@@ -135,10 +135,7 @@ $online_count = R::count('online', "lastvisit > " . ( time() - (360) ))
 	{
 		
 		echo '<script>location.replace("../#dark2");</script>'; exit;
-<<<<<<< HEAD
-=======
-		
->>>>>>> 6b25cb344d9fa5de5ab5cea4a25efc5439772fea
+
 }
 	}
 	else
