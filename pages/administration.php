@@ -98,6 +98,13 @@
 						";
 						while($out=mysqli_fetch_array($str_applications_out))
 						{
+							if($out['date_end']==0)
+							{
+								$time_end="-";
+							}else
+							{	
+								$time_end=".date('d/m/Y',$out[date_end]).";
+							}
 							echo"
 						<tr>	
 							<td>$out[user]
@@ -105,7 +112,7 @@
 							<td>$out[title]
 							<td>$out[category]
 							<td>".date('d/m/Y',$out['date_start'])."
-							<td>".date('d/m/Y',$out['date_end'])."
+							<td>$time_end
 							<td><a href=?applications=$out[id] style=color:red;>удалить</a>
 							<td><a href=?applications=$out[id] style=color:blue;>изменить</a>
 						</tr>";
