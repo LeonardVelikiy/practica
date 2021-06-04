@@ -141,13 +141,13 @@
 }
 .part1
 {
- 	width: 50%;
+ 	width: 30%;
 	height: 100%;
 	background-color: blue;
 }
 .part2
 {
-	width: 50%;
+	width: 70%;
 	height: 100%;
 	background-color: red;
 
