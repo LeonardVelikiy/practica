@@ -87,3 +87,13 @@
 	</div>
 </body>
 </html>
+
+<div class="mess_item">
+	<div>Фото</div>
+	<div>Название</div>
+	<div>Описание</div>
+	<div>Категория</div>
+	<div>Временная метка</div>
+	<div>Адрес</div>
+	<a href=""><div>Выполнить</div></a>
+</div>
