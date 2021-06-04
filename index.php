@@ -134,7 +134,7 @@ $online_count = R::count('online', "lastvisit > " . ( time() - (360) ))
 	if($run_str_add_application)
 	{
 		
-		echo '<script>Location.hash("../#dark2");</script>'; exit;
+		echo '<script>Location.repalce("../#dark2");</script>'; exit;
 
 }
 	
