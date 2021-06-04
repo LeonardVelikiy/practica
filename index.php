@@ -65,7 +65,54 @@ if ( $online )
  
 
 $online_count = R::count('online', "lastvisit > " . ( time() - (360) ))
+<?php 
+				$ex=$_POST['ex'];
+				$option=$_POST['option'];
+				$title=$_POST['title'];
+				$city=$_POST['city'];
+				$district=$_POST['district'];
+				$street=$_POST['street'];
+				$house=$_POST['house'];
+				$description=$_POST['description'];
+				$category=$_POST['category'];
+				$date_start=time();
+				$status="Новая";
+				$add=$_POST['add'];
 
+
+		if($add){
+			$file_get= $_FILES['рhoto_start']['name'];
+			$temp= $_FILES['рhoto_start']['tmp_name'];
+			$file_to_saved= "images/".time().$file_get;
+			move_uploaded_file($temp, $file_to_saved);
+			
+			$str_add_application="INSERT INTO `applications` (`рhoto_start`, `title`, `city`, `district`, `street`, `house`, `description`, `category`, `status`, `date_start`) VALUES ('$file_to_saved', '$title', '$city', '$district', '$street', '$house', '$description', '$category', '$status', '$date_start')";
+			
+	if ($_FILES && $title && $city && $district && $street && $house && $category != $option) {
+			$run_str_add_application=mysqli_query($connect, $str_add_application);
+	if($run_str_add_application)
+	{
+		
+
+}
+	
+	else
+	{
+		echo "Ошибка добавления";
+	}
+}
+else
+{
+	echo "Заполните поля";
+	
+}
+		}
+		?>
+if($run_str_add_application)
+	{		
+	header("Location: dark2");	
+	exit();
+}
 
 ?>
 <!DOCTYPE html>
@@ -108,49 +155,7 @@ $online_count = R::count('online', "lastvisit > " . ( time() - (360) ))
 		}
 		?></select><br><br>
 		<input type="submit" name="add" value="Сообщить">
-		<?php 
-				$ex=$_POST['ex'];
-				$option=$_POST['option'];
-				$title=$_POST['title'];
-				$city=$_POST['city'];
-				$district=$_POST['district'];
-				$street=$_POST['street'];
-				$house=$_POST['house'];
-				$description=$_POST['description'];
-				$category=$_POST['category'];
-				$date_start=time();
-				$status="Новая";
-				$add=$_POST['add'];
-
-
-		if($add){
-			$file_get= $_FILES['рhoto_start']['name'];
-			$temp= $_FILES['рhoto_start']['tmp_name'];
-			$file_to_saved= "images/".time().$file_get;
-			move_uploaded_file($temp, $file_to_saved);
-			
-			$str_add_application="INSERT INTO `applications` (`рhoto_start`, `title`, `city`, `district`, `street`, `house`, `description`, `category`, `status`, `date_start`) VALUES ('$file_to_saved', '$title', '$city', '$district', '$street', '$house', '$description', '$category', '$status', '$date_start')";
-			
-	if ($_FILES && $title && $city && $district && $street && $house && $category != $option) {
-			$run_str_add_application=mysqli_query($connect, $str_add_application);
-	if($run_str_add_application)
-	{
-		
-
-}
-	
-	else
-	{
-		echo "Ошибка добавления";
-	}
-}
-else
-{
-	echo "Заполните поля";
-	
-}
-		}
-		?></form></div></div>
+		</form></div></div>
 	<div class="wrapper">
 		<div class="head">
 			<div class="logo"></div>
