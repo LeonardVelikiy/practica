@@ -39,7 +39,7 @@
 		</div>
 		<div class="mess_p_item">
 			<?php
-		$str_out_application="SELECT * FROM `applications` WHERE `status`='Выполнено' ORDER BY `date_end` DESC";
+		$str_out_application="SELECT * FROM `applications` WHERE `status`='Новая' ORDER BY `date_start` DESC";
 		$run_out_application=mysqli_query($connect,$str_out_application);
 		$int_out_application=mysqli_num_rows($run_out_application);
 		$page_number=$_GET['page_number'];
@@ -49,7 +49,7 @@
 					}
 					$application_in_tape=12;
 					$sql_page_number=$page_number*$application_in_tape;
-					$str_out_application_pag="SELECT * FROM `applications` WHERE `status`='Новая' ORDER BY `date_end` DESC LIMIT $sql_page_number, $application_in_tape";
+					$str_out_application_pag="SELECT * FROM `applications` WHERE `status`='Новая' ORDER BY `date_start` DESC LIMIT $sql_page_number, $application_in_tape";
 					$run_out_application_pag=mysqli_query($connect, $str_out_application_pag);
 		while ($out=mysqli_fetch_array($run_out_application_pag)) {
 			$id=$out['id'];
