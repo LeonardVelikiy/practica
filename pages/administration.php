@@ -130,6 +130,7 @@
 					
 					$str_out_categoty="SELECT * FROM `category`";
 					$run_out_categoty=mysqli_query($connect,$str_out_categoty);
+					echo"<div class=part0>";
 					echo"
 					<div class=part1>
 					<form method=POST enctype=multipart/form-data>
