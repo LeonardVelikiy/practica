@@ -8,9 +8,13 @@
 <body>
 	<div class="wrapper">
 		<div class="head">
-			<div class="logo">ЛОГО</div>
-			<span class="link_f">О сервисе</span>
-			<span class="link_s">Все сообщения</span>
+			<div class="logo"></div>
+			<a href="pages/about.php">
+				<span class="link_f">О сервисе</span>
+			</a>
+			<a href="pages/all_messages.php">
+				<span class="link_s">Все сообщения</span>
+			</a>
 			<div class="out">Выйти</div>
 		</div>
 		<div class="problem_text">Все заявки</div>
@@ -19,13 +23,10 @@
 				<div>Фото</div>
 				<div>Название</div>
 				<div>Описание</div>
-				<select class="select">
-					<option>Выберите категорию</option>
-					<option></option>
-					<option></option>
-					<option></option>
-				</select>
+				<div>Категория</div>
 				<div>Временная метка</div>
+				<div>Адрес</div>
+				<div><a href="">Удалить</a></div>
 				<div><a href="">Удалить</a></div>
 			</div>
 		</div>
