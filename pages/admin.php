@@ -30,7 +30,12 @@
 				<div><a href="">Удалить</a></div>
 			</div>
 		</div>
-		<a href="administration.php">Перейти на панель администации</a>
+		<div class="pag_place">
+			<div class="pagination">1</div>
+			<div class="pagination">2</div>
+			<div class="pagination">3</div>
+			<div class="pagination">4</div>
+		</div>
 		<div class="copyright">Copyright</div>
 	</div>
 </body>
