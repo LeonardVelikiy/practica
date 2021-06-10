@@ -31,10 +31,18 @@
 			</div>
 		</div>
 		<div class="pag_place">
-			<div class="pagination">1</div>
-			<div class="pagination">2</div>
-			<div class="pagination">3</div>
-			<div class="pagination">4</div>
+			<div class="pagination">
+				<div>1</div>
+			</div>
+			<div class="pagination">
+				<div>2</div>
+			</div>
+			<div class="pagination">
+				<div>3</div>
+			</div>
+			<div class="pagination">
+				<div>4</div>
+			</div>
 		</div>
 		<div class="copyright">Copyright</div>
 	</div>
