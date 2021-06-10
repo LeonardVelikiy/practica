@@ -26,7 +26,7 @@
 				<div>Категория</div>
 				<div>Временная метка</div>
 				<div>Адрес</div>
-				<div><a href="">Удалить</a></div>
+				<div><a href="">Изменить</a></div>
 				<div><a href="">Удалить</a></div>
 			</div>
 		</div>
