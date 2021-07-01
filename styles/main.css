@@ -634,7 +634,7 @@
 
 .kab
 {
-	width: 250px;
+	width: 175px;
 	height: 32px;
 	background-color: #00ff00;
 	border: 5px solid #4cc33f;
@@ -644,7 +644,7 @@
 	color: #ffffff;
 	text-align: center;
 	padding-top: 3px;
-	margin-left: 250px;
+	margin-left: 1000px;
 	margin-top: 20px;
 }
 
