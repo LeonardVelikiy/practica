@@ -231,7 +231,7 @@ else
 			}
 			else
 			{
-				echo "<div class="auth"><input type=submit name=lk></div>"
+				echo "<div class="auth"><input type=submit name=lk></div>";
 			}
 			?>
 		</div>
