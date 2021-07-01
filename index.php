@@ -74,6 +74,22 @@ $online_count = R::count('online', "lastvisit > " . ( time() - (360) ))
 	<link rel="stylesheet" type="text/css" href="styles/main.css">
 </head>
 <body>
+<div id=auth_dark>
+<div class="form_window_auth">
+		<a href="../index.php">
+			<div class="close_btn"></div>
+		</a>
+		<div class="form_mname">Вход</div>
+		<div class="form_place">
+			<form>
+				<input type="text" name="" placeholder="Логин" class="form_mitem"><br>
+				<input type="text" name="" placeholder="Пароль" class="form_mitem"><br>
+				<input type="submit" name="auth" value="Вход" class="form_btn">
+			</form>
+		</div>
+		<div class="form_link"><a href="reg_form.php">Регистрация</a></div>
+	</div>
+</div>
 <div id="lock">
 	<div id="okno2">
 		<a href="index.php#">
@@ -165,7 +181,7 @@ else
 				<span class="link_s">Все сообщения</span>
 			</a>	
 			<a href="pages/auth_form.php">
-				<div class="auth">Войти</div>
+				<div class="auth"><a href=#auth_dark>Войти</a></div>
 			</a>
 		</div>
 		<div class="checker">
