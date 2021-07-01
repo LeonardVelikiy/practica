@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 include '../pages/db.php' ;
 require 'pages/cookies.php';
 require 'pages/rb.php';
@@ -65,6 +65,29 @@ if ( $online )
  
 
 $online_count = R::count('online', "lastvisit > " . ( time() - (360) ))
+
+
+$str_auth="SELECT * FROM `users` WHERE `login` = '$_SESSION[login]' AND `pass` = '$_SESSION[pass]'";
+		$run_auth=mysqli_query($connect,$str_auth);
+		$out_auth=mysqli_fetch_array($run_auth);
+		$check=mysqli_num_rows($run_auth);
+		$login=$_POST["login"];
+		$id=$_GET['id'];
+		$pass=$_POST["pass"];
+		
+		$role=$_POST['role'];
+		$auth=$_POST["auth"];
+		if ($authorization) {
+			$_SESSION['login']=$login;
+			$_SESSION['pass']=$pass;
+			$_SESSION['auth']=$auth;
+}
+			if ($_SESSION['authorization']) {
+
+			if ($check){
+				header("Location: #");
+			}
+		}
 ?>
 <!DOCTYPE html>
 <html>
@@ -102,8 +125,8 @@ $online_count = R::count('online', "lastvisit > " . ( time() - (360) ))
 		<div class="form_mname">Вход</div>
 		<div class="form_place">
 			<form>
-				<input type="text" name="" placeholder="Логин" class="form_mitem"><br>
-				<input type="text" name="" placeholder="Пароль" class="form_mitem"><br>
+				<input type="text" name="login" placeholder="Логин" class="form_mitem"><br>
+				<input type="text" name="pass" placeholder="Пароль" class="form_mitem"><br>
 				<input type="submit" name="auth" value="Вход" class="form_btn">
 			</form>
 		</div>
@@ -199,10 +222,18 @@ else
 			</a>
 			<a href="pages/all_messages.php">
 				<span class="link_s">Все сообщения</span>
-			</a>	
-			<a href="pages/auth_form.php">
-				<div class="auth"><a href=#auth_dark>Войти</a></div>
 			</a>
+			<?php
+			if ($_SESSION['auth'] = NULL) {
+			echo "<a href="pages/auth_form.php">
+				<div class="auth"><a href=#auth_dark>Войти</a></div>
+			</a>";
+			}
+			else
+			{
+				echo "<div class="auth"><input type=submit name=lk></div>"
+			}
+			?>
 		</div>
 		<div class="checker">
 			<div>
