@@ -76,7 +76,7 @@ $online_count = R::count('online', "lastvisit > " . ( time() - (360) ))
 <body>
 <div id=reg_dark>
 <div class="form_window_reg">
-		<a href="../index.php">
+		<a href="#">
 			<div class="close_btn"></div>
 		</a>
 		<div class="form_mname">Регистрация</div>
@@ -96,7 +96,7 @@ $online_count = R::count('online', "lastvisit > " . ( time() - (360) ))
 </div>
 <div id=auth_dark>
 <div class="form_window_auth">
-		<a href="../index.php">
+		<a href="#">
 			<div class="close_btn"></div>
 		</a>
 		<div class="form_mname">Вход</div>
