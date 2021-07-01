@@ -616,7 +616,7 @@
 	  position: fixed;
 }
 #auth_dark:target {display: block;}
-}
+
 
 
 #reg_dark
@@ -631,7 +631,7 @@
 	  position: fixed;
 }
 #reg_dark:target {display: block;}
-}
+
 
 
 
