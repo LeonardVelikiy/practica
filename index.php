@@ -224,14 +224,14 @@ else
 				<span class="link_s">Все сообщения</span>
 			</a>
 			<?php
-			if ($_SESSION['auth'] = NULL) {
+			if ($_SESSION['auth'] == NULL) {
 			echo "<a href=#auth_dark>
 				<div class=auth>Войти</div>
 			</a>";
 			}
 			else
 			{
-				echo "<div class=auth><input type=submit name=lk></div>";
+				echo "<input type=submit name=lk>";
 			}
 			?>
 		</div>
