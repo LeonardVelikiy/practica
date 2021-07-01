@@ -231,7 +231,7 @@ else
 			}
 			else
 			{
-				echo "<a href=#auth_dark><div class=kab>Мой кабинет</div></a>";
+				echo "<a href=#auth_dark><div class=kab>Мой кабинет</div></a><div class=kab>Выход</div>";
 			}
 			?>
 		</div>
