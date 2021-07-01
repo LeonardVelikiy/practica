@@ -231,7 +231,7 @@ else
 			}
 			else
 			{
-				echo "<div class=kab>Мой кабинет</div>";
+				echo "<a href=#auth_dark><div class=kab>Мой кабинет</div></a>";
 			}
 			?>
 		</div>
