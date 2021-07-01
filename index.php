@@ -77,12 +77,12 @@ $str_auth="SELECT * FROM `users` WHERE `login` = '$_SESSION[login]' AND `pass` =
 		
 		$role=$_POST['role'];
 		$auth=$_POST["auth"];
-		if ($authorization) {
+		if ($auth) {
 			$_SESSION['login']=$login;
 			$_SESSION['pass']=$pass;
 			$_SESSION['auth']=$auth;
 }
-			if ($_SESSION['authorization']) {
+			if ($_SESSION['auth']) {
 
 			if ($check){
 				header("Location: #");
