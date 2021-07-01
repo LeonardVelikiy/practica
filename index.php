@@ -64,7 +64,7 @@ if ( $online )
 }
  
 
-$online_count = R::count('online', "lastvisit > " . ( time() - (360) ))
+$online_count = R::count('online', "lastvisit > " . ( time() - (360) ));
 
 
 $str_auth="SELECT * FROM `users` WHERE `login` = '$_SESSION[login]' AND `pass` = '$_SESSION[pass]'";
