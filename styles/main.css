@@ -632,7 +632,28 @@
 }
 #reg_dark:target {display: block;}
 
+.kab
+{
+	width: 175px;
+	height: 32px;
+	background-color: #00ff00;
+	border: 5px solid #4cc33f;
+	border-radius: 15px;
+	font-family: "Nunito-Bold";
+	font-size: 16pt;
+	color: #ffffff;
+	text-align: center;
+	padding-top: 3px;
+	margin-left: 250px;
+	margin-top: 20px;
+}
 
+.kab:hover
+{
+	cursor: pointer;
+	background-color: #00ff00;
+	border: 5px solid #00ff00;
+}
 
 
 

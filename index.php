@@ -231,7 +231,7 @@ else
 			}
 			else
 			{
-				echo "<input type=submit name=lk>";
+				echo "<div class=kab>Мой кабинет</div>";
 			}
 			?>
 		</div>
