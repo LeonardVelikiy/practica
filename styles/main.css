@@ -492,6 +492,7 @@
 	border: 3px solid black;
 	border-radius: 20px;
 	margin: 65px auto;
+	background-color: white;
 }
 
 .close_btn
@@ -616,6 +617,26 @@
 }
 #auth_dark:target {display: block;}
 }
+
+
+#reg_dark
+{
+		background: rgba(102, 102, 102, 0.5);
+	  width: 100%;
+	  height: 100%;
+	  position: absolute;
+	  top: 0;
+	  left: 0;
+	  display: none;
+	  position: fixed;
+}
+#reg_dark:target {display: block;}
+}
+
+
+
+
+
 @font-face
 {
 	src:url(../fonts/Nunito-SemiBold.ttf);

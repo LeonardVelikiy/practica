@@ -74,6 +74,26 @@ $online_count = R::count('online', "lastvisit > " . ( time() - (360) ))
 	<link rel="stylesheet" type="text/css" href="styles/main.css">
 </head>
 <body>
+<div id=reg_dark>
+<div class="form_window_reg">
+		<a href="../index.php">
+			<div class="close_btn"></div>
+		</a>
+		<div class="form_mname">Регистрация</div>
+		<div class="form_place">
+			<form>
+				<input type="text" name="" placeholder="ФИО" class="form_mitem"><br>
+				<input type="text" name="" placeholder="Логин" class="form_mitem"><br>
+				<input type="text" name="" placeholder="Email" class="form_mitem"><br>
+				<input type="password" name="" placeholder="Пароль" class="form_mitem"><br>
+				<input type="password" name="" placeholder="Повторите пароль" class="form_mitem"><br>
+				<input type="checkbox" name=""><span class="pers_inf">Согласие на обработку<br>персональных данных</span><br>
+				<input type="submit" name="" value="Регистрация" class="form_btn_reg">
+			</form>
+		</div>
+		<div class="form_link"><a href="#auth_dark">Вернуться</a></div>
+	</div>
+</div>
 <div id=auth_dark>
 <div class="form_window_auth">
 		<a href="../index.php">
@@ -87,7 +107,7 @@ $online_count = R::count('online', "lastvisit > " . ( time() - (360) ))
 				<input type="submit" name="auth" value="Вход" class="form_btn">
 			</form>
 		</div>
-		<div class="form_link"><a href="reg_form.php">Регистрация</a></div>
+		<div class="form_link"><a href="#reg_dark">Регистрация</a></div>
 	</div>
 </div>
 <div id="lock">
