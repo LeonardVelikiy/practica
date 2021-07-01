@@ -225,13 +225,13 @@ else
 			</a>
 			<?php
 			if ($_SESSION['auth'] = NULL) {
-			echo "<a href="pages/auth_form.php">
-				<div class="auth"><a href=#auth_dark>Войти</a></div>
+			echo "<a href=#auth_dark>
+				<div class=auth>Войти</div>
 			</a>";
 			}
 			else
 			{
-				echo "<div class="auth"><input type=submit name=lk></div>";
+				echo "<div class=auth><input type=submit name=lk></div>";
 			}
 			?>
 		</div>
