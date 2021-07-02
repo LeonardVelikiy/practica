@@ -163,6 +163,7 @@ $str_auth="SELECT * FROM `users` WHERE `login` = '$_SESSION[login]' AND `pass` =
 								"role" =>$user['role']
 							];
 							echo'user есть';
+							print_r($user);
 							// echo '<script>location.replace("/");</script>'; exit;
 						}else
 						{
