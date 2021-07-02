@@ -38,7 +38,7 @@
 					echo"<div class=part1>";
 					
 					echo"
-					<form methot=POST>
+					<form method=POST>
 						<input type=text name=category_name class=form_mitem1 id=form_mitem1><br>
 						<input type=submit name=add class=form_mitem1 id=form_mitem1>
 					</form>";
