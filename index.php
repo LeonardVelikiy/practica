@@ -140,7 +140,7 @@ $str_auth="SELECT * FROM `users` WHERE `login` = '$_SESSION[login]' AND `pass` =
 				<input type="text" name="login" placeholder="Логин" class="form_mitem"><br>
 				<input type="text" name="pass" placeholder="Пароль" class="form_mitem"><br>
 				<input type="submit" name="auth" value="Вход" class="form_btn">
-			</form>
+			
 			<?php
 			$login=$_POST['login'];
 			$pass=$_POST['pass'];
@@ -162,7 +162,8 @@ $str_auth="SELECT * FROM `users` WHERE `login` = '$_SESSION[login]' AND `pass` =
 								"login" =>$user['login'],
 								"role" =>$user['role']
 							];
-							echo '<script>location.replace("/");</script>'; exit;
+							echo'user есть';
+							// echo '<script>location.replace("/");</script>'; exit;
 						}else
 						{
 							$_SESSION['user']=[
@@ -170,12 +171,14 @@ $str_auth="SELECT * FROM `users` WHERE `login` = '$_SESSION[login]' AND `pass` =
 								"login" =>$user['login'],
 								"role" =>$user['role']
 							];
-							echo '<script>location.replace("../pages/administration.php");</script>'; exit;
+							echo'admin есть';
+							// echo '<script>location.replace("../pages/administration.php");</script>'; exit;
 						}
 									
 					}else
 					{
-						echo '<script>location.replace("/");</script>'; exit;
+						// echo '<script>location.replace("/");</script>'; exit;
+						echo'не на найден';
 						unset($_SESSION);
 					}
 
@@ -183,6 +186,7 @@ $str_auth="SELECT * FROM `users` WHERE `login` = '$_SESSION[login]' AND `pass` =
 
 
 			?>
+			</form>
 		</div>
 		<div class="form_link"><a href="#reg_dark">Регистрация</a></div>
 	</div>
