@@ -52,7 +52,7 @@
 					echo"</div>";/*part1 */
 
 					$category_del=$_GET['category'];
-					$str_category_del=mysqli_query($connect, "DELETE FROM `users` WHERE id = $category_del");
+					$str_category_del=mysqli_query($connect, "DELETE FROM `category` WHERE id = $category_del");
 
 					$str_applications_out=mysqli_query($connect, "SELECT * FROM `category` ");
 					echo"<div class=part2>";
