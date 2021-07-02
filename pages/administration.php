@@ -38,8 +38,8 @@
 					
 					echo"
 					<form method=POST>
-						<input type=text name=category_name class=form_mitem1 id=form_mitem1><br>
-						<input type=submit name=add class=form_mitem1 id=form_mitem1>
+						<input type=text name=category_name class=form_mitem1 id=form_mitem1>
+						<input type=submit name=add style=cursor:pointer; class=form_mitem1 id=form_mitem1 ><br><br>
 					</form>";
 					$category_name=$_POST['category_name'];
 					$add=$_POST['add'];
