@@ -79,7 +79,47 @@ $online_count = R::count('online', "lastvisit > " . ( time() - (360) ));
    			$add_user=mysqli_query($connect,$add_user_str);
 		}
 ?>
-<?php
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Благоустройство города</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="styles/main.css">
+</head>
+<body>
+<div id=reg_dark>
+<div class="form_window_reg">
+		<a href="#">
+			<div class="close_btn"></div>
+		</a>
+		<div class="form_mname">Регистрация</div>
+		<div class="form_place">
+			<form method="POST">
+				<input type="text" name="first_last_name" placeholder="ФИО" class="form_mitem"><br>
+				<input type="text" name="login" placeholder="Логин" class="form_mitem"><br>
+				<input type="text" name="Email" placeholder="Email" class="form_mitem"><br>
+				<input type="password" name="pass" placeholder="Пароль" class="form_mitem"><br>
+				<input type="password" name="copy_pass" placeholder="Повторите пароль" class="form_mitem"><br>
+				<input type="checkbox" name="cb"><span class="pers_inf">Согласие на обработку<br>персональных данных</span><br>
+				<input type="submit" name="reg" value="Регистрация" class="form_btn_reg">
+			</form>
+		</div>
+		<div class="form_link"><a href="#auth_dark">Войти</a></div>
+	</div>
+</div>
+<div id=auth_dark>
+<div class="form_window_auth">
+		<a href="#">
+			<div class="close_btn"></div>
+		</a>
+		<div class="form_mname">Вход</div>
+		<div class="form_place">
+			<form method="POST">
+				<input type="text" name="login" placeholder="Логин" class="form_mitem"><br>
+				<input type="text" name="pass" placeholder="Пароль" class="form_mitem"><br>
+				<input type="submit" name="auth" value="Вход" class="form_btn">
+			
+			<?php
 			$login=$_POST['login'];
 			$pass=$_POST['pass'];
 			$add=$_POST['auth'];
@@ -124,47 +164,6 @@ $online_count = R::count('online', "lastvisit > " . ( time() - (360) ));
 
 
 			?>
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Благоустройство города</title>
-	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="styles/main.css">
-</head>
-<body>
-<div id=reg_dark>
-<div class="form_window_reg">
-		<a href="#">
-			<div class="close_btn"></div>
-		</a>
-		<div class="form_mname">Регистрация</div>
-		<div class="form_place">
-			<form method="POST">
-				<input type="text" name="first_last_name" placeholder="ФИО" class="form_mitem"><br>
-				<input type="text" name="login" placeholder="Логин" class="form_mitem"><br>
-				<input type="text" name="Email" placeholder="Email" class="form_mitem"><br>
-				<input type="password" name="pass" placeholder="Пароль" class="form_mitem"><br>
-				<input type="password" name="copy_pass" placeholder="Повторите пароль" class="form_mitem"><br>
-				<input type="checkbox" name="cb"><span class="pers_inf">Согласие на обработку<br>персональных данных</span><br>
-				<input type="submit" name="reg" value="Регистрация" class="form_btn_reg">
-			</form>
-		</div>
-		<div class="form_link"><a href="#auth_dark">Войти</a></div>
-	</div>
-</div>
-<div id=auth_dark>
-<div class="form_window_auth">
-		<a href="#">
-			<div class="close_btn"></div>
-		</a>
-		<div class="form_mname">Вход</div>
-		<div class="form_place">
-			<form method="POST">
-				<input type="text" name="login" placeholder="Логин" class="form_mitem"><br>
-				<input type="text" name="pass" placeholder="Пароль" class="form_mitem"><br>
-				<input type="submit" name="auth" value="Вход" class="form_btn">
-			
-			
 			</form>
 		</div>
 		<div class="form_link"><a href="#reg_dark">Регистрация</a></div>
