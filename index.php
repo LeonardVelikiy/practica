@@ -162,7 +162,7 @@ $str_auth="SELECT * FROM `users` WHERE `login` = '$_SESSION[login]' AND `pass` =
 								"login" =>$user['login'],
 								"role" =>$user['role']
 							];
-							echo '<script>location.replace("index.php");</script>'; exit;
+							echo '<script>location.replace("/");</script>'; exit;
 						}else
 						{
 							$_SESSION['user']=[
@@ -175,7 +175,7 @@ $str_auth="SELECT * FROM `users` WHERE `login` = '$_SESSION[login]' AND `pass` =
 									
 					}else
 					{
-						echo '<script>location.replace("index.php");</script>'; exit;
+						echo '<script>location.replace("/");</script>'; exit;
 						unset($_SESSION);
 					}
 
