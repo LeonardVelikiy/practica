@@ -131,7 +131,7 @@
 	width: 1000px;
 	height: 800px;
 	margin-left: 500px;
-	
+	border: black solid 1px;
 }
 .right_body > table
 {

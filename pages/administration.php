@@ -34,6 +34,10 @@
 				if($_GET['category'])
 				{
 					$str_applications_out=mysqli_query($connect, "SELECT * FROM `category` ");
+					echo"<div class=part0>";
+					echo"<div class=part1>";
+					echo"</div>";
+					echo"<div class=part2>";
 					echo"<table border=1 cellspacing=0 >
 					<tr>
 						<th style=text-aligin:center;>категория
@@ -47,7 +51,8 @@
 						</tr>";
 						}
 					echo "</table>";
-					
+					echo"</div>";/*part2 */
+					echo"</div>";/*part0 */
 				}
 				if($_GET['applications'])
 				{
