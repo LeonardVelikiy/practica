@@ -94,7 +94,7 @@ $str_auth="SELECT * FROM `users` WHERE `login` = '$_SESSION[login]' AND `pass` =
 		$Email=$_POST['Email'];
 		$first_last_name=$_POST['first_last_name'];
 		$reg=$_POST['reg'];
-		$add_user_str="INSERT INTO `users`(`login`, `pass`, `Email`, `first_last_name`) VALUES ('$login','$pass','$Email','$first_last_name')";
+		$add_user_str="INSERT INTO `users`(`login`, `pass`, `mail`, `first_last_name`) VALUES ('$login','$pass','$Email','$first_last_name')";
 		
 		if ($reg) 
 		{
