@@ -270,7 +270,7 @@ else
 			}
 			else
 			{
-				echo "<a href=#auth_dark><div class=kab>Мой кабинет</div></a><div class=exit><form method=POST><input type=submit name=exit>Выход</form></div>";
+				echo "<a href=#auth_dark><div class=kab>Мой кабинет</div></a><div class=exit><form method=POST><input type=submit name=exit value=Выход></form></div>";
 			}
 			$exit=$_POST['exit'];
 			if ($exit)
