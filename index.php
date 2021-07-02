@@ -67,28 +67,6 @@ if ( $online )
 $online_count = R::count('online', "lastvisit > " . ( time() - (360) ));
 
 
-$str_auth="SELECT * FROM `users` WHERE `login` = '$_SESSION[login]' AND `pass` = '$_SESSION[pass]'";
-		$run_auth=mysqli_query($connect,$str_auth);
-		$out_auth=mysqli_fetch_array($run_auth);
-		$check=mysqli_num_rows($run_auth);
-		$login=$_POST["login"];
-		$id=$_GET['id'];
-		$pass=$_POST["pass"];
-		
-		$role=$_POST['role'];
-		$auth=$_POST["auth"];
-		if ($auth) {
-			$_SESSION['login']=$login;
-			$_SESSION['pass']=$pass;
-			$_SESSION['auth']=$auth;
-}
-			if ($_SESSION['auth']) {
-
-			if ($check){
-				header("Location: #");
-			}
-		}
-
 		$login=$_POST['login'];
 		$pass=$_POST['pass'];
 		$Email=$_POST['Email'];
@@ -163,7 +141,7 @@ $str_auth="SELECT * FROM `users` WHERE `login` = '$_SESSION[login]' AND `pass` =
 								"role" =>$user['role']
 							];
 						
-							 echo '<script>location.replace("/");</script>'; exit;
+							 echo '<script>location.replace("#");</script>'; exit;
 						}else
 						{
 							$_SESSION['user']=[
