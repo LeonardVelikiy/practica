@@ -88,6 +88,18 @@ $str_auth="SELECT * FROM `users` WHERE `login` = '$_SESSION[login]' AND `pass` =
 				header("Location: #");
 			}
 		}
+
+		$login=$_POST['login'];
+		$pass=$_POST['pass'];
+		$Email=$_POST['Email'];
+		$first_last_name=$_POST['first_last_name'];
+		$reg=$_POST['reg'];
+		$add_user_str="INSERT INTO `users`(`login`, `pass`, `role`, `Email`, `first_last_name`) VALUES ('$login','$pass','$role','$Email','$first_last_name')";
+		
+		if ($reg) 
+		{
+   			$add_user=mysqli_query($connect,$add_user_str);
+		}
 ?>
 <!DOCTYPE html>
 <html>
@@ -105,13 +117,13 @@ $str_auth="SELECT * FROM `users` WHERE `login` = '$_SESSION[login]' AND `pass` =
 		<div class="form_mname">Регистрация</div>
 		<div class="form_place">
 			<form>
-				<input type="text" name="" placeholder="ФИО" class="form_mitem"><br>
-				<input type="text" name="" placeholder="Логин" class="form_mitem"><br>
-				<input type="text" name="" placeholder="Email" class="form_mitem"><br>
-				<input type="password" name="" placeholder="Пароль" class="form_mitem"><br>
-				<input type="password" name="" placeholder="Повторите пароль" class="form_mitem"><br>
-				<input type="checkbox" name=""><span class="pers_inf">Согласие на обработку<br>персональных данных</span><br>
-				<input type="submit" name="" value="Регистрация" class="form_btn_reg">
+				<input type="text" name="first_last_name" placeholder="ФИО" class="form_mitem"><br>
+				<input type="text" name="login" placeholder="Логин" class="form_mitem"><br>
+				<input type="text" name="Email" placeholder="Email" class="form_mitem"><br>
+				<input type="password" name="pass" placeholder="Пароль" class="form_mitem"><br>
+				<input type="password" name="copy_pass" placeholder="Повторите пароль" class="form_mitem"><br>
+				<input type="checkbox" name="cb"><span class="pers_inf">Согласие на обработку<br>персональных данных</span><br>
+				<input type="submit" name="reg" value="Регистрация" class="form_btn_reg">
 			</form>
 		</div>
 		<div class="form_link"><a href="#auth_dark">Войти</a></div>
@@ -231,7 +243,7 @@ else
 			}
 			else
 			{
-				echo "<a href=#auth_dark><div class=kab>Мой кабинет</div></a><div class=kab>Выход</div>";
+				echo "<a href=#auth_dark><div class=kab>Мой кабинет</div></a><div class=exit>Выход</div>";
 			}
 			?>
 		</div>
