@@ -24,12 +24,31 @@
 					<button  name="users" value="ok">пользователи</button>
 					<button  name="aplications_work" value='ok'>работа с заявками</button>
 					<button  name="users_work" value='ok'>добавление заявок</button>
+					<button  name="category" value='ok'>добавление ктегорий</button>
 				</form>
 			</div>
 			<div class="right_body">
 
 				<?php
 				include 'db.php';
+				if($_GET['category'])
+				{
+					$str_applications_out=mysqli_query($connect, "SELECT * FROM `category` ");
+					echo"<table border=1 cellspacing=0 >
+					<tr>
+						<th style=text-aligin:center;>категория
+					</tr>
+						";
+						while($out=mysqli_fetch_array($str_applications_out))
+						{
+							echo"
+						<tr>
+							<td>$out[category]
+						</tr>";
+						}
+					echo "</table>";
+					
+				}
 				if($_GET['applications'])
 				{
 					$str_applications_out=mysqli_query($connect, "SELECT * FROM `applications` WHERE `status`='Новая'");
