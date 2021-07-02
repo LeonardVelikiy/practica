@@ -162,10 +162,8 @@ $str_auth="SELECT * FROM `users` WHERE `login` = '$_SESSION[login]' AND `pass` =
 								"login" =>$user['login'],
 								"role" =>$user['role']
 							];
-							echo'user есть';
-							print_r($user);
-							var_dump($_SESSION['user']);
-							// echo '<script>location.replace("/");</script>'; exit;
+						
+							 echo '<script>location.replace("/");</script>'; exit;
 						}else
 						{
 							$_SESSION['user']=[
@@ -173,14 +171,14 @@ $str_auth="SELECT * FROM `users` WHERE `login` = '$_SESSION[login]' AND `pass` =
 								"login" =>$user['login'],
 								"role" =>$user['role']
 							];
-							echo'admin есть';
-							// echo '<script>location.replace("../pages/administration.php");</script>'; exit;
+							
+							 echo '<script>location.replace("../pages/administration.php");</script>'; exit;
 						}
 									
 					}else
 					{
-						// echo '<script>location.replace("/");</script>'; exit;
-						echo'не на найден';
+						echo '<script>location.replace("/");</script>'; exit;
+					
 						unset($_SESSION);
 					}
 
