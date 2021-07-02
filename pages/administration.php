@@ -38,8 +38,8 @@
 					
 					echo"
 					<form method=POST>
-						<input type=text name=category_name class=form_mitem1 id=form_mitem1>
-						<input type=submit name=add style=cursor:pointer; class=form_mitem1 id=form_mitem1 ><br><br>
+						<input type=text name=category_name class=form_mitem1 id=form_mitem1><br><br>
+						<input type=submit name=add style=cursor:pointer; class=form_mitem1 id=form_mitem1 >
 					</form>";
 					$category_name=$_POST['category_name'];
 					$add=$_POST['add'];
@@ -50,11 +50,16 @@
 					
 
 					echo"</div>";/*part1 */
+
+					$category_del=$_GET['category'];
+					$str_category_del=mysqli_query($connect, "DELETE FROM `users` WHERE id = $category_del");
+
 					$str_applications_out=mysqli_query($connect, "SELECT * FROM `category` ");
 					echo"<div class=part2>";
 					echo"<table border=1 cellspacing=0 >
 					<tr>
-						<th style=text-aligin:center;>категория
+						<th style=text-aligin:center;>категории
+						<th style=text-aligin:center;>действие
 					</tr>
 						";
 						while($out=mysqli_fetch_array($str_applications_out))
@@ -62,6 +67,7 @@
 							echo"
 						<tr>
 							<td>$out[category]
+							<td><a href=?category=$out[id]>удалить</a>
 						</tr>";
 						}
 					echo "</table>";
