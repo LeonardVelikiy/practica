@@ -70,7 +70,7 @@ $online_count = R::count('online', "lastvisit > " . ( time() - (360) ));
 
 		$login=$_POST['login'];
 		$pass=$_POST['pass'];
-		$Email=$_POST['Email'];
+		$Email=$_POST['mail'];
 		$first_last_name=$_POST['first_last_name'];
 		$reg=$_POST['reg'];
 		$add_user_str="INSERT INTO `users`(`login`, `pass`, `mail`, `first_last_name`) VALUES ('$login','$pass','$Email','$first_last_name')";
