@@ -116,7 +116,7 @@ $str_auth="SELECT * FROM `users` WHERE `login` = '$_SESSION[login]' AND `pass` =
 		</a>
 		<div class="form_mname">Регистрация</div>
 		<div class="form_place">
-			<form>
+			<form method="POST">
 				<input type="text" name="first_last_name" placeholder="ФИО" class="form_mitem"><br>
 				<input type="text" name="login" placeholder="Логин" class="form_mitem"><br>
 				<input type="text" name="Email" placeholder="Email" class="form_mitem"><br>
