@@ -70,7 +70,7 @@ $online_count = R::count('online', "lastvisit > " . ( time() - (360) ));
 
 		$login=$_POST['login'];
 		$pass=$_POST['pass'];
-		$Email=$_POST['mail'];
+		$Email=$_POST['Email'];
 		$first_last_name=$_POST['first_last_name'];
 		$reg=$_POST['reg'];
 		$add_user_str="INSERT INTO `users`(`login`, `pass`, `mail`, `first_last_name`) VALUES ('$login','$pass','$Email','$first_last_name')";
@@ -126,11 +126,8 @@ $online_count = R::count('online', "lastvisit > " . ( time() - (360) ));
 			$add=$_POST['auth'];
 			if($add)
 			{
-				$str_auth="SELECT * FROM `users` WHERE `login` = '$_SESSION[login]' AND `pass` = '$_SESSION[pass]'";
+				$str_auth="SELECT * FROM `users` WHERE `login` = '$login' AND `pass` = '$pass'";
 				$run_auth=mysqli_query($connect,$str_auth);
-				$_SESSION['login']=$login;
-				$_SESSION['pass']=$pass;
-				$_SESSION['auth']=$add;
 				$check_users=mysqli_num_rows($run_auth);
 
 				if ($check_users) 
@@ -263,7 +260,7 @@ else
 				<span class="link_s">Все сообщения</span>
 			</a>
 			<?php
-			if ($_SESSION['login'] == NULL) {
+			if ($_SESSION['user'] == NULL) {
 			echo "<a href=#auth_dark>
 				<div class=auth>Войти</div>
 			</a>";
@@ -275,9 +272,8 @@ else
 			$exit=$_POST['exit'];
 			if ($exit)
 			{
-				
+				echo '<script>location.replace("/");</script>'; exit;
 						unset($_SESSION);
-						echo '<script>location.replace("/");</script>'; exit;
 			}
 			?>
 		</div>
