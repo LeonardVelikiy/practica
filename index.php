@@ -141,6 +141,48 @@ $str_auth="SELECT * FROM `users` WHERE `login` = '$_SESSION[login]' AND `pass` =
 				<input type="text" name="pass" placeholder="Пароль" class="form_mitem"><br>
 				<input type="submit" name="auth" value="Вход" class="form_btn">
 			</form>
+			<?php
+			$login=$_POST['login'];
+			$pass=$_POST['pass'];
+			$add=$_POST['auth'];
+			if($add)
+			{
+				$str_auth="SELECT * FROM `users` WHERE `login` = '$login' AND `pass`= '$pass'";
+				$run_auth=mysqli_query($connect,$str_auth);
+
+				$check_users=mysqli_num_rows($run_auth);
+
+				if ($check_users) 
+					{
+						$user= mysqli_fetch_assoc($run_auth);
+						if ($user['role']==1) 
+						{
+							$_SESSION['user']=[
+								"name" =>$user['name'],
+								"login" =>$user['login'],
+								"role" =>$user['role']
+							];
+							echo '<script>location.replace("index.php");</script>'; exit;
+						}else
+						{
+							$_SESSION['user']=[
+								"name" =>$user['name'],
+								"login" =>$user['login'],
+								"role" =>$user['role']
+							];
+							echo '<script>location.replace("../pages/administration.php");</script>'; exit;
+						}
+									
+					}else
+					{
+						echo '<script>location.replace("index.php");</script>'; exit;
+						unset($_SESSION);
+					}
+
+			}
+
+
+			?>
 		</div>
 		<div class="form_link"><a href="#reg_dark">Регистрация</a></div>
 	</div>
