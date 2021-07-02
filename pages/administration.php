@@ -36,6 +36,20 @@
 					$str_applications_out=mysqli_query($connect, "SELECT * FROM `category` ");
 					echo"<div class=part0>";
 					echo"<div class=part1>";
+					
+					echo"
+					<form methot=POST>
+						<input type=text name=category_name class=form_mitem1 id=form_mitem1><br>
+						<input type=submit name=add class=form_mitem1 id=form_mitem1>
+					</form>";
+					$category_name=$_POST['category_name'];
+					$add=$_POST['add'];
+					if($add)
+					{
+						$str_category_out=mysqli_query($connect, "INSERT INTO `category` (`category`) VALUES ('$category_name');");
+					}
+					
+
 					echo"</div>";
 					echo"<div class=part2>";
 					echo"<table border=1 cellspacing=0 >
