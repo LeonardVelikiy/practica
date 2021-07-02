@@ -68,7 +68,6 @@ $online_count = R::count('online', "lastvisit > " . ( time() - (360) ));
 
 
 
-
 		$login=$_POST['login'];
 		$pass=$_POST['pass'];
 		$Email=$_POST['Email'];
@@ -129,7 +128,9 @@ $online_count = R::count('online', "lastvisit > " . ( time() - (360) ));
 			{
 				$str_auth="SELECT * FROM `users` WHERE `login` = '$_SESSION[login]' AND `pass` = '$_SESSION[pass]'";
 				$run_auth=mysqli_query($connect,$str_auth);
-
+				$_SESSION['login']=$login;
+				$_SESSION['pass']=$pass;
+				$_SESSION['auth']=$add;
 				$check_users=mysqli_num_rows($run_auth);
 
 				if ($check_users) 
