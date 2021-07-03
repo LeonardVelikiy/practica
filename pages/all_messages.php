@@ -111,7 +111,7 @@ echo "Заполните поля";
 			<div>$out[category]</div>
 			<div>".date('d/m/Y', $out['date_start'])."</div>
 			<div>$out[city]/$out[district]<br>$out[street]/$out[house]</div>
-			<a href=><div>Выполнить</div></a>
+			<a href=#dark_success><div>Выполнить</div></a>
 			</div>";
 		}
 		
