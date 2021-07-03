@@ -19,7 +19,7 @@ strtolower(pathinfo($file_to_saved,PATHINFO_EXTENSION));
 <form method="POST" enctype="multipart/form-data">
 		<input type="file" name="рhoto_end" class="form_mitem1" id="form_mitem1">
 		<input type="submit" name="add" value="Подтвердить">
-		<input type="text" name="id_succ" value="<?php $out['id']?>">
+		<input type="text" name="id_succ" placeholder="<?php $out['id']?>">
 </form>
 <?php
 $id_succ=$_POST['id_succ'];
