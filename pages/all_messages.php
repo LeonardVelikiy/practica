@@ -8,6 +8,10 @@
 <body>
 <div id=dark_success>
 <div id=okno_success>
+<form method="POST" enctype="multipart/form-data">
+		<input type="file" name="рhoto_end" class="form_mitem1" id="form_mitem1">
+		<input type="submit" name="add" value="Подтвердить">
+</form>
 <?php
 $file_get= $_FILES['рhoto_start']['name'];
 			$temp= $_FILES['рhoto_start']['tmp_name'];
@@ -15,9 +19,6 @@ $file_get= $_FILES['рhoto_start']['name'];
 				$imageFileType = 
 strtolower(pathinfo($file_to_saved,PATHINFO_EXTENSION));
 
-?>
-
-<?php
 $id_success=$_GET['id_success'];
 $photo_end=$_POST['photo_end'];
 $status=$_POST['status'];
@@ -54,10 +55,7 @@ echo "Заполните поля";
 }
 }
 ?>
-<form method="POST" enctype="multipart/form-data">
-		<input type="file" name="рhoto_end" class="form_mitem1" id="form_mitem1">
-		<input type="submit" name="add" value="Подтвердить">
-</form>
+
 </div>
 </div>
 	<div class="wrapper">
