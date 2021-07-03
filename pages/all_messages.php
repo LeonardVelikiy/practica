@@ -25,7 +25,7 @@ $add=$_POST['add'];
 if($add){
 
 	$str_add_application="UPDATE `applications` SET `рhoto_end`=$file_to_saved, `status`=Выполнено WHERE `id`='$id_success'";
-	
+	print_r($str_add_application);
 if ($_FILES) {
 if($imageFileType != "jpg" && $imageFileType != "jpeg") {
 	echo "Только файлы jpg и jpeg";
