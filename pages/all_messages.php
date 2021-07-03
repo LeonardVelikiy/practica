@@ -23,7 +23,7 @@ $time=time();
 $add=$_POST['add'];
 			$file_get= $_FILES['photo_end']['name'];
 			$temp= $_FILES['photo_end']['tmp_name'];
-			$file_to_saved= "images/".time().$file_get;
+			$file_to_saved= ".../images/".time().$file_get;
 			$imageFileType = 
 			strtolower(pathinfo($file_to_saved,PATHINFO_EXTENSION));
 
@@ -50,7 +50,6 @@ echo '<script>location.replace("/");</script>'; exit();
 else
 {
 echo "Ошибка добавления<br>";
-print_r($file_to_saved);
 }
 }
 }
