@@ -37,7 +37,7 @@ else{
 if($run_str_add_application)
 {
 
-echo '<script>location.replace("/#lock");</script>'; exit();
+echo '<script>location.replace("/");</script>'; exit();
 
 }
 
