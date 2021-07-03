@@ -23,7 +23,7 @@ $time=time();
 $add=$_POST['add'];
 			$file_get= $_FILES['photo_end']['name'];
 			$temp= $_FILES['photo_end']['tmp_name'];
-			$file_to_saved= "\images/".time().$file_get;
+			$file_to_saved= "images/".time().$file_get;
 			$imageFileType = 
 strtolower(pathinfo($file_to_saved,PATHINFO_EXTENSION));
 
@@ -41,11 +41,11 @@ else{
 	$run_str_add_application=mysqli_query($connect, $str_add_application);
 if($run_str_add_application)
 {
-
+if (move_uploaded_file($temp, $file_to_saved)){}
 echo '<script>location.replace("/");</script>'; exit();
 
 }
-
+}
 else
 {
 echo "Ошибка добавления";
@@ -55,9 +55,10 @@ echo "Ошибка добавления";
 else
 {
 echo "Заполните поля";
+}
+}
+}
 
-}
-}
 ?>
 
 </div>
