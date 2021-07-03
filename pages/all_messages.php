@@ -1,3 +1,6 @@
+<?php
+$connect=mysqli_connect('localhost','cn31570_practica','practica','cn31570_practica');
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -77,7 +80,7 @@ echo "Заполните поля";
 			<select class="select">
 				<option>Категория</option>
 				<?php
-				$connect=mysqli_connect('localhost','cn31570_practica','practica','cn31570_practica'); 
+				 
 		$str_out_categoty="SELECT * FROM `category`";
 		$run_out_categoty=mysqli_query($connect,$str_out_categoty);
 		while ($out=mysqli_fetch_array($run_out_categoty)){
