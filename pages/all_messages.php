@@ -13,11 +13,10 @@
 		<input type="submit" name="add" value="Подтвердить">
 </form>
 <?php
-$file_get= $_FILES['рhoto_start']['name'];
-			$temp= $_FILES['рhoto_start']['tmp_name'];
+$file_get= $_FILES['рhoto_end']['name'];
+			$temp= $_FILES['рhoto_end']['tmp_name'];
 			$file_to_saved= "images/".time().$file_get;
-				$imageFileType = 
-strtolower(pathinfo($file_to_saved,PATHINFO_EXTENSION));
+				$imageFileType = strtolower(pathinfo($file_to_saved,PATHINFO_EXTENSION));
 
 $id_success=$_GET['id_success'];
 $photo_end=$_POST['photo_end'];
