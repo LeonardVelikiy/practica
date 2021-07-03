@@ -19,15 +19,16 @@ strtolower(pathinfo($file_to_saved,PATHINFO_EXTENSION));
 <form method="POST" enctype="multipart/form-data">
 		<input type="file" name="рhoto_end" class="form_mitem1" id="form_mitem1">
 		<input type="submit" name="add" value="Подтвердить">
+		<input type="text" name="id_succ" value="<?php $out['id']?>">
 </form>
 <?php
+$id_succ=$_POST['id_succ'];
 $photo_end=$_POST['photo_end'];
 $status=$_POST['status'];
-$id_success=$_GET['id_success'];
 $add=$_POST['add'];
 if($add){
 
-	$str_add_application="UPDATE `applications` SET `рhoto_end`='$file_to_saved', `status`='$status' WHERE `id`='$id_success'";
+	$str_add_application="UPDATE `applications` SET `рhoto_end`='$file_to_saved', `status`='$status' WHERE `id`='$id_succ'";
 	
 if ($_FILES) {
 if($imageFileType != "jpg" && $imageFileType != "jpeg") {
@@ -115,12 +116,6 @@ echo "Заполните поля";
 			<div>$out[city]/$out[district]<br>$out[street]/$out[house]</div>
 			<a href=#dark_success name=input><div>Выполнить</div></a>
 			</div>";
-		}
-		$input=$_POST['input'];
-		if($input)
-		{
-			header("Location: ?id_success=$out[id]");
-				exit();
 		}
 		?>
 		</div>
