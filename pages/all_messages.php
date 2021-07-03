@@ -12,7 +12,7 @@ $connect=mysqli_connect('localhost','cn31570_practica','practica','cn31570_pract
 <div id=dark_success>
 <div id=okno_success>
 <form method="POST" enctype="multipart/form-data">
-		<input type="file" name="рhoto_end" class="form_mitem1" id="form_mitem1">
+		<input type="file" name="photo_end" class="form_mitem1" id="form_mitem1">
 		<input type="submit" name="add" value="Подтвердить">
 </form>
 <?php
@@ -20,8 +20,8 @@ $id_success=$_GET['id_success'];
 $photo_end=$_POST['photo_end'];
 $status=$_POST['status'];
 $add=$_POST['add'];
-$file_get= $_FILES['рhoto_end']['name'];
-			$temp= $_FILES['рhoto_end']['tmp_name'];
+$file_get= $_FILES['photo_end']['name'];
+			$temp= $_FILES['photo_end']['tmp_name'];
 			$file_to_saved= "images/".time().$file_get;
 				$imageFileType = strtolower(pathinfo($file_to_saved,PATHINFO_EXTENSION));
 
