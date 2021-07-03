@@ -57,7 +57,6 @@ echo "Заполните поля";
 <form method="POST" enctype="multipart/form-data">
 		<input type="file" name="рhoto_end" class="form_mitem1" id="form_mitem1">
 		<input type="submit" name="add" value="Подтвердить">
-		<input type="submit" name=id_succ value=<?php $out['id']?>>
 </form>
 </div>
 </div>
@@ -115,7 +114,7 @@ echo "Заполните поля";
 			<div>$out[category]</div>
 			<div>".date('d/m/Y', $out['date_start'])."</div>
 			<div>$out[city]/$out[district]<br>$out[street]/$out[house]</div>
-			<a href=#dark_success name=input><div>Выполнить</div></a>
+			<a href=?id_succ=$$out[id]#dark_success name=input><div>Выполнить</div></a>
 			</div>";
 		}
 		?>
