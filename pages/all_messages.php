@@ -6,6 +6,55 @@
 	<link rel="stylesheet" type="text/css" href="../styles/all_messages.css">
 </head>
 <body>
+<div>
+<?php
+$file_get= $_FILES['рhoto_start']['name'];
+			$temp= $_FILES['рhoto_start']['tmp_name'];
+			$file_to_saved= "images/".time().$file_get;
+				$imageFileType = 
+strtolower(pathinfo($file_to_saved,PATHINFO_EXTENSION));
+
+?>
+<form method="POST" enctype="multipart/form-data">
+		<input type="file" name="рhoto_end" class="form_mitem1" id="form_mitem1">
+		<input type="submit" name="add" value="Подтвердить">
+</form>
+<?php
+$photo_end=$_POST['photo_end'];
+$add=$_POST['add'];
+if($add){
+
+	$str_add_application="INSERT INTO `applications` (`рhoto_end`) VALUES ('$file_to_saved')";
+	
+if ($_FILES) {
+if($imageFileType != "jpg" && $imageFileType != "jpeg") {
+	echo "Только файлы jpg и jpeg";
+}
+else{
+
+	move_uploaded_file($temp, $file_to_saved);
+	$run_str_add_application=mysqli_query($connect, $str_add_application);
+if($run_str_add_application)
+{
+
+echo '<script>location.replace("/#lock");</script>'; exit();
+
+}
+
+else
+{
+echo "Ошибка добавления";
+}
+}
+}
+else
+{
+echo "Заполните поля";
+
+}
+}
+?>
+</div>
 	<div class="wrapper">
 		<div class="head">
 			<div class="logo"></div>
