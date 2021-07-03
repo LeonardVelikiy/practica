@@ -114,7 +114,7 @@ echo "Заполните поля";
 			echo "<div class=mess_item>
 			<div><img src=../$out[рhoto_start]  width=260 height=260></div>
 			<div>$out[title]</div>
-			<div>$out[description]</div>0
+			<div>$out[description]</div>
 			<div>$out[category]</div>
 			<div>".date('d/m/Y', $out['date_start'])."</div>
 			<div>$out[city]/$out[district]<br>$out[street]/$out[house]</div>
