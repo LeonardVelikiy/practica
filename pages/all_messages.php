@@ -19,6 +19,7 @@ $connect=mysqli_connect('localhost','cn31570_practica','practica','cn31570_pract
 $id_success=$_GET['id_success'];
 $photo_end=$_POST['photo_end'];
 $status=$_POST['status'];
+$time=time();
 $add=$_POST['add'];
 $file_get= $_FILES['photo_end']['name'];
 			$temp= $_FILES['photo_end']['tmp_name'];
@@ -28,7 +29,7 @@ $file_get= $_FILES['photo_end']['name'];
 
 if($add){
 
-	$str_add_application="UPDATE `applications` SET `photo_end`='$file_to_saved', `status`='Выполнено' WHERE `id`='$id_success'";
+	$str_add_application="UPDATE `applications` SET `photo_end`='$file_to_saved', `status`='Выполнено', `date_end`='$time' WHERE `id`='$id_success'";
 if ($_FILES) {
 if($imageFileType != "jpg" && $imageFileType != "jpeg") {
 	echo "Только файлы jpg и jpeg";
