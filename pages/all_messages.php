@@ -16,19 +16,19 @@ $connect=mysqli_connect('localhost','cn31570_practica','practica','cn31570_pract
 		<input type="submit" name="add" value="Подтвердить">
 </form>
 <?php
+$id_success=$_GET['id_success'];
+$photo_end=$_POST['photo_end'];
+$status=$_POST['status'];
+$add=$_POST['add'];
 $file_get= $_FILES['рhoto_end']['name'];
 			$temp= $_FILES['рhoto_end']['tmp_name'];
 			$file_to_saved= "images/".time().$file_get;
 				$imageFileType = strtolower(pathinfo($file_to_saved,PATHINFO_EXTENSION));
 
-$id_success=$_GET['id_success'];
-$photo_end=$_POST['photo_end'];
-$status=$_POST['status'];
-$add=$_POST['add'];
+
 if($add){
 
 	$str_add_application="UPDATE `applications` SET `photo_end`='$file_to_saved', `status`='Выполнено' WHERE `id`='$id_success'";
-	print_r($str_add_application);
 if ($_FILES) {
 if($imageFileType != "jpg" && $imageFileType != "jpeg") {
 	echo "Только файлы jpg и jpeg";
@@ -110,7 +110,7 @@ echo "Заполните поля";
 			echo "<div class=mess_item>
 			<div><img src=../$out[рhoto_start]  width=260 height=260></div>
 			<div>$out[title]</div>
-			<div>$out[description]</div>
+			<div>$out[description]</div>0
 			<div>$out[category]</div>
 			<div>".date('d/m/Y', $out['date_start'])."</div>
 			<div>$out[city]/$out[district]<br>$out[street]/$out[house]</div>
