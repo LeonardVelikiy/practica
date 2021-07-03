@@ -17,7 +17,6 @@ $connect=mysqli_connect('localhost','cn31570_practica','practica','cn31570_pract
 </form>
 <?php
 $id_success=$_GET['id_success'];
-$photo_end=$_POST['photo_end'];
 $status=$_POST['status'];
 $time=time();
 $add=$_POST['add'];
