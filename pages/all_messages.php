@@ -57,7 +57,7 @@ echo "Заполните поля";
 <form method="POST" enctype="multipart/form-data">
 		<input type="file" name="рhoto_end" class="form_mitem1" id="form_mitem1">
 		<input type="submit" name="add" value="Подтвердить">
-		<input type="text" name=id_succ value=<?php $out['id']?>>
+		<input type="submit" name=id_succ value=<?php $out['id']?>>
 </form>
 </div>
 </div>
