@@ -256,7 +256,7 @@ else
 			<a href="pages/about.php">
 				<span class="link_f">О сервисе</span>
 			</a>
-			<a href="all_messages.php">
+			<a href="pages/all_messages.php">
 				<span class="link_s">Все сообщения</span>
 			</a>
 			<?php
