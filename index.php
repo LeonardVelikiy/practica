@@ -229,9 +229,7 @@ strtolower(pathinfo($file_to_saved,PATHINFO_EXTENSION));
 		else{
 		
 			move_uploaded_file($temp, $file_to_saved);
-			if(move_uploaded_file($temp, $file_to_saved)){
 			$run_str_add_application=mysqli_query($connect, $str_add_application);
-			}
 	if($run_str_add_application)
 	{
 		
