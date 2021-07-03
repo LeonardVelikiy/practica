@@ -50,7 +50,7 @@ echo '<script>location.replace("/");</script>'; exit();
 else
 {
 echo "Ошибка добавления<br>";
-print_r($temp);
+print_r($file_to_saved);
 }
 }
 }
