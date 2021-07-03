@@ -22,10 +22,12 @@ strtolower(pathinfo($file_to_saved,PATHINFO_EXTENSION));
 </form>
 <?php
 $photo_end=$_POST['photo_end'];
+$status=$_POST['status'];
+$id_success=$_GET['id_success'];
 $add=$_POST['add'];
 if($add){
 
-	$str_add_application="INSERT INTO `applications` (`рhoto_end`) VALUES ('$file_to_saved')";
+	$str_add_application="UPDATE `applications` SET `рhoto_end`='$file_to_saved', `status`='$status' WHERE `id`='$id_success'";
 	
 if ($_FILES) {
 if($imageFileType != "jpg" && $imageFileType != "jpeg") {
@@ -111,7 +113,7 @@ echo "Заполните поля";
 			<div>$out[category]</div>
 			<div>".date('d/m/Y', $out['date_start'])."</div>
 			<div>$out[city]/$out[district]<br>$out[street]/$out[house]</div>
-			<a href=#dark_success><div>Выполнить</div></a>
+			<a href=#dark_success?id_success=$out[id]><div>Выполнить</div></a>
 			</div>";
 		}
 		
