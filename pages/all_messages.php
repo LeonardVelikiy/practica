@@ -18,13 +18,13 @@ strtolower(pathinfo($file_to_saved,PATHINFO_EXTENSION));
 ?>
 
 <?php
-$id_succ=$_POST['id_succ'];
+$id_success=$_GET['id_success'];
 $photo_end=$_POST['photo_end'];
 $status=$_POST['status'];
 $add=$_POST['add'];
 if($add){
 
-	$str_add_application="UPDATE `applications` SET `рhoto_end`='$file_to_saved', `status`='$status' WHERE `id`='$id_succ'";
+	$str_add_application="UPDATE `applications` SET `рhoto_end`='$file_to_saved', `status`='Выполнено' WHERE `id`='$id_success'";
 	
 if ($_FILES) {
 if($imageFileType != "jpg" && $imageFileType != "jpeg") {
@@ -114,7 +114,7 @@ echo "Заполните поля";
 			<div>$out[category]</div>
 			<div>".date('d/m/Y', $out['date_start'])."</div>
 			<div>$out[city]/$out[district]<br>$out[street]/$out[house]</div>
-			<a href=?id_succ=$$out[id]#dark_success name=input><div>Выполнить</div></a>
+			<a href=?id_success=$out[id]#dark_success name=input><div>Выполнить</div></a>
 			</div>";
 		}
 		?>
