@@ -113,10 +113,15 @@ echo "Заполните поля";
 			<div>$out[category]</div>
 			<div>".date('d/m/Y', $out['date_start'])."</div>
 			<div>$out[city]/$out[district]<br>$out[street]/$out[house]</div>
-			<a href=#dark_success?id_success=$out[id]><div>Выполнить</div></a>
+			<a href=#dark_success name=input><div>Выполнить</div></a>
 			</div>";
 		}
-		
+		$input=$_POST['input'];
+		if($input)
+		{
+			header("Location: ?id_success=$out[id]");
+				exit();
+		}
 		?>
 		</div>
 		<div class="pag_place">
