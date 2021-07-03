@@ -23,9 +23,8 @@ $time=time();
 $add=$_POST['add'];
 			$file_get= $_FILES['photo_end']['name'];
 			$temp= $_FILES['photo_end']['tmp_name'];
-			$file_to_saved= "images/".time().$file_get;
-			$imageFileType = 
-strtolower(pathinfo($file_to_saved,PATHINFO_EXTENSION));
+			$file_to_saved="images/".time().$file_get;
+			$imageFileType=strtolower(pathinfo($file_to_saved,PATHINFO_EXTENSION));
 
 
 if($add){
