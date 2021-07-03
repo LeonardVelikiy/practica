@@ -309,7 +309,7 @@ else
 		while ($out=mysqli_fetch_array($run_out_application_pag)) {
 			$id=$out['id'];
 			echo "<div class=solved_item>
-				<div><img src=$out[photo_end] width=260 height=260></div>
+				<div><img src=../$out[photo_end] width=260 height=260></div>
 				<div>$out[title]</div>
 				<div>$out[description]</div>
 				<div>$out[category]</div>
