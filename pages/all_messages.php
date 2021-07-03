@@ -6,7 +6,8 @@
 	<link rel="stylesheet" type="text/css" href="../styles/all_messages.css">
 </head>
 <body>
-<div>
+<div id=dark_success>
+<div id=okno_success>
 <?php
 $file_get= $_FILES['рhoto_start']['name'];
 			$temp= $_FILES['рhoto_start']['tmp_name'];
@@ -54,6 +55,7 @@ echo "Заполните поля";
 }
 }
 ?>
+</div>
 </div>
 	<div class="wrapper">
 		<div class="head">
