@@ -282,7 +282,7 @@ else
 			}
 			else
 			{
-				echo "<a href=><div class=kab>Мой кабинет</div></a><div class=exit><form method=POST><input type=submit name=exit value=Выход></form></div>";
+				echo "<a href=><div class=kab>Мой кабинет</div></a><div class=exit><form method=POST><input type=submit name=exit value=Выход class=exit></form></div>";
 			}
 			$exit=$_POST['exit'];
 			if ($exit) {
