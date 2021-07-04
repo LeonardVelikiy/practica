@@ -1,3 +1,6 @@
+<?php
+$connect=mysqli_connect('localhost','cn31570_practica','practica','cn31570_practica'); 
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,14 +18,20 @@
 				<div class="out">Выйти</div>
 			</a>
 		</div>
+		<?php
+		$str_auth="SELECT * FROM `users` WHERE name = $user[name], login = $user[login],
+		role = $user[role]";
+			
+		$run_auth=mysqli_query($connect,$str_auth);
+		$out_auth=mysqli_fetch_array($run_auth);
+		?>
 		<span class="yinfo_text">Ваш профиль</span>
 		<div class="user_info">
 			<div class="avatar_img">Аватар</div>
 			<div class="std_info">
-				<div>Логин</div>
-				<div>Имя</div>
-				<div>Фамилия</div>
-				<div>Почта</div>
+				<div><?php echo "$out_auth[login]"?></div>
+				<div><?php echo "$out_auth[first_last_name]"?></div>
+				<div><?php echo "$out_auth[mail]"?></div>
 			</div>
 			<div class="user_info_change">Изменить профиль</div>
 		</div>
