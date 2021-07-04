@@ -48,7 +48,7 @@ $connect=mysqli_connect('localhost','cn31570_practica','practica','cn31570_pract
 				<div>$out[title]</div>
 				<div>$out[description]</div>
 				<div>$out[category]</div>
-				<div>".date('d/m/Y', $out['date_end'])."</div>
+				<div>".date('d/m/Y', $out['date_start'])."</div>
 				<div><a href=>Удалить</a></div>
 			</div>
 		</div>"
