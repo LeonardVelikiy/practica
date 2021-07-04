@@ -25,7 +25,7 @@ $_SESSION['user']=[
 		</div>
 		<?php
 		$str_auth="SELECT * FROM `users` WHERE $_SESSION[user][login]";
-			
+		print_r($_SESSION['user']['login']);
 		$run_auth=mysqli_query($connect,$str_auth);
 		$out_auth=mysqli_fetch_array($run_auth);
 		?>
