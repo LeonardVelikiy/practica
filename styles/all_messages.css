@@ -299,8 +299,11 @@
 }
 #dark_success:target {display: block;}
 
-
-
+.form_mitem1,
+.form_mbtn1
+{
+	float: left;
+}
 .form_mitem1
 {
 font-family: "Nunito-SemiBold";
