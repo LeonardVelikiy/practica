@@ -115,11 +115,11 @@ $online_count = R::count('online', "lastvisit > " . ( time() - (360) ));
 				{
 					if($first_last_name  && $login  && $Emai  && $pass==$copy_pass && $cb) 
 					{
-						echo"прикол_рофл";
-
+						$str_user_plus=mysqli_query($connect, "INSERT INTO `user` (`first_last_name`, `mail`, `pass`, `login`) VALUES ('$first_last_name','$mail','$pass','$login');");
+						echo '<script>location.replace("#");</script>'; exit;
 					}else
 					{
-						echo"неа";
+						echo'<br>заполните все поля <br>';
 					}
 				}
 				?>
