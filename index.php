@@ -245,7 +245,7 @@ strtolower(pathinfo($file_to_saved,PATHINFO_EXTENSION));
 	if($run_str_add_application)
 	{
 		
-		echo '<script>location.replace("/#lock");</script>'; exit();
+		header("Location: #lock");; exit();
 
 }
 	
