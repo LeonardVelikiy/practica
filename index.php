@@ -113,7 +113,7 @@ $online_count = R::count('online', "lastvisit > " . ( time() - (360) ));
 				$reg=$_POST['reg'];
 				if($reg)
 				{
-					if($first_last_name || $login || $Emai || $pass==$copy_pass || $cb) 
+					if($first_last_name  && $login  && $Emai  && $pass==$copy_pass && $cb) 
 					{
 						echo"прикол_рофл";
 
