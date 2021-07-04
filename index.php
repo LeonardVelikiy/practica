@@ -265,6 +265,9 @@ else
 	<div class="wrapper">
 		<div class="head">
 			<div class="logo"></div>
+			<a href="../index.php">
+				<span class="link_i">Главная</span>
+			</a>
 			<a href="pages/about.php">
 				<span class="link_f">О сервисе</span>
 			</a>
