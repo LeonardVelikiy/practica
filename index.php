@@ -66,19 +66,6 @@ if ( $online )
 
 $online_count = R::count('online', "lastvisit > " . ( time() - (360) ));
 
-
-
-		$login=$_POST['login'];
-		$pass=$_POST['pass'];
-		$Email=$_POST['Email'];
-		$first_last_name=$_POST['first_last_name'];
-		$reg=$_POST['reg'];
-		$add_user_str="INSERT INTO `users`(`login`, `pass`, `mail`, `first_last_name`) VALUES ('$login','$pass','$Email','$first_last_name')";
-		
-		if ($reg) 
-		{
-   			$add_user=mysqli_query($connect,$add_user_str);
-		}
 ?>
 <!DOCTYPE html>
 <html>
@@ -115,7 +102,7 @@ $online_count = R::count('online', "lastvisit > " . ( time() - (360) ));
 				{	
 					if($copy_pass == $pass)
 					{
-							if( $first_last_name and $login and $Email and $cb) 
+							if($first_last_name and $login and $Email and $cb) 
 							{
 							$str_user_plus=mysqli_query($connect, "INSERT INTO `user` (`first_last_name`, `mail`, `pass`, `login`) VALUES ('$first_last_name','$Email','$pass','$login');");
 							echo '<script>location.replace("../pages/profile.php");</script>'; exit;
