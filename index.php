@@ -183,7 +183,7 @@ $online_count = R::count('online', "lastvisit > " . ( time() - (360) ));
 </div>
 <div id="lock">
 	<div id="okno2">
-		<a href="index.php#">
+		<a href="/">
 		<div class="close_btn1"></div>
 	</a>
 	<div class=text>Заявка отправлена</div>
@@ -245,7 +245,7 @@ strtolower(pathinfo($file_to_saved,PATHINFO_EXTENSION));
 	if($run_str_add_application)
 	{
 		
-		header("Location: #lock");; exit();
+		echo '<script>location.replace("/#lock");</script>'; exit();
 
 }
 	
@@ -304,7 +304,7 @@ else
 		</div>
 		<div class="tagline">
 			<div></div>
-			<div><a href="#dark">Сообщить о проблеме</a></div>
+			<div><a href="index.php#dark">Сообщить о проблеме</a></div>
 		</div>
 		<div class="solved_text">Последние решенные проблемы</div>
 		<div class="solved_p_item">
