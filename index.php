@@ -112,16 +112,20 @@ $online_count = R::count('online', "lastvisit > " . ( time() - (360) ));
 				$cb=$_POST['cb'];
 				$reg=$_POST['reg'];
 				if($reg)
-				{
-					if($first_last_name and $login and $Emai and $pass==$copy_pass and $cb) 
+				{	
+					if($copy_pass == $pass)
 					{
-						// $str_user_plus=mysqli_query($connect, "INSERT INTO `user` (`first_last_name`, `mail`, `pass`, `login`) VALUES ('$first_last_name','$Email','$pass','$login');");
-						// echo '<script>location.replace("../pages/profile.php");</script>'; exit;
-						echo"круто";
-					}else
-					{
-						echo'<br>заполните все поля<br>';
+							if($first_last_name and $login and $Emai and $cb > 0) 
+							{
+								// $str_user_plus=mysqli_query($connect, "INSERT INTO `user` (`first_last_name`, `mail`, `pass`, `login`) VALUES ('$first_last_name','$Email','$pass','$login');");
+								// echo '<script>location.replace("../pages/profile.php");</script>'; exit;
+								echo"круто";
+							}else
+							{
+								echo'<br>заполните все поля<br>';
+							}
 					}
+					
 				}
 				?>
 			</form>
