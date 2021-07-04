@@ -284,8 +284,8 @@ else
 			$exit=$_POST['exit'];
 			if ($exit)
 			{
+				session_destroy();
 				echo '<script>location.replace("index.php");</script>'; exit;
-				session_destroy();exit;
 			}
 			?>
 		</div>
