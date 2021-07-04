@@ -15,7 +15,10 @@
 			<div class="logo">ЛОГО</div>
 			<span class="link_f">О сервисе</span>
 			<span class="link_s">Все сообщения</span>
-			<div class="out">Выйти</div>
+			<form method="$_POST"><input class="out" type="submit" name="out" value="Выйти"></form>
+			<?php 
+			if($_POST['out']){ unset($_SESSION['user']); echo '<script>location.replace("../index.php");</script>';exit;}
+			?>
 		</div>
 		<div>
 			<div class="left_panel">
