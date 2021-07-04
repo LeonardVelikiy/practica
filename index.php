@@ -136,6 +136,11 @@ $online_count = R::count('online', "lastvisit > " . ( time() - (360) ));
 			$login=$_POST['login'];
 			$pass=$_POST['pass'];
 			$add=$_POST['auth'];
+			if ($add) {
+				$_SESSION['login']=$login;
+				$_SESSION['pass']=$pass;
+				$_SESSION['auth']=$add;
+	}
 			if($add)
 			{
 				$str_auth="SELECT * FROM `users` WHERE `login` = '$login' AND `pass` = '$pass'";
@@ -147,21 +152,9 @@ $online_count = R::count('online', "lastvisit > " . ( time() - (360) ));
 						$user= mysqli_fetch_assoc($run_auth);
 						if ($user['role']==0) 
 						{
-							$_SESSION['user']=[
-								"name" =>$user['name'],
-								"login" =>$user['login'],
-								"role" =>$user['role']
-							];
-						
 							 echo '<script>location.replace("../pages/profile.php");</script>'; exit;
 						}else
 						{
-							$_SESSION['user']=[
-								"name" =>$user['name'],
-								"login" =>$user['login'],
-								"role" =>$user['role']
-							];
-							
 							 echo '<script>location.replace("../pages/administration.php");</script>'; exit;
 						}
 									
@@ -275,7 +268,7 @@ else
 				<span class="link_s">Все сообщения</span>
 			</a>
 			<?php
-			if ($_SESSION['user'] == NULL) {
+			if ($_SESSION['auth'] == NULL) {
 			echo "<a href=#auth_dark>
 				<div class=auth>Войти</div>
 			</a>";
