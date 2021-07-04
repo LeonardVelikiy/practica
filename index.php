@@ -264,10 +264,10 @@ else
 		?></form></div></div>
 	<div class="wrapper">
 		<div class="head">
-			<div class="logo"></div>
-			<a href="../index.php">
+		<a href="../index.php">
 				<span class="link_i">Главная</span>
 			</a>
+			<div class="logo"></div>
 			<a href="pages/about.php">
 				<span class="link_f">О сервисе</span>
 			</a>
