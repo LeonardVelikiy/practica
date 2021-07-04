@@ -140,6 +140,7 @@ $online_count = R::count('online', "lastvisit > " . ( time() - (360) ));
 				$_SESSION['login']=$login;
 				$_SESSION['pass']=$pass;
 				$_SESSION['auth']=$add;
+			}
 			if($add)
 			{
 				$str_auth="SELECT * FROM `users` WHERE `login` = '$_SESSION[login]' AND `pass` = '$_SESSION[pass]'";
