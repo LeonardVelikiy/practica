@@ -1,5 +1,4 @@
 <?php
-session_start();
 $connect=mysqli_connect('localhost','cn31570_practica','practica','cn31570_practica'); 
 
 ?>
@@ -21,8 +20,8 @@ $connect=mysqli_connect('localhost','cn31570_practica','practica','cn31570_pract
 			</a>
 		</div>
 		<?php
-		session_start();
-		$str_auth="SELECT * FROM `users` WHERE `login`=$_SESSION[login]";
+		$login=$_SESSION['login'];
+		$str_auth="SELECT * FROM `users` WHERE `login`='$login'";
 		$run_auth=mysqli_query($connect,$str_auth);
 		$out_auth=mysqli_fetch_array($run_auth);
 		?>
