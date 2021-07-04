@@ -133,6 +133,7 @@ $online_count = R::count('online', "lastvisit > " . ( time() - (360) ));
 				<input type="submit" name="auth" value="Вход" class="form_btn">
 			
 			<?php
+			session_start();
 			$login=$_POST['login'];
 			$pass=$_POST['pass'];
 			$add=$_POST['auth'];
