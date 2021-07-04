@@ -59,12 +59,12 @@ text-decoration: underline;
 
 .link_f
 {
-font-size: 16pt;
-font-family: "Nunito-SemiBold";
-margin-top: 25px;
-margin-left: 230px;
-color: #000000;
-text-decoration: none;
+	font-size: 16pt;
+	font-family: "Nunito-SemiBold";
+	margin-top: 25px;
+	margin-left: 230px;
+	color: #000000;
+	text-decoration: none;
 }
 
 .link_f:hover
