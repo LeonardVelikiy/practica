@@ -120,6 +120,7 @@ $online_count = R::count('online', "lastvisit > " . ( time() - (360) ));
 					}else
 					{
 						echo'<br>заполните все поля<br>';
+						die();
 					}
 				}
 				?>
