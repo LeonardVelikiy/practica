@@ -153,7 +153,7 @@ $online_count = R::count('online', "lastvisit > " . ( time() - (360) ));
 								"role" =>$user['role']
 							];
 						
-							 echo '<script>location.replace("#");</script>'; exit;
+							 echo '<script>location.replace("../pages/profile.php");</script>'; exit;
 						}else
 						{
 							$_SESSION['user']=[
