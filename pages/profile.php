@@ -35,17 +35,24 @@ $connect=mysqli_connect('localhost','cn31570_practica','practica','cn31570_pract
 			</div>
 			<div class="user_info_change">Изменить профиль</div>
 		</div>
+		<?php
+		$str_app="SELECT * FROM `applications` WHERE `user`='$_SESSION[login]'";
+		$run_app=mysqli_query($connect,$str_app);
+		?>
 		<div class="problem_text">Ваши заявки</div>
-		<div class="your_p_item">
-			<div class="prodlem_item">
-				<div>Фото</div>
-				<div>Название</div>
-				<div>Описание</div>
-				<div>Категория</div>
-				<div>Временная метка</div>
-				<div><a href="">Удалить</a></div>
+		<?php
+		while ($out=mysqli_fetch_array($run_app))
+		echo "<div class=your_p_item>
+			<div class=prodlem_item>
+				<div><img src=../$out[photo_end] width=260 height=260></div>
+				<div>$out[title]</div>
+				<div>$out[description]</div>
+				<div>$out[category]</div>
+				<div>".date('d/m/Y', $out['date_end'])."</div>
+				<div><a href=>Удалить</a></div>
 			</div>
-		</div>
+		</div>"
+		?>
 		<div class="delete_acc">
 			<a href="">Удалить профиль</a>
 		</div>
