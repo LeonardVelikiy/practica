@@ -222,10 +222,10 @@ $online_count = R::count('online', "lastvisit > " . ( time() - (360) ));
 			$file_to_saved= "images/".time().$file_get;
 				$imageFileType = 
 strtolower(pathinfo($file_to_saved,PATHINFO_EXTENSION));
-
+		$username=$_SESSION['login'];
 		if($add){
 
-			$str_add_application="INSERT INTO `applications` (`рhoto_start`, `title`, `city`, `district`, `street`, `house`, `description`, `category`, `status`, `date_start`) VALUES ('$file_to_saved', '$title', '$city', '$district', '$street', '$house', '$description', '$category', '$status', '$date_start')";
+			$str_add_application="INSERT INTO `applications` (`user`, `рhoto_start`, `title`, `city`, `district`, `street`, `house`, `description`, `category`, `status`, `date_start`) VALUES ('$username', '$file_to_saved', '$title', '$city', '$district', '$street', '$house', '$description', '$category', '$status', '$date_start')";
 			
 	if ($_FILES && $title && $city && $district && $street && $house && $category != $option) {
 		if($imageFileType != "jpg" && $imageFileType != "jpeg") {
