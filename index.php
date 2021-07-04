@@ -284,7 +284,7 @@ else
 			$exit=$_POST['exit'];
 			if ($exit)
 			{
-				echo '<script>location.replace("/");</script>'; exit;
+				echo '<script>location.replace("index.php");</script>'; exit;
 						unset($_SESSION);
 			}
 			?>
