@@ -4,7 +4,7 @@ $connect=mysqli_connect('localhost','cn31570_practica','practica','cn31570_pract
 $_SESSION['user']=[
 	"name" =>$user['name'],
 	"login" =>$user['login'],
-	"role" =>$user['role'];
+	"role" =>$user['role']]
 ?>
 <!DOCTYPE html>
 <html>
