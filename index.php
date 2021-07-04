@@ -103,6 +103,26 @@ $online_count = R::count('online', "lastvisit > " . ( time() - (360) ));
 				<input type="password" name="copy_pass" placeholder="Повторите пароль" class="form_mitem"><br>
 				<input type="checkbox" name="cb"><span class="pers_inf">Согласие на обработку<br>персональных данных</span><br>
 				<input type="submit" name="reg" value="Регистрация" class="form_btn_reg">
+				<?php
+				$first_last_name=$_POST['first_last_name'];
+				$login=$_POST['login'];
+				$Email=$_POST['Email'];
+				$pass=$_POST['pass'];
+				$copy_pass=$_POST['copy_pass'];
+				$cb=$_POST['cb'];
+				$reg=$_POST['reg'];
+				if($reg)
+				{
+					if($first_last_name || $login || $Emai || $pass==$copy_pass || $cb) 
+					{
+						echo"прикол_рофл";
+
+					}else
+					{
+						echo"неа";
+					}
+				}
+				?>
 			</form>
 		</div>
 		<div class="form_link"><a href="#auth_dark">Войти</a></div>
