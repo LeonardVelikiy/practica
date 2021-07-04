@@ -691,7 +691,7 @@ cursor: pointer;
 border: 4px solid #ff0000;
 }
 
-.exit > div
+.exit > input
 {
 	border: none;
 }
