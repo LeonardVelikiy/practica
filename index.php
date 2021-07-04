@@ -285,7 +285,7 @@ else
 			if ($exit)
 			{
 				echo '<script>location.replace("index.php");</script>'; exit;
-						unset();
+				session_destroy();
 			}
 			?>
 		</div>
