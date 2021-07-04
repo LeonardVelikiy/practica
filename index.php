@@ -282,10 +282,10 @@ else
 				echo "<a href=><div class=kab>Мой кабинет</div></a><div class=exit><form method=POST><input type=submit name=exit value=Выход></form></div>";
 			}
 			$exit=$_POST['exit'];
-			if ($exit)
-			{
+			if ($exit) {
 				session_destroy();
-				echo '<script>location.replace("index.php");</script>'; exit;
+				header("Location: index.php");
+				exit();
 			}
 			?>
 		</div>
