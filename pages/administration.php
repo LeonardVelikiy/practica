@@ -91,7 +91,7 @@
 					echo"</div>";/*part2 */
 					echo"</div>";/*part0 */
 				}
-				if($_GET['applications'])
+				if($_GET['applications'] or !$_GET['applications'])
 				{
 					$str_applications_out=mysqli_query($connect, "SELECT * FROM `applications` WHERE `status`='Новая'");
 					echo"<table border=1 cellspacing=0 >
