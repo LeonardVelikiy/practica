@@ -129,7 +129,7 @@ $online_count = R::count('online', "lastvisit > " . ( time() - (360) ));
 		<div class="form_place">
 			<form method="POST">
 				<input type="text" name="login" placeholder="Логин" class="form_mitem"><br>
-				<input type="text" name="pass" placeholder="Пароль" class="form_mitem"><br>
+				<input type="password" name="pass" placeholder="Пароль" class="form_mitem"><br>
 				<input type="submit" name="auth" value="Вход" class="form_btn">
 			
 			<?php
@@ -148,34 +148,28 @@ $online_count = R::count('online', "lastvisit > " . ( time() - (360) ));
 				$run_auth=mysqli_query($connect,$str_auth);
 				$check_users=mysqli_num_rows($run_auth);
 				$user= mysqli_fetch_assoc($run_auth);
-			// 	if ($check_users) 
-			// 		{
-			// 			
-			// 			if ($user['role']==0) 
-			// 			{
-			// 				//  echo '<script>location.replace("../pages/profile.php");</script>'; exit;
-			// 				echo 'юзер';
-			// 			print_r($check_users);
-			// 			print_r($run_auth);
-			// 			print_r($user);
-			// 			}else
-			// 			{
-			// 				//  echo '<script>location.replace("../pages/administration.php");</script>'; exit;
-			// 				echo 'админ';
-			// 				print_r($check_users);
-			// 			print_r($run_auth);
-			// 			print_r($user);
-			// 			}
+				if ($check_users) 
+					{
+						
+						if ($user['role']==0) 
+						{
+							//  echo '<script>location.replace("../pages/profile.php");</script>'; exit;
+							var_dump($_SESSION['login']);
+							echo 'юзер';
+					
+						}else
+						{
+							//  echo '<script>location.replace("../pages/administration.php");</script>'; exit;
+							echo 'админ';
+					
+						}
 									
-			// 		}else
-			// 		{
-			// 			// echo '<script>location.replace("/");</script>'; exit;
-			// 			echo'пиздос';
-			// 			print_r($check_users);
-			// 			print_r($run_auth);
-			// 			print_r($user);
-			// 			// unset($_SESSION);
-			// 		}
+					}else
+					{
+						// echo '<script>location.replace("/");</script>'; exit;
+						echo'ошибка';
+						// unset($_SESSION);
+					}
 
 			 }
 
@@ -292,7 +286,7 @@ else
 				}
 				else
 				{
-					echo "<a href=../pages/administration.php><div class=kab>херня</div></a><form method=POST><input type=submit name=exit value=Выход class=exit></form>";
+					echo "<a href=../pages/administration.php><div class=kab>Мой кабинет</div></a><form method=POST><input type=submit name=exit value=Выход class=exit></form>";
 				}
 			}
 			$exit=$_POST['exit'];
