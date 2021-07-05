@@ -105,7 +105,7 @@ $online_count = R::count('online', "lastvisit > " . ( time() - (360) ));
 							if($first_last_name and $login and $Email and $cb) 
 							{
 							$str_user_plus=mysqli_query($connect, "INSERT INTO `users` (`first_last_name`, `mail`, `pass`, `login`) VALUES ('$first_last_name','$Email','$pass','$login');");
-							echo '<script>location.replace("../pages/profile.php");</script>'; exit;
+							header("Location: #auth_dark");exit();
 								
 							}else
 							{
