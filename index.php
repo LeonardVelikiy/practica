@@ -154,6 +154,7 @@ require 'pages/rb.php';
 		<select name="category" class="form_mitem4"><option name="option">Выберите категорию</option>
 		<?php
 		$str_out_categoty="SELECT * FROM `category`";
+
 		$run_out_categoty=mysqli_query($connect,$str_out_categoty);
 		while ($out=mysqli_fetch_array($run_out_categoty)){
 			echo "<option>$out[category]</option>";
@@ -224,27 +225,27 @@ else
 				<span class="link_s">Все сообщения</span>
 			</a>
 			<?php
-			if ($_SESSION['login'] == NULL) {
-			echo "<a href=#auth_dark>
-				<div class=auth>Войти</div>
-			</a>";
-			}
-			else
-			{
-				if ($user['role']==0){
-					echo "<a href=../pages/profile.php><div class=kab>Мой кабинет</div></a><form method=POST><input type=submit name=exit value=Выход class=exit></form>";
-				}
-				else
-				{
-					echo "<a href=../pages/administration.php><div class=kab>Мой кабинет</div></a><form method=POST><input type=submit name=exit value=Выход class=exit></form>";
-				}
-			}
-			$exit=$_POST['exit'];
-			if ($exit) {
-				session_destroy();
-				echo '<script>location.replace("index.php");</script>';
-				exit();
-			}
+			// if ($_SESSION['login'] == NULL) {
+			// echo "<a href=#auth_dark>
+			// 	<div class=auth>Войти</div>
+			// </a>";
+			// }
+			// else
+			// {
+			// 	if ($user['role']==0){
+			// 		echo "<a href=../pages/profile.php><div class=kab>Мой кабинет</div></a><form method=POST><input type=submit name=exit value=Выход class=exit></form>";
+			// 	}
+			// 	else
+			// 	{
+			// 		echo "<a href=../pages/administration.php><div class=kab>Мой кабинет</div></a><form method=POST><input type=submit name=exit value=Выход class=exit></form>";
+			// 	}
+			// }
+			// $exit=$_POST['exit'];
+			// if ($exit) {
+			// 	session_destroy();
+			// 	echo '<script>location.replace("index.php");</script>';
+			// 	exit();
+			// }
 			?>
 		</div>
 		<div class="checker">
@@ -264,7 +265,9 @@ else
 		<div class="solved_text">Последние решенные проблемы</div>
 		<div class="solved_p_item">
 		<?php
+
 		$str_out_application="SELECT * FROM `applications` WHERE `status`='Выполнено' ORDER BY `date_end` DESC";
+
 		$run_out_application=mysqli_query($connect,$str_out_application);
 		$int_out_application=mysqli_num_rows($run_out_application);
 		$page_number=$_GET['page_number'];
