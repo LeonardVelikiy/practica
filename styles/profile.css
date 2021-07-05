@@ -17,6 +17,23 @@
 	width: 100%;
 	border-bottom: 5px solid #d2d2d2; 
 }
+
+.logo,
+.link_f,
+.link_s,
+.out
+{
+	float: left;
+}
+
+.logo
+{
+	height: 20px;
+	width: 50px;
+	background-image: url(../images/logo.png);
+	margin-left: 180px;
+	margin-top: 25px;
+}
 .link_i
 {
 font-size: 16pt;
@@ -32,24 +49,7 @@ text-decoration: none;
 {
 text-decoration: underline;
 }
-.logo,
-.link_f,
 .link_i,
-.link_s,
-.out
-{
-	float: left;
-}
-
-.logo
-{
-	height: 20px;
-	width: 50px;
-	background-image: url(../images/logo.png);
-	margin-left: 180px;
-	margin-top: 25px;
-}
-
 .link_f,
 .link_s
 {
