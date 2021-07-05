@@ -165,8 +165,10 @@ $online_count = R::count('online', "lastvisit > " . ( time() - (360) ));
 					{
 						// echo '<script>location.replace("/");</script>'; exit;
 						echo'пиздос';
+						echo"$check_users";
+						echo"$run_auth";
 						echo"$user";
-						unset($_SESSION);
+						// unset($_SESSION);
 					}
 
 			}
