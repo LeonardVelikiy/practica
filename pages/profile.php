@@ -17,8 +17,12 @@ $connect=mysqli_connect('localhost','cn31570_practica','practica','cn31570_pract
 				<span class="link_i">Главная</span>
 			</a>
 			<div class="logo"></div>
-			<span class="link_f">О сервисе</span>
-			<span class="link_s">Все сообщения</span>
+			<a href="about.php">
+				<span class="link_f">О сервисе</span>
+			</a>
+			<a href="all_messages.php">
+				<span class="link_s">Все сообщения</span>
+			</a>
 			<a href="../index.php">
 				<div class="out">Выйти</div>
 			</a>
