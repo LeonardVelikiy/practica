@@ -54,10 +54,13 @@
 					
 
 					echo"</div>";/*part1 */
-
+					
 					$category_del=$_GET['category'];
 					$str_category_del=mysqli_query($connect, "DELETE FROM `category` WHERE id = $category_del");
-
+					if ($str_category_del) {
+						$str_del_category_applications="DELETE FROM `applications` WHERE `category` = '$category_del'";
+						$run_del_category_applications=mysqli_query($connect,$str_del_category_applications);
+					}
 					$str_applications_out=mysqli_query($connect, "SELECT * FROM `category` ");
 					echo"<div class=part2>";
 					echo"<table border=1 cellspacing=0 >
