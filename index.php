@@ -136,7 +136,8 @@ $online_count = R::count('online', "lastvisit > " . ( time() - (360) ));
 			$login=$_POST['login'];
 			$pass=$_POST['pass'];
 			$add=$_POST['auth'];
-			if ($add) {
+			if ($add) 
+			{
 				$_SESSION['login']=$login;
 				$_SESSION['pass']=$pass;
 				$_SESSION['auth']=$add;
@@ -164,6 +165,7 @@ $online_count = R::count('online', "lastvisit > " . ( time() - (360) ));
 					{
 						// echo '<script>location.replace("/");</script>'; exit;
 						echo'пиздос';
+						echo"$user";
 						unset($_SESSION);
 					}
 
