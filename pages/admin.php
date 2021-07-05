@@ -8,11 +8,14 @@
 <body>
 	<div class="wrapper">
 		<div class="head">
+		<a href="../index.php">
+				<span class="link_i">Главная</span>
+			</a>
 			<div class="logo"></div>
-			<a href="pages/about.php">
+			<a href="about.php">
 				<span class="link_f">О сервисе</span>
 			</a>
-			<a href="pages/all_messages.php">
+			<a href="all_messages.php">
 				<span class="link_s">Все сообщения</span>
 			</a>
 			<div class="out">Выйти</div>

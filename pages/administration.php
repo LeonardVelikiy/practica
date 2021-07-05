@@ -12,9 +12,16 @@
 <body>
 	<div class="wrapper">
 		<div class="head">
-			<div class="logo">ЛОГО</div>
-			<span class="link_f">О сервисе</span>
-			<span class="link_s">Все сообщения</span>
+		<a href="../index.php">
+				<span class="link_i">Главная</span>
+			</a>
+			<div class="logo"></div>
+			<a href="pages/about.php">
+				<span class="link_f">О сервисе</span>
+			</a>
+			<a href="pages/all_messages.php">
+				<span class="link_s">Все сообщения</span>
+			</a>
 			<form method="POST"><input class="out" type="submit" name="out" value="Выйти"></form>
 			<?php 
 			$out=$_POST['out'];

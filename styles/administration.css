@@ -28,12 +28,28 @@
 
 .logo
 {
-	height: 20px;
-	width: 50px;
+	height: 85px;
+	width: 85px;
 	margin-left: 180px;
-	margin-top: 25px;
+	background-image: url(../images/logo.png);
+	background-size: 100%;
+	background-repeat: no-repeat;
+}
+.link_i
+{
+font-size: 16pt;
+font-family: "Nunito-SemiBold";
+margin-top: 25px;
+margin-left: 100px;
+color: #000000;
+float: left;
+text-decoration: none;
 }
 
+.link_i:hover
+{
+text-decoration: underline;
+}
 .link_f,
 .link_s
 {
@@ -46,7 +62,14 @@
 	font-size: 16pt;
 	font-family: "Nunito-SemiBold";
 	margin-top: 25px;
-	margin-left: 300px;
+	margin-left: 155px;
+	color: #000000;
+	text-decoration: none;
+}
+
+.link_f:hover
+{
+	text-decoration: underline;
 }
 
 .link_s
@@ -55,6 +78,13 @@
 	font-family: "Nunito-SemiBold";
 	margin-top: 25px;
 	margin-left: 60px;
+	color: #000000;
+	text-decoration: none;
+}
+
+.link_s:hover
+{
+	text-decoration: underline;
 }
 
 .out
