@@ -251,7 +251,26 @@ text-decoration: underline;
   outline: none;
   text-align: center;
 }
+.exit
+{
+width: 100px;
+height: 40px;
+background-color: #ff0000;
+border: 4px solid #a60000;
+border-radius: 10px;
+font-family: "Nunito-Bold";
+font-size: 16pt;
+color: #ffffff;
+text-align: center;
+float: left;
+margin-top: 22px;
+}
 
+.exit:hover
+{
+cursor: pointer;
+border: 4px solid #ff0000;
+}
 
 
 
