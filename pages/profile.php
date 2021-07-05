@@ -1,7 +1,12 @@
 <?php
 session_start();
 $connect=mysqli_connect('localhost','cn31570_practica','practica','cn31570_practica'); 
-
+$exit=$_POST['exit'];
+			if ($exit) {
+				session_destroy();
+				echo '<script>location.replace("index.php");</script>';
+				exit();
+			}
 ?>
 <!DOCTYPE html>
 <html>
@@ -23,9 +28,7 @@ $connect=mysqli_connect('localhost','cn31570_practica','practica','cn31570_pract
 			<a href="all_messages.php">
 				<span class="link_s">Все сообщения</span>
 			</a>
-			<a href="../index.php">
-				<div class="out">Выйти</div>
-			</a>
+			<form method=POST><input type=submit name=exit value=Выход class=exit></form>
 		</div>
 		<?php
 		$str_auth="SELECT * FROM `users` WHERE `login`='$_SESSION[login]'";
