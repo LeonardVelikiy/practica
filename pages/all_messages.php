@@ -202,11 +202,23 @@ echo "Заполните поля";
 		<div class="mess_text">Все сообщения</div>
 		<div class="all_messages_filter">
 			<form>
-			<input type="text" name="" class="text_sub" placeholder="Поиск">
-			<select class="select">
+			<form method=GET ><br>
+<input type=text name=search class=form_mitem1><br>
+			<select class="select" name=select>
 				<option>Категория</option>
+				<input type=submit name=send_search value=Поиск>
+</form>
 				<?php
-				 
+				 $search=$_GET['search'];
+				 $select=$_GET['select'];
+				 $send_search=$_GET['send_search'];
+				 if ($send_search)
+{
+$str_applications_out=mysqli_query($connect, "SELECT * FROM `applications` WHERE ( user LIKE '%$search%' OR title LIKE '%$search%' OR city LIKE '%$search%' OR district LIKE '%$search%' OR street LIKE '%$search%' OR house LIKE '%$search%' OR category LIKE '%$search%' OR status LIKE '%$search%' OR date_end LIKE '%$search%' OR date_start LIKE '%$search%') AND (`status` LIKE '%$select%')");
+}else
+{
+$str_applications_out=mysqli_query($connect,"SELECT * FROM `applications`");
+}
 		$str_out_categoty="SELECT * FROM `category`";
 		$run_out_categoty=mysqli_query($connect,$str_out_categoty);
 		while ($out=mysqli_fetch_array($run_out_categoty)){
