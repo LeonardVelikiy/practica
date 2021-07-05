@@ -37,6 +37,7 @@ require 'pages/rb.php';
 				$copy_pass=$_POST['copy_pass'];
 				$cb=$_POST['cb'];
 				$reg=$_POST['reg'];
+
 				if($reg)
 				{	
 					if($copy_pass == $pass)
@@ -83,8 +84,8 @@ require 'pages/rb.php';
 			}
 			if($add)
 			{
-				// $str_auth="SELECT * FROM `users` WHERE `login` = '$_SESSION[login]' AND `pass` = '$_SESSION[pass]'";
-				// $run_auth= mysqli_query ($connect,$str_auth);
+				$str_auth="SELECT * FROM `users` WHERE `login` = '$_SESSION[login]' AND `pass` = '$_SESSION[pass]'";
+				$run_auth= mysqli_query ($connect,$str_auth);
 
 				$run_auth= mysqli_query($connect,"SELECT * FROM `users` WHERE `login` = '$_SESSION[login]' AND `pass` = '$_SESSION[pass]'");
 
