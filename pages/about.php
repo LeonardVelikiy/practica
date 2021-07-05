@@ -6,19 +6,7 @@
 	<link rel="stylesheet" type="text/css" href="../styles/about.css">
 </head>
 <body>
-	<div class="wrapper">
-		<div class="head">
-		<a href="../index.php">
-				<span class="link_i">Главная</span>
-			</a>
-			<div class="logo"></div>
-			<a href="about.php">
-				<span class="link_f">О сервисе</span>
-			</a>
-			<a href="all_messages.php">
-				<span class="link_s">Все сообщения</span>
-			</a>
-			<div id=auth_dark>
+<div id=auth_dark>
 <div class="form_window_auth">
 		<a href="#">
 			<div class="close_btn"></div>
@@ -71,6 +59,20 @@
 		</div>
 		<div class="form_link"><a href="#reg_dark">Регистрация</a></div>
 	</div>
+</div>
+	<div class="wrapper">
+		<div class="head">
+		<a href="../index.php">
+				<span class="link_i">Главная</span>
+			</a>
+			<div class="logo"></div>
+			<a href="about.php">
+				<span class="link_f">О сервисе</span>
+			</a>
+			<a href="all_messages.php">
+				<span class="link_s">Все сообщения</span>
+			</a>
+			
 			<?php
 			if ($_SESSION['login'] == NULL) {
 			echo "<a href=#auth_dark>
@@ -88,7 +90,7 @@
 				exit();
 			}
 			?>
-		</div><br>
+		</div>
 		<div class="about_text">О сервисе</div>
 		<div class="about_text_place">
 			Сервис создан для оперативного решения проблем, которые касаются улучшения качества жизни в городе, развития инфраструктуры, транспорта, благоустройства.
