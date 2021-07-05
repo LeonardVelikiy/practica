@@ -27,7 +27,7 @@
 			$exit=$_POST['exit'];
 			if ($exit) {
 				session_destroy();
-				echo '<script>location.replace("index.php");</script>';
+				echo '<script>location.replace("/");</script>';
 				exit();}
 			?>
 		</div>
