@@ -147,7 +147,7 @@ $online_count = R::count('online', "lastvisit > " . ( time() - (360) ));
 				 $str_auth="SELECT * FROM `users` WHERE `login` = '$login' AND `pass` = '$pass'";
 				 $run_auth= mysqli_query ($connect,$str_auth);
 
-				 
+				$check_users= mysqli_num_rows($run_auth);
 				$out=mysqli_fetch_array($run_auth);
 				$user= mysqli_fetch_assoc($run_auth);
 
