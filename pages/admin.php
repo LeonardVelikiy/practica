@@ -18,7 +18,14 @@
 			<a href="all_messages.php">
 				<span class="link_s">Все сообщения</span>
 			</a>
-			<div class="out">Выйти</div>
+			<form method=POST><input type=submit name=exit value=Выход class=exit></form>
+			<?php 
+			$exit=$_POST['exit'];
+			if ($exit) {
+				session_destroy();
+				echo '<script>location.replace("index.php");</script>';
+				exit();
+			?>
 		</div>
 		<div class="problem_text">Все заявки</div>
 		<div class="your_p_item">

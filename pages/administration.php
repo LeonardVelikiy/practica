@@ -22,10 +22,13 @@
 			<a href="pages/all_messages.php">
 				<span class="link_s">Все сообщения</span>
 			</a>
-			<form method="POST"><input class="out" type="submit" name="out" value="Выйти"></form>
+			<form method=POST><input type=submit name=exit value=Выход class=exit></form>
 			<?php 
-			$out=$_POST['out'];
-			if($out){ unset($_SESSION['user']); echo '<script>location.replace("../index.php");</script>';exit;}
+			$exit=$_POST['exit'];
+			if ($exit) {
+				session_destroy();
+				echo '<script>location.replace("index.php");</script>';
+				exit();
 			?>
 		</div>
 		<div>
