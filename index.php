@@ -225,11 +225,11 @@ else
 				<span class="link_s">Все сообщения</span>
 			</a>
 			<?php
-			// if ($_SESSION['login'] == NULL) {
-			// echo "<a href=#auth_dark>
-			// 	<div class=auth>Войти</div>
-			// </a>";
-			// }
+			 if ($_SESSION['login'] == NULL) {
+			 echo "<a href=#auth_dark>
+			 	<div class=auth>Войти</div>
+			 </a>";
+			 }
 			// else
 			// {
 			// 	if ($user['role']==0){
