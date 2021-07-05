@@ -93,7 +93,7 @@ $online_count = R::count('online', "lastvisit > " . ( time() - (360) ));
 				<?php
 				$first_last_name=$_POST['first_last_name'];
 				$login=$_POST['login'];
-				$Email=$_POST['Email'];
+				$Email=$_POST['mail'];
 				$pass=$_POST['pass'];
 				$copy_pass=$_POST['copy_pass'];
 				$cb=$_POST['cb'];
