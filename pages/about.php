@@ -18,9 +18,76 @@
 			<a href="all_messages.php">
 				<span class="link_s">Все сообщения</span>
 			</a>
-			<a href="auth_form.php">
-				<div class="auth">Войти</div>
-			</a>
+			<div id=auth_dark>
+<div class="form_window_auth">
+		<a href="#">
+			<div class="close_btn"></div>
+		</a>
+		<div class="form_mname">Вход</div>
+		<div class="form_place">
+			<form method="POST">
+				<input type="text" name="login" placeholder="Логин" class="form_mitem"><br>
+				<input type="text" name="pass" placeholder="Пароль" class="form_mitem"><br>
+				<input type="submit" name="auth" value="Вход" class="form_btn">
+			
+			<?php
+			$login=$_POST['login'];
+			$pass=$_POST['pass'];
+			$add=$_POST['auth'];
+			if ($add) {
+				$_SESSION['login']=$login;
+				$_SESSION['pass']=$pass;
+				$_SESSION['auth']=$add;
+			}
+			if($add)
+			{
+				$str_auth="SELECT * FROM `users` WHERE `login` = '$_SESSION[login]' AND `pass` = '$_SESSION[pass]'";
+				$run_auth=mysqli_query($connect,$str_auth);
+				$check_users=mysqli_num_rows($run_auth);
+
+				if ($check_users) 
+					{
+						$user= mysqli_fetch_assoc($run_auth);
+						if ($user['role']==0) 
+						{
+							 echo '<script>location.replace("../pages/profile.php");</script>'; exit;
+						}else
+						{
+							 echo '<script>location.replace("../pages/administration.php");</script>'; exit;
+						}
+									
+					}else
+					{
+						echo '<script>location.replace("/");</script>'; exit;
+					
+						unset($_SESSION);
+					}
+
+			}
+
+
+			?>
+			</form>
+		</div>
+		<div class="form_link"><a href="#reg_dark">Регистрация</a></div>
+	</div>
+			<?php
+			if ($_SESSION['login'] == NULL) {
+			echo "<a href=#auth_dark>
+				<div class=auth>Войти</div>
+			</a>";
+			}
+			else
+			{
+				echo "<a href=../pages/profile.php><div class=kab>Мой кабинет</div></a><form method=POST><input type=submit name=exit value=Выход class=exit></form>";
+			}
+			$exit=$_POST['exit'];
+			if ($exit) {
+				session_destroy();
+				echo '<script>location.replace("index.php");</script>';
+				exit();
+			}
+			?>
 		</div>
 		<div class="about_text">О сервисе</div>
 		<div class="about_text_place">
