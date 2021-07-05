@@ -292,7 +292,7 @@ else
 				}
 				else
 				{
-					echo "<a href=../pages/administration.php><div class=kab>Мой кабинет</div></a><form method=POST><input type=submit name=exit value=Выход class=exit></form>";
+					echo "<a href=../pages/administration.php><div class=kab>херня</div></a><form method=POST><input type=submit name=exit value=Выход class=exit></form>";
 				}
 			}
 			$exit=$_POST['exit'];
