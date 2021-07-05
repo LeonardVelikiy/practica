@@ -173,14 +173,14 @@ require 'pages/rb.php';
 				$category=$_POST['category'];
 				$date_start=time();
 				$status="Новая";
-				$add=$_POST['add'];
+				$add1=$_POST['add'];
 				$file_get= $_FILES['рhoto_start']['name'];
 			$temp= $_FILES['рhoto_start']['tmp_name'];
 			$file_to_saved= "images/".time().$file_get;
-				$imageFileType = 
-strtolower(pathinfo($file_to_saved,PATHINFO_EXTENSION));
+			$imageFileType = strtolower(pathinfo($file_to_saved,PATHINFO_EXTENSION));
 		$username=$_SESSION['login'];
-		if($add){
+
+		if($add1){
 
 			$str_add_application="INSERT INTO `applications` (`user`, `рhoto_start`, `title`, `city`, `district`, `street`, `house`, `description`, `category`, `status`, `date_start`) VALUES ('$username', '$file_to_saved', '$title', '$city', '$district', '$street', '$house', '$description', '$category', '$status', '$date_start')";
 			
