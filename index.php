@@ -129,6 +129,7 @@ $online_count = R::count('online', "lastvisit > " . ( time() - (360) ));
 							}else
 							{
 								echo'<br>заполните все поля<br>';
+								print_r($str_user_plus);
 							}
 					}
 					
