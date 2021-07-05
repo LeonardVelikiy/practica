@@ -105,7 +105,39 @@ $online_count = R::count('online', "lastvisit > " . ( time() - (360) ));
 							if($first_last_name and $login and $Email and $cb) 
 							{
 							$str_user_plus=mysqli_query($connect, "INSERT INTO `user` (`first_last_name`, `mail`, `pass`, `login`) VALUES ('$first_last_name','$Email','$pass','$login');");
-							echo '<script>location.replace("../pages/profile.php");</script>'; exit;
+							$login=$_POST['login'];
+			$pass=$_POST['pass'];
+			$add=$_POST['auth'];
+			if ($reg) {
+				$_SESSION['login']=$login;
+				$_SESSION['pass']=$pass;
+				$_SESSION['reg']=$reg;
+			}
+			if($reg)
+			{
+				$str_auth="SELECT * FROM `users` WHERE `login` = '$_SESSION[login]' AND `pass` = '$_SESSION[pass]'";
+				$run_auth=mysqli_query($connect,$str_auth);
+				$check_users=mysqli_num_rows($run_auth);
+
+				if ($check_users) 
+					{
+						$user= mysqli_fetch_assoc($run_auth);
+						if ($user['role']==0) 
+						{
+							 echo '<script>location.replace("../pages/profile.php");</script>'; exit;
+						}else
+						{
+							 echo '<script>location.replace("../pages/administration.php");</script>'; exit;
+						}
+									
+					}else
+					{
+						echo '<script>location.replace("/");</script>'; exit;
+					
+						unset($_SESSION);
+					}
+
+			}
 								
 							}else
 							{
