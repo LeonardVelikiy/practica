@@ -16,13 +16,13 @@
 				<span class="link_i">Главная</span>
 			</a>
 			<div class="logo"></div>
-			<a href="pages/about.php">
+			<a href="about.php">
 				<span class="link_f">О сервисе</span>
 			</a>
-			<a href="pages/all_messages.php">
+			<a href="all_messages.php">
 				<span class="link_s">Все сообщения</span>
 			</a>
-			<form method=POST><input type=submit name=exit value=Выход class=exit></form>
+			<div class=kab>Мой кабинет</div></a><form method=POST><input type=submit name=exit value=Выход class=exit></form>";
 			<?php 
 			$exit=$_POST['exit'];
 			if ($exit) {

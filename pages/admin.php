@@ -18,7 +18,7 @@
 			<a href="all_messages.php">
 				<span class="link_s">Все сообщения</span>
 			</a>
-			<form method=POST><input type=submit name=exit value=Выход class=exit></form>
+			<a href=administration.php><div class=kab>Администрация</div></a><form method=POST><input type=submit name=exit value=Выход class=exit></form>";
 			<?php 
 			$exit=$_POST['exit'];
 			if ($exit) {
