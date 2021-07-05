@@ -51,7 +51,7 @@ $exit=$_POST['exit'];
 		?>
 		<div class="problem_text">Ваши заявки</div>
 		<?php
-		while ($out=mysqli_fetch_array($run_app))
+		while ($out=mysqli_fetch_array($run_app)){
 		echo "<div class=your_p_item>
 			<div class=prodlem_item>
 				<div><img src=../$out[рhoto_start] width=260 height=260></div>
@@ -61,10 +61,18 @@ $exit=$_POST['exit'];
 				<div>".date('d/m/Y', $out['date_start'])."</div>
 				<div><a href=>Удалить</a></div>
 			</div>
-		</div>"
+		</div>";
+		}
+		$del_akk=$_POST['del_akk'];
+		if ($del_akk){
+		$users_del=$_GET['users'];
+		$str_user_del=mysqli_query($connect, "DELETE FROM `users` WHERE `login` = '$_SESSION[login]'");
+		}
 		?>
 		<div class="delete_acc">
-			<a href="">Удалить профиль</a>
+			<form method=POST>
+			<input type=submit name=del_akk>Удалить профиль
+	</form>
 		</div>
 		<div class="copyright">Copyright</div>
 	</div>
