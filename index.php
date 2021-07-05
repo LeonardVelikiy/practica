@@ -3,68 +3,6 @@ session_start();
 include '../pages/db.php' ;
 require 'pages/cookies.php';
 require 'pages/rb.php';
-R::setup( 'mysql:host=localhost;dbname=cn31570_practica','cn31570_practica', 'practica' );
-
-$query = mysqli_query($connect, "SELECT COUNT(*) FROM `applications` WHERE `status`='Выполнено'");
-	$count = mysqli_fetch_row($query)[0];
-
-if ( !R::testconnection() )
-{
-        exit ('Нет соединения с базой данных');
-}
- 
-$cookie_key = 'online-cache';
- 
-
-$ip = $_SERVER['REMOTE_ADDR']; 
- 
-
-$online = R::findOne('online', 'ip = ?', array($ip)); 
- 
-if ( $online )
-{
-    $do_update = false;
-    if ( CookieManager::stored($cookie_key) )
-        {
-            $c = (array) @json_decode(CookieManager::read($cookie_key), true);
-            if ( $c )
-            {
-                if( $c['lastvisit'] < (time() - (5 * 1)) ) 
-                {
-                    $do_update = true;
-                }
-            } else
-            {
-                $do_update = true;
-            }
- 
-        } else{
-                $do_update = true;      
-        }
-        if ( $do_update )
-        {
-                $time = time();
-                $online->lastvisit = $time;
-                R::store($online);
-                CookieManager::store($cookie_key, json_encode(array(
-                    'id' => $online->id,
-                    'lastvisit' => $time)));
-                 
-        }
- 
-} else{
-    $time = time();
-    $online = R::dispense('online');
-    $online->lastvisit = $time;
-    $online->ip = $ip;
-    R::store($online);
-    CookieManager::store($cookie_key, json_encode(array(
-        'id' => $online->id,
-        'lastvisit' => $time)));
-}
- 
-
-$online_count = R::count('online', "lastvisit > " . ( time() - (360) ));
 
 ?>
 <!DOCTYPE html>
@@ -91,6 +29,7 @@ $online_count = R::count('online', "lastvisit > " . ( time() - (360) ));
 				<input type="checkbox" name="cb"><span class="pers_inf">Согласие на обработку<br>персональных данных</span><br>
 				<input type="submit" name="reg" value="Регистрация" class="form_btn_reg">
 				<?php
+
 				$first_last_name=$_POST['first_last_name'];
 				$login=$_POST['login'];
 				$Email=$_POST['Email'];
@@ -105,7 +44,7 @@ $online_count = R::count('online', "lastvisit > " . ( time() - (360) ));
 							if($first_last_name and $login and $Email and $cb) 
 							{
 							$str_user_plus=mysqli_query($connect, "INSERT INTO `users` (`first_last_name`, `mail`, `pass`, `login`) VALUES ('$first_last_name','$Email','$pass','$login');");
-							header("Location: #auth_dark");exit();
+							 echo '<script>location.replace("../pages/profile.php");</script>'; exit;
 								
 							}else
 							{
@@ -133,48 +72,54 @@ $online_count = R::count('online', "lastvisit > " . ( time() - (360) ));
 				<input type="submit" name="auth" value="Вход" class="form_btn">
 			
 			<?php
-
+			$login=$_POST['login'];
+			$pass=$_POST['pass'];
 			$add=$_POST['auth'];
-		
+			if ($add) 
+			{
+				$_SESSION['login']=$login;
+				$_SESSION['pass']=$pass;
+				$_SESSION['auth']=$add;
+			}
 			if($add)
 			{
-				$login=$_POST['login'];
-				$pass=$_POST['pass'];
-				
-				$str_auth="SELECT * FROM `users` WHERE `login` = '$login' AND `pass`= '$pass'";
+				// $str_auth="SELECT * FROM `users` WHERE `login` = '$_SESSION[login]' AND `pass` = '$_SESSION[pass]'";
+				// $run_auth= mysqli_query ($connect,$str_auth);
 
-				$run_auth=mysqli_query($connect,$str_auth);
+				$run_auth= mysqli_query($connect,"SELECT * FROM `users` WHERE `login` = '$_SESSION[login]' AND `pass` = '$_SESSION[pass]'");
 
 				$check_users=mysqli_num_rows($run_auth);
 
-						if ($check_users) 
-								{
-									$user= mysqli_fetch_assoc($run_auth);
+				$user= mysqli_fetch_assoc($run_auth);
 
-									if ($user['role']==1) 
-									{
-										$_SESSION['user']=[
-											"name" =>$user['name'],
-											"login" =>$user['login'],
-											"role" =>$user['role']
-										];
-										echo '<script>location.replace("../pages/administration.php");</script>'; exit;
-									}else
-									{
-										$_SESSION['user']=[
-											"name" =>$user['name'],
-											"login" =>$user['login'],
-											"role" =>$user['role']
-										];
-										echo '<script>location.replace("../pages/profile.php");</script>'; exit;
-									}
-												
-								}else
-								{
-									// echo '<script>location.replace("/");</script>'; exit;
-									var_dump($_SESSION['user']);
-									unset($_SESSION);
-								}
+				if ($check_users) 
+					{
+						
+						if ($user['role']==0) 
+						{
+							  echo '<script>location.replace("../pages/profile.php");</script>'; exit;
+							var_dump($_SESSION['login']);
+							echo 'юзер';
+					
+						}else
+						{
+							  echo '<script>location.replace("../pages/administration.php");</script>'; exit;
+							var_dump($_SESSION['login']);
+							
+							echo 'админ';
+					
+						}
+									
+					}else
+					{
+						// echo '<script>location.replace("/");</script>'; exit;
+						var_dump($_SESSION['login']);
+						var_dump($user);
+
+						var_dump($check_users);
+						echo'ошибка';
+						// unset($_SESSION);
+					}
 
 			 }
 
@@ -210,7 +155,6 @@ $online_count = R::count('online', "lastvisit > " . ( time() - (360) ));
 		<?php
 		$str_out_categoty="SELECT * FROM `category`";
 		$run_out_categoty=mysqli_query($connect,$str_out_categoty);
-
 		while ($out=mysqli_fetch_array($run_out_categoty)){
 			echo "<option>$out[category]</option>";
 		}
