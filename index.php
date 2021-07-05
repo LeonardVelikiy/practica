@@ -107,29 +107,16 @@ $online_count = R::count('online', "lastvisit > " . ( time() - (360) ));
 							$str_user_plus=mysqli_query($connect, "INSERT INTO `users` (`first_last_name`, `mail`, `pass`, `login`) VALUES ('$first_last_name','$Email','$pass','$login');");
 							$login=$_POST['login'];
 			$pass=$_POST['pass'];
-			$add=$_POST['auth'];
-			if ($reg) {
 				$_SESSION['login']=$login;
 				$_SESSION['pass']=$pass;
 				$_SESSION['reg']=$reg;
-			}
-			if($reg)
-			{
 				$str_auth="SELECT * FROM `users` WHERE `login` = '$_SESSION[login]' AND `pass` = '$_SESSION[pass]'";
 				$run_auth=mysqli_query($connect,$str_auth);
 				$check_users=mysqli_num_rows($run_auth);
 
 				if ($check_users) 
 					{
-						$user= mysqli_fetch_assoc($run_auth);
-						if ($user['role']==0) 
-						{
 							 echo '<script>location.replace("../pages/profile.php");</script>'; exit;
-						}else
-						{
-							 echo '<script>location.replace("../pages/administration.php");</script>'; exit;
-						}
-									
 					}else
 					{
 						echo '<script>location.replace("/");</script>'; exit;
@@ -145,7 +132,7 @@ $online_count = R::count('online', "lastvisit > " . ( time() - (360) ));
 							}
 					}
 					
-				}
+				
 				?>
 			</form>
 		</div>
