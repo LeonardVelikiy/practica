@@ -152,7 +152,8 @@ $online_count = R::count('online', "lastvisit > " . ( time() - (360) ));
 						$user= mysqli_fetch_assoc($run_auth);
 						if ($user['role']==0) 
 						{
-							 echo '<script>location.replace("../pages/profile.php");</script>'; exit;
+							//  echo '<script>location.replace("../pages/profile.php");</script>'; exit;
+							echo 'юзер';
 						}else
 						{
 							//  echo '<script>location.replace("../pages/administration.php");</script>'; exit;
@@ -161,8 +162,8 @@ $online_count = R::count('online', "lastvisit > " . ( time() - (360) ));
 									
 					}else
 					{
-						echo '<script>location.replace("/");</script>'; exit;
-					
+						// echo '<script>location.replace("/");</script>'; exit;
+						echo'пиздос';
 						unset($_SESSION);
 					}
 
