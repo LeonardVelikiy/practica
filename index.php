@@ -4,7 +4,7 @@ include '../pages/db.php' ;
 require 'pages/cookies.php';
 require 'pages/rb.php';
 R::setup( 'mysql:host=localhost;dbname=cn31570_practica','cn31570_practica', 'practica' );
-$connect=mysqli_connect('localhost','cn31570_practica','practica','cn31570_practica'); 
+
 $query = mysqli_query($connect, "SELECT COUNT(*) FROM `applications` WHERE `status`='Выполнено'");
 	$count = mysqli_fetch_row($query)[0];
 
@@ -275,7 +275,13 @@ else
 			}
 			else
 			{
-				echo "<a href=../pages/profile.php><div class=kab>Мой кабинет</div></a><form method=POST><input type=submit name=exit value=Выход class=exit></form>";
+				if ($user['role']==0){
+					echo "<a href=../pages/profile.php><div class=kab>Мой кабинет</div></a><form method=POST><input type=submit name=exit value=Выход class=exit></form>";
+				}
+				else
+				{
+					echo "<a href=../pages/administration.php><div class=kab>Мой кабинет</div></a><form method=POST><input type=submit name=exit value=Выход class=exit></form>";
+				}
 			}
 			$exit=$_POST['exit'];
 			if ($exit) {

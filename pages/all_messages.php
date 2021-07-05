@@ -183,7 +183,13 @@ echo "Заполните поля";
 			}
 			else
 			{
-				echo "<a href=../pages/profile.php><div class=kab>Мой кабинет</div></a><form method=POST><input type=submit name=exit value=Выход class=exit></form>";
+				if ($user['role']==0){
+					echo "<a href=../pages/profile.php><div class=kab>Мой кабинет</div></a><form method=POST><input type=submit name=exit value=Выход class=exit></form>";
+				}
+				else
+				{
+					echo "<a href=../pages/administration.php><div class=kab>Мой кабинет</div></a><form method=POST><input type=submit name=exit value=Выход class=exit></form>";
+				}
 			}
 			$exit=$_POST['exit'];
 			if ($exit) {
