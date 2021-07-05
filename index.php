@@ -144,10 +144,11 @@ $online_count = R::count('online', "lastvisit > " . ( time() - (360) ));
 			}
 			if($add)
 			{
-				 $str_auth="SELECT * FROM `users` WHERE `login` = '$login' AND `pass` = '$pass'";
-				 $run_auth= mysqli_query ($connect,$str_auth);
+				$str_auth="SELECT * FROM `users` WHERE `login` = '$login' AND `pass` = '$pass'";
+				$run_auth= mysqli_query ($connect,$str_auth);
 
 				$check_users= mysqli_num_rows($run_auth);
+
 				$out=mysqli_fetch_array($run_auth);
 				$user= mysqli_fetch_assoc($run_auth);
 
@@ -174,6 +175,7 @@ $online_count = R::count('online', "lastvisit > " . ( time() - (360) ));
 						// echo '<script>location.replace("/");</script>'; exit;
 						var_dump($_SESSION['login']);
 						var_dump($out);
+						var_dump($user);
 						var_dump($check_users);
 						echo'ошибка';
 						// unset($_SESSION);
