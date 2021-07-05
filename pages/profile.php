@@ -4,7 +4,7 @@ $connect=mysqli_connect('localhost','cn31570_practica','practica','cn31570_pract
 $exit=$_POST['exit'];
 			if ($exit) {
 				session_destroy();
-				echo '<script>location.replace("index.php");</script>';
+				echo '<script>location.replace("/");</script>';
 				exit();
 			}
 ?>
