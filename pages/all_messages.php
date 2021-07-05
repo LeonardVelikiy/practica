@@ -63,8 +63,11 @@ echo "Заполните поля";
 </div>
 	<div class="wrapper">
 		<div class="head">
+		<a href="../index.php">
+				<span class="link_i">Главная</span>
+			</a>
 			<div class="logo"></div>
-			<a href="admin.php">
+			<a href="about_us.php">
 				<div class="link_f">О сервисе</div>
 			</a>
 			<a href="all_messages.php">

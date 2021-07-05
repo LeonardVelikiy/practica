@@ -13,7 +13,10 @@ $connect=mysqli_connect('localhost','cn31570_practica','practica','cn31570_pract
 <body>
 	<div class="wrapper">
 		<div class="head">
-			<div class="logo">ЛОГО</div>
+		<a href="../index.php">
+				<span class="link_i">Главная</span>
+			</a>
+			<div class="logo"></div>
 			<span class="link_f">О сервисе</span>
 			<span class="link_s">Все сообщения</span>
 			<a href="../index.php">
