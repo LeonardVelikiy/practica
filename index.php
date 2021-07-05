@@ -230,22 +230,22 @@ else
 			 	<div class=auth>Войти</div>
 			 </a>";
 			 }
-			// else
-			// {
-			// 	if ($user['role']==0){
-			// 		echo "<a href=../pages/profile.php><div class=kab>Мой кабинет</div></a><form method=POST><input type=submit name=exit value=Выход class=exit></form>";
-			// 	}
-			// 	else
-			// 	{
-			// 		echo "<a href=../pages/administration.php><div class=kab>Мой кабинет</div></a><form method=POST><input type=submit name=exit value=Выход class=exit></form>";
-			// 	}
-			// }
-			// $exit=$_POST['exit'];
-			// if ($exit) {
-			// 	session_destroy();
-			// 	echo '<script>location.replace("index.php");</script>';
-			// 	exit();
-			// }
+			else
+			{
+				if ($user['role']==0){
+					echo "<a href=../pages/profile.php><div class=kab>Мой кабинет</div></a><form method=POST><input type=submit name=exit value=Выход class=exit></form>";
+				}
+				else
+				{
+					echo "<a href=../pages/administration.php><div class=kab>Мой кабинет</div></a><form method=POST><input type=submit name=exit value=Выход class=exit></form>";
+				}
+			}
+			$exit=$_POST['exit'];
+			if ($exit) {
+				session_destroy();
+				echo '<script>location.replace("index.php");</script>';
+				exit();
+			}
 			?>
 		</div>
 		<div class="checker">
