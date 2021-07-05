@@ -155,7 +155,8 @@ $online_count = R::count('online', "lastvisit > " . ( time() - (360) ));
 							 echo '<script>location.replace("../pages/profile.php");</script>'; exit;
 						}else
 						{
-							 echo '<script>location.replace("../pages/administration.php");</script>'; exit;
+							//  echo '<script>location.replace("../pages/administration.php");</script>'; exit;
+							echo 'админ';
 						}
 									
 					}else
