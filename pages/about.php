@@ -6,6 +6,51 @@
 	<link rel="stylesheet" type="text/css" href="../styles/about.css">
 </head>
 <body>
+<div id=reg_dark>
+<div class="form_window_reg">
+		<a href="#">
+			<div class="close_btn"></div>
+		</a>
+		<div class="form_mname">Регистрация</div>
+		<div class="form_place">
+			<form method="POST">
+				<input type="text" name="first_last_name" placeholder="ФИО" class="form_mitem"><br>
+				<input type="text" name="login" placeholder="Логин" class="form_mitem"><br>
+				<input type="text" name="Email" placeholder="Email" class="form_mitem"><br>
+				<input type="password" name="pass" placeholder="Пароль" class="form_mitem"><br>
+				<input type="password" name="copy_pass" placeholder="Повторите пароль" class="form_mitem"><br>
+				<input type="checkbox" name="cb"><span class="pers_inf">Согласие на обработку<br>персональных данных</span><br>
+				<input type="submit" name="reg" value="Регистрация" class="form_btn_reg">
+				<?php
+				$first_last_name=$_POST['first_last_name'];
+				$login=$_POST['login'];
+				$Email=$_POST['Email'];
+				$pass=$_POST['pass'];
+				$copy_pass=$_POST['copy_pass'];
+				$cb=$_POST['cb'];
+				$reg=$_POST['reg'];
+				if($reg)
+				{	
+					if($copy_pass == $pass)
+					{
+							if($first_last_name and $login and $Email and $cb) 
+							{
+							$str_user_plus=mysqli_query($connect, "INSERT INTO `users` (`first_last_name`, `mail`, `pass`, `login`) VALUES ('$first_last_name','$Email','$pass','$login');");
+							header("Location: #auth_dark");exit();
+								
+							}else
+							{
+								echo'<br>заполните все поля<br>';
+							}
+					}
+					
+				}
+				?>
+			</form>
+		</div>
+		<div class="form_link"><a href="#auth_dark">Войти</a></div>
+	</div>
+</div>
 <div id=auth_dark>
 <div class="form_window_auth">
 		<a href="#">
