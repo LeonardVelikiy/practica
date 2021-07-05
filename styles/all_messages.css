@@ -35,7 +35,21 @@
 	background-size: 100%;
 	background-repeat: no-repeat;
 }
+.link_i
+{
+font-size: 16pt;
+font-family: "Nunito-SemiBold";
+margin-top: 25px;
+margin-left: 100px;
+color: #000000;
+float: left;
+text-decoration: none;
+}
 
+.link_i:hover
+{
+text-decoration: underline;
+}
 .link_f,
 .link_s
 {

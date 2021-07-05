@@ -67,7 +67,7 @@ echo "Заполните поля";
 				<span class="link_i">Главная</span>
 			</a>
 			<div class="logo"></div>
-			<a href="about_us.php">
+			<a href="about.php">
 				<div class="link_f">О сервисе</div>
 			</a>
 			<a href="all_messages.php">
