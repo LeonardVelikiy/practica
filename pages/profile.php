@@ -44,7 +44,7 @@ $connect=mysqli_connect('localhost','cn31570_practica','practica','cn31570_pract
 		while ($out=mysqli_fetch_array($run_app))
 		echo "<div class=your_p_item>
 			<div class=prodlem_item>
-				<div><img src=../$out[рhoto_start] width=260 height=260></div>
+				<div>Фото</div>
 				<div>$out[title]</div>
 				<div>$out[description]</div>
 				<div>$out[category]</div>
