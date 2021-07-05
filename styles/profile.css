@@ -28,11 +28,12 @@
 
 .logo
 {
-	height: 20px;
-	width: 50px;
+	height: 85px;
+	width: 85px;
 	margin-left: 180px;
-	margin-top: 25px;
 	background-image: url(../images/logo.png);
+	background-size: 100%;
+	background-repeat: no-repeat;
 }
 .link_i
 {
@@ -81,7 +82,10 @@ text-decoration: underline;
 	color: #000000;
 	text-decoration: none;
 }
-
+.link_s:hover
+{
+	text-decoration: underline;
+}
 .out
 {
 	width: 100px;
