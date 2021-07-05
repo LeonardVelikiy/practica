@@ -148,15 +148,17 @@ $online_count = R::count('online', "lastvisit > " . ( time() - (360) ));
 				// $run_auth= mysqli_query ($connect,$str_auth);
 
 				$run_auth= mysqli_query($connect,"SELECT * FROM `users` WHERE `login` = '$_SESSION[login]' AND `pass` = '$_SESSION[pass]'");
-				
+
 				$check_users=mysqli_num_rows($run_auth);
+				
+				$out=mysqli_fetch_array($run_auth);
 
 				$user= mysqli_fetch_assoc($run_auth);
 
 				if ($check_users) 
 					{
 						
-						if ($user['role']==0) 
+						if ($out['role']==0) 
 						{
 							  echo '<script>location.replace("../pages/profile.php");</script>'; exit;
 							var_dump($_SESSION['login']);
@@ -175,8 +177,7 @@ $online_count = R::count('online', "lastvisit > " . ( time() - (360) ));
 					{
 						// echo '<script>location.replace("/");</script>'; exit;
 						var_dump($_SESSION['login']);
-						var_dump($user);
-						var_dump($str_auth);
+						var_dump($out);
 						var_dump($check_users);
 						echo'ошибка';
 						// unset($_SESSION);
@@ -216,6 +217,7 @@ $online_count = R::count('online', "lastvisit > " . ( time() - (360) ));
 		<?php
 		$str_out_categoty="SELECT * FROM `category`";
 		$run_out_categoty=mysqli_query($connect,$str_out_categoty);
+
 		while ($out=mysqli_fetch_array($run_out_categoty)){
 			echo "<option>$out[category]</option>";
 		}
