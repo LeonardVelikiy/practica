@@ -147,20 +147,21 @@ $online_count = R::count('online', "lastvisit > " . ( time() - (360) ));
 				$str_auth="SELECT * FROM `users` WHERE `login` = '$_SESSION[login]' AND `pass` = '$_SESSION[pass]'";
 				$run_auth=mysqli_query($connect,$str_auth);
 				$check_users=mysqli_num_rows($run_auth);
-				$user = mysqli_fetch_array($run_auth);
+
+				$user= mysqli_fetch_assoc($run_auth);
 
 				if ($check_users) 
 					{
 						
 						if ($user['role']==0) 
 						{
-							//  echo '<script>location.replace("../pages/profile.php");</script>'; exit;
+							  echo '<script>location.replace("../pages/profile.php");</script>'; exit;
 							var_dump($_SESSION['login']);
 							echo 'юзер';
 					
 						}else
 						{
-							//  echo '<script>location.replace("../pages/administration.php");</script>'; exit;
+							  echo '<script>location.replace("../pages/administration.php");</script>'; exit;
 							var_dump($_SESSION['login']);
 							echo 'админ';
 					
