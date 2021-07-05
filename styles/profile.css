@@ -30,9 +30,9 @@
 {
 	height: 20px;
 	width: 50px;
-	background-image: url(../images/logo.png);
 	margin-left: 180px;
 	margin-top: 25px;
+	background-image: url(../images/logo.png);
 }
 .link_i
 {
