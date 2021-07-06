@@ -1,13 +1,12 @@
 <?php
 session_start();
-include 'pages/db.php' ;
+include '../pages/db.php' ;
 require 'pages/cookies.php';
 require 'pages/rb.php';
 R::setup( 'mysql:host=localhost;dbname=cn31570_practica','cn31570_practica', 'practica' );
-$connect=mysqli_connect('localhost','cn31570_practica','practica','cn31570_practica');
+$connect=mysqli_connect('localhost','cn31570_practica','practica','cn31570_practica'); 
 $query = mysqli_query($connect, "SELECT COUNT(*) FROM `applications` WHERE `status`='Выполнено'");
-$count = mysqli_fetch_row($query)[0];
-
+	$count = mysqli_fetch_row($query)[0];
 
 if ( !R::testconnection() )
 {
@@ -67,29 +66,6 @@ if ( $online )
 
 $online_count = R::count('online', "lastvisit > " . ( time() - (360) ));
 
-
-$str_auth="SELECT * FROM `users` WHERE `login` = '$_SESSION[login]' AND `pass` = '$_SESSION[pass]'";
-		$run_auth=mysqli_query($connect,$str_auth);
-		$out_auth=mysqli_fetch_array($run_auth);
-		$check=mysqli_num_rows($run_auth);
-		$login=$_POST["login"];
-		$id=$_GET['id'];
-		$pass=$_POST["pass"];
-		
-		$role=$_POST['role'];
-		$auth=$_POST["auth"];
-		if ($auth) {
-			$_SESSION['login']=$login;
-			$_SESSION['pass']=$pass;
-			$_SESSION['auth']=$auth;
-}
-			if ($_SESSION['auth']) {
-
-			if ($check){
-				header("Location: #");
-			}
-		}
-
 ?>
 <!DOCTYPE html>
 <html>
@@ -114,9 +90,8 @@ $str_auth="SELECT * FROM `users` WHERE `login` = '$_SESSION[login]' AND `pass` =
 				<input type="password" name="copy_pass" placeholder="Повторите пароль" class="form_mitem"><br>
 				<input type="checkbox" name="cb"><span class="pers_inf">Согласие на обработку<br>персональных данных</span><br>
 				<input type="submit" name="reg" value="Регистрация" class="form_btn_reg">
-			</form>
-			<?php
-			$first_last_name=$_POST['first_last_name'];
+				<?php
+				$first_last_name=$_POST['first_last_name'];
 				$login=$_POST['login'];
 				$Email=$_POST['Email'];
 				$pass=$_POST['pass'];
@@ -130,7 +105,7 @@ $str_auth="SELECT * FROM `users` WHERE `login` = '$_SESSION[login]' AND `pass` =
 							if($first_last_name and $login and $Email and $cb) 
 							{
 							$str_user_plus=mysqli_query($connect, "INSERT INTO `user` (`first_last_name`, `mail`, `pass`, `login`) VALUES ('$first_last_name','$Email','$pass','$login');");
-							echo '<script>location.replace("../pages/profile.php");</script>'; exit();
+							echo '<script>location.replace("../pages/profile.php");</script>'; exit;
 								
 							}else
 							{
@@ -140,6 +115,7 @@ $str_auth="SELECT * FROM `users` WHERE `login` = '$_SESSION[login]' AND `pass` =
 					
 				}
 				?>
+			</form>
 		</div>
 		<div class="form_link"><a href="#auth_dark">Войти</a></div>
 	</div>
@@ -192,7 +168,7 @@ $str_auth="SELECT * FROM `users` WHERE `login` = '$_SESSION[login]' AND `pass` =
 					}
 
 			}
-		
+
 
 			?>
 			</form>
@@ -264,8 +240,8 @@ strtolower(pathinfo($file_to_saved,PATHINFO_EXTENSION));
 	if($run_str_add_application)
 	{
 		
-		echo '<script>location.replace("/#lock")</script>'; exit();
-		
+		echo '<script>location.replace("/#lock");</script>'; exit();
+
 }
 	
 	else
@@ -283,9 +259,6 @@ else
 		?></form></div></div>
 	<div class="wrapper">
 		<div class="head">
-			<a href="../index.php">
-				<span class="link_i">Главная</span>
-			</a>
 			<div class="logo"></div>
 			<a href="pages/about.php">
 				<span class="link_f">О сервисе</span>
@@ -317,7 +290,6 @@ else
 				exit();
 			}
 			?>
-
 		</div>
 		<div class="checker">
 			<div>
@@ -351,7 +323,7 @@ else
 		while ($out=mysqli_fetch_array($run_out_application_pag)) {
 			$id=$out['id'];
 			echo "<div class=solved_item>
-				<div><img src=$out[photo_end] width=260 height=260></div>
+				<div><img src=../$out[photo_end] width=260 height=260></div>
 				<div>$out[title]</div>
 				<div>$out[description]</div>
 				<div>$out[category]</div>
