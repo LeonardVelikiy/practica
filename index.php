@@ -283,11 +283,11 @@ else
 			<?php
 			if ($_SESSION['login'] == NULL) {
 			if ($out_auth['role']==0){
-			echo "<a href=../pages/profile.php><div class=kab>Мой кабинет</div></a><input type=submit name=exit value=Выход>";
+			echo "<a href=../pages/profile.php><div class=kab>Мой кабинет</div></a><form method=POST><input type=submit name=exit value=Выход class=exit></form>";
 			}
 			else
 			{
-				echo "<a href=../pages/administration.php><div class=kab>Мой кабинет</div></a><input type=submit name=exit value=Выход>";
+				echo "<a href=../pages/administration.php><div class=kab>Мой кабинет</div></a><form method=POST><input type=submit name=exit value=Выход class=exit></form>";
 			}
 		}
 			else
