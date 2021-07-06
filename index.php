@@ -124,18 +124,18 @@ else{
 			{
 				$_SESSION['login']=$login;
 				$_SESSION['pass']=$pass;
-				$_SESSION['role']=$user['role'];
 				$_SESSION['auth']=$add;
 			}
 			if($add)
 			{
+				
 				$str_auth="SELECT * FROM `users` WHERE `login` = '$_SESSION[login]' AND `pass` = '$_SESSION[pass]' AND `role`='$_SESSION[role]'";
 				$run_auth= mysqli_query ($connect,$str_auth);
 
 				$check_users=mysqli_num_rows($run_auth);
 
 				$user= mysqli_fetch_assoc($run_auth);
-
+					$_SESSION['role']=$user['role'];
 				if ($check_users) 
 					{
 						
@@ -151,8 +151,8 @@ else{
 					}else
 					{
 						session_destroy();
-				echo '<script>location.replace("/");</script>';
-				exit();
+					echo '<script>location.replace("/");</script>';
+					exit();
 					}
 
 			 }
