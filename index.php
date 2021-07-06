@@ -1,6 +1,7 @@
 <?php
 session_start();
 include 'pages/db.php' ;
+$connect=mysqli_connect('localhost','cn31570_practica','practica','cn31570_practica');
 require 'pages/cookies.php';
 require 'pages/rb.php';
 $query = mysqli_query($connect, "SELECT COUNT(*) FROM `applications` WHERE `status`='Выполнено'");
