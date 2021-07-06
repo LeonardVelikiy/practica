@@ -90,17 +90,6 @@ $str_auth="SELECT * FROM `users` WHERE `login` = '$_SESSION[login]' AND `pass` =
 			}
 		}
 
-		$login=$_POST['login'];
-		$pass=$_POST['pass'];
-		$Email=$_POST['Email'];
-		$first_last_name=$_POST['first_last_name'];
-		$reg=$_POST['reg'];
-		$add_user_str="INSERT INTO `users`(`login`, `pass`, `mail`, `first_last_name`) VALUES ('$login','$pass','$Email','$first_last_name')";
-		
-		if ($reg) 
-		{
-   			$add_user=mysqli_query($connect,$add_user_str);
-		}
 ?>
 <!DOCTYPE html>
 <html>
@@ -126,6 +115,31 @@ $str_auth="SELECT * FROM `users` WHERE `login` = '$_SESSION[login]' AND `pass` =
 				<input type="checkbox" name="cb"><span class="pers_inf">Согласие на обработку<br>персональных данных</span><br>
 				<input type="submit" name="reg" value="Регистрация" class="form_btn_reg">
 			</form>
+			<?php
+			$first_last_name=$_POST['first_last_name'];
+				$login=$_POST['login'];
+				$Email=$_POST['Email'];
+				$pass=$_POST['pass'];
+				$copy_pass=$_POST['copy_pass'];
+				$cb=$_POST['cb'];
+				$reg=$_POST['reg'];
+				if($reg)
+				{	
+					if($copy_pass == $pass)
+					{
+							if($first_last_name and $login and $Email and $cb) 
+							{
+							$str_user_plus=mysqli_query($connect, "INSERT INTO `user` (`first_last_name`, `mail`, `pass`, `login`) VALUES ('$first_last_name','$Email','$pass','$login');");
+							echo '<script>location.replace("../pages/profile.php");</script>'; exit;
+								
+							}else
+							{
+								echo'<br>заполните все поля<br>';
+							}
+					}
+					
+				}
+				?>
 		</div>
 		<div class="form_link"><a href="#auth_dark">Войти</a></div>
 	</div>
@@ -252,7 +266,7 @@ strtolower(pathinfo($file_to_saved,PATHINFO_EXTENSION));
 	{
 		
 		echo '<script>location.replace("/#lock")</script>'; exit();
-
+		
 }
 	
 	else
