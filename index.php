@@ -145,41 +145,37 @@ $str_auth="SELECT * FROM `users` WHERE `login` = '$_SESSION[login]' AND `pass` =
 			$login=$_POST['login'];
 			$pass=$_POST['pass'];
 			$add=$_POST['auth'];
+			if ($add) {
+				$_SESSION['login']=$login;
+				$_SESSION['pass']=$pass;
+				$_SESSION['auth']=$add;
+	}
+
 			if($add)
 			{
-				$str_auth="SELECT * FROM `users` WHERE `login` = '$login' AND `pass`= '$pass'";
+				$str_auth="SELECT * FROM `users` WHERE `login` = '$_SESSION[login]' AND `pass` = '$_SESSION[pass]'";
 				$run_auth=mysqli_query($connect,$str_auth);
+				$out_auth=mysqli_fetch_array($run_auth);
 
 				$check_users=mysqli_num_rows($run_auth);
 
 				if ($check_users) 
 					{
 						$user= mysqli_fetch_assoc($run_auth);
-						if ($user['role']==0) 
+						if ($out_auth['role']==0) 
 						{
-							$_SESSION['user']=[
-								"name" =>$user['name'],
-								"login" =>$user['login'],
-								"role" =>$user['role']
-							];
-						
-							 echo '<script>location.replace("/");</script>'; exit;
-						}else
+							 echo '<script>location.replace("../pages/profile.php");</script>'; exit;
+						}
+						else
 						{
-							$_SESSION['user']=[
-								"name" =>$user['name'],
-								"login" =>$user['login'],
-								"role" =>$user['role']
-							];
-							
 							 echo '<script>location.replace("../pages/administration.php");</script>'; exit;
 						}
 									
 					}else
 					{
-						echo '<script>location.replace("/");</script>'; exit;
+						echo '<script>location.replace("/");</script>'; 
 					
-						unset($_SESSION);
+						unset($_SESSION);exit();
 					}
 
 			}
@@ -285,10 +281,15 @@ else
 				<span class="link_s">Все сообщения</span>
 			</a>
 			<?php
-			if ($_SESSION['auth'] == NULL) {
-			
-			echo "<a href=#auth_dark><div class=kab>Мой кабинет</div></a><div class=exit>Выход</div>";
+			if ($_SESSION['login'] == NULL) {
+			if ($out_auth['role']==0){
+			echo "<a href=../pages/profile.php><div class=kab>Мой кабинет</div></a><div class=exit>Выход</div>";
 			}
+			else
+			{
+				echo "<a href=../pages/administration.php><div class=kab>Мой кабинет</div></a><div class=exit>Выход</div>";
+			}
+		}
 			else
 			{
 				echo "<a href=#auth_dark>
