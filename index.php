@@ -164,11 +164,11 @@ $str_auth="SELECT * FROM `users` WHERE `login` = '$_SESSION[login]' AND `pass` =
 						$user= mysqli_fetch_assoc($run_auth);
 						if ($user['role']==0) 
 						{
-							 echo '<script>location.replace("../pages/profile.php");</script>'; exit;
+							 echo '<script>location.replace("../pages/profile.php")</script>'; exit;
 						}
 						else
 						{
-							 echo '<script>location.replace("../pages/administration.php");</script>'; exit;
+							 echo '<script>location.replace("../pages/administration.php")</script>'; exit;
 						}
 									
 					}
@@ -251,7 +251,7 @@ strtolower(pathinfo($file_to_saved,PATHINFO_EXTENSION));
 	if($run_str_add_application)
 	{
 		
-		echo '<script>location.replace("/#lock");</script>'; exit();
+		echo '<script>location.replace("/#lock")</script>'; exit();
 
 }
 	
@@ -301,7 +301,7 @@ else
 			if ($exit) {
 				session_destroy();
 				echo '<script>location.replace("/");</script>';
-				exit;
+				exit();
 			}
 			?>
 
