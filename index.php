@@ -3,7 +3,41 @@ session_start();
 include 'pages/db.php' ;
 require 'pages/cookies.php';
 require 'pages/rb.php';
-
+$query = mysqli_query($connect, "SELECT COUNT(*) FROM `applications` WHERE `status`='Выполнено'");
+$count = mysqli_fetch_row($query)[0];
+R::setup( 'mysql:host=localhost;dbname=cn31570_practica','cn31570_practica', 'practica' );
+$query = mysqli_query($connect, "SELECT COUNT(*) FROM `applications` WHERE `status`='Выполнено'");
+$count = mysqli_fetch_row($query)[0];
+if ( !R::testconnection() ){
+exit ('Нет соединения с базой данных');}
+$cookie_key = 'online-cache';
+$ip = $_SERVER['REMOTE_ADDR']; 
+$online = R::findOne('online', 'ip = ?', array($ip)); 
+if ( $online ){
+$do_update = false;
+if ( CookieManager::stored($cookie_key) ){$c = (array) @json_decode(CookieManager::read($cookie_key), true);
+if ( $c ){
+if( $c['lastvisit'] < (time() - (5 * 1)) ) {
+$do_update = true}
+}
+else{
+	$do_update = true;}
+	} else{
+	$do_update = true;}
+	if ( $do_update ){
+	$time = time();
+	$online->lastvisit = $time;
+	R::store($online);
+	CookieManager::store($cookie_key, json_encode(array('id' => $online->id,'lastvisit' => $time)));}
+	} else{
+	$time = time();
+	$online = R::dispense('online');
+	$online->lastvisit = $time;
+	$online->ip = $ip;
+	R::store($online);
+	CookieManager::store($cookie_key, json_encode(array('id' => $online->id,'lastvisit' => $time)));}
+	$online_count = R::count('online', "lastvisit > " . ( time() - (360) ));
+	
 ?>
 <!DOCTYPE html>
 <html>
