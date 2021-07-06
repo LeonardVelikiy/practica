@@ -1,53 +1,105 @@
 <?php
 session_start();
 include 'pages/db.php' ;
-$connect=mysqli_connect('localhost','cn31570_practica','practica','cn31570_practica');
 require 'pages/cookies.php';
 require 'pages/rb.php';
+R::setup( 'mysql:host=localhost;dbname=cn31570_practica','root', 'root' );
+$connect=mysqli_connect('localhost','root','root','cn31570_practica'); 
 $query = mysqli_query($connect, "SELECT COUNT(*) FROM `applications` WHERE `status`='Выполнено'");
-$count = mysqli_fetch_row($query)[0];
-R::setup( 'mysql:host=localhost;dbname=cn31570_practica','cn31570_practica', 'practica' );
-$query = mysqli_query($connect, "SELECT COUNT(*) FROM `applications` WHERE `status`='Выполнено'");
-$count = mysqli_fetch_row($query)[0];
-if ( !R::testconnection() ){
-exit ('Нет соединения с базой данных');}
-$cookie_key = 'online-cache';
-$ip = $_SERVER['REMOTE_ADDR']; 
-$online = R::findOne('online', 'ip = ?', array($ip)); 
-if ( $online ){
-$do_update = false;
-if ( CookieManager::stored($cookie_key))
+	$count = mysqli_fetch_row($query)[0];
+
+if ( !R::testconnection() )
 {
-$c = (array) @json_decode(CookieManager::read($cookie_key), true);
-if ( $c ){
-if( $c['lastvisit'] < (time() - (5 * 1)) ) {
-$do_update = true;
+        exit ('Нет соединения с базой данных');
 }
+ 
+$cookie_key = 'online-cache';
+ 
+
+$ip = $_SERVER['REMOTE_ADDR']; 
+ 
+
+$online = R::findOne('online', 'ip = ?', array($ip)); 
+ 
+if ( $online )
+{
+    $do_update = false;
+    if ( CookieManager::stored($cookie_key) )
+        {
+            $c = (array) @json_decode(CookieManager::read($cookie_key), true);
+            if ( $c )
+            {
+                if( $c['lastvisit'] < (time() - (60 * 1)) ) 
+                {
+                    $do_update = true;
+                }
+            } else
+            {
+                $do_update = true;
+            }
+ 
+        } else{
+                $do_update = true;      
+        }
+        if ( $do_update )
+        {
+                $time = time();
+                $online->lastvisit = $time;
+                R::store($online);
+                CookieManager::store($cookie_key, json_encode(array(
+                    'id' => $online->id,
+                    'lastvisit' => $time)));
+                 
+        }
+ 
+} else{
+    $time = time();
+    $online = R::dispense('online');
+    $online->lastvisit = $time;
+    $online->ip = $ip;
+    R::store($online);
+    CookieManager::store($cookie_key, json_encode(array(
+        'id' => $online->id,
+        'lastvisit' => $time)));
 }
+ 
+
+$online_count = R::count('online', "lastvisit > " . ( time() - (360) ));
+
+
+$str_auth="SELECT * FROM `users` WHERE `login` = '$_SESSION[login]' AND `pass` = '$_SESSION[pass]'";
+		$run_auth=mysqli_query($connect,$str_auth);
+		$out_auth=mysqli_fetch_array($run_auth);
+		$check=mysqli_num_rows($run_auth);
+		$login=$_POST["login"];
+		$id=$_GET['id'];
+		$pass=$_POST["pass"];
+		
+		$role=$_POST['role'];
+		$auth=$_POST["auth"];
+		if ($auth) {
+			$_SESSION['login']=$login;
+			$_SESSION['pass']=$pass;
+			$_SESSION['auth']=$auth;
 }
-else{
-	$do_update = true;
-}
-	} 
-	else{
-	$do_update = true;
-}
-	if ( $do_update ){
-	$time = time();
-	$online->lastvisit = $time;
-	R::store($online);
-	CookieManager::store($cookie_key, json_encode(array('id' => $online->id,'lastvisit' => $time)));
-} 
-	else{
-	$time = time();
-	$online = R::dispense('online');
-	$online->lastvisit = $time;
-	$online->ip = $ip;
-	R::store($online);
-	CookieManager::store($cookie_key, json_encode(array('id' => $online->id,'lastvisit' => $time)));
-}
-	$online_count = R::count('online', "lastvisit > " . ( time() - (360) ));
-	
+			if ($_SESSION['auth']) {
+
+			if ($check){
+				header("Location: #");
+			}
+		}
+
+		$login=$_POST['login'];
+		$pass=$_POST['pass'];
+		$Email=$_POST['Email'];
+		$first_last_name=$_POST['first_last_name'];
+		$reg=$_POST['reg'];
+		$add_user_str="INSERT INTO `users`(`login`, `pass`, `mail`, `first_last_name`) VALUES ('$login','$pass','$Email','$first_last_name')";
+		
+		if ($reg) 
+		{
+   			$add_user=mysqli_query($connect,$add_user_str);
+		}
 ?>
 <!DOCTYPE html>
 <html>
@@ -72,33 +124,6 @@ else{
 				<input type="password" name="copy_pass" placeholder="Повторите пароль" class="form_mitem"><br>
 				<input type="checkbox" name="cb"><span class="pers_inf">Согласие на обработку<br>персональных данных</span><br>
 				<input type="submit" name="reg" value="Регистрация" class="form_btn_reg">
-				<?php
-
-				$first_last_name=$_POST['first_last_name'];
-				$login=$_POST['login'];
-				$Email=$_POST['Email'];
-				$pass=$_POST['pass'];
-				$copy_pass=$_POST['copy_pass'];
-				$cb=$_POST['cb'];
-				$reg=$_POST['reg'];
-
-				if($reg)
-				{	
-					if($copy_pass == $pass)
-					{
-							if($first_last_name and $login and $Email and $cb) 
-							{
-							$str_user_plus=mysqli_query($connect, "INSERT INTO `users` (`first_last_name`, `mail`, `pass`, `login`) VALUES ('$first_last_name','$Email','$pass','$login');");
-							 echo '<script>location.replace("#auth_dark");</script>'; exit;
-								
-							}else
-							{
-								echo'<br>заполните все поля<br>';
-							}
-					}
-					
-				}
-				?>
 			</form>
 		</div>
 		<div class="form_link"><a href="#auth_dark">Войти</a></div>
@@ -113,48 +138,51 @@ else{
 		<div class="form_place">
 			<form method="POST">
 				<input type="text" name="login" placeholder="Логин" class="form_mitem"><br>
-				<input type="password" name="pass" placeholder="Пароль" class="form_mitem"><br>
+				<input type="text" name="pass" placeholder="Пароль" class="form_mitem"><br>
 				<input type="submit" name="auth" value="Вход" class="form_btn">
 			
 			<?php
 			$login=$_POST['login'];
 			$pass=$_POST['pass'];
 			$add=$_POST['auth'];
-			if ($add) 
-			{
-				$_SESSION['login']=$login;
-				$_SESSION['pass']=$pass;
-				$_SESSION['role']=$user['role'];
-				$_SESSION['auth']=$add;
-			}
 			if($add)
 			{
-				$str_auth="SELECT * FROM `users` WHERE `login` = '$_SESSION[login]' AND `pass` = '$_SESSION[pass]' AND `role`='$_SESSION[role]'";
-				$run_auth= mysqli_query ($connect,$str_auth);
+				$str_auth="SELECT * FROM `users` WHERE `login` = '$login' AND `pass`= '$pass'";
+				$run_auth=mysqli_query($connect,$str_auth);
 
 				$check_users=mysqli_num_rows($run_auth);
 
-				$user= mysqli_fetch_assoc($run_auth);
-
 				if ($check_users) 
 					{
-						
-						if ($_SESSION['role']==0) 
+						$user= mysqli_fetch_assoc($run_auth);
+						if ($user['role']==0) 
 						{
-							  echo '<script>location.replace("../pages/profile.php");</script>'; exit;
-					
+							$_SESSION['user']=[
+								"name" =>$user['name'],
+								"login" =>$user['login'],
+								"role" =>$user['role']
+							];
+						
+							 echo '<script>location.replace("/");</script>'; exit;
 						}else
 						{
-							  echo '<script>location.replace("../pages/administration.php");</script>'; exit;
+							$_SESSION['user']=[
+								"name" =>$user['name'],
+								"login" =>$user['login'],
+								"role" =>$user['role']
+							];
+							
+							 echo '<script>location.replace("../pages/administration.php");</script>'; exit;
 						}
 									
 					}else
 					{
-						echo '<script>location.replace("/");</script>';
-						unset($_SESSION);exit();
+						echo '<script>location.replace("/");</script>'; exit;
+					
+						unset($_SESSION);
 					}
 
-			 }
+			}
 
 
 			?>
@@ -165,7 +193,7 @@ else{
 </div>
 <div id="lock">
 	<div id="okno2">
-		<a href="/">
+		<a href="index.php#">
 		<div class="close_btn1"></div>
 	</a>
 	<div class=text>Заявка отправлена</div>
@@ -187,7 +215,6 @@ else{
 		<select name="category" class="form_mitem4"><option name="option">Выберите категорию</option>
 		<?php
 		$str_out_categoty="SELECT * FROM `category`";
-
 		$run_out_categoty=mysqli_query($connect,$str_out_categoty);
 		while ($out=mysqli_fetch_array($run_out_categoty)){
 			echo "<option>$out[category]</option>";
@@ -206,16 +233,16 @@ else{
 				$category=$_POST['category'];
 				$date_start=time();
 				$status="Новая";
-				$add1=$_POST['add'];
+				$add=$_POST['add'];
 				$file_get= $_FILES['рhoto_start']['name'];
 			$temp= $_FILES['рhoto_start']['tmp_name'];
 			$file_to_saved= "images/".time().$file_get;
-			$imageFileType = strtolower(pathinfo($file_to_saved,PATHINFO_EXTENSION));
-		$username=$_SESSION['login'];
+				$imageFileType = 
+strtolower(pathinfo($file_to_saved,PATHINFO_EXTENSION));
 
-		if($add1){
+		if($add){
 
-			$str_add_application="INSERT INTO `applications` (`user`, `рhoto_start`, `title`, `city`, `district`, `street`, `house`, `description`, `category`, `status`, `date_start`) VALUES ('$username', '$file_to_saved', '$title', '$city', '$district', '$street', '$house', '$description', '$category', '$status', '$date_start')";
+			$str_add_application="INSERT INTO `applications` (`рhoto_start`, `title`, `city`, `district`, `street`, `house`, `description`, `category`, `status`, `date_start`) VALUES ('$file_to_saved', '$title', '$city', '$district', '$street', '$house', '$description', '$category', '$status', '$date_start')";
 			
 	if ($_FILES && $title && $city && $district && $street && $house && $category != $option) {
 		if($imageFileType != "jpg" && $imageFileType != "jpeg") {
@@ -247,7 +274,7 @@ else
 		?></form></div></div>
 	<div class="wrapper">
 		<div class="head">
-		<a href="../index.php">
+			<a href="../index.php">
 				<span class="link_i">Главная</span>
 			</a>
 			<div class="logo"></div>
@@ -258,26 +285,15 @@ else
 				<span class="link_s">Все сообщения</span>
 			</a>
 			<?php
-			 if ($_SESSION['login'] == NULL) {
-			 echo "<a href=#auth_dark>
-			 	<div class=auth>Войти</div>
-			 </a>";
-			 }
+			if ($_SESSION['auth'] == NULL) {
+			
+			echo "<a href=#auth_dark><div class=kab>Мой кабинет</div></a><div class=exit>Выход</div>";
+			}
 			else
 			{
-				if ($_SESSION['role']==0){
-					echo "<a href=../pages/profile.php><div class=kab>Мой кабинет</div></a><form method=POST><input type=submit name=exit value=Выход class=exit></form>";
-				}
-				else
-				{
-					echo "<a href=../pages/administration.php><div class=kab>Мой кабинет</div></a><form method=POST><input type=submit name=exit value=Выход class=exit></form>";
-				}
-			}
-			$exit=$_POST['exit'];
-			if ($exit) {
-				session_destroy();
-				echo '<script>location.replace("index.php");</script>';
-				exit();
+				echo "<a href=#auth_dark>
+				<div class=auth>Войти</div>
+			</a>";
 			}
 			?>
 		</div>
@@ -293,14 +309,12 @@ else
 		</div>
 		<div class="tagline">
 			<div></div>
-			<div><a href="index.php#dark">Сообщить о проблеме</a></div>
+			<div><a href="#dark">Сообщить о проблеме</a></div>
 		</div>
 		<div class="solved_text">Последние решенные проблемы</div>
 		<div class="solved_p_item">
 		<?php
-
 		$str_out_application="SELECT * FROM `applications` WHERE `status`='Выполнено' ORDER BY `date_end` DESC";
-
 		$run_out_application=mysqli_query($connect,$str_out_application);
 		$int_out_application=mysqli_num_rows($run_out_application);
 		$page_number=$_GET['page_number'];
@@ -315,7 +329,7 @@ else
 		while ($out=mysqli_fetch_array($run_out_application_pag)) {
 			$id=$out['id'];
 			echo "<div class=solved_item>
-				<div><img src=../$out[photo_end] width=260 height=260></div>
+				<div><img src=$out[photo_end] width=260 height=260></div>
 				<div>$out[title]</div>
 				<div>$out[description]</div>
 				<div>$out[category]</div>
