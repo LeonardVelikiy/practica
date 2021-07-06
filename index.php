@@ -179,7 +179,11 @@ $str_auth="SELECT * FROM `users` WHERE `login` = '$_SESSION[login]' AND `pass` =
 					}
 
 			}
-
+			$exit=$_POST['exit'];
+			if ($exit) {
+				session_destroy();
+				echo '<script>location.replace("/");</script>';
+				exit();}
 
 			?>
 			</form>
