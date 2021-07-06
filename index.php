@@ -80,11 +80,12 @@ require 'pages/rb.php';
 			{
 				$_SESSION['login']=$login;
 				$_SESSION['pass']=$pass;
+				$_SESSION['role']=$user['role'];
 				$_SESSION['auth']=$add;
 			}
 			if($add)
 			{
-				$str_auth="SELECT * FROM `users` WHERE `login` = '$_SESSION[login]' AND `pass` = '$_SESSION[pass]'";
+				$str_auth="SELECT * FROM `users` WHERE `login` = '$_SESSION[login]' AND `pass` = '$_SESSION[pass]' AND `role`='$_SESSION[role]'";
 				$run_auth= mysqli_query ($connect,$str_auth);
 
 				$check_users=mysqli_num_rows($run_auth);
@@ -94,7 +95,7 @@ require 'pages/rb.php';
 				if ($check_users) 
 					{
 						
-						if ($user['role']==0) 
+						if ($_SESSION['role']==0) 
 						{
 							  echo '<script>location.replace("../pages/profile.php");</script>'; exit;
 					
@@ -220,7 +221,7 @@ else
 			 }
 			else
 			{
-				if ($user['role']==0){
+				if ($_SESSION['role']==0){
 					echo "<a href=../pages/profile.php><div class=kab>Мой кабинет</div></a><form method=POST><input type=submit name=exit value=Выход class=exit></form>";
 				}
 				else
