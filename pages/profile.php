@@ -71,7 +71,7 @@ $exit=$_POST['exit'];
 		?>
 		<div class="delete_acc">
 			<form method=POST>
-			<input type=submit name=del_akk>Удалить профиль
+			<input type=submit name=del_akk value="Удалить профиль">
 	</form>
 		</div>
 		<div class="copyright">Copyright</div>
