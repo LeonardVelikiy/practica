@@ -282,19 +282,20 @@ else
 			</a>
 			<?php
 			if ($_SESSION['login'] == NULL) {
-			if ($out_auth['role']==0){
-			echo "<a href=../pages/profile.php><div class=kab>Мой кабинет</div></a><form method=POST><input type=submit name=exit value=Выход class=exit></form>";
-			}
-			else
-			{
-				echo "<a href=../pages/administration.php><div class=kab>Мой кабинет</div></a><form method=POST><input type=submit name=exit value=Выход class=exit></form>";
-			}
-		}
-			else
-			{
 				echo "<a href=#auth_dark>
 				<div class=auth>Войти</div>
 			</a>";
+			}
+			else
+			{
+				
+			if ($out_auth['role']==0){
+				echo "<a href=../pages/profile.php><div class=kab>Мой кабинет</div></a><form method=POST><input type=submit name=exit value=Выход class=exit></form>";
+				}
+				else
+				{
+					echo "<a href=../pages/administration.php><div class=kab>Мой кабинет</div></a><form method=POST><input type=submit name=exit value=Выход class=exit></form>";
+				}
 			}
 			?>
 		</div>
