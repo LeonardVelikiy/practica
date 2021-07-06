@@ -159,14 +159,13 @@ $str_auth="SELECT * FROM `users` WHERE `login` = '$_SESSION[login]' AND `pass` =
 			<?php
 			$login=$_POST['login'];
 			$pass=$_POST['pass'];
-			$add=$_POST['auth'];
-			if ($add) {
+			$auth=$_POST['auth'];
+			if ($auth) {
 				$_SESSION['login']=$login;
 				$_SESSION['pass']=$pass;
-				$_SESSION['auth']=$add;
 	}
 
-			if($add)
+			if($auth)
 			{
 				$str_auth="SELECT * FROM `users` WHERE `login` = '$_SESSION[login]' AND `pass` = '$_SESSION[pass]'";
 				$run_auth=mysqli_query($connect,$str_auth);
