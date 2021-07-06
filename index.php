@@ -301,7 +301,7 @@ else
 			if ($exit) {
 				session_destroy();
 				echo '<script>location.replace("/");</script>';
-				exit();
+				exit;
 			}
 			?>
 
