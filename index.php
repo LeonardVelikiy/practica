@@ -87,8 +87,6 @@ require 'pages/rb.php';
 				$str_auth="SELECT * FROM `users` WHERE `login` = '$_SESSION[login]' AND `pass` = '$_SESSION[pass]'";
 				$run_auth= mysqli_query ($connect,$str_auth);
 
-				$run_auth= mysqli_query($connect,"SELECT * FROM `users` WHERE `login` = '$_SESSION[login]' AND `pass` = '$_SESSION[pass]'");
-
 				$check_users=mysqli_num_rows($run_auth);
 
 				$user= mysqli_fetch_assoc($run_auth);
@@ -99,27 +97,16 @@ require 'pages/rb.php';
 						if ($user['role']==0) 
 						{
 							  echo '<script>location.replace("../pages/profile.php");</script>'; exit;
-							var_dump($_SESSION['login']);
-							echo 'юзер';
 					
 						}else
 						{
 							  echo '<script>location.replace("../pages/administration.php");</script>'; exit;
-							var_dump($_SESSION['login']);
-							
-							echo 'админ';
-					
 						}
 									
 					}else
 					{
-						// echo '<script>location.replace("/");</script>'; exit;
-						var_dump($_SESSION['login']);
-						var_dump($user);
-
-						var_dump($check_users);
-						echo'ошибка';
-						// unset($_SESSION);
+						echo '<script>location.replace("/");</script>'; exit;
+						unset($_SESSION);
 					}
 
 			 }
