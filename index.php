@@ -89,7 +89,7 @@ else{
 							if($first_last_name and $login and $Email and $cb) 
 							{
 							$str_user_plus=mysqli_query($connect, "INSERT INTO `users` (`first_last_name`, `mail`, `pass`, `login`) VALUES ('$first_last_name','$Email','$pass','$login');");
-							 echo '<script>location.replace("../pages/profile.php");</script>'; exit;
+							 echo '<script>location.replace("#auth_dark");</script>'; exit;
 								
 							}else
 							{
@@ -141,17 +141,18 @@ else{
 						
 						if ($_SESSION['role']==0) 
 						{
-							  echo '<script>location.replace("../pages/profile.php");</script>'; exit;
+							  echo '<script>location.replace("../pages/profile.php");</script>'; exit();
 					
 						}else
 						{
-							  echo '<script>location.replace("../pages/administration.php");</script>'; exit;
+							  echo '<script>location.replace("../pages/administration.php");</script>'; exit();
 						}
 									
 					}else
 					{
-						echo '<script>location.replace("/");</script>'; exit;
-						unset($_SESSION);
+						session_destroy();
+				echo '<script>location.replace("/");</script>';
+				exit();
 					}
 
 			 }
