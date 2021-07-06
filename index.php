@@ -179,11 +179,7 @@ $str_auth="SELECT * FROM `users` WHERE `login` = '$_SESSION[login]' AND `pass` =
 					}
 
 			}
-			$exit=$_POST['exit'];
-			if ($exit) {
-				session_destroy();
-				echo '<script>location.replace("/");</script>';
-				exit();}
+		
 
 			?>
 			</form>
@@ -287,11 +283,11 @@ else
 			<?php
 			if ($_SESSION['login'] == NULL) {
 			if ($out_auth['role']==0){
-			echo "<a href=../pages/profile.php><div class=kab>Мой кабинет</div></a><div class=exit>Выход</div>";
+			echo "<a href=../pages/profile.php><div class=kab>Мой кабинет</div></a><input type=submit name=exit value=Выход>";
 			}
 			else
 			{
-				echo "<a href=../pages/administration.php><div class=kab>Мой кабинет</div></a><div class=exit>Выход</div>";
+				echo "<a href=../pages/administration.php><div class=kab>Мой кабинет</div></a><input type=submit name=exit value=Выход>";
 			}
 		}
 			else
