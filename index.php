@@ -171,11 +171,12 @@ $str_auth="SELECT * FROM `users` WHERE `login` = '$_SESSION[login]' AND `pass` =
 							 echo '<script>location.replace("../pages/administration.php");</script>'; exit;
 						}
 									
-					}else
+					}
+					else
 					{
-						echo '<script>location.replace("/");</script>'; 
-					
-						unset($_SESSION);exit();
+						session_destroy();
+				echo '<script>location.replace("/");</script>';
+				exit();
 					}
 
 			}
@@ -301,7 +302,8 @@ else
 			if ($exit) {
 				session_destroy();
 				echo '<script>location.replace("/");</script>';
-				exit();}
+				exit();
+			}
 			?>
 
 		</div>
