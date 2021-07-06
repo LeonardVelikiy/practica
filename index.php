@@ -36,8 +36,7 @@ else{
 	$online->lastvisit = $time;
 	R::store($online);
 	CookieManager::store($cookie_key, json_encode(array('id' => $online->id,'lastvisit' => $time)));
-}
-	} 
+} 
 	else{
 	$time = time();
 	$online = R::dispense('online');
