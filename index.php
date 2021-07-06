@@ -175,8 +175,7 @@ $str_auth="SELECT * FROM `users` WHERE `login` = '$_SESSION[login]' AND `pass` =
 					else
 					{
 						session_destroy();
-				echo '<div>Неправильный логин или пароль</div>';
-				exit();
+						exit();
 					}
 
 			}
