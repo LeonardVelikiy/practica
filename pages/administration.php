@@ -26,7 +26,7 @@
 			<?php 
 			$exit=$_POST['exit'];
 			if ($exit) {
-				session_destroy();
+				session_destroy();exit();
 				echo '<script>location.replace("/");</script>';
 				exit();}
 			?>
