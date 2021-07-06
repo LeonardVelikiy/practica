@@ -15,27 +15,37 @@ $ip = $_SERVER['REMOTE_ADDR'];
 $online = R::findOne('online', 'ip = ?', array($ip)); 
 if ( $online ){
 $do_update = false;
-if ( CookieManager::stored($cookie_key) ){$c = (array) @json_decode(CookieManager::read($cookie_key), true);
+if ( CookieManager::stored($cookie_key))
+{
+$c = (array) @json_decode(CookieManager::read($cookie_key), true);
 if ( $c ){
 if( $c['lastvisit'] < (time() - (5 * 1)) ) {
-$do_update = true}
+$do_update = true;
+}
+}
 }
 else{
-	$do_update = true;}
-	} else{
-	$do_update = true;}
+	$do_update = true;
+}
+	} 
+	else{
+	$do_update = true;
+}
 	if ( $do_update ){
 	$time = time();
 	$online->lastvisit = $time;
 	R::store($online);
-	CookieManager::store($cookie_key, json_encode(array('id' => $online->id,'lastvisit' => $time)));}
-	} else{
+	CookieManager::store($cookie_key, json_encode(array('id' => $online->id,'lastvisit' => $time)));
+}
+	} 
+	else{
 	$time = time();
 	$online = R::dispense('online');
 	$online->lastvisit = $time;
 	$online->ip = $ip;
 	R::store($online);
-	CookieManager::store($cookie_key, json_encode(array('id' => $online->id,'lastvisit' => $time)));}
+	CookieManager::store($cookie_key, json_encode(array('id' => $online->id,'lastvisit' => $time)));
+}
 	$online_count = R::count('online', "lastvisit > " . ( time() - (360) ));
 	
 ?>
