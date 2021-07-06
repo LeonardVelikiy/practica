@@ -299,7 +299,7 @@ else
 			}
 			$exit=$_POST['exit'];
 			if ($exit) {
-				session_destroy();exit();
+				session_destroy();
 				echo '<script>location.replace("/");</script>';
 				exit();
 			}
