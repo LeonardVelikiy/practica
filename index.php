@@ -275,7 +275,7 @@ else
 			else
 			{
 				
-			if ($user['role']==0){
+			if ($user['role']=0){
 				echo "<a href=../pages/profile.php><div class=kab>Мой кабинет</div></a><form method=POST><input type=submit name=exit value=Выход class=exit></form>";
 				}
 				else
@@ -297,7 +297,7 @@ else
 				<div>Заинтересованых<br>граждан</div>
 			</div>
 			<div>
-				<div><?php echo "";?></div>
+				<div><?php echo "$count";?></div>
 				<div>Решенных<br>проблем</div>
 			</div>
 		</div>
