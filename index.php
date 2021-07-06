@@ -1,6 +1,6 @@
 <?php
 session_start();
-include '../pages/db.php' ;
+include 'pages/db.php' ;
 require 'pages/cookies.php';
 require 'pages/rb.php';
 
