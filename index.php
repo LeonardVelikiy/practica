@@ -297,7 +297,7 @@ else
 				<div>Заинтересованых<br>граждан</div>
 			</div>
 			<div>
-				<div><?php echo "$count";?></div>
+				<div><?php echo "";?></div>
 				<div>Решенных<br>проблем</div>
 			</div>
 		</div>
