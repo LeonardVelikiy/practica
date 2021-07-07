@@ -214,7 +214,6 @@ echo "Заполните поля";
 					echo "<option>$out[category]</option>";
 				}
 				?>
-				<input type=submit name=send_search value=Поиск>
 			</form>
 				<?php
 				 $search=$_GET['search'];
@@ -229,7 +228,7 @@ echo "Заполните поля";
 								}
 		?>
 			</select>
-			<input type="submit" name="" class="sub_btn" value="">
+			<input type="submit" name="send_search" class="sub_btn" value="">
 			</form>
 		</div>
 		<div class="mess_p_item">
