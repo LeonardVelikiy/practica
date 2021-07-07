@@ -204,7 +204,7 @@ echo "Заполните поля";
 		<div class="all_messages_filter">
 			<form>
 			<form method=GET><br>
-			<input type=text name=search class=form_mitem1><br>
+			<input type=text name=search class=form_mitem1>
 				<select class="select" name=select>
 				<option>Категория</option>
 				<?php
