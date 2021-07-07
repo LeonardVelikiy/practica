@@ -76,7 +76,7 @@
 					}
 					$str_applications_out=mysqli_query($connect, "SELECT * FROM `category` ");
 					echo"<div class=part2>";
-					echo"<table border=1 cellspacing=0 >
+					echo"<div><table border=1 cellspacing=0 >
 					<tr>
 						<th style=text-aligin:center;>категории
 						<th style=text-aligin:center;>действие
@@ -90,14 +90,14 @@
 							<td><a href=?category=$out[id]>удалить</a>
 						</tr>";
 						}
-					echo "</table>";
+					echo "</table></div>";
 					echo"</div>";/*part2 */
 					echo"</div>";/*part0 */
 				}
 				if($_GET['applications'])
 				{
 					$str_applications_out=mysqli_query($connect, "SELECT * FROM `applications` WHERE `status`='Новая'");
-					echo"<table border=1 cellspacing=0 >
+					echo"<div class=table><table border=1 cellspacing=0 >
 					<tr>
 						<th style=text-aligin:center;>Публикующий
 						<th style=text-aligin:center;>статус
@@ -117,7 +117,7 @@
 							<td>".date('d/m/Y',$out['date_start'])."
 						</tr>";
 						}
-					echo "</table>";
+					echo "</table></div>";
 					
 				}
 				if($_GET['users'])
@@ -127,7 +127,7 @@
 					$str_user_del=mysqli_query($connect, "DELETE FROM `users` WHERE id = $users_del");
 
 					$str_users_out=mysqli_query($connect, "SELECT * FROM `users`");
-					echo"<table border=1 cellspacing=0 style=widht:50%;>
+					echo"<div class=table><table border=1 cellspacing=0 style=widht:50%;>
 					<tr>
 						<th style=text-aligin:center;>ФИО
 						<th style=text-aligin:center;>Login
@@ -147,7 +147,7 @@
 							<td><a href=?users=$out[id]>удалить</a>
 						</tr>";
 						}
-					echo "</table>";
+					echo "</table></div>";
 				}
 				if($_GET['aplications_work'])
 				{
@@ -155,7 +155,7 @@
 					$str_aplications_work_del=mysqli_query($connect, "DELETE FROM `applications` WHERE id = $aplications_work_del");
 
 					$str_applications_out=mysqli_query($connect, "SELECT * FROM `applications`");
-					echo"<table border=1 cellspacing=0 >
+					echo"<div class=table><table border=1 cellspacing=0 >
 					<tr>
 						<th style=text-aligin:center;>Публикующий
 						<th style=text-aligin:center;>статус
@@ -187,7 +187,7 @@
 							<td><a href=?aplications_work=$out[id] style=color:blue;>изменить</a>
 						</tr>";
 						}
-					echo "</table>";
+					echo "</table></div>";
 				}
 				if($_GET['users_work']or$_GET['search']or$_GET['send_search'])
 				{
