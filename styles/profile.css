@@ -361,7 +361,36 @@ text-decoration: underline;
 	font-family: "Nunito-Bold";
 }
 
-
+#okno_edit
+{
+	height: 150px;
+  width: 400px;
+  border: 3px solid black;
+  border-radius: 20px;
+  margin: 150px auto;
+  background-color: white;
+        text-align: center;
+        padding: 15px;
+        position: absolute;
+  		  top: 0;
+  		  right: 0;
+  		  bottom: 0;
+  		  left: 0;
+  		  margin: auto;
+  		  position: fixed;
+}
+#dark_edit
+{
+	  background: rgba(102, 102, 102, 0.5);
+	  width: 100%;
+	  height: 100%;
+	  position: absolute;
+	  top: 0;
+	  left: 0;
+	  display: none;
+	  position: fixed;
+}
+#dark_edit:target {display: block;}
 
 .exit
 {
