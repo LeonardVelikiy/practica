@@ -204,10 +204,16 @@ echo "Заполните поля";
 		<div class="all_messages_filter">
 			<form>
 			<form method=GET><br>
-			<input type=text name=search class=form_mitem1><br>
-				<!-- <select class="select" name=select> -->
+			<input type=text name=search class=form_mitem1 placeholder="Поиск...">
+				<select class="select" name=select>
 				<option>Категория</option>
-				<input type=submit name=send_search value=Поиск>
+				<?php
+				$str_out_categoty="SELECT * FROM `category`";
+				$run_out_categoty=mysqli_query($connect,$str_out_categoty);
+				while ($out=mysqli_fetch_array($run_out_categoty)){
+					echo "<option>$out[category]</option>";
+				}
+				?>
 			</form>
 				<?php
 				 $search=$_GET['search'];
@@ -220,16 +226,9 @@ echo "Заполните поля";
 								{
 								$str_applications_out=mysqli_query($connect,"SELECT * FROM `applications`");
 								}
-				$str_out_categoty="SELECT * FROM `category`";
-				$run_out_categoty=mysqli_query($connect,$str_out_categoty);
-
-				while ($out=mysqli_fetch_array($run_out_categoty))
-				{
-					echo "<option>$out[category]</option>";
-				}
 		?>
 			</select>
-			<input type="submit" name="" class="sub_btn" value="">
+			<input type="submit" name="send_search" class="sub_btn" value="">
 			</form>
 		</div>
 		<div class="mess_p_item">
@@ -271,7 +270,7 @@ echo "Заполните поля";
 						$int_count++;
 					}
 					for ($i=0; $i <$int_count ; $i++) { 
-						echo "<a class=pagination href=/?page_number=$i><div>$p</div></a>";
+						echo "<a class=pagination href=?page_number=$i><div>$p</div></a>";
 						$p++;
 					}
 				?>	
