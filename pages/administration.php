@@ -271,7 +271,7 @@
 								$str_applications_out=mysqli_query($connect,"SELECT * FROM `applications`");
 							}
 					
-					echo"<table border=1 cellspacing=0 >
+					echo"<table border=1 cellspacing=0 class=table>
 					<tr>
 						<th style=text-aligin:center;>Публикующий
 						<th style=text-aligin:center;>статус

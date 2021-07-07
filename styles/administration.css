@@ -268,7 +268,10 @@ float: left;
 margin-left: 275px;
 margin-top: 22px;
 }
-
+.table
+{
+	overflow: scroll;
+}
 .exit:hover
 {
 cursor: pointer;
