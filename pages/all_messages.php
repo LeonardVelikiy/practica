@@ -205,19 +205,19 @@ echo "Заполните поля";
 			<form>
 			<form method=GET><br>
 			<input type=text name=search class=form_mitem1 placeholder="Поиск...">
-				<select class="select" name=select>
+				<select class="select">
 				<option>Категория</option>
 				<?php
 				$str_out_categoty="SELECT * FROM `category`";
 				$run_out_categoty=mysqli_query($connect,$str_out_categoty);
 				while ($out=mysqli_fetch_array($run_out_categoty)){
-					echo "<option>$out[category]</option>";
+					echo "<option name=select>$out[category]</option>";
 				}
 				?>
 			</form>
 				<?php
 				 $search=$_GET['search'];
-				
+				 $select=$_GET['select'];
 				 $send_search=$_GET['send_search'];
 
 				 if ($send_search)
