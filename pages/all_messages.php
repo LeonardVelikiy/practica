@@ -217,7 +217,7 @@ echo "Заполните поля";
 			</form>
 				<?php
 				 $search=$_GET['search'];
-				//  $select=$_GET['select'];
+				$select=$_GET['select'];
 				 $send_search=$_GET['send_search'];
 
 				 if ($send_search)
