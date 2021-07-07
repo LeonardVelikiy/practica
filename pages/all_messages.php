@@ -205,13 +205,13 @@ echo "Заполните поля";
 			<form>
 			<form method=GET><br>
 			<input type=text name=search class=form_mitem1><br>
-				<<select class="select" name=select>
+				<select class="select" name=select>
 				<option>Категория</option>
 				<?php
-				$str_out_category="SELECT * FROM `category`";
-				$run_out_category=mysqli_query($connect,$str_out_category);
-				while ($out=mysqli_fetch_array($run_out_category)) {
-				echo "$out[category]";
+				$str_out_categoty="SELECT * FROM `category`";
+				$run_out_categoty=mysqli_query($connect,$str_out_categoty);
+				while ($out=mysqli_fetch_array($run_out_categoty)){
+					echo "<option>$out[category]</option>";
 				}
 				?>
 				<input type=submit name=send_search value=Поиск>
@@ -227,13 +227,6 @@ echo "Заполните поля";
 								{
 								$str_applications_out=mysqli_query($connect,"SELECT * FROM `applications`");
 								}
-				$str_out_categoty="SELECT * FROM `category`";
-				$run_out_categoty=mysqli_query($connect,$str_out_categoty);
-
-				while ($out=mysqli_fetch_array($run_out_categoty))
-				{
-					echo "<option>$out[category]</option>";
-				}
 		?>
 			</select>
 			<input type="submit" name="" class="sub_btn" value="">
