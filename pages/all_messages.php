@@ -214,17 +214,19 @@ echo "Заполните поля";
 				 $select=$_GET['select'];
 				 $send_search=$_GET['send_search'];
 				 if ($send_search)
-{
-$str_applications_out=mysqli_query($connect, "SELECT * FROM `applications` WHERE ( user LIKE '%$search%' OR title LIKE '%$search%' OR city LIKE '%$search%' OR district LIKE '%$search%' OR street LIKE '%$search%' OR house LIKE '%$search%' OR  status LIKE '%$search%' OR date_end LIKE '%$search%' OR date_start LIKE '%$search%') AND (`status` LIKE '%$select%')");/*category LIKE '%$search%' OR*/
-}else
-{
-$str_applications_out=mysqli_query($connect,"SELECT * FROM `applications`");
-}
-		$str_out_categoty="SELECT * FROM `category`";
-		$run_out_categoty=mysqli_query($connect,$str_out_categoty);
-		while ($out=mysqli_fetch_array($run_out_categoty)){
-			echo "<option>$out[category]</option>";
-		}
+							{
+							$str_applications_out=mysqli_query($connect, "SELECT * FROM `applications` WHERE ( user LIKE '%$search%' OR title LIKE '%$search%' OR city LIKE '%$search%' OR district LIKE '%$search%' OR street LIKE '%$search%' OR house LIKE '%$search%' OR  status LIKE '%$search%' OR date_end LIKE '%$search%' OR date_start LIKE '%$search%') AND (`status` LIKE '%$select%')");/*category LIKE '%$search%' OR*/
+							}else
+								{
+								$str_applications_out=mysqli_query($connect,"SELECT * FROM `applications`");
+								}
+				$str_out_categoty="SELECT * FROM `category`";
+				$run_out_categoty=mysqli_query($connect,$str_out_categoty);
+
+				while ($out=mysqli_fetch_array($run_out_categoty))
+				{
+					echo "<option>$out[category]</option>";
+				}
 		?>
 			</select>
 			<input type="submit" name="" class="sub_btn" value="">
