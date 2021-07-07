@@ -219,6 +219,7 @@ echo "Заполните поля";
 				 $search=$_GET['search'];
 				 $select=$_GET['select'];
 				 $send_search=$_GET['send_search'];
+
 				 if ($send_search)
 							{
 							$str_applications_out=mysqli_query($connect, "SELECT * FROM `applications` WHERE ( user LIKE '%$search%' OR title LIKE '%$search%' OR city LIKE '%$search%' OR district LIKE '%$search%' OR street LIKE '%$search%' OR house LIKE '%$search%' OR  status LIKE '%$search%' OR date_end LIKE '%$search%' OR date_start LIKE '%$search%') AND (`status` LIKE '%$select%')");/*category LIKE '%$search%' OR*/
@@ -228,7 +229,7 @@ echo "Заполните поля";
 								}
 		?>
 			</select>
-			<input type="submit" name="send_search" class="sub_btn" value="">
+			<input type="submit" name="send_search" class="sub_btn" value="1">
 			</form>
 		</div>
 		<div class="mess_p_item">
