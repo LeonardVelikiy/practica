@@ -205,8 +205,15 @@ echo "Заполните поля";
 			<form>
 			<form method=GET><br>
 			<input type=text name=search class=form_mitem1><br>
-				<!-- <select class="select" name=select> -->
+				<<select class="select" name=select>
 				<option>Категория</option>
+				<?php
+				$str_out_category="SELECT * FROM `category`";
+				$run_out_category=mysqli_query($connect,$str_out_category);
+				while ($out=mysqli_fetch_array($run_out_category)) {
+				echo "$out[category]";
+				}
+				?>
 				<input type=submit name=send_search value=Поиск>
 			</form>
 				<?php
