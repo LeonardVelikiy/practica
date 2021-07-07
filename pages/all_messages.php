@@ -243,7 +243,15 @@ echo "Заполните поля";
 					}
 					$application_in_tape=12;
 					$sql_page_number=$page_number*$application_in_tape;
-					$str_out_application_pag="SELECT * FROM `applications` WHERE ( user LIKE '%$search%' OR title LIKE '%$search%' OR city LIKE '%$search%' OR district LIKE '%$search%' OR street LIKE '%$search%' OR house LIKE '%$search%' OR  status LIKE '%$search%' OR date_end LIKE '%$search%' OR date_start LIKE '%$search%') AND (`status` LIKE '%$select%') ORDER BY `date_start` DESC LIMIT $sql_page_number, $application_in_tape";
+					if($send_search)
+					{
+						$str_out_application_pag="SELECT * FROM `applications` WHERE ( user LIKE '%$search%' OR title LIKE '%$search%' OR city LIKE '%$search%' OR district LIKE '%$search%' OR street LIKE '%$search%' OR house LIKE '%$search%' OR  status LIKE '%$search%' OR date_end LIKE '%$search%' OR date_start LIKE '%$search%') AND (`status` LIKE '%$select%') ORDER BY `date_start` DESC LIMIT $sql_page_number, $application_in_tape";
+					}else
+
+					{
+						$str_out_application_pag="SELECT * FROM `applications` WHERE `status`='Новая' ORDER BY `date_start` DESC LIMIT $sql_page_number, $application_in_tape";
+					}
+					
 					$run_out_application_pag=mysqli_query($connect, $str_out_application_pag);
 
 		while ($out=mysqli_fetch_array($run_out_application_pag)) {
