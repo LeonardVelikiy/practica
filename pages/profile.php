@@ -16,13 +16,13 @@ $exit=$_POST['exit'];
 	<link rel="stylesheet" type="text/css" href="../styles/profile.css">
 </head>
 <body>
+<div id="dark_edit">
+<div id="okno_edit">
 <?php
 		$str_auth="SELECT * FROM `users` WHERE `login`='$_SESSION[login]'";
 		$run_auth=mysqli_query($connect,$str_auth);
 		$out_auth=mysqli_fetch_array($run_auth);
 		?>
-<div id="dark_edit">
-<div id="okno_edit">
 <a href="#">
 			<div class="close_btn"></div>
 		</a>
@@ -53,7 +53,11 @@ $exit=$_POST['exit'];
 			</a>
 			<form method=POST><input type=submit name=exit value=Выход class=exit></form>
 		</div>
-		
+		<?php
+		$str_auth="SELECT * FROM `users` WHERE `login`='$_SESSION[login]'";
+		$run_auth=mysqli_query($connect,$str_auth);
+		$out_auth=mysqli_fetch_array($run_auth);
+		?>
 		<span class="yinfo_text">Ваш профиль</span>
 		<div class="user_info">
 			<div class="avatar_img">Аватар</div>
