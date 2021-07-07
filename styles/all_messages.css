@@ -178,6 +178,7 @@ border: #d5d5d5;
 	font-family: "Nunito-SemiBold";
 	font-size: 12pt;
 	outline: none;
+	margin-bottom: 30px;
 }
 
 .select
@@ -186,6 +187,7 @@ border: #d5d5d5;
 	font-size: 13pt;
 	margin-right: 15px;
 	outline: none;
+	margin-bottom: 30px;
 }
 
 .sub_btn
@@ -196,6 +198,7 @@ border: #d5d5d5;
 	background-color: #ffffff;
 	background-size: 100%;
 	margin-left: 5px;
+	margin-bottom: 30px;
 	border: 0px solid #ffffff;
 	outline: none;
 }
