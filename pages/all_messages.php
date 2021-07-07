@@ -204,16 +204,10 @@ echo "Заполните поля";
 		<div class="all_messages_filter">
 			<form>
 			<form method=GET><br>
-			<input type=text name=search class=form_mitem1 placeholder="Поиск...">
-				<select class="select" name=select>
+			<input type=text name=search class=form_mitem1><br>
+				<!-- <select class="select" name=select> -->
 				<option>Категория</option>
-				<?php
-				$str_out_categoty="SELECT * FROM `category`";
-				$run_out_categoty=mysqli_query($connect,$str_out_categoty);
-				while ($out=mysqli_fetch_array($run_out_categoty)){
-					echo "<option>$out[category]</option>";
-				}
-				?>
+				<input type=submit name=send_search value=Поиск>
 			</form>
 				<?php
 				 $search=$_GET['search'];
@@ -221,14 +215,21 @@ echo "Заполните поля";
 				 $send_search=$_GET['send_search'];
 				 if ($send_search)
 							{
-							$str_out_application_pag=mysqli_query($connect, "SELECT * FROM `applications` WHERE ( user LIKE '%$search%' OR title LIKE '%$search%' OR city LIKE '%$search%' OR district LIKE '%$search%' OR street LIKE '%$search%' OR house LIKE '%$search%' OR  status LIKE '%$search%' OR date_end LIKE '%$search%' OR date_start LIKE '%$search%') AND (`status` LIKE '%$select%')");/*category LIKE '%$search%' OR*/
+							$str_applications_out=mysqli_query($connect, "SELECT * FROM `applications` WHERE ( user LIKE '%$search%' OR title LIKE '%$search%' OR city LIKE '%$search%' OR district LIKE '%$search%' OR street LIKE '%$search%' OR house LIKE '%$search%' OR  status LIKE '%$search%' OR date_end LIKE '%$search%' OR date_start LIKE '%$search%') AND (`status` LIKE '%$select%')");/*category LIKE '%$search%' OR*/
 							}else
 								{
-								$str_out_application_pag=mysqli_query($connect,"SELECT * FROM `applications`");
+								$str_applications_out=mysqli_query($connect,"SELECT * FROM `applications`");
 								}
+				$str_out_categoty="SELECT * FROM `category`";
+				$run_out_categoty=mysqli_query($connect,$str_out_categoty);
+
+				while ($out=mysqli_fetch_array($run_out_categoty))
+				{
+					echo "<option>$out[category]</option>";
+				}
 		?>
 			</select>
-			<input type="submit" name="send_search" class="sub_btn" value="">
+			<input type="submit" name="" class="sub_btn" value="">
 			</form>
 		</div>
 		<div class="mess_p_item">
@@ -243,10 +244,10 @@ echo "Заполните поля";
 					}
 					$application_in_tape=12;
 					$sql_page_number=$page_number*$application_in_tape;
-					// $str_out_application_pag="SELECT * FROM `applications` WHERE `status`='Новая' ORDER BY `date_start` DESC LIMIT $sql_page_number, $application_in_tape";
-					// $run_out_application_pag=mysqli_query($connect, $str_out_application_pag);
+					$str_out_application_pag="SELECT * FROM `applications` WHERE `status`='Новая' ORDER BY `date_start` DESC LIMIT $sql_page_number, $application_in_tape";
+					$run_out_application_pag=mysqli_query($connect, $str_out_application_pag);
 
-		while ($out=mysqli_fetch_array($str_out_application_pag)) {
+		while ($out=mysqli_fetch_array($str_applications_out)) {
 			$id=$out['id'];
 			echo "<div class=mess_item>
 			<div><img src=../$out[рhoto_start]  width=260 height=260></div>
@@ -270,7 +271,7 @@ echo "Заполните поля";
 						$int_count++;
 					}
 					for ($i=0; $i <$int_count ; $i++) { 
-						echo "<a class=pagination href=?page_number=$i><div>$p</div></a>";
+						echo "<a class=pagination href=/?page_number=$i><div>$p</div></a>";
 						$p++;
 					}
 				?>	
