@@ -244,7 +244,8 @@ $str_applications_out=mysqli_query($connect,"SELECT * FROM `applications`");
 					$sql_page_number=$page_number*$application_in_tape;
 					$str_out_application_pag="SELECT * FROM `applications` WHERE `status`='Новая' ORDER BY `date_start` DESC LIMIT $sql_page_number, $application_in_tape";
 					$run_out_application_pag=mysqli_query($connect, $str_out_application_pag);
-		while ($out=mysqli_fetch_array($run_out_application_pag)) {
+
+		while ($out=mysqli_fetch_array($str_applications_out)) {
 			$id=$out['id'];
 			echo "<div class=mess_item>
 			<div><img src=../$out[рhoto_start]  width=260 height=260></div>
