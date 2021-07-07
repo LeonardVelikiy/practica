@@ -46,12 +46,22 @@ $exit=$_POST['exit'];
 			<div class="user_info_change">Изменить профиль</div>
 		</div>
 		<?php
-		$str_app="SELECT * FROM `applications` WHERE `user`='$_SESSION[login]'";
-		$run_app=mysqli_query($connect,$str_app);
+			$str_out_application="SELECT * FROM `applications` WHERE `user`='$_SESSION[login]' ORDER BY `date_start` DESC";
+			$run_out_application=mysqli_query($connect,$str_out_application);
+			$int_out_application=mysqli_num_rows($run_out_application);
+			$page_number=$_GET['page_number'];
+						if ($page_number == NULL)
+							{
+							$page_number=0;
+						}
+						$application_in_tape=8;
+						$sql_page_number=$page_number*$application_in_tape;
+						$str_out_application_pag="SELECT * FROM `applications` WHERE `user`='$_SESSION[login]' ORDER BY `date_start` DESC LIMIT $sql_page_number, $application_in_tape";
+						$run_out_application_pag=mysqli_query($connect, $str_out_application_pag);
 		?>
 		<div class="problem_text">Ваши заявки</div>
 		<?php
-		while ($out=mysqli_fetch_array($run_app)){
+		while ($out=mysqli_fetch_array($run_out_application_pag)){
 		echo "<div class=your_p_item>
 			<div class=prodlem_item>
 				<div><img src=../$out[рhoto_start] width=260 height=260></div>
@@ -68,11 +78,32 @@ $exit=$_POST['exit'];
 		$users_del=$_GET['users'];
 		$str_user_del=mysqli_query($connect, "DELETE FROM `users` WHERE `login` = '$_SESSION[login]'");
 		}
+		if ($str_user_del)
+		{
+			session_destroy();
+			echo "<script>location.replace(index.php);</script>";
+			exit();
+		}
 		?>
 		<div class="delete_acc">
 			<form method=POST>
 			<input type=submit name=del_akk value="Удалить профиль">
 	</form>
+		</div>
+		<div class="pag_place">
+			<?php
+			$float_count=$int_out_application%8;
+					$int_count=floor($int_out_application/8);
+					$p=1;
+					if ($float_count>0) 
+					{
+						$int_count++;
+					}
+					for ($i=0; $i <$int_count ; $i++) { 
+						echo "<a class=pagination href=/?page_number=$i><div>$p</div></a>";
+						$p++;
+					}
+				?>	
 		</div>
 		<div class="copyright">Copyright</div>
 	</div>
