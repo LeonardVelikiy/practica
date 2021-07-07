@@ -43,7 +43,7 @@ $exit=$_POST['exit'];
 				<div><?php echo "$out_auth[first_last_name]"?></div>
 				<div><?php echo "$out_auth[mail]"?></div>
 			</div>
-			<div class="user_info_change">Изменить профиль</div>
+			<a href=#edit_profile><div class="user_info_change">Изменить профиль</div></a>
 		</div>
 		<?php
 			$str_out_application="SELECT * FROM `applications` WHERE `user`='$_SESSION[login]' ORDER BY `date_start` DESC";
