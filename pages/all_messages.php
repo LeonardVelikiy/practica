@@ -270,7 +270,7 @@ echo "Заполните поля";
 						$int_count++;
 					}
 					for ($i=0; $i <$int_count ; $i++) { 
-						echo "<a class=pagination href=/?page_number=$i><div>$p</div></a>";
+						echo "<a class=pagination href=?page_number=$i><div>$p</div></a>";
 						$p++;
 					}
 				?>	
