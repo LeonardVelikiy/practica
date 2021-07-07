@@ -21,8 +21,8 @@ $exit=$_POST['exit'];
 		$run_auth=mysqli_query($connect,$str_auth);
 		$out_auth=mysqli_fetch_array($run_auth);
 		?>
-<div>
-<div>
+<div id="dark_edit">
+<div id="okno_edit">
 <a href="#">
 			<div class="close_btn"></div>
 		</a>
