@@ -153,9 +153,9 @@ border: #d5d5d5;
 
 .mess_p_item
 {
-	height: 2500px;
+	height: 1830px;
 	width: 100%;
-	position: relative;
+	
 }
 
 .all_messages_filter
@@ -214,6 +214,7 @@ border: #d5d5d5;
 	margin-top: 60px;	
 	float: left;
 	border: 3px solid black;
+
 }
 
 .mess_item > div:nth-child(1)
