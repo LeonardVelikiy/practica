@@ -214,6 +214,7 @@ border: #d5d5d5;
 	margin-top: 60px;	
 	float: left;
 	border: 3px solid black;
+	position: relative;
 }
 
 .mess_item > div:nth-child(1)
