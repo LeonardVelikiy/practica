@@ -269,7 +269,8 @@ margin-top: 22px;
 }
 .table
 {
-	overflow: auto;
+	overflow-y: auto;
+	max-width: 500px;
 }
 .exit:hover
 {
