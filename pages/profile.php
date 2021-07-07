@@ -26,11 +26,11 @@ $exit=$_POST['exit'];
 <a href="#">
 			<div class="close_btn"></div>
 		</a>
-<form method="POST" enctype="multipart/form-data">
+		<form method="POST" enctype="multipart/form-data">
 <input type="file" name="photo_end" class="form_mitem1" id="form_mitem1"><br><br>
-<input type="text" name="login_edit" placeholder="<?php echo $out_auth['login']?>">
-<input type="text" name="name_edit" placeholder="<?php echo $out_auth['first_last_name']?>">
-<input type="text" name="mail_edit" placeholder="<?php echo $out_auth['mail']?>">
+<input type="text" name="login_edit" class="form_mitem" placeholder="<?php echo $out_auth['login']?>"><br>
+<input type="text" name="name_edit" class="form_mitem" placeholder="<?php echo $out_auth['first_last_name']?>"><br>
+<input type="text" name="mail_edit" class="form_mitem" placeholder="<?php echo $out_auth['mail']?>"><br>
 <input type="submit" name="add" class="form_mbtn1" value="Сохранить">
 </form>
 <?php

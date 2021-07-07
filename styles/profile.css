@@ -363,22 +363,22 @@ text-decoration: underline;
 
 #okno_edit
 {
-	height: 150px;
-  width: 400px;
-  border: 3px solid black;
-  border-radius: 20px;
-  margin: 150px auto;
-  background-color: white;
-        text-align: center;
-        padding: 15px;
-        position: absolute;
-  		  top: 0;
-  		  right: 0;
-  		  bottom: 0;
-  		  left: 0;
-  		  margin: auto;
-  		  position: fixed;
-}
+	height: 220px;
+	width: 400px;
+	border: 3px solid black;
+	border-radius: 20px;
+	margin: 150px auto;
+	background-color: white;
+	text-align: center;
+	padding: 15px;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	margin: auto;
+	position: fixed;
+	}
 #dark_edit
 {
 	  background: rgba(102, 102, 102, 0.5);
@@ -391,7 +391,45 @@ text-decoration: underline;
 	  position: fixed;
 }
 #dark_edit:target {display: block;}
+.form_mitem
+{
+height: 25px;
+width: 185px;
+padding-left: 15px;
+padding-right: 15px;
+border: 3px solid #d5d5d5;
+border-radius: 15px;
+background-color: #d5d5d5;
+font-family: "Nunito-SemiBold";
+margin-bottom: 15px;
+outline: none;
+}
 
+.form_mitem1
+{
+font-family: "Nunito-SemiBold";
+font-size: 12pt;
+outline: none;
+margin-left: 45px;
+}
+
+.form_mbtn1
+{
+height: 35px;
+width: 120px;
+text-align: center;
+margin-left: 15px;
+font-family: "Nunito-SemiBold";
+background-color: #d5d5d5;
+border-radius: 5px;
+cursor: pointer;
+border: 5px solid #cccccc;
+}
+
+.form_mbtn1:hover
+{
+border: #d5d5d5;
+}
 .exit
 {
 width: 100px;
