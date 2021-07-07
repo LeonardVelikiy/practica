@@ -210,8 +210,9 @@ border: #d5d5d5;
 {
 	height: 550px;
 	width: 260px;
-	margin-left: 60px;
-	margin-top: 60px;	float: left;
+
+	margin-top: 60px;	
+	float: left;
 	border: 3px solid black;
 }
 
