@@ -265,7 +265,7 @@
 					echo"<div class=part2>";
 					if ($send_search) 
 					{
-						$str_applications_out=mysqli_query($connect, "SELECT * FROM `applications` WHERE ( `user` LIKE '%$search%' OR `title` LIKE '%$search%' OR `city` LIKE '%$search%' OR `district` LIKE '%$search%' OR `street` LIKE '%$search%' OR `house` LIKE '%$search%'  OR `category` LIKE '%$search%'  OR `status` LIKE '%$search%'  OR `date_end` LIKE '%$search%'  OR `date_start` LIKE '%$search%') ");
+						$str_applications_out=mysqli_query($connect, "SELECT * FROM `applications` WHERE (`user` LIKE '%$search%' OR `title` LIKE '%$search%' OR `city` LIKE '%$search%' OR `district` LIKE '%$search%' OR `street` LIKE '%$search%' OR `house` LIKE '%$search%'  OR `category` LIKE '%$search%'  OR `status` LIKE '%$search%'  OR `date_end` LIKE '%$search%'  OR `date_start` LIKE '%$search%')");
 					}else
 							{
 								$str_applications_out=mysqli_query($connect,"SELECT * FROM `applications`");
