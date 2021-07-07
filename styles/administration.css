@@ -269,7 +269,7 @@ margin-top: 22px;
 }
 .table
 {
-	overflow: scroll;
+	overflow: auto;
 }
 .exit:hover
 {
