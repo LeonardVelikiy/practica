@@ -404,7 +404,16 @@ font-family: "Nunito-SemiBold";
 margin-bottom: 15px;
 outline: none;
 }
-
+.close_btn
+{
+	height: 60px;
+	width: 60px;
+	background-image: url(../images/close.png);
+	background-size: 80%;
+	background-repeat: no-repeat;
+	background-position: 5px;
+	margin-left: auto;
+}
 .form_mitem1
 {
 font-family: "Nunito-SemiBold";
