@@ -271,7 +271,7 @@
 								$str_applications_out=mysqli_query($connect,"SELECT * FROM `applications` LIMIT 0, 8");
 							}
 					
-					echo"<table border=1 cellspacing=0 class=table>
+					echo"<div class=table><table border=1 cellspacing=0>
 					<tr>
 						<th style=text-aligin:center;>Публикующий
 						<th style=text-aligin:center;>статус
@@ -292,7 +292,7 @@
 						</tr>";
 						}
 					echo "</table>";
-					echo"</div>";
+					echo"</div></div>";
 					}
 				
 				?>
