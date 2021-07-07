@@ -16,6 +16,24 @@ $exit=$_POST['exit'];
 	<link rel="stylesheet" type="text/css" href="../styles/profile.css">
 </head>
 <body>
+<div>
+<div>
+<a href="#">
+			<div class="close_btn"></div>
+		</a>
+<form method="POST" enctype="multipart/form-data">
+<input type="file" name="photo_end" class="form_mitem1" id="form_mitem1"><br><br>
+<input type="file" name="login_edit">
+<input type="file" name="name_edit">
+<input type="file" name="mail_edit">
+<input type="submit" name="add" class="form_mbtn1" value="Сохранить">
+</form>
+<?php
+
+
+?>
+</div>
+</div>
 	<div class="wrapper">
 		<div class="head">
 		<a href="../index.php">
@@ -100,7 +118,7 @@ $exit=$_POST['exit'];
 						$int_count++;
 					}
 					for ($i=0; $i <$int_count ; $i++) { 
-						echo "<a class=pagination href=/?page_number=$i><div>$p</div></a>";
+						echo "<a class=pagination href=?page_number=$i><div>$p</div></a>";
 						$p++;
 					}
 				?>	
