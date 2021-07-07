@@ -119,10 +119,10 @@ $connect=mysqli_connect('localhost','cn31570_practica','practica','cn31570_pract
 <input type="submit" name="add" class="form_mbtn1" value="Подтвердить">
 </form>
 <?php
-$id_success=$_GET['id_success'];
-$status=$_POST['status'];
-$time=time();
-$add=$_POST['add'];
+			$id_success=$_GET['id_success'];
+			$status=$_POST['status'];
+			$time=time();
+			$add=$_POST['add'];
 			$file_get= $_FILES['photo_end']['name'];
 			$temp= $_FILES['photo_end']['tmp_name'];
 			$file_to_saved= "../images/".time().$file_get;
@@ -243,7 +243,7 @@ echo "Заполните поля";
 					}
 					$application_in_tape=12;
 					$sql_page_number=$page_number*$application_in_tape;
-					$str_out_application_pag="SELECT * FROM `applications` WHERE `status`='Новая'( user LIKE '%$search%' OR title LIKE '%$search%' OR city LIKE '%$search%' OR district LIKE '%$search%' OR street LIKE '%$search%' OR house LIKE '%$search%' OR  status LIKE '%$search%' OR date_end LIKE '%$search%' OR date_start LIKE '%$search%') AND (`status` LIKE '%$select%') ORDER BY `date_start` DESC LIMIT $sql_page_number, $application_in_tape";
+					$str_out_application_pag="SELECT * FROM `applications` WHERE ( user LIKE '%$search%' OR title LIKE '%$search%' OR city LIKE '%$search%' OR district LIKE '%$search%' OR street LIKE '%$search%' OR house LIKE '%$search%' OR  status LIKE '%$search%' OR date_end LIKE '%$search%' OR date_start LIKE '%$search%') AND (`status` LIKE '%$select%') ORDER BY `date_start` DESC LIMIT $sql_page_number, $application_in_tape";
 					$run_out_application_pag=mysqli_query($connect, $str_out_application_pag);
 
 		while ($out=mysqli_fetch_array($run_out_application_pag)) {
