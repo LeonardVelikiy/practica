@@ -203,12 +203,12 @@ echo "Заполните поля";
 		<div class="mess_text">Все сообщения</div>
 		<div class="all_messages_filter">
 			<form>
-			<form method=GET ><br>
-<input type=text name=search class=form_mitem1><br>
-			<select class="select" name=select>
+			<form method=GET><br>
+			<input type=text name=search class=form_mitem1><br>
+				<!-- <select class="select" name=select> -->
 				<option>Категория</option>
 				<input type=submit name=send_search value=Поиск>
-</form>
+			</form>
 				<?php
 				 $search=$_GET['search'];
 				 $select=$_GET['select'];
