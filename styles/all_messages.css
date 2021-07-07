@@ -153,7 +153,7 @@ border: #d5d5d5;
 
 .mess_p_item
 {
-	height: 1830px;
+	max-height: 1830px;
 	width: 100%;
 	padding-top: 30px;
 }
