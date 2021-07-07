@@ -268,7 +268,7 @@
 						$str_applications_out=mysqli_query($connect, "SELECT * FROM `applications` WHERE ( user LIKE '%$search%' OR title LIKE '%$search%' OR city LIKE '%$search%' OR district LIKE '%$search%' OR street LIKE '%$search%' OR house LIKE '%$search%'  OR category LIKE '%$search%'  OR status LIKE '%$search%'  OR date_end LIKE '%$search%'  OR date_start LIKE '%$search%') ");
 					}else
 							{
-								$str_applications_out=mysqli_query($connect,"SELECT * FROM `applications` LIMIT 0, 8");
+								$str_applications_out=mysqli_query($connect,"SELECT * FROM `applications`");
 							}
 					
 					echo"<div class=table><table border=1 cellspacing=0>
