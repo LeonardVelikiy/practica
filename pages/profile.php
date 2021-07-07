@@ -23,9 +23,9 @@ $exit=$_POST['exit'];
 		</a>
 <form method="POST" enctype="multipart/form-data">
 <input type="file" name="photo_end" class="form_mitem1" id="form_mitem1"><br><br>
-<input type="file" name="login_edit">
-<input type="file" name="name_edit">
-<input type="file" name="mail_edit">
+<input type="text" name="login_edit" placeholder="<?php echo '$out_auth[login]'?>">
+<input type="text" name="name_edit" placeholder="<?php echo '$out_auth[first_last_name]'?>">
+<input type="text" name="mail_edit" placeholder="<?php echo '$out_auth[mail]'?>">
 <input type="submit" name="add" class="form_mbtn1" value="Сохранить">
 </form>
 <?php
