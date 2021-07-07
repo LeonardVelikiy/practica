@@ -222,8 +222,14 @@ echo "Заполните поля";
 
 				 if ($send_search)
 							{
-							$str_applications_out=mysqli_query($connect, "SELECT * FROM `applications` WHERE ( user LIKE '%$search%' OR title LIKE '%$search%' OR city LIKE '%$search%' OR district LIKE '%$search%' OR street LIKE '%$search%' OR house LIKE '%$search%' OR  status LIKE '%$search%' OR date_end LIKE '%$search%' OR date_start LIKE '%$search%') AND (`status` LIKE '%$select%')");/*category LIKE '%$search%' OR*/
-							}else
+							if ($select!="Категория")
+							{
+							$str_applications_out=mysqli_query($connect, "SELECT * FROM `applications` WHERE ( user LIKE '%$search%' OR title LIKE '%$search%' OR city LIKE '%$search%' OR district LIKE '%$search%' OR street LIKE '%$search%' OR house LIKE '%$search%' OR  'status' LIKE '%$search%' OR date_end LIKE '%$search%' OR date_start LIKE '%$search%') AND (`category` LIKE '%$select%')");/*category LIKE '%$search%' OR*/
+							}
+							else{
+								$str_applications_out=mysqli_query($connect, "SELECT * FROM `applications` WHERE ( user LIKE '%$search%' OR title LIKE '%$search%' OR city LIKE '%$search%' OR district LIKE '%$search%' OR street LIKE '%$search%' OR house LIKE '%$search%' OR  'status' LIKE '%$search%' OR date_end LIKE '%$search%' OR date_start LIKE '%$search%')";
+							}
+						}else
 								{
 								$str_applications_out=mysqli_query($connect,"SELECT * FROM `applications`");
 								}
