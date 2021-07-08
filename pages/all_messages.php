@@ -33,15 +33,22 @@ $connect=mysqli_connect('localhost','cn31570_practica','practica','cn31570_pract
 				$copy_pass=$_POST['copy_pass'];
 				$cb=$_POST['cb'];
 				$reg=$_POST['reg'];
+				$_SESSION['login']=$login;
+				$_SESSION['pass']=$pass;
 				if($reg)
 				{	
 					if($copy_pass == $pass)
 					{
 							if($first_last_name and $login and $Email and $cb) 
 							{
-							$str_user_plus=mysqli_query($connect, "INSERT INTO `users` (`first_last_name`, `mail`, `pass`, `login`) VALUES ('$first_last_name','$Email','$pass','$login');");
-							header("Location: #auth_dark");exit();
-								
+							$str_user_plus=mysqli_query($connect, "INSERT INTO `users` (`first_last_name`, `mail`, `pass`, `login`) VALUES ('$first_last_name','$Email','$_SESSION[pass]','$_SESSION[login]');");
+							if ($str_user_plus){
+							echo '<script>location.replace("../pages/profile.php");</script>'; exit;
+							}
+							else
+							{
+								echo "Ошибка ругистрации";
+							}
 							}else
 							{
 								echo'<br>заполните все поля<br>';
@@ -184,7 +191,7 @@ echo "Заполните поля";
 			}
 			else
 			{
-				if ($user['role']==0){
+				if ($user['role']=0){
 					echo "<a href=../pages/profile.php><div class=kab>Мой кабинет</div></a><form method=POST><input type=submit name=exit value=Выход class=exit></form>";
 				}
 				else
