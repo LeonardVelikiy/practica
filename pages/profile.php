@@ -112,7 +112,7 @@ echo '<script>location.replace("#")</script>';
 		?>
 		<span class="yinfo_text">Ваш профиль</span>
 		<div class="user_info">
-			<div class="avatar_img"><img src=<?php echo "../$out_auth[avatar]"?> width=260 height=260></div>
+			<div class="avatar_img"><img src=<?php echo "../$out_auth[avatar]"?> width=200 height=200></div>
 			<div class="std_info">
 				<div><?php echo "$out_auth[login]"?></div>
 				<div><?php echo "$out_auth[first_last_name]"?></div>
