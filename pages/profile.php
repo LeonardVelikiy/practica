@@ -188,7 +188,7 @@ echo "Заполните поля";
 						}
 						$application_in_tape=8;
 						$sql_page_number=$page_number*$application_in_tape;
-						$str_out_application_pag="SELECT * FROM `applications` WHERE `user`='$_SESSION[login]' ORDER BY `date_start` DESC LIMIT $sql_page_number, $application_in_tape";
+						$str_out_application_pag="SELECT * FROM `applications` WHERE `user`='$_SESSION[login]' AND `status`='Новая' ORDER BY `date_start` DESC LIMIT $sql_page_number, $application_in_tape";
 						$run_out_application_pag=mysqli_query($connect, $str_out_application_pag);
 		?>
 		<div class="problem_text">Ваши заявки</div>
