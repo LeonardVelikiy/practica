@@ -38,7 +38,7 @@ $mail_edit=$_POST['mail_edit'];
 $save=$_POST['save'];
 $file_get= $_FILES['avatar']['name'];
 			$temp= $_FILES['avatar']['tmp_name'];
-			$file_to_saved= "images/".time().$file_get;
+			$file_to_saved= "../images/".time().$file_get;
 				$imageFileType = 
 strtolower(pathinfo($file_to_saved,PATHINFO_EXTENSION));
 
@@ -91,6 +91,61 @@ echo '<script>location.replace("#")</script>';
 }
 }
 ?>
+</div>
+</div>
+<div id=dark_success>
+<div id=okno_success>
+<a href="#">
+			<div class="close_btn"></div>
+		</a>
+<form method="POST" enctype="multipart/form-data">
+<input type="file" name="photo_end" class="form_mitem1" id="form_mitem1"><br><br>
+<input type="submit" name="add" class="form_mbtn1" value="Подтвердить">
+</form>
+<?php
+			$id_success=$_GET['id_success'];
+			$status=$_POST['status'];
+			$time=time();
+			$add=$_POST['add'];
+			$file_get= $_FILES['photo_end']['name'];
+			$temp= $_FILES['photo_end']['tmp_name'];
+			$file_to_saved= "../images/".time().$file_get;
+			$imageFileType = 
+			strtolower(pathinfo($file_to_saved,PATHINFO_EXTENSION));
+
+
+if($add){
+
+	$str_add_application="UPDATE `applications` SET `photo_end`='$file_to_saved', `status`='Выполнено', `date_end`='$time' WHERE `id`='$id_success'";
+if ($_FILES) {
+if($imageFileType != "jpg" && $imageFileType != "jpeg") {
+	echo "Только файлы jpg и jpeg";
+}
+else{
+
+	move_uploaded_file($temp, $file_to_saved);
+	$run_str_add_application=mysqli_query($connect, $str_add_application);
+if($run_str_add_application)
+{
+
+echo '<script>location.replace("/");</script>'; exit();
+
+}
+else
+{
+echo "Ошибка добавления";
+}
+}
+}
+else
+{
+echo "Заполните поля";
+}
+}
+
+
+?>
+
 </div>
 </div>
 	<div class="wrapper">
@@ -146,10 +201,13 @@ echo '<script>location.replace("#")</script>';
 				<div>$out[description]</div>
 				<div>$out[category]</div>
 				<div>".date('d/m/Y', $out['date_start'])."</div>
-				<div><a href=>Удалить</a></div>
+				<div><a href=?id_del_app=$out[id]>Отменой</a></div>
+				<a href=all_messages.php?id_success=$out[id]#dark_success name=input><div>Выполнить</div></a>
 			</div>
 		</div>";
 		}
+		$str_upd_application="UPDATE `applications` SET `status`='Отменено', `date_end`='$time' WHERE `id`='$id_del_app'";
+		$run_str_upd_application=mysqli_query($connect, $str_upd_application);
 		$del_akk=$_POST['del_akk'];
 		if ($del_akk){
 		$users_del=$_GET['users'];
