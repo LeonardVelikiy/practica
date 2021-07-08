@@ -220,11 +220,6 @@ echo "Заполните поля";
 			exit();
 		}
 		?>
-		<div class="delete_acc">
-			<form method=POST>
-			<input type=submit name=del_akk value="Удалить профиль">
-	</form>
-		</div>
 		<div class="pag_place">
 			<?php
 			$float_count=$int_out_application%8;
