@@ -98,19 +98,14 @@ $online_count = R::count('online', "lastvisit > " . ( time() - (360) ));
 				$copy_pass=$_POST['copy_pass'];
 				$cb=$_POST['cb'];
 				$reg=$_POST['reg'];
-				if ($reg)
-				{
-				$_SESSION['login']=$login;
-				$_SESSION['pass']=$pass;
-				}
 				if($reg)
 				{	
 					if($copy_pass == $pass)
 					{
 							if($first_last_name and $login and $Email and $cb) 
 							{
-							$str_user_plus=mysqli_query($connect, "INSERT INTO `user` (`first_last_name`, `mail`, `pass`, `login`) VALUES ('$first_last_name','$Email','$_SESSION[pass]','$_SESSION[login]');");
-							echo '<script>location.replace("../pages/profile.php");</script>'; exit();
+							$str_user_plus=mysqli_query($connect, "INSERT INTO `user` (`first_last_name`, `mail`, `pass`, `login`) VALUES ('$first_last_name','$Email','$pass','$login');");
+							echo '<script>location.replace("#auth_dark");</script>'; exit;
 								
 							}else
 							{
@@ -122,7 +117,7 @@ $online_count = R::count('online', "lastvisit > " . ( time() - (360) ));
 				?>
 			</form>
 		</div>
-		<div class="form_link"><a href="#auth_dark">Войти</a></div>
+		<div class="form_link"><a href="index.php#auth_dark">Войти</a></div>
 	</div>
 </div>
 <div id=auth_dark>
@@ -311,7 +306,7 @@ else
 		</div>
 		<div class="tagline">
 			<div></div>
-			<div><a href="#dark">Сообщить о проблеме</a></div>
+			<div><a href="index.php#dark">Сообщить о проблеме</a></div>
 		</div>
 		<div class="solved_text">Последние решенные проблемы</div>
 		<div class="solved_p_item">
