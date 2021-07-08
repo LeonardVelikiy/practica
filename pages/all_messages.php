@@ -189,7 +189,7 @@ echo "Заполните поля";
 			</a>
 			<?php
 			if ($_SESSION['login'] == NULL) {
-			echo "<a href=#auth_dark>
+			echo "<a href=all_messages.php#auth_dark>
 				<div class=auth>Войти</div>
 			</a>";
 			}
@@ -281,7 +281,7 @@ echo "Заполните поля";
 			<div>$out[category]</div>
 			<div>".date('d/m/Y', $out['date_start'])."</div>
 			<div>$out[city]/$out[district]<br>$out[street]/$out[house]</div>
-			<a href=?id_success=$out[id]#dark_success name=input><div>Выполнить</div></a>
+			<a href=all_messages.php?id_success=$out[id]#dark_success name=input><div>Выполнить</div></a>
 			</div>";
 		}
 		?>
