@@ -37,7 +37,7 @@ $exit=$_POST['exit'];
 $str_upd_user="UPDATE `users` SET `avatar`='$avatar', `login`='$login_edit', `first_last_name`='$name_edit', `mail`='$mail_edit'";
 if ($save){
 $run_upd_user=mysqli_query($connect, $str_upd_user);
-echo '<script>location.replace("#")</script>'
+echo '<script>location.replace("#")</script>';
 }
 ?>
 </div>
