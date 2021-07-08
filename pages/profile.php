@@ -28,19 +28,34 @@ $exit=$_POST['exit'];
 		</a>
 		<form method="POST" enctype="multipart/form-data">
 <input type="file" name="avatar" class="form_mitem1" id="form_mitem1"><br><br>
-<input type="text" name="login_edit" class="form_mitem" placeholder="<?php echo $out_auth['login']?>"><br>
 <input type="text" name="name_edit" class="form_mitem" placeholder="<?php echo $out_auth['first_last_name']?>"><br>
 <input type="text" name="mail_edit" class="form_mitem" placeholder="<?php echo $out_auth['mail']?>"><br>
 <input type="submit" name="save" class="form_mbtn1" value="Сохранить">
 </form>
 <?php
-$login_edit=$_POST['login_edit'];
 $name_edit=$_POST['name_edit'];
 $mail_edit=$_POST['mail_edit'];
 $avatar=$_POST['avatar'];
 $save=$_POST['save'];
-$str_upd_user="UPDATE `users` SET `avatar`='$avatar',`first_last_name`='$name_edit',`mail`='$mail_edit',`login`='$login_edit' WHERE `login`='$_SESSION[login]'";
+
 if ($save){
+if ($name_edit){
+$str_upd_user="UPDATE `users` SET `first_last_name`='$name_edit' WHERE `login`='$_SESSION[login]'";
+}
+elseif ($mail_edit)
+{
+	$str_upd_user="UPDATE `users` SET `mail`='$mail_edit' WHERE `login`='$_SESSION[login]'";
+}
+elseif ($avatar)
+{
+	$str_upd_user="UPDATE `users` SET `avatar`='$avatar' WHERE `login`='$_SESSION[login]'";
+	$run_upd_user=mysqli_query($connect, $str_upd_user);
+echo '<script>location.replace("#")</script>';
+}
+elseif ($name_edit && $mail_edit && $avatar)
+{
+	$str_upd_user="UPDATE `users` SET `avatar`='$avatar',`first_last_name`='$name_edit',`mail`='$mail_edit' WHERE `login`='$_SESSION[login]'";
+}
 $run_upd_user=mysqli_query($connect, $str_upd_user);
 echo '<script>location.replace("#")</script>';
 }
