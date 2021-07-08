@@ -117,7 +117,7 @@ $online_count = R::count('online', "lastvisit > " . ( time() - (360) ));
 				?>
 			</form>
 		</div>
-		<div class="form_link"><a href="index.php#auth_dark">Войти</a></div>
+		<div class="form_link"><a href="#auth_dark">Войти</a></div>
 	</div>
 </div>
 <div id=auth_dark>
@@ -271,7 +271,7 @@ else
 			</a>
 			<?php
 			if ($_SESSION['login'] == NULL) {
-				echo "<a href=#auth_dark>
+				echo "<a href=index.php#auth_dark>
 				<div class=auth>Войти</div>
 			</a>";
 			}
