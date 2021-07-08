@@ -38,7 +38,7 @@ $mail_edit=$_POST['mail_edit'];
 $save=$_POST['save'];
 $file_get= $_FILES['avatar']['name'];
 			$temp= $_FILES['avatar']['tmp_name'];
-			$file_to_saved= "../images/".time().$file_get;
+			$file_to_saved= "images/".time().$file_get;
 				$imageFileType = 
 strtolower(pathinfo($file_to_saved,PATHINFO_EXTENSION));
 
