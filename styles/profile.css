@@ -323,7 +323,35 @@ text-decoration: underline;
 {
 	text-decoration: underline;
 }
+.prodlem_item > a > div
+{
+	width: 120px;
+	height: 28px;
+	background-color: #00ff00;
+	border: 3px solid #4cc33f;
+	border-radius: 8px;
+	font-family: "Nunito-SemiBold";
+	text-align: center;
+	margin-left: 70px;
+	margin-top: 40px;
+	padding-top: 2px;
+	color: #ffffff;
+	text-decoration: none;
+	font-size: 14pt;
+}
 
+.prodlem_item > a
+{
+	text-decoration: none;
+	color: #ffffff;
+}
+
+.prodlem_item > a > div:hover
+{
+	background-color: #00ff00;
+	border: 3px solid #00ff00;
+	cursor: pointer;
+}
 .delete_acc
 {
 	height: 20px;
