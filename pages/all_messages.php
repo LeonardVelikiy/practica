@@ -69,7 +69,7 @@ $connect=mysqli_connect('localhost','cn31570_practica','practica','cn31570_pract
 		</a>
 		<div class="form_mname">Вход</div>
 		<div class="form_place">
-			<form method="POST">
+		<form method="POST">
 				<input type="text" name="login" placeholder="Логин" class="form_mitem"><br>
 				<input type="text" name="pass" placeholder="Пароль" class="form_mitem"><br>
 				<input type="submit" name="auth" value="Вход" class="form_btn">
@@ -77,16 +77,17 @@ $connect=mysqli_connect('localhost','cn31570_practica','practica','cn31570_pract
 			<?php
 			$login=$_POST['login'];
 			$pass=$_POST['pass'];
-			$add=$_POST['auth'];
-			if ($add) {
+			$auth=$_POST['auth'];
+			if ($auth) {
 				$_SESSION['login']=$login;
 				$_SESSION['pass']=$pass;
-				$_SESSION['auth']=$add;
-			}
-			if($add)
+	}
+
+			if($auth)
 			{
 				$str_auth="SELECT * FROM `users` WHERE `login` = '$_SESSION[login]' AND `pass` = '$_SESSION[pass]'";
 				$run_auth=mysqli_query($connect,$str_auth);
+
 				$check_users=mysqli_num_rows($run_auth);
 
 				if ($check_users) 
@@ -94,17 +95,18 @@ $connect=mysqli_connect('localhost','cn31570_practica','practica','cn31570_pract
 						$user= mysqli_fetch_assoc($run_auth);
 						if ($user['role']==0) 
 						{
-							 echo '<script>location.replace("../pages/profile.php");</script>'; exit;
-						}else
+							 echo '<script>location.replace("../pages/profile.php")</script>'; exit();
+						}
+						else
 						{
-							 echo '<script>location.replace("../pages/administration.php");</script>'; exit;
+							 echo '<script>location.replace("../pages/administration.php")</script>'; exit();
 						}
 									
-					}else
+					}
+					else
 					{
-						echo '<script>location.replace("/");</script>'; exit;
-					
-						unset($_SESSION);
+						session_destroy();
+						exit();
 					}
 
 			}
