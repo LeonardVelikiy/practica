@@ -32,8 +32,10 @@ session_start();
 				$copy_pass=$_POST['copy_pass'];
 				$cb=$_POST['cb'];
 				$reg=$_POST['reg'];
-				$_SESSION['login']=$login;
-				$_SESSION['pass']=$pass;
+				if ($reg){
+					$_SESSION['login']=$login;
+					$_SESSION['pass']=$pass;
+					}
 				if($reg)
 				{	
 					if($copy_pass == $pass)
@@ -76,8 +78,8 @@ session_start();
 			<?php
 			$login=$_POST['login'];
 			$pass=$_POST['pass'];
-			$add=$_POST['auth'];
-			if ($add) {
+			$auth=$_POST['auth'];
+			if ($auth) {
 				$_SESSION['login']=$login;
 				$_SESSION['pass']=$pass;
 				$_SESSION['auth']=$add;
