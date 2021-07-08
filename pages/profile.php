@@ -56,6 +56,22 @@ elseif ($name_edit && $mail_edit && $avatar)
 {
 	$str_upd_user="UPDATE `users` SET `avatar`='$avatar',`first_last_name`='$name_edit',`mail`='$mail_edit' WHERE `login`='$_SESSION[login]'";
 }
+elseif ($name_edit && $mail_edit)
+{
+	$str_upd_user="UPDATE `users` SET `first_last_name`='$name_edit',`mail`='$mail_edit' WHERE `login`='$_SESSION[login]'";
+}
+elseif ($mail_edit && $avatar)
+{
+	$str_upd_user="UPDATE `users` SET `avatar`='$avatar',`mail`='$mail_edit' WHERE `login`='$_SESSION[login]'";
+}
+elseif ($name_edit && $avatar)
+{
+	$str_upd_user="UPDATE `users` SET `avatar`='$avatar',`first_last_name`='$name_edit' WHERE `login`='$_SESSION[login]'";
+}
+else
+{
+	
+}
 $run_upd_user=mysqli_query($connect, $str_upd_user);
 echo '<script>location.replace("#")</script>';
 }
