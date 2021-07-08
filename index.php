@@ -98,8 +98,10 @@ $online_count = R::count('online', "lastvisit > " . ( time() - (360) ));
 				$copy_pass=$_POST['copy_pass'];
 				$cb=$_POST['cb'];
 				$reg=$_POST['reg'];
+				if ($reg){
 				$_SESSION['login']=$login;
 				$_SESSION['pass']=$pass;
+				}
 				if($reg)
 				{	
 					if($copy_pass == $pass)
