@@ -210,21 +210,6 @@ echo "Заполните поля";
 		$run_str_upd_application=mysqli_query($connect, $str_upd_application);
 		
 		?>
-		<div class="pag_place">
-			<?php
-			$float_count=$int_out_application%8;
-					$int_count=floor($int_out_application/8);
-					$p=1;
-					if ($float_count>0) 
-					{
-						$int_count++;
-					}
-					for ($i=0; $i <$int_count ; $i++) { 
-						echo "<a class=pagination href=?page_number=$i><div>$p</div></a>";
-						$p++;
-					}
-				?>	
-		</div>
 		<div class="delete_acc">
 			<form method=POST>
 			<input type=submit name=del_akk value="Удалить профиль">
@@ -243,6 +228,21 @@ echo "Заполните поля";
 			exit();
 		}
 		?>
+		<div class="pag_place">
+			<?php
+			$float_count=$int_out_application%8;
+					$int_count=floor($int_out_application/8);
+					$p=1;
+					if ($float_count>0) 
+					{
+						$int_count++;
+					}
+					for ($i=0; $i <$int_count ; $i++) { 
+						echo "<a class=pagination href=?page_number=$i><div>$p</div></a>";
+						$p++;
+					}
+				?>	
+		</div>
 		<div class="copyright">Copyright</div>
 	</div>
 </body>
