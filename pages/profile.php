@@ -38,7 +38,7 @@ $mail_edit=$_POST['mail_edit'];
 $save=$_POST['save'];
 $file_get= $_FILES['avatar']['name'];
 			$temp= $_FILES['avatar']['tmp_name'];
-			$file_to_saved= "images/".time().$file_get;
+			$file_to_saved= "../images/".time().$file_get;
 				$imageFileType = 
 strtolower(pathinfo($file_to_saved,PATHINFO_EXTENSION));
 
@@ -50,11 +50,11 @@ elseif ($mail_edit)
 {
 	$str_upd_user="UPDATE `users` SET `mail`='$mail_edit' WHERE `login`='$_SESSION[login]'";
 }
-elseif ($FILES)
+elseif ($_FILES)
 {
 	$str_upd_user="UPDATE `users` SET `avatar`='$file_to_saved' WHERE `login`='$_SESSION[login]'";
 }
-elseif ($name_edit && $mail_edit && $FILES)
+elseif ($name_edit && $mail_edit && $_FILES)
 {
 	$str_upd_user="UPDATE `users` SET `avatar`='$file_to_saved',`first_last_name`='$name_edit',`mail`='$mail_edit' WHERE `login`='$_SESSION[login]'";
 }
@@ -62,11 +62,11 @@ elseif ($name_edit && $mail_edit)
 {
 	$str_upd_user="UPDATE `users` SET `first_last_name`='$name_edit',`mail`='$mail_edit' WHERE `login`='$_SESSION[login]'";
 }
-elseif ($mail_edit && $FILES)
+elseif ($mail_edit && $_FILES)
 {
 	$str_upd_user="UPDATE `users` SET `avatar`='$file_to_saved',`mail`='$mail_edit' WHERE `login`='$_SESSION[login]'";
 }
-elseif ($name_edit && $FILES)
+elseif ($name_edit && $_FILES)
 {
 	$str_upd_user="UPDATE `users` SET `avatar`='$file_to_saved',`first_last_name`='$name_edit' WHERE `login`='$_SESSION[login]'";
 }
