@@ -112,7 +112,7 @@ $online_count = R::count('online', "lastvisit > " . ( time() - (360) ));
 							}
 							else
 							{
-								echo "Ошибка ругистрации";
+								echo "Ошибка регистрации";
 							}
 							}else
 							{
