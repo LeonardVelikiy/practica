@@ -38,6 +38,7 @@ $login_edit=$_POST['login_edit'];
 $name_edit=$_POST['name_edit'];
 $mail_edit=$_POST['mail_edit'];
 $avatar=$_POST['avatar'];
+$save=$_POST['save'];
 $str_upd_user="UPDATE `users` SET `avatar`='$avatar',`first_last_name`='$name_edit',`mail`='$mail_edit',`login`='$login_edit'";
 if ($save){
 $run_upd_user=mysqli_query($connect, $str_upd_user);
