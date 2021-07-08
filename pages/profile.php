@@ -53,10 +53,12 @@ elseif ($mail_edit)
 elseif ($_FILES)
 {
 	$str_upd_user="UPDATE `users` SET `avatar`='$file_to_saved' WHERE `login`='$_SESSION[login]'";
+	move_uploaded_file($temp, $file_to_saved);
 }
 elseif ($name_edit && $mail_edit && $_FILES)
 {
 	$str_upd_user="UPDATE `users` SET `avatar`='$file_to_saved',`first_last_name`='$name_edit',`mail`='$mail_edit' WHERE `login`='$_SESSION[login]'";
+	move_uploaded_file($temp, $file_to_saved);
 }
 elseif ($name_edit && $mail_edit)
 {
@@ -65,10 +67,12 @@ elseif ($name_edit && $mail_edit)
 elseif ($mail_edit && $_FILES)
 {
 	$str_upd_user="UPDATE `users` SET `avatar`='$file_to_saved',`mail`='$mail_edit' WHERE `login`='$_SESSION[login]'";
+	move_uploaded_file($temp, $file_to_saved);
 }
 elseif ($name_edit && $_FILES)
 {
 	$str_upd_user="UPDATE `users` SET `avatar`='$file_to_saved',`first_last_name`='$name_edit' WHERE `login`='$_SESSION[login]'";
+	move_uploaded_file($temp, $file_to_saved);
 }
 else
 {
@@ -79,7 +83,7 @@ if($imageFileType != "jpg" && $imageFileType != "jpeg") {
 }
 else
 {
-move_uploaded_file($temp, $file_to_saved);
+
 $run_upd_user=mysqli_query($connect, $str_upd_user);
 if ($run_upd_user){
 echo '<script>location.replace("#")</script>';
