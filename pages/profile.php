@@ -208,17 +208,7 @@ echo "Заполните поля";
 		}
 		$str_upd_application="UPDATE `applications` SET `status`='Отменено', `date_end`='$time' WHERE `id`='$id_del_app'";
 		$run_str_upd_application=mysqli_query($connect, $str_upd_application);
-		$del_akk=$_POST['del_akk'];
-		if ($del_akk){
-		$users_del=$_GET['users'];
-		$str_user_del=mysqli_query($connect, "DELETE FROM `users` WHERE `login` = '$_SESSION[login]'");
-		}
-		if ($str_user_del)
-		{
-			session_destroy();
-			echo "<script>location.replace(index.php);</script>";
-			exit();
-		}
+		
 		?>
 		<div class="pag_place">
 			<?php
@@ -240,6 +230,19 @@ echo "Заполните поля";
 			<input type=submit name=del_akk value="Удалить профиль">
 	</form>
 		</div>
+		<?php
+		$del_akk=$_POST['del_akk'];
+		if ($del_akk){
+		$users_del=$_GET['users'];
+		$str_user_del=mysqli_query($connect, "DELETE FROM `users` WHERE `login` = '$_SESSION[login]'");
+		}
+		if ($str_user_del)
+		{
+			session_destroy();
+			echo "<script>location.replace(index.php);</script>";
+			exit();
+		}
+		?>
 		<div class="copyright">Copyright</div>
 	</div>
 </body>
