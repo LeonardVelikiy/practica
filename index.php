@@ -110,6 +110,10 @@ $online_count = R::count('online', "lastvisit > " . ( time() - (360) ));
 							if ($str_user_plus){
 							echo '<script>location.replace("../pages/profile.php");</script>'; exit;
 							}
+							else
+							{
+								echo "Ошибка ругистрации";
+							}
 							}else
 							{
 								echo'<br>заполните все поля<br>';
