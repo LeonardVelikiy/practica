@@ -53,8 +53,6 @@ elseif ($mail_edit)
 elseif ($FILES)
 {
 	$str_upd_user="UPDATE `users` SET `avatar`='$file_to_saved' WHERE `login`='$_SESSION[login]'";
-	$run_upd_user=mysqli_query($connect, $str_upd_user);
-echo '<script>location.replace("#")</script>';
 }
 elseif ($name_edit && $mail_edit && $FILES)
 {
