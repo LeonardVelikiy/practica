@@ -35,8 +35,12 @@ $exit=$_POST['exit'];
 <?php
 $name_edit=$_POST['name_edit'];
 $mail_edit=$_POST['mail_edit'];
-$avatar=$_POST['avatar'];
 $save=$_POST['save'];
+$file_get= $_FILES['avatar']['name'];
+			$temp= $_FILES['avatar']['tmp_name'];
+			$file_to_saved= "../images/".time().$file_get;
+				$imageFileType = 
+strtolower(pathinfo($file_to_saved,PATHINFO_EXTENSION));
 
 if ($save){
 if ($name_edit){
@@ -46,34 +50,43 @@ elseif ($mail_edit)
 {
 	$str_upd_user="UPDATE `users` SET `mail`='$mail_edit' WHERE `login`='$_SESSION[login]'";
 }
-elseif ($avatar)
+elseif ($FILES)
 {
-	$str_upd_user="UPDATE `users` SET `avatar`='$avatar' WHERE `login`='$_SESSION[login]'";
+	$str_upd_user="UPDATE `users` SET `avatar`='$file_to_saved' WHERE `login`='$_SESSION[login]'";
 	$run_upd_user=mysqli_query($connect, $str_upd_user);
 echo '<script>location.replace("#")</script>';
 }
-elseif ($name_edit && $mail_edit && $avatar)
+elseif ($name_edit && $mail_edit && $FILES)
 {
-	$str_upd_user="UPDATE `users` SET `avatar`='$avatar',`first_last_name`='$name_edit',`mail`='$mail_edit' WHERE `login`='$_SESSION[login]'";
+	$str_upd_user="UPDATE `users` SET `avatar`='$file_to_saved',`first_last_name`='$name_edit',`mail`='$mail_edit' WHERE `login`='$_SESSION[login]'";
 }
 elseif ($name_edit && $mail_edit)
 {
 	$str_upd_user="UPDATE `users` SET `first_last_name`='$name_edit',`mail`='$mail_edit' WHERE `login`='$_SESSION[login]'";
 }
-elseif ($mail_edit && $avatar)
+elseif ($mail_edit && $FILES)
 {
-	$str_upd_user="UPDATE `users` SET `avatar`='$avatar',`mail`='$mail_edit' WHERE `login`='$_SESSION[login]'";
+	$str_upd_user="UPDATE `users` SET `avatar`='$file_to_saved',`mail`='$mail_edit' WHERE `login`='$_SESSION[login]'";
 }
-elseif ($name_edit && $avatar)
+elseif ($name_edit && $FILES)
 {
-	$str_upd_user="UPDATE `users` SET `avatar`='$avatar',`first_last_name`='$name_edit' WHERE `login`='$_SESSION[login]'";
+	$str_upd_user="UPDATE `users` SET `avatar`='$file_to_saved',`first_last_name`='$name_edit' WHERE `login`='$_SESSION[login]'";
 }
 else
 {
-	
+
 }
+if($imageFileType != "jpg" && $imageFileType != "jpeg") {
+	echo "Только файлы jpg и jpeg";
+}
+else
+{
+move_uploaded_file($temp, $file_to_saved);
 $run_upd_user=mysqli_query($connect, $str_upd_user);
+if ($run_upd_user){
 echo '<script>location.replace("#")</script>';
+}
+}
 }
 ?>
 </div>
@@ -99,7 +112,7 @@ echo '<script>location.replace("#")</script>';
 		?>
 		<span class="yinfo_text">Ваш профиль</span>
 		<div class="user_info">
-			<div class="avatar_img">Аватар</div>
+			<div class="avatar_img"><img src=<?php echo "../$out_auth[avatar]"?> width=260 height=260></div>
 			<div class="std_info">
 				<div><?php echo "$out_auth[login]"?></div>
 				<div><?php echo "$out_auth[first_last_name]"?></div>
