@@ -12,6 +12,31 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </head>
 <body>
+<div id=info_dark>
+<div class="form_window_info">
+	<?php
+	$id_get=$_GET['id_get'];
+	$str_out_application="SELECT * FROM `applications` WHERE `id`='$id_get'";
+	?>
+		<a href="#">
+			<div class="close_btn"></div>
+		</a>
+		<div class="form_mname">Регистрация</div>
+		<div class="form_place">
+			<form method="POST">
+				<div>Название</div>
+				<div>Фото старт</div>
+				<div>Фото конец</div>
+				<div>Город</div>
+				<div>Описание</div>
+				<div>Дата</div>
+				<div>Категория</div>
+				<?php
+				
+				?>
+			</form>
+		</div>
+	</div>
 	<div class="wrapper">
 		<div class="head">
 		<a href="../index.php">
@@ -79,7 +104,7 @@
 					echo"<div><table border=1 cellspacing=0 >
 					<tr>
 						<th style=text-aligin:center;>категории
-						<th style=text-aligin:center;>действие
+						<th style=text-aligin:center; colspan=2>действие
 					</tr>
 						";
 						while($out=mysqli_fetch_array($str_applications_out))
@@ -88,6 +113,7 @@
 						<tr>
 							<td>$out[category]
 							<td><a href=?category=$out[id]>удалить</a>
+							<td><a href=?id_get=$out[id]#dark_info></a>
 						</tr>";
 						}
 					echo "</table></div>";
