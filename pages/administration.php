@@ -37,6 +37,7 @@
 			</form>
 		</div>
 	</div>
+</div>
 	<div class="wrapper">
 		<div class="head">
 		<a href="../index.php">
@@ -113,7 +114,7 @@
 						<tr>
 							<td>$out[category]
 							<td><a href=?category=$out[id]>удалить</a>
-							<td><a href=?id_get=$out[id]#dark_info></a>
+							<td><a href=?id_get=$out[id]#info_dark></a>
 						</tr>";
 						}
 					echo "</table></div>";
