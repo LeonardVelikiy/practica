@@ -105,7 +105,7 @@
 					echo"<div><table border=1 cellspacing=0 >
 					<tr>
 						<th style=text-aligin:center;>категории
-						<th style=text-aligin:center; colspan=2>действие
+						<th style=text-aligin:center;>действие
 					</tr>
 						";
 						while($out=mysqli_fetch_array($str_applications_out))
@@ -114,7 +114,6 @@
 						<tr>
 							<td>$out[category]
 							<td><a href=?category=$out[id]>удалить</a>
-							<td><a href=?id_get=$out[id]#info_dark></a>
 						</tr>";
 						}
 					echo "</table></div>";
@@ -190,7 +189,7 @@
 						<th style=text-aligin:center;>категория
 						<th style=text-aligin:center;>время публикации
 						<th style=text-aligin:center;>время выполнения
-						<th colspan=2 style=text-aligin:center;>Действия
+						<th colspan=3 style=text-aligin:center;>Действия
 					</tr>
 						";
 						while($out=mysqli_fetch_array($str_applications_out))
@@ -212,6 +211,7 @@
 							<td>$time_end
 							<td><a href=?aplications_work=$out[id] style=color:red;>удалить</a>
 							<td><a href=?aplications_work=$out[id] style=color:blue;>изменить</a>
+							<td><a href=?id_get=$out[id]#info_dark></a>
 						</tr>";
 						}
 					echo "</table></div>";
