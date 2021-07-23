@@ -149,7 +149,7 @@
 				}
 				if($_GET['applications_waiting'])
 				{
-					$str_applications_out=mysqli_query($connect, "SELECT * FROM `waiting_for_confirmation`");
+					$str_applications_wait_out=mysqli_query($connect, "SELECT * FROM `waiting_for_confirmation`");
 					echo"<div class=table><table border=1 cellspacing=0 >
 					<tr>
 						<th style=text-aligin:center;>Публикующий
@@ -162,7 +162,7 @@
 						<th colspan=3 style=text-aligin:center;>Действия
 					</tr>
 						";
-						while($out=mysqli_fetch_array($str_applications_out))
+						while($out=mysqli_fetch_array($str_applications_wait_out))
 						{
 							echo"
 						<tr>	
