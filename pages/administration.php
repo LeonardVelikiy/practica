@@ -177,23 +177,17 @@
 							<td>".date('d/m/Y',$out['date_start'])."
 							<td>".date('d/m/Y',$out['date_start'])."
 							<td><a href=?id_get=$out[id]#info_dark>Подробнее</a>
-							<td> <a href=?application_waiting=ok?id_cof=$out[id]>Подтвердить</a>
+							<td> <a href=?application_waiting=ok&&id_cof=$out[id]>Подтвердить</a>
 							<td><a href=?users=$out[id]>отклонить</a>
 						</tr>";
 						}
 					echo "</table></div>";
 					$id_cof=$_GET['id_cof'];
-					if($id_cof==NULL)
-					{
-
-					}
-					else
-					{
 					$str_applications_waiting_out=mysqli_query($connect, "SELECT * FROM `waiting_for_confirmation` WHERE `id`='$id_cof'");
 					$out_=mysqli_fetch_array($str_applications_waiting_out);
 					$str_upd_app="UPDATE `applications` SET `photo_end`='$out_[photo_end]', `date_end`='$out_[date_end]' WHERE `id`='$out_[id_wait]'";
 					$run_upd_app=mysqli_query($connect, $str_upd_app);
-					}
+					
 				}
 				if($_GET['users'])
 				{
