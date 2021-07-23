@@ -156,9 +156,12 @@
 						<th style=text-aligin:center;>статус
 						<th style=text-aligin:center;>название
 						<th style=text-aligin:center;>категория
+						<th style=text-aligin:center;>город
+						<th style=text-aligin:center;>район
+						<th style=text-aligin:center;>улица
+						<th style=text-aligin:center;>дом
 						<th style=text-aligin:center;>время публикации
 						<th style=text-aligin:center;>время завершения
-						<th style=text-aligin:center;>время публикации
 						<th colspan=3 style=text-aligin:center;>Действия
 					</tr>
 						";
@@ -170,10 +173,10 @@
 							<td>$out[status]
 							<td>$out[title]
 							<td>$out[category]
-							<td>$out[user]
-							<td>$out[status]
-							<td>$out[title]
-							<td>$out[category]
+							<td>$out[city]
+							<td>$out[district]
+							<td>$out[street]
+							<td>$out[house]
 							<td>".date('d/m/Y',$out['date_start'])."
 							<td>".date('d/m/Y',$out['date_start'])."
 							<td><a href=?id_get=$out[id]#info_dark>Подробнее</a>
@@ -185,7 +188,7 @@
 					$id_cof=$_GET['id_cof'];
 					$str_applications_waiting_out=mysqli_query($connect, "SELECT * FROM `waiting_for_confirmation` WHERE `id`='$id_cof'");
 					$out_=mysqli_fetch_array($str_applications_waiting_out);
-					$str_upd_app="UPDATE `applications` SET `photo_end`='$out_[photo_end]', `date_end`='$out_[date_end]' WHERE `id`='$out_[id_wait]'";
+					$str_upd_app="UPDATE `applications` SET `photo_end`='$out_[photo_end]', `date_end`='$out_[date_end]', `status`='Выполнено' WHERE `id`='$out_[id_wait]'";
 					$run_upd_app=mysqli_query($connect, $str_upd_app);
 					
 				}
