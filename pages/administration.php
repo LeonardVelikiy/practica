@@ -362,7 +362,7 @@
 	$run_out_application__=mysqli_query($connect, $str_out_application__);
 	$out__=mysqli_fetch_array($run_out_application__);
 	?>
-		<a href="#">
+		<a href="administration.php">
 			<div class="close_btn"></div>
 		</a>
 		<div class="form_mname">Подробности</div>
