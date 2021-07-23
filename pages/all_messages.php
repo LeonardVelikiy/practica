@@ -142,7 +142,7 @@ $connect=mysqli_connect('localhost','cn31570_practica','practica','cn31570_pract
 
 
 if($add){
-	$str_out_application_="SELECT * FROM `applications` WHERE `status`='Новая', `id`='$id_success' ORDER BY `date_start`";
+	$str_out_application_="SELECT * FROM `applications` WHERE `id`='$id_success'";
 	$run_out_application_=mysqli_query($connect, $str_out_application_);
 	$out_=mysqli_fetch_array($run_out_application_);
 	$str_add_application="INSERT INTO `waiting_for_confirmation` (`user`, `title`, `photo_start`, `photo_end`, `city`, `district`, `street`, `house`, `description`, `category`, `date_start`, `date_end`) VALUES ('$out_[user]', '$out_[title]', '$out_[photo_end]', '$file_to_saved', '$out_[city]', '$out_[district]', '$out_[street]', '$out_[house]', '$out_[discription]', '$out_[category]', '$out_[date_start]', '$time')";
