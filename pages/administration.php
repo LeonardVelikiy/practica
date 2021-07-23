@@ -67,7 +67,8 @@
 					<button  name="users" value="ok">пользователи</button>
 					<button  name="aplications_work" value='ok'>работа с заявками</button>
 					<button  name="users_work" value='ok'>добавление заявок</button>
-					<button  name="category" value='ok'>добавление ктегорий</button>
+					<button  name="category" value='ok'>добавление категорий</button>
+					<button  name="application_waiting" value='ok'>заявки ожидающие подтверждения</button>
 				</form>
 			</div>
 			<div class="right_body">
@@ -146,6 +147,45 @@
 					echo "</table></div>";
 					
 				}
+				if($_GET['applications_waiting'])
+				{
+					$str_applications_out=mysqli_query($connect, "SELECT * FROM `waiting_for_confirmation`");
+					echo"<div class=table><table border=1 cellspacing=0 >
+					<tr>
+						<th style=text-aligin:center;>Публикующий
+						<th style=text-aligin:center;>статус
+						<th style=text-aligin:center;>название
+						<th style=text-aligin:center;>категория
+						<th style=text-aligin:center;>время публикации
+						<th style=text-aligin:center;>время завершения
+						<th style=text-aligin:center;>время публикации
+						<th colspan=3 style=text-aligin:center;>Действия
+					</tr>
+						";
+						while($out=mysqli_fetch_array($str_applications_out))
+						{
+							echo"
+						<tr>	
+							<td>$out[user]
+							<td>$out[status]
+							<td>$out[title]
+							<td>$out[category]
+							<td>$out[user]
+							<td>$out[status]
+							<td>$out[title]
+							<td>$out[category]
+							<td>".date('d/m/Y',$out['date_start'])."
+							<td>".date('d/m/Y',$out['date_start'])."
+							<td><a href=?id_get=$out[id]#info_dark>Подробнее</a>
+							<td> <a href=?id_get=$out[id]>Подтвердить</a>
+							<td><a href=?users=$out[id]>отклонить</a>
+						</tr>";
+						}
+					echo "</table></div>";
+					$str_applications_waiting_out=mysqli_query($connect, "SELECT * FROM `waiting_for_confirmation` WHERE `id`='$id_get'");
+					$str_upd_app="UPDATE `application` SET `photo_end`='$out_[photo_end]', `date_end`='$out_[date_end]' WHERE `id`='$out_[id_wait]'";
+					$run_upd_app=mysqli_query($connect, $str_upd_app);
+				}
 				if($_GET['users'])
 				{
 					
@@ -175,6 +215,7 @@
 						}
 					echo "</table></div>";
 				}
+				
 				if($_GET['aplications_work'])
 				{
 					$aplications_work_del=$_GET['aplications_work'];
