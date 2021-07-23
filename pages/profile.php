@@ -16,6 +16,14 @@ $exit=$_POST['exit'];
 	<link rel="stylesheet" type="text/css" href="../styles/profile.css">
 </head>
 <body>
+<div id="lock">
+	<div id="okno2">
+		<a href="profile.php#">
+		<div class="close_btn1"></div>
+	</a>
+	<div class=text>Заявка будет рассмотренна</div>
+	</div>
+	</div>
 <div id=dark_success>
 <div id=okno_success>
 <a href="#">
@@ -54,7 +62,7 @@ else{
 if($run_str_add_application)
 {
 
-echo '<script>location.replace("/");</script>'; exit();
+echo '<script>location.replace("profile.php#lock");</script>'; exit();
 
 }
 else
@@ -68,7 +76,6 @@ else
 echo "Заполните поля";
 }
 }
-
 
 ?>
 
