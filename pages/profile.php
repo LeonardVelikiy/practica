@@ -39,7 +39,10 @@ $exit=$_POST['exit'];
 
 if($add){
 
-	$str_add_application="UPDATE `applications` SET `photo_end`='$file_to_saved', `status`='Выполнено', `date_end`='$time' WHERE `id`='$id_success'";
+	$str_out_application_="SELECT * FROM `applications` WHERE `id`='$id_success'";
+	$run_out_application_=mysqli_query($connect, $str_out_application_);
+	$out_=mysqli_fetch_array($run_out_application_);
+	$str_add_application="INSERT INTO `waiting_for_confirmation` (`id_wait`, `user`, `title`, `photo_start`, `photo_end`, `city`, `district`, `street`, `house`, `description`, `category`, `status`, `date_start`, `date_end`) VALUES ('$out_[id]', '$out_[user]', '$out_[title]', '$out_[рhoto_start]', '$file_to_saved', '$out_[city]', '$out_[district]', '$out_[street]', '$out_[house]', '$out_[description]', '$out_[category]', 'Ожидает подтверждения', '$out_[date_start]', '$time')";
 if ($_FILES) {
 if($imageFileType != "jpg" && $imageFileType != "jpeg") {
 	echo "Только файлы jpg и jpeg";
