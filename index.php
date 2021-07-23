@@ -343,8 +343,7 @@ else
 			echo "<div class=solved_item>
 				<div><img src=../$out[photo_end] width=260 height=260></div>
 				<div>$out[title]</div>
-				<div>$out[street]</div>
-				<div>$out[house]</div>
+				<div>Ул.$out[street], Дом $out[house]</div>
 				<div>$out[category]</div>
 				<div>".date('d/m/Y', $out['date_end'])."</div>
 			</div>";
