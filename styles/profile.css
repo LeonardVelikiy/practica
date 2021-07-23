@@ -371,6 +371,35 @@ text-decoration: underline;
 {
 	text-decoration: underline;
 }
+.delete_acc
+{
+	width: 120px;
+	height: 28px;
+	background-color: #00ff00;
+	border: 3px solid #4cc33f;
+	border-radius: 8px;
+	font-family: "Nunito-SemiBold";
+	text-align: center;
+	margin-left: 70px;
+	margin-top: 40px;
+	padding-top: 2px;
+	color: #ffffff;
+	text-decoration: none;
+	font-size: 14pt;
+}
+
+.delete_acc > input
+{
+	text-decoration: none;
+	color: #ffffff;
+}
+
+.delete_acc > input:hover
+{
+	background-color: #00ff00;
+	border: 3px solid #00ff00;
+	cursor: pointer;
+}
 .pag_place
 {
 	height: 40px;
