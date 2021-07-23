@@ -373,10 +373,10 @@ text-decoration: underline;
 }
 .delete_acc
 {
-	width: 120px;
-	height: 28px;
-	background-color: #00ff00;
-	border: 3px solid #4cc33f;
+	width: 150px;
+	height: 35px;
+	background-color: red;
+	border: 3px solid red;
 	border-radius: 8px;
 	font-family: "Nunito-SemiBold";
 	text-align: center;
@@ -396,8 +396,8 @@ text-decoration: underline;
 
 .delete_acc:hover
 {
-	background-color: #00ff00;
-	border: 3px solid #00ff00;
+	background-color: red;
+	border: 3px solid red;
 	cursor: pointer;
 }
 .pag_place
