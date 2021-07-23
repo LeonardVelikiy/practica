@@ -181,10 +181,12 @@
 							<td>".date('d/m/Y',$out['date_start'])."
 							<td><a href=?id_get=$out[id]#info_dark>Подробнее</a>
 							<td> <a href=?application_waiting=ok&&id_cof=$out[id]>Подтвердить</a>
-							<td><a href=?users=$out[id]>отклонить</a>
+							<td><a href=?none=$out[id]>отклонить</a>
 						</tr>";
 						}
 					echo "</table></div>";
+					$none=$_GET['none'];
+					$none_app=mysqli_query($connect, "DELETE FROM `waiting_for_confirmation` WHERE `id`='$none'");
 					$id_cof=$_GET['id_cof'];
 					$str_applications_waiting_out=mysqli_query($connect, "SELECT * FROM `waiting_for_confirmation` WHERE `id`='$id_cof'");
 					$out_=mysqli_fetch_array($str_applications_waiting_out);
