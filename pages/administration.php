@@ -147,7 +147,7 @@
 					echo "</table></div>";
 					
 				}
-				if($_GET['applications_waiting'])
+				if($_GET['application_waiting'])
 				{
 					$str_applications_wait_out=mysqli_query($connect, "SELECT * FROM `waiting_for_confirmation`");
 					echo"<div class=table><table border=1 cellspacing=0 >
