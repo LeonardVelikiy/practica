@@ -344,6 +344,21 @@ border: 4px solid #ff0000;
 	background-position: 5px;
 	margin-left: auto;
 }
+.form_mname
+{
+	margin-top: 20px;
+	margin-bottom: 30px;
+	text-align: center;
+	font-size: 18pt;
+	font-family: "Nunito-Bold";
+
+
+}
+
+.form_place
+{
+	text-align: center;
+}
 @font-face
 {
 	src:url(../fonts/Nunito-SemiBold.ttf);
