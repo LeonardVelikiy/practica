@@ -373,14 +373,13 @@ text-decoration: underline;
 }
 .delete_acc
 {
-	width: 160px;
+	width: 180px;
 	height: 35px;
 	background-color: red;
 	border: 3px solid red;
 	border-radius: 8px;
 	font-family: "Nunito-SemiBold";
 	text-align: center;
-	margin-left: 70px;
 	margin-top: 100px;
 	padding-top: 2px;
 	color: #ffffff;
