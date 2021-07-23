@@ -10,7 +10,14 @@ $connect=mysqli_connect('localhost','cn31570_practica','practica','cn31570_pract
 	<link rel="stylesheet" type="text/css" href="../styles/all_messages.css">
 </head>
 <body>
-
+<div id="lock">
+	<div id="okno2">
+		<a href="all_messages.php#">
+		<div class="close_btn1"></div>
+	</a>
+	<div class=text>Ваша Заявка будет рассмотренна</div>
+	</div>
+	</div>
 <div id=reg_dark>
 <div class="form_window_reg">
 		<a href="#">
@@ -178,14 +185,7 @@ echo "Заполните поля";
 
 </div>
 </div>
-<div id="lock">
-	<div id="okno2">
-		<a href="all_messages.php#">
-		<div class="close_btn1"></div>
-	</a>
-	<div class=text>Заявка будет рассмотренна</div>
-	</div>
-	</div>
+
 	<div class="wrapper">
 		<div class="head">
 		<a href="../index.php">
