@@ -285,7 +285,7 @@
 					{
 						$file_get= $_FILES['рhoto_start']['name'];
 						$temp= $_FILES['рhoto_start']['tmp_name'];
-						$file_to_saved= "images/".time().$file_get;
+						$file_to_saved= "../images/".time().$file_get;
 						move_uploaded_file($temp, $file_to_saved);
 						
 						$str_add_application="INSERT INTO `applications` (`рhoto_start`, `title`, `city`, `district`, `street`, `house`, `description`, `category`, `status`, `date_start`) VALUES ('$file_to_saved', '$title', '$city', '$district', '$street', '$house', '$description', '$category', '$status', '$date_start')";
