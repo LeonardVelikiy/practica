@@ -369,7 +369,7 @@
 		<div class="form_place">
 				<?php
 				echo "<div>$out__[title]</div>
-				<div wight=200px height=200px style=background-image: url($out__[photo_start])></div>
+				<div wight=200px height=200px style=background-image: url($out__[photo_start]);></div>
 				<div>Фото конец</div>
 				<div>Город</div>
 				<div>Описание</div>
