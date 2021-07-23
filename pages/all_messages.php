@@ -142,8 +142,10 @@ $connect=mysqli_connect('localhost','cn31570_practica','practica','cn31570_pract
 
 
 if($add){
-
-	$str_add_application="UPDATE `applications` SET `photo_end`='$file_to_saved', `status`='Выполнено', `date_end`='$time' WHERE `id`='$id_success'";
+	$str_out_application_="SELECT * FROM `applications` WHERE `status`='Новая', `id`='$id_success' ORDER BY `date_start`";
+	$run_out_application_=mysqli_query($connect, $str_out_application_);
+	$out_=mysqli_fetch_array($run_out_application_);
+	$str_add_application="INSERT INTO `waiting_for_confirmation` (`user`, `title`, `photo_start`, `photo_end`, `city`, `district`, `street`, `house`, `description`, `category`, `date_start`, `date_end`) VALUES ('$out_[user]', '$out_[title]', '$out_[photo_end]', '$photo_end', '$out_[city]', '$out_[district]', '$out_[street]', '$out_[house]', '$out_[discription]', '$out_[category]', '$out_[date_start]', '$time'";
 if ($_FILES) {
 if($imageFileType != "jpg" && $imageFileType != "jpeg") {
 	echo "Только файлы jpg и jpeg";
