@@ -177,7 +177,7 @@
 							<td>".date('d/m/Y',$out['date_start'])."
 							<td>".date('d/m/Y',$out['date_start'])."
 							<td><a href=?id_get=$out[id]#info_dark>Подробнее</a>
-							<td> <a href=?id_cof=$out[id]>Подтвердить</a>
+							<td> <a href=?application_waiting=ok?id_cof=$out[id]>Подтвердить</a>
 							<td><a href=?users=$out[id]>отклонить</a>
 						</tr>";
 						}
