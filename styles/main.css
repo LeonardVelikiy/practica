@@ -118,7 +118,8 @@ text-decoration: underline;
 }
 
 .checker > div:nth-child(1),
-.checker > div:nth-child(2)
+.checker > div:nth-child(2),
+.checker > div:nth-child(3)
 {
 	float: left;
 }
@@ -135,11 +136,16 @@ text-decoration: underline;
 	float: left;
 }
 
+.checker > div:nth-child(3) > div:nth-child(1),
+.checker > div:nth-child(3) > div:nth-child(2)
+{
+	float: left;
+}
 .checker > div:nth-child(1)
 {
 	height: 70px;
 	width: 350px;
-	margin-left: 30px;
+	margin-left: 260px;
 	margin-top: 10px;
 }
 
@@ -147,14 +153,14 @@ text-decoration: underline;
 {
 	height: 70px;
 	width: 350px;
-	margin-left: 30px;
+	margin-left: 100px;
 	margin-top: 10px;
 }
 .checker > div:nth-child(3)
 {
 	height: 70px;
 	width: 350px;
-	margin-left: 30px;
+	margin-left: 100px;
 	margin-top: 10px;
 }
 .checker > div:nth-child(1) > div:nth-child(1),
