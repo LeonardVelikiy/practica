@@ -74,6 +74,14 @@ echo "Заполните поля";
 
 </div>
 </div>
+<div id="lock">
+	<div id="okno2">
+		<a href="profile.php#">
+		<div class="close_btn1"></div>
+	</a>
+	<div class=text>Заявка будет рассмотренна</div>
+	</div>
+	</div>
 <div id="dark_edit">
 <div id="okno_edit">
 <?php
@@ -245,14 +253,6 @@ echo '<script>location.replace("#")</script>';
 		}
 		?>
 		<div class="copyright">Copyright</div>
-	</div>
-	<div id="lock">
-	<div id="okno2">
-		<a href="profile.php#">
-		<div class="close_btn1"></div>
-	</a>
-	<div class=text>Заявка будет рассмотренна</div>
-	</div>
 	</div>
 </body>
 </html>

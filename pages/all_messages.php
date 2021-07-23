@@ -178,6 +178,14 @@ echo "Заполните поля";
 
 </div>
 </div>
+<div id="lock">
+	<div id="okno2">
+		<a href="all_messages.php#">
+		<div class="close_btn1"></div>
+	</a>
+	<div class=text>Заявка будет рассмотренна</div>
+	</div>
+	</div>
 	<div class="wrapper">
 		<div class="head">
 		<a href="../index.php">
@@ -306,13 +314,6 @@ echo "Заполните поля";
 		</div>
 		<div class="copyright">Copyright</div>
 	</div>
-	<div id="lock">
-	<div id="okno2">
-		<a href="all_messages.php#">
-		<div class="close_btn1"></div>
-	</a>
-	<div class=text>Заявка будет рассмотренна</div>
-	</div>
-	</div>
+	
 </body>
 </html>
