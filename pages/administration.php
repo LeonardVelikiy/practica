@@ -25,15 +25,13 @@
 		</a>
 		<div class="form_mname">Подробности</div>
 		<div class="form_place">
-				<?php
-				echo "<div>$out__[title]</div>
-				<div wight=200px height=200px style=background-image: url($out__[photo_start])></div>
+				<div><?php echo "$out__[title]"; ?></div>
+				<div wight=200px height=200px style=background-image: url(<?php echo "$out__[photo_start]"; ?>)></div>
 				<div>Фото конец</div>
 				<div>Город</div>
 				<div>Описание</div>
 				<div>Дата</div>
 				<div>Категория</div>";
-				?>
 		</div>
 	</div>
 </div>
