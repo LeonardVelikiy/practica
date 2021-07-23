@@ -68,7 +68,7 @@
 					<button  name="aplications_work" value='ok'>работа с заявками</button>
 					<button  name="users_work" value='ok'>добавление заявок</button>
 					<button  name="category" value='ok'>добавление категорий</button>
-					<button  name="application_waiting" value='ok'>заявки ожидающие подтверждения</button>
+					<button  name="application_waiting" value='ok'>ожидающие подтверждения</button>
 				</form>
 			</div>
 			<div class="right_body">
