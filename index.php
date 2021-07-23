@@ -7,6 +7,8 @@ R::setup( 'mysql:host=localhost;dbname=cn31570_practica','cn31570_practica', 'pr
 $connect=mysqli_connect('localhost','cn31570_practica','practica','cn31570_practica'); 
 $query = mysqli_query($connect, "SELECT COUNT(*) FROM `applications` WHERE `status`='Выполнено'");
 	$count = mysqli_fetch_row($query)[0];
+	$query_all = mysqli_query($connect, "SELECT COUNT(*) FROM `applications`");
+	$count_all = mysqli_fetch_row($query_all)[0];
 
 if ( !R::testconnection() )
 {
@@ -311,6 +313,10 @@ else
 			<div>
 				<div><?php echo "$count";?></div>
 				<div>Решенных<br>проблем</div>
+			</div>
+			<div>
+				<div><?php echo "$count_all";?></div>
+				<div>Всего<br>проблем</div>
 			</div>
 		</div>
 		<div class="tagline">
