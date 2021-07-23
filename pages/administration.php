@@ -369,7 +369,7 @@
 		<div class="form_place">
 				<?php
 				echo "<div>$out__[title]</div>
-				<div><img src=$out__[photo_start] wight=200px height=200px></div>
+				<div><img src=/$out__[photo_start] wight=200px height=200px></div>
 				<div>Фото конец</div>
 				<div>Город</div>
 				<div>Описание</div>
