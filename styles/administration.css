@@ -324,6 +324,18 @@ border: 4px solid #ff0000;
 	  position: fixed;
 }
 #info_dark:target {display: block;}
+#info2_dark
+{
+		background: rgba(102, 102, 102, 0.5);
+	  width: 100%;
+	  height: 100%;
+	  position: absolute;
+	  top: 0;
+	  left: 0;
+	  display: none;
+	  position: fixed;
+}
+#info2_dark:target {display: block;}
 .form_window_info
 {
 	height: 520px;
@@ -354,14 +366,7 @@ border: 4px solid #ff0000;
 
 
 }
-.info_png > img:nth_child(1)
-{
-	margin-right: 10px;
-}
-.info_png > img:nth_child(2)
-{
-	margin-left: 10px;
-}
+
 .form_place
 {
 	text-align: center;

@@ -154,7 +154,7 @@
 							<td>$out[house]
 							<td>".date('d/m/Y',$out['date_start'])."
 							<td>".date('d/m/Y',$out['date_start'])."
-							<td><a href=?id_get=$out[id]&&#info_dark>Подробнее</a>
+							<td><a href=?id_get=$out[id]#info2_dark>Подробнее</a>
 							<td> <a href=?application_waiting=ok&&id_cof=$out[id]>Подтвердить</a>
 							<td><a href=?none=$out[id]>отклонить</a>
 						</tr>";
@@ -216,7 +216,7 @@
 						<th style=text-aligin:center;>категория
 						<th style=text-aligin:center;>время публикации
 						<th style=text-aligin:center;>время выполнения
-						<th colspan=3 style=text-aligin:center;>Действия
+						<th colspan=2 style=text-aligin:center;>Действия
 					</tr>
 						";
 						while($out=mysqli_fetch_array($str_applications_out))
@@ -237,7 +237,6 @@
 							<td>".date('d/m/Y',$out['date_start'])."
 							<td>$time_end
 							<td><a href=?aplications_work=$out[id] style=color:red;>удалить</a>
-							<td><a href=?aplications_work=$out[id] style=color:blue;>изменить</a>
 							<td><a href=?id_get=$out[id]#info_dark>Подробнее</a>
 						</tr>";
 						}
@@ -359,6 +358,34 @@
 	<?php
 	$id_get=$_GET['id_get'];
 	$str_out_application__="SELECT * FROM `applications` WHERE `id`='$id_get'";
+	$run_out_application__=mysqli_query($connect, $str_out_application__);
+	$out__=mysqli_fetch_array($run_out_application__);
+	?>
+		<a href="administration.php">
+			<div class="close_btn"></div>
+		</a>
+		<div class="form_mname">Подробности</div>
+		<div class="form_place">
+				<?php
+				echo "
+				<div><img src=../$out__[рhoto_start] width=150px height=150px><img src=../$out__[photo_end] width=150px height=150px></div>
+				<div>$out__[title]</div>
+				<div>$out__[user]</div>
+				<div>$out__[city]</div>
+				<div>$out__[discrit]</div>
+				<div>$out__[street]</div>
+				<div>$out__[house]</div>
+				<div>".date('d/m/Y',$out__['date_start'])."</div>
+				<div>".date('d/m/Y',$out__['date_end'])."</div>";
+				?>
+		</div>
+	</div>
+</div>
+<div id=info2_dark>
+<div class="form_window_info">
+	<?php
+	$id_get=$_GET['id_get'];
+	$str_out_application__="SELECT * FROM `waiting_for_confirmation` WHERE `id`='$id_get'";
 	$run_out_application__=mysqli_query($connect, $str_out_application__);
 	$out__=mysqli_fetch_array($run_out_application__);
 	?>
