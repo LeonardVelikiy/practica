@@ -17,6 +17,8 @@
 	<?php
 	$id_get=$_GET['id_get'];
 	$str_out_application="SELECT * FROM `applications` WHERE `id`='$id_get'";
+	$run_out_application=mysqli_query($connect, $str_out_application);
+	$out=mysqli_fetch_array($run_out_application);
 	?>
 		<a href="#">
 			<div class="close_btn"></div>
@@ -24,13 +26,15 @@
 		<div class="form_mname">Регистрация</div>
 		<div class="form_place">
 			<form method="POST">
-				<div>Название</div>
-				<div>Фото старт</div>
+				<?php
+				echo "<div>$out[title]</div>
+				<div wight=200px height=200px style=background-image: url($out[photo_start])></div>
 				<div>Фото конец</div>
 				<div>Город</div>
 				<div>Описание</div>
 				<div>Дата</div>
-				<div>Категория</div>
+				<div>Категория</div>";
+				?>
 				<?php
 				
 				?>
