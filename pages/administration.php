@@ -16,18 +16,18 @@
 <div class="form_window_info">
 	<?php
 	$id_get=$_GET['id_get'];
-	$str_out_application="SELECT * FROM `applications` WHERE `id`='$id_get'";
-	$run_out_application=mysqli_query($connect, $str_out_application);
-	$out=mysqli_fetch_array($run_out_application);
+	$str_out_application__="SELECT * FROM `applications` WHERE `id`='$id_get'";
+	$run_out_application__=mysqli_query($connect, $str_out_application__);
+	$out__=mysqli_fetch_array($run_out_application__);
 	?>
 		<a href="#">
 			<div class="close_btn"></div>
 		</a>
-		<div class="form_mname">Регистрация</div>
+		<div class="form_mname">Подробности</div>
 		<div class="form_place">
 				<?php
-				echo "<div>$out[title]</div>
-				<div wight=200px height=200px style=background-image: url($out[photo_start])></div>
+				echo "<div>$out__[title]</div>
+				<div wight=200px height=200px style=background-image: url($out__[photo_start])></div>
 				<div>Фото конец</div>
 				<div>Город</div>
 				<div>Описание</div>
