@@ -25,7 +25,6 @@
 		</a>
 		<div class="form_mname">Регистрация</div>
 		<div class="form_place">
-			<form method="POST">
 				<?php
 				echo "<div>$out[title]</div>
 				<div wight=200px height=200px style=background-image: url($out[photo_start])></div>
@@ -35,10 +34,6 @@
 				<div>Дата</div>
 				<div>Категория</div>";
 				?>
-				<?php
-				
-				?>
-			</form>
 		</div>
 	</div>
 </div>
