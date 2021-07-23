@@ -138,23 +138,23 @@ text-decoration: underline;
 .checker > div:nth-child(1)
 {
 	height: 70px;
-	width: 300px;
-	margin-left: 100px;
+	width: 350px;
+	margin-left: 30px;
 	margin-top: 10px;
 }
 
 .checker > div:nth-child(2)
 {
 	height: 70px;
-	width: 300px;
-	margin-left: 60px;
+	width: 350px;
+	margin-left: 30px;
 	margin-top: 10px;
 }
 .checker > div:nth-child(3)
 {
 	height: 70px;
-	width: 300px;
-	margin-left: 60px;
+	width: 350px;
+	margin-left: 30px;
 	margin-top: 10px;
 }
 .checker > div:nth-child(1) > div:nth-child(1),
