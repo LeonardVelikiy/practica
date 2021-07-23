@@ -16,14 +16,7 @@ $exit=$_POST['exit'];
 	<link rel="stylesheet" type="text/css" href="../styles/profile.css">
 </head>
 <body>
-<div id="lock">
-	<div id="okno2">
-		<a href="profile.php#">
-		<div class="close_btn1"></div>
-	</a>
-	<div class=text>Заявка будет рассмотренна</div>
-	</div>
-	</div>
+
 <div id=dark_success>
 <div id=okno_success>
 <a href="#">
@@ -252,6 +245,14 @@ echo '<script>location.replace("#")</script>';
 		}
 		?>
 		<div class="copyright">Copyright</div>
+	</div>
+	<div id="lock">
+	<div id="okno2">
+		<a href="profile.php#">
+		<div class="close_btn1"></div>
+	</a>
+	<div class=text>Заявка будет рассмотренна</div>
+	</div>
 	</div>
 </body>
 </html>
