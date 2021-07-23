@@ -348,7 +348,7 @@ margin-top: 22px;
 cursor: pointer;
 border: 4px solid #ff0000;
 }
-max-width: 1300px{
+@media (max-width: 1300px){
 	.wrapper
 	{
 	margin: 0px auto;
@@ -581,7 +581,7 @@ max-width: 1300px{
 	
 	}
 	
-	max-width: 1100px{
+	@media (max-width: 1100px){
 	.wrapper
 	{
 	margin: 0px auto;
@@ -926,7 +926,7 @@ max-width: 1300px{
 	
 	}
 	
-	max-width: 900px{
+	@media (max-width: 900px){
 	.wrapper
 	{
 	margin: 0px auto;
