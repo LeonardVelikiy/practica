@@ -351,21 +351,6 @@ else
 		
 		?>
 		</div>
-		<div class="pag_place">
-			<?php
-			$float_count=$int_out_application%8;
-					$int_count=floor($int_out_application/8);
-					$p=1;
-					if ($float_count>0) 
-					{
-						$int_count++;
-					}
-					for ($i=0; $i <$int_count ; $i++) { 
-						echo "<a class=pagination href=/?page_number=$i><div>$p</div></a>";
-						$p++;
-					}
-				?>	
-		</div>
 		<div class="copyright">Copyright</div>
 	</div>
 </body>
