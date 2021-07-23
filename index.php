@@ -343,8 +343,6 @@ else
 			echo "<div class=solved_item>
 				<div><img src=../$out[photo_end] width=260 height=260></div>
 				<div>$out[title]</div>
-				<div>$out[city]</div>
-				<div>$out[discrit]</div>
 				<div>$out[street]</div>
 				<div>$out[house]</div>
 				<div>$out[category]</div>
