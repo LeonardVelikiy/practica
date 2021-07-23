@@ -369,11 +369,14 @@
 		<div class="form_place">
 				<?php
 				echo "<div>$out__[title]</div>
+				<div>$out__[user]</div>
 				<div><img src=../$out__[рhoto_start] width=150px height=150px><img src=../$out__[photo_end] width=150px height=150px></div>
-				<div>Город</div>
-				<div>Описание</div>
-				<div>Дата</div>
-				<div>Категория</div>";
+				<div>$out__[city]</div>
+				<div>$out__[discrit][</div>
+				<div>$out__[street]</div>
+				<div>$out__[house]</div>
+				<div>".date('d/m/Y',$out['date_start'])."</div>
+				<div>".date('d/m/Y',$out['date_end'])."</div>
 				?>
 		</div>
 	</div>
