@@ -375,8 +375,8 @@
 				<div>$out__[discrit][</div>
 				<div>$out__[street]</div>
 				<div>$out__[house]</div>
-				<div>".date('d/m/Y',$out['date_start'])."</div>
-				<div>".date('d/m/Y',$out['date_end'])."</div>";
+				<div>".date('d/m/Y',$out__['date_start'])."</div>
+				<div>".date('d/m/Y',$out__['date_end'])."</div>";
 				?>
 		</div>
 	</div>
