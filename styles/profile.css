@@ -388,13 +388,13 @@ text-decoration: underline;
 	font-size: 14pt;
 }
 
-.delete_acc > input
+.delete_acc
 {
 	text-decoration: none;
 	color: #ffffff;
 }
 
-.delete_acc > input:hover
+.delete_acc:hover
 {
 	background-color: #00ff00;
 	border: 3px solid #00ff00;

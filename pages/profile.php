@@ -202,7 +202,7 @@ echo '<script>location.replace("#")</script>';
 				<div>$out[category]</div>
 				<div>".date('d/m/Y', $out['date_start'])."</div>
 				<div><a href=?id_del_app=$out[id]>Отменить</a></div>
-				<a href=all_messages.php?id_success=$out[id]#dark_success name=input><div>Выполнить</div></a>
+				<a href=profile.php?id_success=$out[id]#dark_success name=input><div>Выполнить</div></a>
 			</div>
 		</div>";
 		}
@@ -225,11 +225,9 @@ echo '<script>location.replace("#")</script>';
 					}
 				?>	
 		</div>
-		<div class="delete_acc">
 			<form method=POST>
-			<input type=submit name=del_akk value="Удалить профиль">
+			<input type=submit class="delete_acc" name=del_akk value="Удалить профиль">
 	</form>
-		</div>
 		<?php
 		$del_akk=$_POST['del_akk'];
 		if ($del_akk){
