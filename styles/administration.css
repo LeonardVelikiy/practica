@@ -354,7 +354,14 @@ border: 4px solid #ff0000;
 
 
 }
-
+.info_png > img:nth_child(1)
+{
+	margin-right: 10px;
+}
+.info_png > img:nth_child(2)
+{
+	margin-left: 10px;
+}
 .form_place
 {
 	text-align: center;
