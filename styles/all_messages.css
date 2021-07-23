@@ -17,6 +17,19 @@
 	width: 100%;
 	border-bottom: 5px solid #d2d2d2; 
 }
+
+.close_btn1
+{
+  height: 60px;
+  width: 60px;
+  background-image: url(../images/close.png);
+  background-size: 80%;
+  background-repeat: no-repeat;
+  background-position: 5px;
+  margin-left: 340px;
+  margin-bottom: 80px;
+  position: absolute;
+}
 #okno2 {
 	height: 75px;
 width: 400px;
