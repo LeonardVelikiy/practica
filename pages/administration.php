@@ -156,7 +156,7 @@
 							<td>".date('d/m/Y',$out['date_start'])."
 							<td><a href=?id_get=$out[id]#info2_dark>Подробнее</a>
 							<td> <a href=?application_waiting=ok&&id_cof=$out[id]>Подтвердить</a>
-							<td><a href=?none=$out[id]application_waiting=ok>отклонить</a>
+							<td><a href=?application_waiting=ok&&none=$out[id]>отклонить</a>
 						</tr>";
 						}
 					echo "</table></div>";
