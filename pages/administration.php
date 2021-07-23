@@ -262,7 +262,7 @@
 							<td>$time_end
 							<td><a href=?aplications_work=$out[id] style=color:red;>удалить</a>
 							<td><a href=?aplications_work=$out[id] style=color:blue;>изменить</a>
-							<td><a href=#info_dark&&id_get=$out[id]>Подробнее</a>
+							<td><a href=#info_dark?id_get=$out[id]>Подробнее</a>
 						</tr>";
 						}
 					echo "</table></div>";
