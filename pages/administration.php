@@ -12,31 +12,7 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </head>
 <body>
-<div id=info_dark>
-<div class="form_window_info">
-	<?php
-	$id_get=$_GET['id_get'];
-	$str_out_application__="SELECT * FROM `applications` WHERE `id`='$id_get'";
-	$run_out_application__=mysqli_query($connect, $str_out_application__);
-	$out__=mysqli_fetch_array($run_out_application__);
-	?>
-		<a href="#">
-			<div class="close_btn"></div>
-		</a>
-		<div class="form_mname">Подробности</div>
-		<div class="form_place">
-				<?php
-				echo "<div>$out__[title]</div>
-				<div wight=200px height=200px style=background-image: url($out__[photo_start])></div>
-				<div>Фото конец</div>
-				<div>Город</div>
-				<div>Описание</div>
-				<div>Дата</div>
-				<div>Категория</div>";
-				?>
-		</div>
-	</div>
-</div>
+
 	<div class="wrapper">
 		<div class="head">
 		<a href="../index.php">
@@ -378,6 +354,31 @@
 		</div>
 		<div class="copyright">Copyright</div>
 	</div>
+	<div id=info_dark>
+<div class="form_window_info">
+	<?php
+	$id_get=$_GET['id_get'];
+	$str_out_application__="SELECT * FROM `applications` WHERE `id`='$id_get'";
+	$run_out_application__=mysqli_query($connect, $str_out_application__);
+	$out__=mysqli_fetch_array($run_out_application__);
+	?>
+		<a href="#">
+			<div class="close_btn"></div>
+		</a>
+		<div class="form_mname">Подробности</div>
+		<div class="form_place">
+				<?php
+				echo "<div>$out__[title]</div>
+				<div wight=200px height=200px style=background-image: url($out__[photo_start])></div>
+				<div>Фото конец</div>
+				<div>Город</div>
+				<div>Описание</div>
+				<div>Дата</div>
+				<div>Категория</div>";
+				?>
+		</div>
+	</div>
+</div>
 </body>
 </html>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
