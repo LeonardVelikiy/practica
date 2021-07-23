@@ -386,6 +386,7 @@ text-decoration: underline;
 	color: #ffffff;
 	font-family: "Nunito-SemiBold";
 	float: left;
+	margin-top: 50px;
 }
 
 .pagination > div
