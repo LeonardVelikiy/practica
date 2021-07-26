@@ -282,7 +282,7 @@ echo "Заполните поля";
 					}
 					
 					$run_out_application_pag=mysqli_query($connect, $str_out_application_pag);
-
+echo "<div>"
 		while ($out=mysqli_fetch_array($run_out_application_pag)) {
 			$id=$out['id'];
 			echo "<div class=mess_item>
@@ -293,8 +293,9 @@ echo "Заполните поля";
 			<div>".date('d/m/Y', $out['date_start'])."</div>
 			<div>$out[city]/$out[district]<br>$out[street]/$out[house]</div>
 			<a href=all_messages.php?id_success=$out[id]#dark_success name=input><div>Выполнить</div></a>
-			</div></div>";
+			</div>";
 		}
+		echo "</div>"
 		?>
 		</div>
 		<div class="pag_place">
