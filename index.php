@@ -201,7 +201,7 @@ $online_count = R::count('online', "lastvisit > " . ( time() - (360) ));
 		<div class="close_btn1"></div>
 	</a>
 		<form method="POST" enctype="multipart/form-data">
-		<input type="file" name="рhoto_start" class="form_mitem1" id="form_mitem1"></input><br><br>
+		<input type="file" name="рhoto_start" class="form_mitem1" id="form_mitem1" accept="MIME-jpg"></input><br><br>
 		<input type="text" name="title" class="form_mitem2" placeholder="Название"><br><br>
 		<input type="text" name="city" class="form_mitem2" placeholder="Город"><br><br>
 		<input type="text" name="district" class="form_mitem2" placeholder="Район"><br><br>
