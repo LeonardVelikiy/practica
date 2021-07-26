@@ -310,7 +310,7 @@
 					echo"
 					<form method=GET ><br>
 						<input type=text name=search class=form_mitem1><br>
-						<input type=submit name=send_search value=Поиск>
+						<input type=submit name=send_search value=Поиск class=form_btn_call>
 					</form>";
 					$search=$_GET['search'];
 					$send_search=$_GET['send_search'];
