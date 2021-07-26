@@ -85,7 +85,7 @@ $online_count = R::count('online', "lastvisit > " . ( time() - (360) ));
 		<div class="form_mname">Регистрация</div>
 		<div class="form_place">
 			<form method="POST">
-				<input type="text" name="first_last_name" placeholder="ФИО" class="form_mitem"><br>
+			<input type="text" name="first_last_name" placeholder="ФИО" class="form_mitem"><br>
 				<input type="text" name="login" placeholder="Логин" class="form_mitem"><br>
 				<input type="text" name="Email" placeholder="Email" class="form_mitem"><br>
 				<input type="password" name="pass" placeholder="Пароль" class="form_mitem"><br>
@@ -100,7 +100,7 @@ $online_count = R::count('online', "lastvisit > " . ( time() - (360) ));
 				$copy_pass=$_POST['copy_pass'];
 				$cb=$_POST['cb'];
 				$reg=$_POST['reg'];
-				if ($reg){
+				if ($str_user_plus){
 				$_SESSION['login']=$login;
 				$_SESSION['pass']=$pass;
 				}
@@ -110,7 +110,7 @@ $online_count = R::count('online', "lastvisit > " . ( time() - (360) ));
 					{
 							if($first_last_name and $login and $Email and $cb) 
 							{
-							$str_user_plus=mysqli_query($connect, "INSERT INTO `users` (`first_last_name`, `mail`, `pass`, `login`) VALUES ('$first_last_name','$Email','$_SESSION[pass]','$_SESSION[login]');");
+							$str_user_plus=mysqli_query($connect, "INSERT INTO `users` (`first_last_name`, `mail`, `pass`, `login`) VALUES ('$first_last_name','$Email','$pass','$login')");
 							if ($str_user_plus){
 							echo '<script>location.replace("../pages/profile.php");</script>'; exit;
 							}
