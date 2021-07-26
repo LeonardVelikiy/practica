@@ -41,7 +41,6 @@ $connect=mysqli_connect('localhost','cn31570_practica','practica','cn31570_pract
 				$copy_pass=$_POST['copy_pass'];
 				$cb=$_POST['cb'];
 				$reg=$_POST['reg'];
-				session_start();
 				if ($reg){
 				$_SESSION['login']=$login;
 				$_SESSION['pass']=$pass;
@@ -95,7 +94,6 @@ $connect=mysqli_connect('localhost','cn31570_practica','practica','cn31570_pract
 			$login=$_POST['login'];
 			$pass=$_POST['pass'];
 			$auth=$_POST['auth'];
-			session_start();
 			if ($auth) {
 				$_SESSION['login']=$login;
 				$_SESSION['pass']=$pass;
