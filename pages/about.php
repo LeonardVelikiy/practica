@@ -79,15 +79,17 @@ session_start();
 			$login=$_POST['login'];
 			$pass=$_POST['pass'];
 			$auth=$_POST['auth'];
+			session_start();
 			if ($auth) {
 				$_SESSION['login']=$login;
 				$_SESSION['pass']=$pass;
-				$_SESSION['auth']=$add;
-			}
-			if($add)
+	}
+
+			if($auth)
 			{
 				$str_auth="SELECT * FROM `users` WHERE `login` = '$_SESSION[login]' AND `pass` = '$_SESSION[pass]'";
 				$run_auth=mysqli_query($connect,$str_auth);
+
 				$check_users=mysqli_num_rows($run_auth);
 
 				if ($check_users) 
@@ -95,19 +97,22 @@ session_start();
 						$user= mysqli_fetch_assoc($run_auth);
 						if ($user['role']==0) 
 						{
-							 echo '<script>location.replace("../pages/profile.php");</script>'; exit;
-						}else
+							 echo '<script>location.replace("../pages/profile.php")</script>'; exit();
+						}
+						else
 						{
-							 echo '<script>location.replace("../pages/administration.php");</script>'; exit;
+							 echo '<script>location.replace("../pages/administration.php")</script>'; exit();
 						}
 									
-					}else
+					}
+					else
 					{
 						session_destroy();
 						exit();
 					}
 
 			}
+
 
 
 			?>
