@@ -41,7 +41,7 @@ $connect=mysqli_connect('localhost','cn31570_practica','practica','cn31570_pract
 				$copy_pass=$_POST['copy_pass'];
 				$cb=$_POST['cb'];
 				$reg=$_POST['reg'];
-				if ($reg){
+				if ($str_user_plus){
 				$_SESSION['login']=$login;
 				$_SESSION['pass']=$pass;
 				}
@@ -51,7 +51,7 @@ $connect=mysqli_connect('localhost','cn31570_practica','practica','cn31570_pract
 					{
 							if($first_last_name and $login and $Email and $cb) 
 							{
-							$str_user_plus=mysqli_query($connect, "INSERT INTO `users` (`first_last_name`, `mail`, `pass`, `login`) VALUES ('$first_last_name','$Email','$_SESSION[pass]','$_SESSION[login]');");
+							$str_user_plus=mysqli_query($connect, "INSERT INTO `users` (`first_last_name`, `mail`, `pass`, `login`) VALUES ('$first_last_name','$Email','$pass','$login');");
 							if ($str_user_plus){
 							echo '<script>location.replace("../pages/profile.php");</script>'; exit;
 							}
