@@ -125,7 +125,7 @@ $online_count = R::count('online', "lastvisit > " . ( time() - (360) ));
 					}
 					else
 					{
-						echo "Пароли не совпадают"ж
+						echo "Пароли не совпадают";
 					}
 				}
 				?>
