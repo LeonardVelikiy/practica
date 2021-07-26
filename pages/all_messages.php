@@ -188,7 +188,9 @@ echo "Заполните поля";
 }
 }
 
-
+$str_auth="SELECT * FROM `users` WHERE `login` = '$_SESSION[login]' AND `pass` = '$_SESSION[pass]'";
+				$run_auth=mysqli_query($connect,$str_auth);
+				$user= mysqli_fetch_assoc($run_auth);
 ?>
 
 </div>
