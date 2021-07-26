@@ -110,7 +110,9 @@ $online_count = R::count('online', "lastvisit > " . ( time() - (360) ));
 					{
 							if($first_last_name and $login and $Email and $cb) 
 							{
-							$str_user_plus=mysqli_query($connect, "INSERT INTO `users` (`first_last_name`, `mail`, `pass`, `login`) VALUES ('$first_last_name','$Email','$pass','$login')");
+								$str="INSERT INTO `users` (`first_last_name`, `mail`, `pass`, `login`) VALUES ('$first_last_name','$Email','$pass','$login')";
+							$str_user_plus=mysqli_query($connect, $str);
+							print_r($str);
 							if ($str_user_plus){
 							echo '<script>location.replace("../pages/profile.php");</script>'; exit;
 							}
