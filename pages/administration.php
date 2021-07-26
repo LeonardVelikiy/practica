@@ -409,7 +409,7 @@
 		<div class="form_place">
 				<?php
 				echo "
-				<div><img src=../$out__[рhoto_start] width=150px height=150px><img src=../$out__[photo_end] width=150px height=150px></div>
+				<div><img src=../$out__[photo_start] width=150px height=150px><img src=../$out__[photo_end] width=150px height=150px></div>
 				<div>$out__[title]</div>
 				<div>$out__[user]</div>
 				<div>$out__[city]</div>
