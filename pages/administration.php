@@ -124,6 +124,15 @@
 				}
 				if($_GET['application_waiting'])
 				{
+					$none=$_GET['application_waiting_none'];
+					$none_app=mysqli_query($connect, "DELETE FROM `waiting_for_confirmation` WHERE `id`='$none'");
+					$id_cof=$_GET['application_waiting'];
+					$str_applications_waiting_out=mysqli_query($connect, "SELECT * FROM `waiting_for_confirmation` WHERE `id`='$id_cof'");
+					$out_=mysqli_fetch_array($str_applications_waiting_out);
+					$run_del=mysqli_query($connect, "DELETE FROM `waiting_for_confirmation` WHERE `id_wait`='$out_[id_wait]'");	
+					$str_upd_app="UPDATE `applications` SET `photo_end`='$out_[photo_end]', `date_end`='$out_[date_end]', `status`='Выполнено' WHERE `id`='$out_[id_wait]'";
+					$run_upd_app=mysqli_query($connect, $str_upd_app);
+					
 					$str_applications_wait_out=mysqli_query($connect, "SELECT * FROM `waiting_for_confirmation`");
 					echo"<div class=table><table border=1 cellspacing=0 >
 					<tr>
@@ -160,14 +169,6 @@
 						</tr>";
 						}
 					echo "</table></div>";
-					$none=$_GET['application_waiting_none'];
-					$none_app=mysqli_query($connect, "DELETE FROM `waiting_for_confirmation` WHERE `id`='$none'");
-					$id_cof=$_GET['application_waiting'];
-					$str_applications_waiting_out=mysqli_query($connect, "SELECT * FROM `waiting_for_confirmation` WHERE `id`='$id_cof'");
-					$out_=mysqli_fetch_array($str_applications_waiting_out);
-					$run_del=mysqli_query($connect, "DELETE FROM `waiting_for_confirmation` WHERE `id_wait`='$out_[id_wait]'");	
-					$str_upd_app="UPDATE `applications` SET `photo_end`='$out_[photo_end]', `date_end`='$out_[date_end]', `status`='Выполнено' WHERE `id`='$out_[id_wait]'";
-					$run_upd_app=mysqli_query($connect, $str_upd_app);
 					
 						
 					
