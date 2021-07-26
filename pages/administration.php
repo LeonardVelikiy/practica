@@ -309,7 +309,7 @@
 					}
 					echo"
 					<form method=GET ><br>
-						<input type=text name=search class=form_mitem1><br>
+						<input type=text name=search class=form_mitem1 placeholder=Поиск...><br>
 						<input type=submit name=send_search value=Поиск class=form_btn_call>
 					</form>";
 					$search=$_GET['search'];
