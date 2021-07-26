@@ -287,7 +287,8 @@ else
 			}
 			else
 			{
-				
+				$str_auth="SELECT * FROM `users` WHERE `login` = '$_SESSION[login]' AND `pass` = '$_SESSION[pass]'";
+				$run_auth=mysqli_query($connect,$str_auth);
 			if ($user['role']=0){
 				echo "<a href=../pages/profile.php><div class=kab>Мой кабинет</div></a><form method=POST><input type=submit name=exit value=Выход class=exit></form>";
 				}
