@@ -216,7 +216,7 @@ $online_count = R::count('online', "lastvisit > " . ( time() - (360) ));
 			echo "<option>$out[category]</option>";
 		}
 		?></select><br><br>
-		<input type="submit" name="add" value="Сообщить">
+		<input class="form_btn_call" type="submit" name="add" value="Сообщить">
 		<?php 
 				$ex=$_POST['ex'];
 				$option=$_POST['option'];
