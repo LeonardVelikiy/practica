@@ -58,7 +58,7 @@
 					echo"
 					<form method=POST>
 						<input type=text name=category_name class=form_mitem1 id=form_mitem1><br><br>
-						<input type=submit name=add class=form_mitem1 id=form_mitem1 value=добавить style=cursor:pointer;>
+						<input type=submit name=add class=form_btn_call id=form_mitem1 value=добавить style=cursor:pointer;>
 					</form>";
 					$category_name=$_POST['category_name'];
 					$add=$_POST['add'];
