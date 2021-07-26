@@ -238,7 +238,7 @@
 							<td>".date('d/m/Y',$out['date_start'])."
 							<td>$time_end
 							<td><a href=?aplications_work=$out[id] style=color:red;>удалить</a>
-							<td><a href=?id_get=$out[id]#info_dark>Подробнее</a>
+							<td><a href=?aplications_work=ok&&id_get=$out[id]#info_dark>Подробнее</a>
 						</tr>";
 						}
 					echo "</table></div>";
@@ -362,7 +362,7 @@
 	$run_out_application__=mysqli_query($connect, $str_out_application__);
 	$out__=mysqli_fetch_array($run_out_application__);
 	?>
-		<a href="administration.php">
+		<a href="administration.php?aplications_work=ok">
 			<div class="close_btn"></div>
 		</a>
 		<div class="form_mname">Подробности</div>
@@ -403,7 +403,7 @@
 	$run_out_application__=mysqli_query($connect, $str_out_application__);
 	$out__=mysqli_fetch_array($run_out_application__);
 	?>
-		<a href="administration.php">
+		<a href="administration.php?application_waiting=ok">
 			<div class="close_btn"></div>
 		</a>
 		<div class="form_mname">Подробности</div>
