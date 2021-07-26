@@ -163,7 +163,7 @@
 							<td>$out[house]
 							<td>".date('d/m/Y',$out['date_start'])."
 							<td>".date('d/m/Y',$out['date_end'])."
-							<td><a href=?id_get=$out[id]#info2_dark>Подробнее</a>
+							<td><a href=?application_waiting=ok&&id_get=$out[id]#info2_dark>Подробнее</a>
 							<td> <a href=?application_waiting=$out[id]>Подтвердить</a>
 							<td><a href=?application_waiting=ok&&none=$out[id]>отклонить</a>
 						</tr>";
