@@ -121,7 +121,7 @@ session_start();
 		<a href="../index.php">
 				<span class="link_i">Главная</span>
 			</a>
-			<div class="logo"></div>
+			<a href="/"><div class="logo"></div></a>
 			<a href="about.php">
 				<span class="link_f">О сервисе</span>
 			</a>
