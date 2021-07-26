@@ -265,7 +265,7 @@
 					}
 					echo"
 					</select><br><br>
-					<input type=submit name=add value=Сообщить>
+					<input type=submit name=add value=Сообщить class=form_btn_call>
 					</form>";
 					
 					$ex=$_POST['ex'];
