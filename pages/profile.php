@@ -30,7 +30,7 @@ $exit=$_POST['exit'];
 			<div class="close_btn"></div>
 		</a>
 <form method="POST" enctype="multipart/form-data">
-<input type="file" name="photo_end" class="form_mitem1" id="form_mitem1"><br><br>
+<input type="file" name="photo_end" class="form_mitem1" id="form_mitem1" accept=".jpg"><br><br>
 <input type="submit" name="add" class="form_mbtn1" value="Подтвердить">
 </form>
 <?php
@@ -93,7 +93,7 @@ echo "Заполните поля";
 			<div class="close_btn"></div>
 		</a>
 		<form method="POST" enctype="multipart/form-data">
-<input type="file" name="avatar" class="form_mitem1" id="form_mitem1"><br><br>
+<input type="file" name="avatar" class="form_mitem1" id="form_mitem1" accept=".jpg"><br><br>
 <input type="text" name="name_edit" class="form_mitem" placeholder="<?php echo $out_auth['first_last_name']?>"><br>
 <input type="text" name="mail_edit" class="form_mitem" placeholder="<?php echo $out_auth['mail']?>"><br>
 <input type="submit" name="save" class="form_mbtn1" value="Сохранить">

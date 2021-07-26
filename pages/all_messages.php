@@ -133,7 +133,7 @@ $connect=mysqli_connect('localhost','cn31570_practica','practica','cn31570_pract
 			<div class="close_btn"></div>
 		</a>
 <form method="POST" enctype="multipart/form-data">
-<input type="file" name="photo_end" class="form_mitem1" id="form_mitem1"><br><br>
+<input type="file" name="photo_end" class="form_mitem1" id="form_mitem1" accept=".jpg"><br><br>
 <input type="submit" name="add" class="form_mbtn1" value="Подтвердить">
 </form>
 <?php

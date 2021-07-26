@@ -252,7 +252,7 @@
 					echo"
 					<div class=part1>
 					<form method=POST enctype=multipart/form-data>
-					<input type=file name=рhoto_start class=form_mitem1 id=form_mitem1></input><br><br>
+					<input type=file name=рhoto_start class=form_mitem1 id=form_mitem1 accept=.jpg></input><br><br>
 					<input type=text name=title class=form_mitem2 placeholder=Название><br><br>
 					<input type=text name=city class=form_mitem2 placeholder=Город><br><br>
 					<input type=text name=district class=form_mitem2 placeholder=Район><br><br>
@@ -265,7 +265,7 @@
 					}
 					echo"
 					</select><br><br>
-					<input type=submit name=add value=Сообщить class=form_btn_call>
+					<input type=submit name=add value=Добавить class=form_btn_call>
 					</form>";
 					
 					$ex=$_POST['ex'];
