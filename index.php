@@ -107,13 +107,17 @@ $online_count = R::count('online', "lastvisit > " . ( time() - (360) ));
 					{
 							if($first_last_name and $login and $Email and $cb) 
 							{
-							$str_user_plus=mysqli_query($connect, "INSERT INTO `users` (`first_last_name`, `mail`, `pass`, `login`) VALUES ('$first_last_name','$Email','$pass','$login')");
-							if ($str_user_plus){
+							$str_user_plus="INSERT INTO `users` (`first_last_name`, `mail`, `pass`, `login`) VALUES ('$first_last_name','$Email','$pass','$login')";
+							if ($str_user_plus!=NULL){
 								session_start();
 								$_SESSION['login']=$login;
 								$_SESSION['pass']=$pass;
+								$str_user_plus_session="INSERT INTO `users` (`first_last_name`, `mail`, `pass`, `login`) VALUES ('$first_last_name','$Email','$_SESSION[pass]','$_SESSION[login]')";
+							$run_user_plus=mysqli_query($connect, $str_user_plus_session);
+							if ($run_user_plus){
 							echo '<script>location.replace("../pages/profile.php");</script>'; exit;
-							}
+							}	
+						}
 							else
 							{
 								echo "Ошибка регистрации";
