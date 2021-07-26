@@ -382,6 +382,7 @@ border: 1px solid #00ff00;
 	height: 45px;
 	width: 100%;
 	margin-top: 50px;
+	float: left;
 	padding-top: 15px;
 	text-align: center;
 	background-color: #1cd538;
