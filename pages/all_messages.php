@@ -41,35 +41,28 @@ $connect=mysqli_connect('localhost','cn31570_practica','practica','cn31570_pract
 				$copy_pass=$_POST['copy_pass'];
 				$cb=$_POST['cb'];
 				$reg=$_POST['reg'];
-				if ($reg){
-				$_SESSION['login']=$login;
-				$_SESSION['pass']=$pass;
-				}
 				if($reg)
 				{	
 					if($copy_pass == $pass)
 					{
 							if($first_last_name and $login and $Email and $cb) 
 							{
-							$str_user_plus=mysqli_query($connect, "INSERT INTO `users` (`first_last_name`, `mail`, `pass`, `login`) VALUES ('$first_last_name','$Email','$_SESSION[pass]','$_SESSION[login]')");
+							$str_user_plus=mysqli_query($connect, "INSERT INTO `users` (`first_last_name`, `mail`, `pass`, `login`) VALUES ('$first_last_name','$Email','$pass','$login')");
 							if ($str_user_plus){
-							echo '<script>location.replace("../pages/profile.php");</script>'; exit;
+							echo '<script>location.replace("#auth_dark");</script>'; exit;
 							}
 							else
 							{
 								echo "Ошибка регистрации";
-								session_destroy();exit();
 							}
 							}else
 							{
 								echo'<br>заполните все поля<br>';
-								session_destroy();exit();
 							}
 					}
 					else
 					{
 						echo "Пароли не совпадают";
-						session_destroy();exit();
 					}
 				}
 				?>
@@ -185,11 +178,8 @@ else
 echo "Заполните поля";
 }
 }
-if ($_SESSION['login']!=NULL){
-$str_="SELECT * FROM `users` WHERE `login` = '$_SESSION[login]' AND `pass` = '$_SESSION[pass]'";
-$run_=mysqli_query($connect,$str_);
-$user=mysqli_fetch_array($run_);
-}
+
+
 ?>
 
 </div>
