@@ -26,7 +26,7 @@ $connect=mysqli_connect('localhost','cn31570_practica','practica','cn31570_pract
 		<div class="form_mname">Регистрация</div>
 		<div class="form_place">
 			<form method="POST">
-				<input type="text" name="first_last_name" placeholder="ФИО" class="form_mitem"><br>
+			<input type="text" name="first_last_name" placeholder="ФИО" class="form_mitem"><br>
 				<input type="text" name="login" placeholder="Логин" class="form_mitem"><br>
 				<input type="text" name="Email" placeholder="Email" class="form_mitem"><br>
 				<input type="password" name="pass" placeholder="Пароль" class="form_mitem"><br>
@@ -57,7 +57,7 @@ $connect=mysqli_connect('localhost','cn31570_practica','practica','cn31570_pract
 							}
 							else
 							{
-								echo "Ошибка ругистрации";
+								echo "Ошибка регистрации";
 							}
 							}else
 							{
@@ -66,6 +66,7 @@ $connect=mysqli_connect('localhost','cn31570_practica','practica','cn31570_pract
 					}
 					
 				}
+				
 				?>
 			</form>
 		</div>
@@ -282,7 +283,7 @@ echo "Заполните поля";
 					}
 					
 					$run_out_application_pag=mysqli_query($connect, $str_out_application_pag);
-echo "<div>";
+
 		while ($out=mysqli_fetch_array($run_out_application_pag)) {
 			$id=$out['id'];
 			echo "<div class=mess_item>
@@ -295,7 +296,6 @@ echo "<div>";
 			<a href=all_messages.php?id_success=$out[id]#dark_success name=input><div>Выполнить</div></a>
 			</div>";
 		}
-		echo "</div>";
 		?>
 		</div>
 		<div class="pag_place">
