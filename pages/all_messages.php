@@ -191,7 +191,7 @@ echo "Заполните поля";
 		<a href="../index.php">
 				<span class="link_i">Главная</span>
 			</a>
-			<div class="logo"></div>
+			<a href="/"><div class="logo"></div></a>
 			<a href="about.php">
 				<div class="link_f">О сервисе</div>
 			</a>

@@ -18,7 +18,7 @@
 		<a href="../index.php">
 				<span class="link_i">Главная</span>
 			</a>
-			<div class="logo"></div>
+			<a href="/"><div class="logo"></div></a>
 			<a href="about.php">
 				<span class="link_f">О сервисе</span>
 			</a>
@@ -367,7 +367,19 @@
 		<div class="form_mname">Подробности</div>
 		<div class="form_place">
 				<?php
+				if ($out__['photo_end']==NULL){
 				echo "
+				<div><img src=../$out__[рhoto_start] width=150px height=150px></div>
+				<div>$out__[title]</div>
+				<div>$out__[user]</div>
+				<div>$out__[city]</div>
+				<div>$out__[discrit]</div>
+				<div>$out__[street]</div>
+				<div>$out__[house]</div>
+				<div>".date('d/m/Y',$out__['date_start'])."</div>";
+				}
+				else{
+					echo "
 				<div><img src=../$out__[рhoto_start] width=150px height=150px><img src=../$out__[photo_end] width=150px height=150px></div>
 				<div>$out__[title]</div>
 				<div>$out__[user]</div>
@@ -377,6 +389,7 @@
 				<div>$out__[house]</div>
 				<div>".date('d/m/Y',$out__['date_start'])."</div>
 				<div>".date('d/m/Y',$out__['date_end'])."</div>";
+				}
 				?>
 		</div>
 	</div>
