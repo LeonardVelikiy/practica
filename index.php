@@ -149,9 +149,10 @@ $online_count = R::count('online', "lastvisit > " . ( time() - (360) ));
 			if ($auth) {
 				$_SESSION['login']=$login;
 				$_SESSION['pass']=$pass;
+				$_SESSION['auth']=$auth;
 	}
 
-			if($auth)
+			if($_SESSION['auth'])
 			{
 				$str_auth="SELECT * FROM `users` WHERE `login` = '$_SESSION[login]' AND `pass` = '$_SESSION[pass]'";
 				$run_auth=mysqli_query($connect,$str_auth);
@@ -287,14 +288,6 @@ else
 			}
 			else
 			{
-				$str_auth="SELECT * FROM `users` WHERE `login` = '$_SESSION[login]' AND `pass` = '$_SESSION[pass]'";
-				$run_auth=mysqli_query($connect,$str_auth);
-
-				$check_users=mysqli_num_rows($run_auth);
-
-				if ($check_users) 
-					{
-						$user= mysqli_fetch_assoc($run_auth);
 			if ($user['role']=0){
 				echo "<a href=../pages/profile.php><div class=kab>Мой кабинет</div></a><form method=POST><input type=submit name=exit value=Выход class=exit></form>";
 				}
@@ -302,7 +295,7 @@ else
 				{
 					echo "<a href=../pages/administration.php><div class=kab>Мой кабинет</div></a><form method=POST><input type=submit name=exit value=Выход class=exit></form>";
 				}
-			}
+			
 			}
 			$exit=$_POST['exit'];
 			if ($exit) {
