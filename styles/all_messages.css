@@ -387,6 +387,7 @@ border: 1px solid #00ff00;
 	font-size: 16pt;
 	color: #ffffff;
 	font-family: "Nunito-Bold";
+	position: relative;
 }
 
 #okno_success
