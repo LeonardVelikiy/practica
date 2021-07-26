@@ -8,7 +8,7 @@ $connect=mysqli_connect('localhost','cn31570_practica','practica','cn31570_pract
 $query = mysqli_query($connect, "SELECT COUNT(*) FROM `applications` WHERE `status`='Выполнено'");
 	$count = mysqli_fetch_row($query)[0];
 	$query_all = mysqli_query($connect, "SELECT COUNT(*) FROM `applications`");
-	$count_all = mysqli_fetch_row($query_all)[0];
+	$count_all = mysqli_fetch_row($query_all)[0];s
 
 if ( !R::testconnection() )
 {
