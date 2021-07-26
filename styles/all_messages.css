@@ -197,6 +197,7 @@ border: #d5d5d5;
 	max-height: 1830px;
 	width: 100%;
 	padding-top: 30px;
+	float: left;
 }
 
 .all_messages_filter
