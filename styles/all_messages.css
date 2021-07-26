@@ -197,7 +197,6 @@ border: #d5d5d5;
 	max-height: 1830px;
 	width: 100%;
 	padding-top: 30px;
-	position: relative;
 }
 
 .all_messages_filter
@@ -387,7 +386,6 @@ border: 1px solid #00ff00;
 	font-size: 16pt;
 	color: #ffffff;
 	font-family: "Nunito-Bold";
-	position: relative;
 }
 
 #okno_success
