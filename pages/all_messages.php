@@ -54,15 +54,6 @@ $connect=mysqli_connect('localhost','cn31570_practica','practica','cn31570_pract
 							{
 							$str_user_plus=mysqli_query($connect, "INSERT INTO `users` (`first_last_name`, `mail`, `pass`, `login`) VALUES ('$first_last_name','$Email','$_SESSION[pass]','$_SESSION[login]')");
 							if ($str_user_plus){
-								$str_auth="SELECT * FROM `users` WHERE `login` = '$_SESSION[login]' AND `pass` = '$_SESSION[pass]'";
-								$run_auth=mysqli_query($connect,$str_auth);
-
-								$check_users=mysqli_num_rows($run_auth);
-
-								if ($check_users) 
-								{
-									$user= mysqli_fetch_assoc($run_auth);
-								}
 							echo '<script>location.replace("../pages/profile.php");</script>'; exit;
 							}
 							else
@@ -196,8 +187,11 @@ else
 echo "Заполните поля";
 }
 }
-
-
+if ($_SESSION['login']!=NULL){
+$str_="SELECT * FROM `users` WHERE `login` = '$_SESSION[login]' AND `pass` = '$_SESSION[pass]'";
+$run_=mysqli_query($connect,$str_);
+$user=mysqli_fetch_array($run_);
+}
 ?>
 
 </div>
