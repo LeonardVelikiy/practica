@@ -288,15 +288,10 @@ else
 			}
 			else
 			{
-				$str_auth="SELECT * FROM `users` WHERE `login` = '$_SESSION[login]' AND `pass` = '$_SESSION[pass]'";
-				$run_auth=mysqli_query($connect,$str_auth);
-
-				$check_users=mysqli_num_rows($run_auth);
-
-				if ($check_users) 
-					{
-						$user= mysqli_fetch_assoc($run_auth);
-			if ($user['role']=0){
+				$str_auth__="SELECT * FROM `users` WHERE `login` = '$_SESSION[login]'";
+				$run_auth__=mysqli_query($connect,$str_auth__);
+				$user__= mysqli_fetch_assoc($run_auth__);
+			if ($user__['role']=0){
 				echo "<a href=../pages/profile.php><div class=kab>Мой кабинет</div></a><form method=POST><input type=submit name=exit value=Выход class=exit></form>";
 				}
 				else
